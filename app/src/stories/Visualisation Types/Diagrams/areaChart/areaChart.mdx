@@ -1,0 +1,28 @@
+import { Meta, Canvas } from "@storybook/blocks";
+import { moduleMetadata } from '@storybook/angular';
+import * as chartStories from './areaChart.stories'
+
+
+<Meta title="Visualisation Types/Diagrams/Area Chart/Simple Area Chart"/>
+
+# Area Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do's and don'ts](#dos-and-donts)
+
+## Description
+An area chart is used to visualize changes to a metric value over time. Because it has only one metric, it serves the same function as a simple line chart. An area chart is distinguished from a line chart by the addition of shading between lines and a baseline, like in a bar chart.
+<Canvas of={chartStories.Description} />
+## Anatomy
+
+## Chart variations
+### Area chart with breaks
+<Canvas of={chartStories.breaks} />
+### Area chart with diverging areas
+A Diverging Area Chart will present a standard area chart but with a diverging display of the data around a Base-line or Zero-line. It is used to compare values and to highlight 2 directions in the data over a single dimension. It should be used when the data includes negative and positive values. A diverging area chart however will have a zero-line or base-line with diverging areas on each side, which can in turn be highlighted by diverging colors. The shaded area of these charts allows a balance to be shown – either against a baseline or between two series. 
+<Canvas of={chartStories.diverging} />
+## Do's and don'ts
+

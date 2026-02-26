@@ -1,0 +1,34 @@
+import { Meta, Canvas } from "@storybook/blocks";
+import { moduleMetadata } from '@storybook/angular';
+import * as chartStories from './groupedBarChart.stories'
+
+
+<Meta title="Visualisation Types/Diagrams/Bar Chart/Grouped Bar Chart"/>
+
+# Grouped Bar Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do's and don'ts](#dos-and-donts)
+
+## Description
+A Grouped Bar Charts is used when two or more data sets are displayed side-by-side and grouped together under the same categories. It is a standard way to compare the size of things, and it allows to compare multiple series. However, it can become tricky to read with more than 2 series. The horizontal layout is the best choice for long text labels and trends. Grouped bar charts can group the categories on the same axis.
+<Canvas of={chartStories.Description} />
+## Anatomy
+
+## Chart variations
+### Grouped bar chart with groups
+<Canvas of={chartStories.groups} />
+### Grouped bar chart with confidence interval
+<Canvas of={chartStories.confidence} />
+### Grouped bar chart with overlay
+<Canvas of={chartStories.overlay} />
+## Do's and don'ts
+### Axis starts at 0
+Diagrams must always start at 0 otherwise the perception is distorted (unless the diagram represents an index, in which case the 100 value is mandatory). Deviations are allowed if the interruption is clearly marked. 
+### Horizontal layout
+All charts with long labels, have to be rotated by 90° to be compatible with small screens (mobile). 
+### Sort unordered categories by metric
+Appropriate sorting, which is almost always based on a metric, is important to effectively convey information in a bar chart and increase readability.

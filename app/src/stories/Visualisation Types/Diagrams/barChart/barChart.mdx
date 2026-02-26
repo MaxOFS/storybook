@@ -1,0 +1,38 @@
+import { Meta, Canvas } from "@storybook/blocks";
+import { moduleMetadata } from '@storybook/angular';
+import * as chartStories from './barChart.stories'
+
+
+<Meta title="Visualisation Types/Diagrams/Bar Chart/Bar Chart"/>
+
+# Bar Chart
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do's and don'ts](#dos-and-donts)
+
+## Description
+A bar chart visualizes categorical data. It consists of rectangles whose length is proportional to the values displayed. One axis represents categories and the other axis represents values. It is also possible to combine a bar chart with a line.
+<Canvas of={chartStories.Description} />
+## Anatomy
+<img src="../images/barChart_anatomy.png" alt="alt"/>
+## Chart variations
+### Bar chart with a confidence interval
+<Canvas of={chartStories.Confidence} />
+The lower and upper margin of the confidence interval is shown by an overlay. Usually we use the 95%-margin which has to be mentioned in the legend. In charts with only one colour, the hatched area is two steps darker than the bar chart. If there are multiple colours or different shades of the base colour, we use black #333333 instead.
+### Bar chart with an overlay (mark?)
+<Canvas of={chartStories.Overlay} />
+### Bar chart in groups
+<Canvas of={chartStories.Groups} />
+A Grouped Bar Charts is used when two or more data sets are displayed side-by-side and grouped together under the same categories. It is a standard way to compare the size of things, and it allows to compare multiple series. However, it can become tricky to read with more than 2 series. The horizontal layout is the best choice for long text labels and trends. Grouped bar charts can group the categories on the same axis.
+### Bar chart with diverging bars
+A Diverging Bar Chart is used to compare categories and to highlight 2 directions in the data over a single dimension. It should be used when the data includes negative and positive values. The Y-axis represents the categories being compared. The X-axis represents a measured value with a Zero-Line around which the bars are distributed with a possible diverging color scheme. The length of the bars is proportional to the values displayed.
+<Canvas of={chartStories.divergent} />
+## Do's and don'ts
+### Axis starts at 0
+Diagrams must always start at 0 otherwise the perception is distorted (unless the diagram represents an index, in which case the 100 value is mandatory). Deviations are allowed if the interruption is clearly marked. 
+### Horizontal layout
+All charts with long labels, have to be rotated by 90° to be compatible with small screens (mobile). 
+### Sort unordered categories by metric
+Appropriate sorting, which is almost always based on a metric, is important to effectively convey information in a bar chart and increase readability.

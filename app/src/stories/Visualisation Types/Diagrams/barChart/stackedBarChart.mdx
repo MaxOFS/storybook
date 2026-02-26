@@ -1,0 +1,30 @@
+import { Meta, Canvas } from "@storybook/blocks";
+import { moduleMetadata } from '@storybook/angular';
+import * as chartStories from './stackedBarChart.stories'
+
+
+<Meta title="Visualisation Types/Diagrams/Bar Chart/Stacked Bar Chart"/>
+
+# Stacked Bar Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do's and don'ts](#dos-and-donts)
+
+## Description
+A Stacked Bar Chart is a simple way of showing part-to-whole relationships but can be difficult to read with more than a few components. The size of the components is more effective to read in a stacked bar chart than in a pie chart because it is a surface comparison. A stacked bar chart uses color differences to show several dimensions. To do this, each bar is split into a set of dimension items, distinguished by color, while maintaining the total bar length. A Stacked Bar chart is presented with horizontal bars. A horizontal layout is the best choice for long text labels and trends, whereas a vertical layout is the best choice for short labels and trends. 
+<Canvas of={chartStories.Description2} />
+## Anatomy
+
+## Chart variations
+### Stacked bar chart in groups
+<Canvas of={chartStories.groups} />
+## Do's and don'ts
+### Axis starts at 0
+Diagrams must always start at 0 otherwise the perception is distorted (unless the diagram represents an index, in which case the 100 value is mandatory). Deviations are allowed if the interruption is clearly marked. 
+### Horizontal layout
+All charts with long labels, have to be rotated by 90° to be compatible with small screens (mobile). 
+### Sort unordered categories by metric
+Appropriate sorting, which is almost always based on a metric, is important to effectively convey information in a bar chart and increase readability.

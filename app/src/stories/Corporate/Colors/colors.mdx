@@ -1,0 +1,66 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+ 
+<Meta title="Corporate/Colors/Introduction" />
+ 
+
+# Introduction to Colors
+In order to create a clear recognition of the FSO graphics, the color palette was completely revised. In addition, it was ensured that all colors are barrier-free and comply with the [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/).
+
+The colors of a graphic are primarily intended to help the reader distinguish (dissociate) or connect (associate) things. However, the graphic creator must always try to use colors in a way that supports the message and readability. The same applies to the legend - it should be as logical and easy to read as possible.
+
+The color should be used with care and as a complement to other visual variables such as position, shape or size. It is therefore recommended to use colors in the FSO's visualisations with moderation in order to maintain neutrality and objectivity. 
+
+In order to make the application of colors easier, the new color palettes are divided into the following groups :
+- [Qualitative colors](?path=/docs/corporate-colors-qualitative-colors--docs)
+- [Sequential colors](?path=/docs/corporate-colors-sequential-colors--docs)
+- [Diverging colors](?path=/docs/corporate-colors-diverging-colors--docs)
+- [Political parties colors](?path=/docs/corporate-colors-political-parties-colors--docs)
+- [Corporate colors](?path=/docs/corporate-colors-corporate-colors--docs)
+- [Themes colors](?path=/docs/corporate-colors-themes-colors--docs)
+
+
+<ColorPalette>
+  <ColorItem
+    title="BFS Blue"
+    subtitle="Standard Palette"
+    colors={{ 3: '#728CD7'}}
+  />
+  <ColorItem
+    colors={{ 2: '#C2CEF2', 4: '#728CD7'}}
+  />
+  <ColorItem
+    colors={{ 1: '#C2CEF2', 3: '#728CD7', 5: '#2B408C' }}
+  />
+  <ColorItem 
+    title="theme.color.primary" 
+    subtitle="Coral" 
+    colors={{ WildWatermelon: '#FF4785' }} 
+  />
+  <ColorItem 
+    title="theme.color.secondary" 
+    subtitle="Ocean" 
+    colors={{ DodgerBlue: '#1EA7FD' }} 
+  />
+  <ColorItem
+    title="theme.color.positive"
+    subtitle="Green"
+    colors={{
+      Apple: 'rgba(102,191,60,1)',
+      Apple80: 'rgba(102,191,60,.8)',
+      Apple60: 'rgba(102,191,60,.6)',
+      Apple30: 'rgba(102,191,60,.3)',
+    }}
+  />
+  <ColorItem
+    title="gradient"
+    subtitle="Grayscale"
+    colors={{
+      Gradient: 'linear-gradient(to right,white,black)',
+    }}
+  />
+  <ColorItem
+    title="gradient"
+    subtitle="Grayscale"
+    colors={['linear-gradient(65deg,white,black)']}
+  />
+</ColorPalette>

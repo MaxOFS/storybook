@@ -1,0 +1,36 @@
+.bar-chart-container {
+    display: block;
+    width: 100%;
+  }
+  
+  .bar-chart-container svg {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Styles pour les axes */
+  :host ::ng-deep .x-axis text,
+  :host ::ng-deep .y-axis text {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    fill: #333;
+  }
+  
+  :host ::ng-deep .x-axis line,
+  :host ::ng-deep .y-axis line,
+  :host ::ng-deep .x-axis path,
+  :host ::ng-deep .y-axis path {
+    stroke: #333;
+    stroke-width: 1;
+    fill: none;
+  }
+  
+  /* Animation au survol */
+  :host ::ng-deep .bar {
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+  }
+  
+  :host ::ng-deep .bar:hover {
+    opacity: 0.7 !important;
+  }

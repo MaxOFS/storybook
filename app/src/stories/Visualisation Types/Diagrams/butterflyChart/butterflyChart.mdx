@@ -1,0 +1,29 @@
+import { Meta, Canvas } from "@storybook/blocks";
+import { moduleMetadata } from '@storybook/angular';
+import * as chartStories from './butterflyChart.stories'
+
+
+<Meta title="Visualisation Types/Diagrams/Butterfly Chart/Butterfly Chart"/>
+
+# Butterfly Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do's and don'ts](#dos-and-donts)
+
+## Description
+A Butterfly Chart allows two variables that share the same modalities to be compared side by side. In this way, the differences between the variables can be quickly identified. A Butterfly Chart presents 2 bar charts back-to-back. The categories or intervals are presented vertically.
+<Canvas of={chartStories.description} />
+## Anatomy
+
+## Chart variations
+### Butterfly chart with a confidence interval
+<Canvas of={chartStories.confidence} />
+### Butterfly chart with marks
+<Canvas of={chartStories.overlay} />
+### Butterfly chart with groups
+<Canvas of={chartStories.groups} />
+## Do's and don'ts
+

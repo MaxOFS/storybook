@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.app.json",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true
+  },
+  "exclude": ["../src/test.ts", "../src/**/*.spec.ts"],
+  "include": ["../src/**/*","../src/**/*.component.ts", "./preview.ts", "./typings.d.ts"],
+  "files": ["./typings.d.ts"]
+}

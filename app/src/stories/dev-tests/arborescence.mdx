@@ -1,0 +1,15 @@
+import { Meta, Canvas } from "@storybook/blocks";
+import { moduleMetadata } from '@storybook/angular';
+import * as DWStories from './dw.stories'
+import * as DynvisStories from './dynvis.stories'
+
+Cette page est pour tester l'apparition de contenu dans une arborescence pluri-Niveau
+
+<Meta title="dev-tests/PAGE" />
+
+#DW Implementation
+This is the test for implementing a dw chart but on a simple component
+
+<Canvas of={DWStories.Default} />
+
+<Canvas of={DynvisStories.Default} />

@@ -1,0 +1,1557 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "BarChartData",
+            "id": "interface-BarChartData-19c1f35ff983dda823faf7cf6c961559e16e2d076eeaea8c22ec4a795ddad1b1125a6bddf703158338356279467615184167cbcfd6e6a4821b4e0041a77c51e4",
+            "file": "src/app/old/bar-chart.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';\nimport * as d3 from 'd3';\n\nexport interface BarChartData {\n  label: string;\n  value: number;\n}\n\n@Component({\n  selector: 'app-bar-chart',\n  template: `<div class=\"bar-chart-container\"></div>`,\n  styleUrls: ['./bar-chart.component.css']\n})\nexport class BarChartComponent implements OnInit, OnChanges {\n  @Input() data: BarChartData[] = [];\n  @Input() width: number = 600;\n  @Input() height: number = 400;\n  @Input() margin = { top: 20, right: 30, bottom: 40, left: 40 };\n  @Input() color: string = '#69b3a2';\n\n  private svg: any;\n  private chartWidth!: number;\n  private chartHeight!: number;\n\n  constructor(private elementRef: ElementRef) {}\n\n  ngOnInit(): void {\n    this.createSvg();\n    this.drawChart();\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    if (this.svg && changes['data']) {\n      this.updateChart();\n    }\n  }\n\n  private createSvg(): void {\n    this.chartWidth = this.width - this.margin.left - this.margin.right;\n    this.chartHeight = this.height - this.margin.top - this.margin.bottom;\n\n    const container = d3.select(this.elementRef.nativeElement)\n      .select('.bar-chart-container');\n\n    // Supprimer l'ancien SVG s'il existe\n    container.select('svg').remove();\n\n    this.svg = container\n      .append('svg')\n      .attr('width', this.width)\n      .attr('height', this.height)\n      .append('g')\n      .attr('transform', `translate(${this.margin.left},${this.margin.top})`);\n  }\n\n  private drawChart(): void {\n    if (!this.data || this.data.length === 0) {\n      return;\n    }\n\n    // Échelles\n    const xScale = d3.scaleBand()\n      .domain(this.data.map(d => d.label))\n      .range([0, this.chartWidth])\n      .padding(0.1);\n\n    const yScale = d3.scaleLinear()\n      .domain([0, d3.max(this.data, d => d.value) || 0])\n      .range([this.chartHeight, 0]);\n\n    // Axes\n    const xAxis = d3.axisBottom(xScale);\n    const yAxis = d3.axisLeft(yScale);\n\n    // Axe X\n    this.svg.append('g')\n      .attr('class', 'x-axis')\n      .attr('transform', `translate(0, ${this.chartHeight})`)\n      .call(xAxis);\n\n    // Axe Y\n    this.svg.append('g')\n      .attr('class', 'y-axis')\n      .call(yAxis);\n\n    // Barres\n    this.svg.selectAll('.bar')\n      .data(this.data)\n      .enter()\n      .append('rect')\n      .attr('class', 'bar')\n      .attr('x', (d: BarChartData) => xScale(d.label) || 0)\n      .attr('width', xScale.bandwidth())\n      .attr('y', (d: BarChartData) => yScale(d.value))\n      .attr('height', (d: BarChartData) => this.chartHeight - yScale(d.value))\n      .attr('fill', this.color)\n      .on('mouseover', (event: any, d: BarChartData) => {\n        d3.select(event.currentTarget).attr('opacity', 0.7);\n        \n        // Tooltip simple\n        const tooltip = d3.select('body')\n          .append('div')\n          .attr('class', 'tooltip')\n          .style('opacity', 0)\n          .style('position', 'absolute')\n          .style('background', 'rgba(0, 0, 0, 0.8)')\n          .style('color', 'white')\n          .style('padding', '8px')\n          .style('border-radius', '4px')\n          .style('font-size', '12px');\n\n        tooltip.transition()\n          .duration(200)\n          .style('opacity', .9);\n        \n        tooltip.html(`${d.label}: ${d.value}`)\n          .style('left', (event.pageX + 10) + 'px')\n          .style('top', (event.pageY - 28) + 'px');\n      })\n      .on('mouseout', (event: any, d: BarChartData) => {\n        d3.select(event.currentTarget).attr('opacity', 1);\n        d3.selectAll('.tooltip').remove();\n      });\n  }\n\n  private updateChart(): void {\n    if (!this.svg) return;\n\n    // Supprimer les anciens éléments\n    this.svg.selectAll('*').remove();\n    \n    // Redessiner le graphique\n    this.drawChart();\n  }\n}",
+            "properties": [
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "Window",
+            "id": "interface-Window-7ed216dc420800ae3dcee1a733397ccf6f9aa967c7be463ee7076b66757fd50ec744e184dcc6d8ceaf5382a8af82f326ec68356fefc0813bfbd93521988c1ea8",
+            "file": "src/app/dynvis.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, Input, OnInit, OnDestroy, ElementRef, ViewChild, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';\n\ndeclare global {\n  interface Window {\n    dynvis?: {\n      init?: () => void;\n      destroy?: (element: HTMLElement) => void;\n    };\n  }\n}\n\n@Component({\n  selector: 'app-bfs-visualization',\n  template: `\n    <div #vizContainer\n         class=\"fso-datavis-widget\"\n         [attr.data-vizid]=\"vizId\"\n         [attr.data-lang]=\"language\">\n    </div>\n  `,\n  styles: [`\n    :host {\n      display: block;\n      width: 100%;\n    }\n  `]\n})\nexport class DynvisComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {\n  @Input() vizId: string = 'gd-01.05.05.01-su';\n  @Input() lang: 'f' | 'd' | 'i' | 'e' = 'f'; // French, German, Italian, English\n  @Input() scriptVersion: string = 'v0.9';\n  \n  @ViewChild('vizContainer', { static: true }) vizContainer!: ElementRef;\n  \n  private scriptId = 'bfs-dynvis-script';\n  private scriptLoaded = false;\n  private initialized = false;\n\n  ngOnInit(): void {\n    this.loadScript();\n  }\n\n  ngAfterViewInit(): void {\n    // If script is already loaded, initialize the visualization\n    if (this.scriptLoaded && !this.initialized) {\n      this.initializeVisualization();\n    }\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    // When vizId or language changes, reinitialize the visualization\n    if ((changes['vizId'] || changes['language']) && !changes['vizId']?.firstChange && !changes['language']?.firstChange) {\n      if (this.scriptLoaded && this.initialized) {\n        console.log(`Reinitializing visualization: ${this.vizId} in language: ${this.lang}`);\n        this.reinitializeVisualization();\n      }\n    }\n  }\n\n  ngOnDestroy(): void {\n    // Clean up the visualization instance\n    this.destroyVisualization();\n  }\n\n  private loadScript(): void {\n    // Check if script is already loaded\n    if (document.getElementById(this.scriptId)) {\n      this.scriptLoaded = true;\n      return;\n    }\n\n    const script = document.createElement('script');\n    script.id = this.scriptId;\n    script.src = `https://viz.bfs.admin.ch/libs/viz-bfs/dynvis/dynvis-${this.scriptVersion}/dynvis.min.js`;\n    script.async = true;\n    \n    script.onload = () => {\n      this.scriptLoaded = true;\n      if (!this.initialized) {\n        this.initializeVisualization();\n      }\n    };\n\n    script.onerror = () => {\n      console.error('Failed to load BFS visualization script');\n    };\n\n    document.head.appendChild(script);\n  }\n\n  private initializeVisualization(): void {\n    console.log(`Initializing visualization: ${this.vizId} in language: ${this.lang}`);\n    \n    // Wait a tick to ensure DOM is ready\n    setTimeout(() => {\n      // The dynvis script automatically initializes elements with fso-datavis-widget class\n      // Try to manually trigger initialization if the API is available\n      if (window.dynvis && typeof window.dynvis.init === 'function') {\n        window.dynvis.init();\n      }\n      this.initialized = true;\n    }, 100);\n  }\n\n  private reinitializeVisualization(): void {\n    // Destroy the current visualization\n    this.destroyVisualization();\n    \n    // Clear the container\n    const container = this.vizContainer.nativeElement;\n    container.innerHTML = '';\n    \n    // Wait a bit then reinitialize\n    setTimeout(() => {\n      this.initializeVisualization();\n    }, 200);\n  }\n\n  private destroyVisualization(): void {\n    const container = this.vizContainer.nativeElement;\n    \n    // Try to use dynvis destroy method if available\n    if (window.dynvis && typeof window.dynvis.destroy === 'function') {\n      window.dynvis.destroy(container);\n    }\n    \n    // Clear any child elements\n    while (container.firstChild) {\n      container.removeChild(container.firstChild);\n    }\n  }\n}",
+            "properties": [
+                {
+                    "name": "dynvis",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        }
+    ],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-46f0c71d4ba228ee6f286250e5009a743ccfe5b0c37094f1c86d730aef800b689ee7d07e056129151ef27995ae66f22a8aef0c0fa1d71d3dc5735d62b4dad829",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'taskbox'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    selector: 'app-root',\n    templateUrl: './app.component.html',\n    styleUrls: ['./app.component.css'],\n    standalone: false\n})\nexport class AppComponent {\n  title = 'taskbox';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->\n<!-- * * * * * * * to get started with your project! * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n<style>\n  :host {\n    --bright-blue: oklch(51.01% 0.274 263.83);\n    --electric-violet: oklch(53.18% 0.28 296.97);\n    --french-violet: oklch(47.66% 0.246 305.88);\n    --vivid-pink: oklch(69.02% 0.277 332.77);\n    --hot-red: oklch(61.42% 0.238 15.34);\n    --orange-red: oklch(63.32% 0.24 31.68);\n\n    --gray-900: oklch(19.37% 0.006 300.98);\n    --gray-700: oklch(36.98% 0.014 302.71);\n    --gray-400: oklch(70.9% 0.015 304.04);\n\n    --red-to-pink-to-purple-vertical-gradient: linear-gradient(\n      180deg,\n      var(--orange-red) 0%,\n      var(--vivid-pink) 50%,\n      var(--electric-violet) 100%\n    );\n\n    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(\n      90deg,\n      var(--orange-red) 0%,\n      var(--vivid-pink) 50%,\n      var(--electric-violet) 100%\n    );\n\n    --pill-accent: var(--bright-blue);\n\n    font-family: \"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto,\n      Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\",\n      \"Segoe UI Symbol\";\n    box-sizing: border-box;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  h1 {\n    font-size: 3.125rem;\n    color: var(--gray-900);\n    font-weight: 500;\n    line-height: 100%;\n    letter-spacing: -0.125rem;\n    margin: 0;\n    font-family: \"Inter Tight\", -apple-system, BlinkMacSystemFont, \"Segoe UI\",\n      Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\",\n      \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  }\n\n  p {\n    margin: 0;\n    color: var(--gray-700);\n  }\n\n  main {\n    width: 100%;\n    min-height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding: 1rem;\n    box-sizing: inherit;\n    position: relative;\n  }\n\n  .angular-logo {\n    max-width: 9.2rem;\n  }\n\n  .content {\n    display: flex;\n    justify-content: space-around;\n    width: 100%;\n    max-width: 700px;\n    margin-bottom: 3rem;\n  }\n\n  .content h1 {\n    margin-top: 1.75rem;\n  }\n\n  .content p {\n    margin-top: 1.5rem;\n  }\n\n  .divider {\n    width: 1px;\n    background: var(--red-to-pink-to-purple-vertical-gradient);\n    margin-inline: 0.5rem;\n  }\n\n  .pill-group {\n    display: flex;\n    flex-direction: column;\n    align-items: start;\n    flex-wrap: wrap;\n    gap: 1.25rem;\n  }\n\n  .pill {\n    display: flex;\n    align-items: center;\n    --pill-accent: var(--bright-blue);\n    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);\n    color: var(--pill-accent);\n    padding-inline: 0.75rem;\n    padding-block: 0.375rem;\n    border-radius: 2.75rem;\n    border: 0;\n    transition: background 0.3s ease;\n    font-family: var(--inter-font);\n    font-size: 0.875rem;\n    font-style: normal;\n    font-weight: 500;\n    line-height: 1.4rem;\n    letter-spacing: -0.00875rem;\n    text-decoration: none;\n  }\n\n  .pill:hover {\n    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);\n  }\n\n  .pill-group .pill:nth-child(6n + 1) {\n    --pill-accent: var(--bright-blue);\n  }\n  .pill-group .pill:nth-child(6n + 2) {\n    --pill-accent: var(--french-violet);\n  }\n  .pill-group .pill:nth-child(6n + 3),\n  .pill-group .pill:nth-child(6n + 4),\n  .pill-group .pill:nth-child(6n + 5) {\n    --pill-accent: var(--hot-red);\n  }\n\n  .pill-group svg {\n    margin-inline-start: 0.25rem;\n  }\n\n  .social-links {\n    display: flex;\n    align-items: center;\n    gap: 0.73rem;\n    margin-top: 1.5rem;\n  }\n\n  .social-links path {\n    transition: fill 0.3s ease;\n    fill: var(--gray-400);\n  }\n\n  .social-links a:hover svg path {\n    fill: var(--gray-900);\n  }\n\n  @media screen and (max-width: 650px) {\n    .content {\n      flex-direction: column;\n      width: max-content;\n    }\n\n    .divider {\n      height: 1px;\n      width: 100%;\n      background: var(--red-to-pink-to-purple-horizontal-gradient);\n      margin-block: 1.5rem;\n    }\n  }\n</style>\n\n<main class=\"main\">\n  <div class=\"content\">\n    <div class=\"left-side\">\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        viewBox=\"0 0 982 239\"\n        fill=\"none\"\n        class=\"angular-logo\"\n      >\n        <g clip-path=\"url(#a)\">\n          <path\n            fill=\"url(#b)\"\n            d=\"M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z\"\n          />\n          <path\n            fill=\"url(#c)\"\n            d=\"M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z\"\n          />\n        </g>\n        <defs>\n          <radialGradient\n            id=\"c\"\n            cx=\"0\"\n            cy=\"0\"\n            r=\"1\"\n            gradientTransform=\"rotate(118.122 171.182 60.81) scale(205.794)\"\n            gradientUnits=\"userSpaceOnUse\"\n          >\n            <stop stop-color=\"#FF41F8\" />\n            <stop offset=\".707\" stop-color=\"#FF41F8\" stop-opacity=\".5\" />\n            <stop offset=\"1\" stop-color=\"#FF41F8\" stop-opacity=\"0\" />\n          </radialGradient>\n          <linearGradient\n            id=\"b\"\n            x1=\"0\"\n            x2=\"982\"\n            y1=\"192\"\n            y2=\"192\"\n            gradientUnits=\"userSpaceOnUse\"\n          >\n            <stop stop-color=\"#F0060B\" />\n            <stop offset=\"0\" stop-color=\"#F0070C\" />\n            <stop offset=\".526\" stop-color=\"#CC26D5\" />\n            <stop offset=\"1\" stop-color=\"#7702FF\" />\n          </linearGradient>\n          <clipPath id=\"a\"><path fill=\"#fff\" d=\"M0 0h982v239H0z\" /></clipPath>\n        </defs>\n      </svg>\n      <h1>Hello, {{ title }}</h1>\n      <p>Congratulations! Your app is running. 🎉</p>\n    </div>\n    <div class=\"divider\" role=\"separator\" aria-label=\"Divider\"></div>\n    <div class=\"right-side\">\n      <div class=\"pill-group\">\n        @for (item of [ { title: 'Explore the Docs', link: 'https://angular.dev'\n        }, { title: 'Learn with Tutorials', link:\n        'https://angular.dev/tutorials' }, { title: 'CLI Docs', link:\n        'https://angular.dev/tools/cli' }, { title: 'Angular Language Service',\n        link: 'https://angular.dev/tools/language-service' }, { title: 'Angular\n        DevTools', link: 'https://angular.dev/tools/devtools' }, ]; track\n        item.title) {\n        <a class=\"pill\" [href]=\"item.link\" target=\"_blank\" rel=\"noopener\">\n          <span>{{ item.title }}</span>\n          <svg\n            xmlns=\"http://www.w3.org/2000/svg\"\n            height=\"14\"\n            viewBox=\"0 -960 960 960\"\n            width=\"14\"\n            fill=\"currentColor\"\n          >\n            <path\n              d=\"M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z\"\n            />\n          </svg>\n        </a>\n        }\n      </div>\n      <div class=\"social-links\">\n        <a\n          href=\"https://github.com/angular/angular\"\n          aria-label=\"Github\"\n          target=\"_blank\"\n          rel=\"noopener\"\n        >\n          <svg\n            width=\"25\"\n            height=\"24\"\n            viewBox=\"0 0 25 24\"\n            fill=\"none\"\n            xmlns=\"http://www.w3.org/2000/svg\"\n            alt=\"Github\"\n          >\n            <path\n              d=\"M12.3047 0C5.50634 0 0 5.50942 0 12.3047C0 17.7423 3.52529 22.3535 8.41332 23.9787C9.02856 24.0946 9.25414 23.7142 9.25414 23.3871C9.25414 23.0949 9.24389 22.3207 9.23876 21.2953C5.81601 22.0377 5.09414 19.6444 5.09414 19.6444C4.53427 18.2243 3.72524 17.8449 3.72524 17.8449C2.61064 17.082 3.81137 17.0973 3.81137 17.0973C5.04697 17.1835 5.69604 18.3647 5.69604 18.3647C6.79321 20.2463 8.57636 19.7029 9.27978 19.3881C9.39052 18.5924 9.70736 18.0499 10.0591 17.7423C7.32641 17.4347 4.45429 16.3765 4.45429 11.6618C4.45429 10.3185 4.9311 9.22133 5.72065 8.36C5.58222 8.04931 5.16694 6.79833 5.82831 5.10337C5.82831 5.10337 6.85883 4.77319 9.2121 6.36459C10.1965 6.09082 11.2424 5.95546 12.2883 5.94931C13.3342 5.95546 14.3801 6.09082 15.3644 6.36459C17.7023 4.77319 18.7328 5.10337 18.7328 5.10337C19.3942 6.79833 18.9789 8.04931 18.8559 8.36C19.6403 9.22133 20.1171 10.3185 20.1171 11.6618C20.1171 16.3888 17.2409 17.4296 14.5031 17.7321C14.9338 18.1012 15.3337 18.8559 15.3337 20.0084C15.3337 21.6552 15.3183 22.978 15.3183 23.3779C15.3183 23.7009 15.5336 24.0854 16.1642 23.9623C21.0871 22.3484 24.6094 17.7341 24.6094 12.3047C24.6094 5.50942 19.0999 0 12.3047 0Z\"\n            />\n          </svg>\n        </a>\n        <a\n          href=\"https://twitter.com/angular\"\n          aria-label=\"Twitter\"\n          target=\"_blank\"\n          rel=\"noopener\"\n        >\n          <svg\n            width=\"25\"\n            height=\"20\"\n            viewBox=\"0 0 25 20\"\n            fill=\"none\"\n            xmlns=\"http://www.w3.org/2000/svg\"\n            alt=\"Twitter\"\n          >\n            <path\n              d=\"M8.04524 20C17.3335 20 22.4138 12.3047 22.4138 5.63144C22.4138 5.41287 22.4138 5.19529 22.399 4.97869C23.3874 4.26381 24.2405 3.37867 24.9185 2.3647C23.9969 2.77329 23.0192 3.04112 22.018 3.15923C23.0723 2.52818 23.8613 1.53552 24.2382 0.366057C23.2469 0.954335 22.1624 1.36889 21.0315 1.59182C20.2701 0.782212 19.2631 0.246107 18.1663 0.0664704C17.0695 -0.113166 15.9441 0.0736804 14.9642 0.598096C13.9843 1.12251 13.2046 1.95526 12.7457 2.96748C12.2868 3.9797 12.1742 5.11495 12.4255 6.19756C10.4178 6.09685 8.45366 5.57507 6.66064 4.66609C4.86763 3.75712 3.28579 2.48127 2.01781 0.921344C1.37203 2.03306 1.17424 3.34911 1.46472 4.60154C1.75519 5.85397 2.51208 6.9486 3.58128 7.66257C2.77759 7.63903 1.9914 7.42221 1.28924 7.03049V7.09449C1.28956 8.26041 1.69316 9.39034 2.4316 10.2926C3.17003 11.1949 4.19783 11.8139 5.34067 12.0448C4.59721 12.2476 3.81715 12.2772 3.06045 12.1315C3.38327 13.1348 4.01156 14.0122 4.85746 14.641C5.70337 15.2698 6.72461 15.6185 7.77842 15.6384C6.73139 16.4614 5.53237 17.0699 4.24995 17.4291C2.96753 17.7882 1.62687 17.891 0.304688 17.7316C2.61411 19.2136 5.30121 19.9997 8.04524 19.9961\"\n            />\n          </svg>\n        </a>\n        <a\n          href=\"https://www.youtube.com/channel/UCbn1OgGei-DV7aSRo_HaAiw\"\n          aria-label=\"Youtube\"\n          target=\"_blank\"\n          rel=\"noopener\"\n        >\n          <svg\n            width=\"29\"\n            height=\"20\"\n            viewBox=\"0 0 29 20\"\n            fill=\"none\"\n            xmlns=\"http://www.w3.org/2000/svg\"\n            alt=\"Youtube\"\n          >\n            <path\n              fill-rule=\"evenodd\"\n              clip-rule=\"evenodd\"\n              d=\"M27.4896 1.52422C27.9301 1.96749 28.2463 2.51866 28.4068 3.12258C29.0004 5.35161 29.0004 10 29.0004 10C29.0004 10 29.0004 14.6484 28.4068 16.8774C28.2463 17.4813 27.9301 18.0325 27.4896 18.4758C27.0492 18.9191 26.5 19.2389 25.8972 19.4032C23.6778 20 14.8068 20 14.8068 20C14.8068 20 5.93586 20 3.71651 19.4032C3.11363 19.2389 2.56449 18.9191 2.12405 18.4758C1.68361 18.0325 1.36732 17.4813 1.20683 16.8774C0.613281 14.6484 0.613281 10 0.613281 10C0.613281 10 0.613281 5.35161 1.20683 3.12258C1.36732 2.51866 1.68361 1.96749 2.12405 1.52422C2.56449 1.08095 3.11363 0.76113 3.71651 0.596774C5.93586 0 14.8068 0 14.8068 0C14.8068 0 23.6778 0 25.8972 0.596774C26.5 0.76113 27.0492 1.08095 27.4896 1.52422ZM19.3229 10L11.9036 5.77905V14.221L19.3229 10Z\"\n            />\n          </svg>\n        </a>\n      </div>\n    </div>\n  </div>\n</main>\n\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n"
+        },
+        {
+            "name": "BarChartComponent",
+            "id": "component-BarChartComponent-19c1f35ff983dda823faf7cf6c961559e16e2d076eeaea8c22ec4a795ddad1b1125a6bddf703158338356279467615184167cbcfd6e6a4821b4e0041a77c51e4",
+            "file": "src/app/old/bar-chart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-bar-chart",
+            "styleUrls": [
+                "./bar-chart.component.css"
+            ],
+            "styles": [],
+            "template": "<div class=\"bar-chart-container\"></div>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "color",
+                    "defaultValue": "'#69b3a2'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "data",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "BarChartData[]",
+                    "decorators": []
+                },
+                {
+                    "name": "height",
+                    "defaultValue": "400",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "margin",
+                    "defaultValue": "{ top: 20, right: 30, bottom: 40, left: 40 }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "{ top: number; right: number; bottom: number; left: number; }",
+                    "decorators": []
+                },
+                {
+                    "name": "width",
+                    "defaultValue": "600",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "chartHeight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "chartWidth",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "svg",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "createSvg",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "drawChart",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 56,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "updateChart",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 126,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';\nimport * as d3 from 'd3';\n\nexport interface BarChartData {\n  label: string;\n  value: number;\n}\n\n@Component({\n  selector: 'app-bar-chart',\n  template: `<div class=\"bar-chart-container\"></div>`,\n  styleUrls: ['./bar-chart.component.css']\n})\nexport class BarChartComponent implements OnInit, OnChanges {\n  @Input() data: BarChartData[] = [];\n  @Input() width: number = 600;\n  @Input() height: number = 400;\n  @Input() margin = { top: 20, right: 30, bottom: 40, left: 40 };\n  @Input() color: string = '#69b3a2';\n\n  private svg: any;\n  private chartWidth!: number;\n  private chartHeight!: number;\n\n  constructor(private elementRef: ElementRef) {}\n\n  ngOnInit(): void {\n    this.createSvg();\n    this.drawChart();\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    if (this.svg && changes['data']) {\n      this.updateChart();\n    }\n  }\n\n  private createSvg(): void {\n    this.chartWidth = this.width - this.margin.left - this.margin.right;\n    this.chartHeight = this.height - this.margin.top - this.margin.bottom;\n\n    const container = d3.select(this.elementRef.nativeElement)\n      .select('.bar-chart-container');\n\n    // Supprimer l'ancien SVG s'il existe\n    container.select('svg').remove();\n\n    this.svg = container\n      .append('svg')\n      .attr('width', this.width)\n      .attr('height', this.height)\n      .append('g')\n      .attr('transform', `translate(${this.margin.left},${this.margin.top})`);\n  }\n\n  private drawChart(): void {\n    if (!this.data || this.data.length === 0) {\n      return;\n    }\n\n    // Échelles\n    const xScale = d3.scaleBand()\n      .domain(this.data.map(d => d.label))\n      .range([0, this.chartWidth])\n      .padding(0.1);\n\n    const yScale = d3.scaleLinear()\n      .domain([0, d3.max(this.data, d => d.value) || 0])\n      .range([this.chartHeight, 0]);\n\n    // Axes\n    const xAxis = d3.axisBottom(xScale);\n    const yAxis = d3.axisLeft(yScale);\n\n    // Axe X\n    this.svg.append('g')\n      .attr('class', 'x-axis')\n      .attr('transform', `translate(0, ${this.chartHeight})`)\n      .call(xAxis);\n\n    // Axe Y\n    this.svg.append('g')\n      .attr('class', 'y-axis')\n      .call(yAxis);\n\n    // Barres\n    this.svg.selectAll('.bar')\n      .data(this.data)\n      .enter()\n      .append('rect')\n      .attr('class', 'bar')\n      .attr('x', (d: BarChartData) => xScale(d.label) || 0)\n      .attr('width', xScale.bandwidth())\n      .attr('y', (d: BarChartData) => yScale(d.value))\n      .attr('height', (d: BarChartData) => this.chartHeight - yScale(d.value))\n      .attr('fill', this.color)\n      .on('mouseover', (event: any, d: BarChartData) => {\n        d3.select(event.currentTarget).attr('opacity', 0.7);\n        \n        // Tooltip simple\n        const tooltip = d3.select('body')\n          .append('div')\n          .attr('class', 'tooltip')\n          .style('opacity', 0)\n          .style('position', 'absolute')\n          .style('background', 'rgba(0, 0, 0, 0.8)')\n          .style('color', 'white')\n          .style('padding', '8px')\n          .style('border-radius', '4px')\n          .style('font-size', '12px');\n\n        tooltip.transition()\n          .duration(200)\n          .style('opacity', .9);\n        \n        tooltip.html(`${d.label}: ${d.value}`)\n          .style('left', (event.pageX + 10) + 'px')\n          .style('top', (event.pageY - 28) + 'px');\n      })\n      .on('mouseout', (event: any, d: BarChartData) => {\n        d3.select(event.currentTarget).attr('opacity', 1);\n        d3.selectAll('.tooltip').remove();\n      });\n  }\n\n  private updateChart(): void {\n    if (!this.svg) return;\n\n    // Supprimer les anciens éléments\n    this.svg.selectAll('*').remove();\n    \n    // Redessiner le graphique\n    this.drawChart();\n  }\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".bar-chart-container {\n    display: block;\n    width: 100%;\n  }\n  \n  .bar-chart-container svg {\n    display: block;\n    margin: 0 auto;\n  }\n  \n  /* Styles pour les axes */\n  :host ::ng-deep .x-axis text,\n  :host ::ng-deep .y-axis text {\n    font-family: Arial, sans-serif;\n    font-size: 12px;\n    fill: #333;\n  }\n  \n  :host ::ng-deep .x-axis line,\n  :host ::ng-deep .y-axis line,\n  :host ::ng-deep .x-axis path,\n  :host ::ng-deep .y-axis path {\n    stroke: #333;\n    stroke-width: 1;\n    fill: none;\n  }\n  \n  /* Animation au survol */\n  :host ::ng-deep .bar {\n    transition: opacity 0.3s ease;\n    cursor: pointer;\n  }\n  \n  :host ::ng-deep .bar:hover {\n    opacity: 0.7 !important;\n  }",
+                    "styleUrl": "./bar-chart.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "elementRef",
+                        "type": "ElementRef",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 23,
+                "jsdoctags": [
+                    {
+                        "name": "elementRef",
+                        "type": "ElementRef",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "implements": [
+                "OnInit",
+                "OnChanges"
+            ]
+        },
+        {
+            "name": "DatawrapperEmbedComponent",
+            "id": "component-DatawrapperEmbedComponent-14a384771cb1ad49042a92ff7b0a1b758b87ea272690f2be282689524a8da0d150add5dd6694b83c3e850aff61e42fb91bc0cc519f0a9f90ca8acbefab31de02",
+            "file": "src/app/old/dw-visualisation.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-datawrapper-embed",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<iframe\n  [src]=\"safeUrl\"\n  [title]=\"title\"\n  [attr.aria-label]=\"ariaLabel\"\n  scrolling=\"no\"\n  frameborder=\"0\"\n  [style.height.px]=\"height\"\n  style=\"width: 0; min-width: 100% !important; border: none;\"\n></iframe>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "defaultValue": "'Interactive chart'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "height",
+                    "defaultValue": "400",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "src",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "style",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'Chart'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "setupResizeListener",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, AfterViewInit } from '@angular/core';\nimport { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';\n\n@Component({\n  selector: 'app-datawrapper-embed',\n  template: `\n    <iframe \n      [src]=\"safeUrl\"\n      [title]=\"title\"\n      [attr.aria-label]=\"ariaLabel\"\n      scrolling=\"no\"\n      frameborder=\"0\"\n      [style.height.px]=\"height\"\n      style=\"width: 0; min-width: 100% !important; border: none;\"\n    ></iframe>\n  `,\n})\nexport class DatawrapperEmbedComponent implements AfterViewInit {\n  @Input() style?: string;\n  @Input() src!: string;\n  @Input() title?: string = 'Chart';\n  @Input() ariaLabel?: string = 'Interactive chart';\n  @Input() height?: number = 400;\n\n  constructor(private sanitizer: DomSanitizer) {}\n\n  get safeUrl(): SafeResourceUrl {\n    return this.sanitizer.bypassSecurityTrustResourceUrl(\n      `${this.src}`\n    );\n  }\n\n  ngAfterViewInit() {\n    this.setupResizeListener();\n  }\n\n  private setupResizeListener() {\n    window.addEventListener(\"message\",function(a){if(void 0!==a.data[\"datawrapper-height\"]){var e=document.querySelectorAll(\"iframe\");for(var t in a.data[\"datawrapper-height\"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data[\"datawrapper-height\"][t]+\"px\";r.style.height=d}}});\n  }\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 23,
+                "jsdoctags": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "implements": [
+                "AfterViewInit"
+            ],
+            "accessors": {
+                "safeUrl": {
+                    "name": "safeUrl",
+                    "getSignature": {
+                        "name": "safeUrl",
+                        "type": "unknown",
+                        "returnType": "SafeResourceUrl",
+                        "line": 27
+                    }
+                }
+            }
+        },
+        {
+            "name": "DWComponent",
+            "id": "component-DWComponent-f2b1626c1bd42448b04cfc4e6bde965c95c742266f73b8dcb30356e3c99473a6eff4fcbe46f4e413e0a2b1d136d3a4bf08790476906c5976154af2efeac6779a",
+            "file": "src/app/dw.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "dw-chart",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./dw.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "iframeUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "messageListener",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "function",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "safeUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "SafeResourceUrl",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 41,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, AfterViewInit, ElementRef, OnDestroy } from '@angular/core';\nimport { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';\n\n@Component({\n  selector: 'dw-chart',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './dw.component.html'\n})\nexport class DWComponent implements AfterViewInit, OnDestroy {\n    @Input() set iframeUrl(url: string) {\n      this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);\n    }\n    \n    safeUrl: SafeResourceUrl = '';\n    private messageListener: (event: MessageEvent) => void;\n  \n    constructor(\n      private sanitizer: DomSanitizer,\n      private elementRef: ElementRef\n    ) {\n      this.messageListener = (event: MessageEvent) => {\n        if (event.data[\"datawrapper-height\"] !== undefined) {\n          const iframes = this.elementRef.nativeElement.querySelectorAll(\"iframe\");\n          for (const chartId in event.data[\"datawrapper-height\"]) {\n            for (let i = 0; i < iframes.length; i++) {\n              if (iframes[i].contentWindow === event.source) {\n                iframes[i].style.height = event.data[\"datawrapper-height\"][chartId] + \"px\";\n              }\n            }\n          }\n        }\n      };\n    }\n  \n    ngAfterViewInit() {\n      window.addEventListener(\"message\", this.messageListener);\n    }\n  \n    ngOnDestroy() {\n      window.removeEventListener(\"message\", this.messageListener);\n    }\n  }",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "elementRef",
+                        "type": "ElementRef",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 17,
+                "jsdoctags": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "elementRef",
+                        "type": "ElementRef",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "implements": [
+                "AfterViewInit",
+                "OnDestroy"
+            ],
+            "accessors": {
+                "iframeUrl": {
+                    "name": "iframeUrl",
+                    "setSignature": {
+                        "name": "iframeUrl",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "url",
+                                "type": "string",
+                                "optional": false,
+                                "dotDotDotToken": false,
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 12,
+                        "jsdoctags": [
+                            {
+                                "name": "url",
+                                "type": "string",
+                                "optional": false,
+                                "dotDotDotToken": false,
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "templateData": "<div class=\"dw-chart\">\n    <iframe \n      [src]=\"safeUrl\" \n      scrolling=\"no\" \n      frameborder=\"0\" \n      style=\"width: 0; min-width: 100% !important; border: none;\" \n      data-external=\"1\">\n    </iframe>\n</div>"
+        },
+        {
+            "name": "DynvisComponent",
+            "id": "component-DynvisComponent-7ed216dc420800ae3dcee1a733397ccf6f9aa967c7be463ee7076b66757fd50ec744e184dcc6d8ceaf5382a8af82f326ec68356fefc0813bfbd93521988c1ea8",
+            "file": "src/app/dynvis.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-bfs-visualization",
+            "styleUrls": [],
+            "styles": [
+                "\n    :host {\n      display: block;\n      width: 100%;\n    }\n  "
+            ],
+            "template": "<div #vizContainer\n     class=\"fso-datavis-widget\"\n     [attr.data-vizid]=\"vizId\"\n     [attr.data-lang]=\"language\">\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "lang",
+                    "defaultValue": "'f'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "\"f\" | \"d\" | \"i\" | \"e\"",
+                    "decorators": []
+                },
+                {
+                    "name": "scriptVersion",
+                    "defaultValue": "'v0.9'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "vizId",
+                    "defaultValue": "'gd-01.05.05.01-su'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "initialized",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 38,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "scriptId",
+                    "defaultValue": "'bfs-dynvis-script'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 36,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "scriptLoaded",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 37,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "vizContainer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 34,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'vizContainer', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        171
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "destroyVisualization",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 120,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "initializeVisualization",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 92,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "loadScript",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 44,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 51,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 61,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "reinitializeVisualization",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 106,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit, OnDestroy, ElementRef, ViewChild, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';\n\ndeclare global {\n  interface Window {\n    dynvis?: {\n      init?: () => void;\n      destroy?: (element: HTMLElement) => void;\n    };\n  }\n}\n\n@Component({\n  selector: 'app-bfs-visualization',\n  template: `\n    <div #vizContainer\n         class=\"fso-datavis-widget\"\n         [attr.data-vizid]=\"vizId\"\n         [attr.data-lang]=\"language\">\n    </div>\n  `,\n  styles: [`\n    :host {\n      display: block;\n      width: 100%;\n    }\n  `]\n})\nexport class DynvisComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {\n  @Input() vizId: string = 'gd-01.05.05.01-su';\n  @Input() lang: 'f' | 'd' | 'i' | 'e' = 'f'; // French, German, Italian, English\n  @Input() scriptVersion: string = 'v0.9';\n  \n  @ViewChild('vizContainer', { static: true }) vizContainer!: ElementRef;\n  \n  private scriptId = 'bfs-dynvis-script';\n  private scriptLoaded = false;\n  private initialized = false;\n\n  ngOnInit(): void {\n    this.loadScript();\n  }\n\n  ngAfterViewInit(): void {\n    // If script is already loaded, initialize the visualization\n    if (this.scriptLoaded && !this.initialized) {\n      this.initializeVisualization();\n    }\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    // When vizId or language changes, reinitialize the visualization\n    if ((changes['vizId'] || changes['language']) && !changes['vizId']?.firstChange && !changes['language']?.firstChange) {\n      if (this.scriptLoaded && this.initialized) {\n        console.log(`Reinitializing visualization: ${this.vizId} in language: ${this.lang}`);\n        this.reinitializeVisualization();\n      }\n    }\n  }\n\n  ngOnDestroy(): void {\n    // Clean up the visualization instance\n    this.destroyVisualization();\n  }\n\n  private loadScript(): void {\n    // Check if script is already loaded\n    if (document.getElementById(this.scriptId)) {\n      this.scriptLoaded = true;\n      return;\n    }\n\n    const script = document.createElement('script');\n    script.id = this.scriptId;\n    script.src = `https://viz.bfs.admin.ch/libs/viz-bfs/dynvis/dynvis-${this.scriptVersion}/dynvis.min.js`;\n    script.async = true;\n    \n    script.onload = () => {\n      this.scriptLoaded = true;\n      if (!this.initialized) {\n        this.initializeVisualization();\n      }\n    };\n\n    script.onerror = () => {\n      console.error('Failed to load BFS visualization script');\n    };\n\n    document.head.appendChild(script);\n  }\n\n  private initializeVisualization(): void {\n    console.log(`Initializing visualization: ${this.vizId} in language: ${this.lang}`);\n    \n    // Wait a tick to ensure DOM is ready\n    setTimeout(() => {\n      // The dynvis script automatically initializes elements with fso-datavis-widget class\n      // Try to manually trigger initialization if the API is available\n      if (window.dynvis && typeof window.dynvis.init === 'function') {\n        window.dynvis.init();\n      }\n      this.initialized = true;\n    }, 100);\n  }\n\n  private reinitializeVisualization(): void {\n    // Destroy the current visualization\n    this.destroyVisualization();\n    \n    // Clear the container\n    const container = this.vizContainer.nativeElement;\n    container.innerHTML = '';\n    \n    // Wait a bit then reinitialize\n    setTimeout(() => {\n      this.initializeVisualization();\n    }, 200);\n  }\n\n  private destroyVisualization(): void {\n    const container = this.vizContainer.nativeElement;\n    \n    // Try to use dynvis destroy method if available\n    if (window.dynvis && typeof window.dynvis.destroy === 'function') {\n      window.dynvis.destroy(container);\n    }\n    \n    // Clear any child elements\n    while (container.firstChild) {\n      container.removeChild(container.firstChild);\n    }\n  }\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n    :host {\n      display: block;\n      width: 100%;\n    }\n  \n",
+            "extends": [],
+            "implements": [
+                "OnInit",
+                "AfterViewInit",
+                "OnChanges",
+                "OnDestroy"
+            ]
+        },
+        {
+            "name": "DynvisComponent",
+            "id": "component-DynvisComponent-e96c2e53120d370c1b7db2870d07947a1538dc1f995b9d8745718f65b625b99c61b531aa669adc6e2d6a958c26464e2b2df5f80b48697c75a8d1d184cd768f29-1",
+            "file": "src/app/old/dynvis-chart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dynvis-wrapper",
+            "styleUrls": [],
+            "styles": [
+                "\n  .dynvis-container {\n    width: 100%;\n    height: 100%;\n  }\n  "
+            ],
+            "template": "<div #container class=\"dynvis-container\"></div>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "chartType",
+                    "defaultValue": "'barChart'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "configOptions",
+                    "defaultValue": "{}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "styleOptions",
+                    "defaultValue": "{}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "chartInstance",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 31,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "container",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'container', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        171
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "destroyChart",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 88,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 46,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "renderChart",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 50,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { \n  Component, \n  ElementRef, \n  Input,\n  OnInit,\n  OnChanges,\n  OnDestroy,\n  ViewChild,\n  SimpleChanges\n} from '@angular/core'\n\nimport * as dynvis from '@fso-datavis/dynvis';\n\n@Component({\n  selector: 'app-dynvis-wrapper',\n  template: '<div #container class=\"dynvis-container\"></div>',\n  styles: [`\n  .dynvis-container {\n    width: 100%;\n    height: 100%;\n  }\n  `]\n})\nexport class DynvisComponent implements OnInit, OnChanges, OnDestroy {\n  @ViewChild('container', {static: true}) container!: ElementRef;\n\n  @Input() chartType: string = 'barChart';\n  @Input() configOptions: any = {};\n  @Input() styleOptions: any = {};\n\n  private chartInstance: any;\n\n  ngOnInit() {\n    this.renderChart();\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if (!changes['chartType']?.firstChange) {\n      this.destroyChart();\n      this.renderChart();\n    } else if (this.chartInstance && this.chartInstance.update) {\n      this.chartInstance.update(this.configOptions, this.styleOptions)\n    }\n  }\n\n  ngOnDestroy() {\n    this.destroyChart();\n  }\n\n  private renderChart() {\n    if (typeof dynvis === 'undefined') {\n      console.error('dynvis is not loaded')\n      return;\n    }\n\n    this.container.nativeElement.innerHTML = '';\n    console.log(this)\n    console.log('This is the the chart Type :', this.chartType)\n    const method = `${this.chartType}`;\n    \n    if (typeof dynvis[method] === 'function'){\n\n      const ds = dynvis.dataSource({\n        type: 'tsv',\n        src: 'data.tsv'\n      })\n      const chart = dynvis[method](\n        this.configOptions,\n        this.styleOptions\n      );\n      const layout = dynvis.layout(\n        document.getElementById('container'),\n        {\n          boxes: [\n            ['chart', chart]\n          ],\n          dataSources: {\n            main: ds\n          }\n        }\n      )\n      layout.render()\n    } else {\n      console.error(`dynvis.${method} is not a function`)\n    }\n  }\n\n  private destroyChart() {\n    if (this.chartInstance && typeof this.chartInstance.destroy === 'function') {\n      this.chartInstance.destroy();\n    }\n    this.container.nativeElement.innerHTML = '';\n  }\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n  .dynvis-container {\n    width: 100%;\n    height: 100%;\n  }\n  \n",
+            "extends": [],
+            "implements": [
+                "OnInit",
+                "OnChanges",
+                "OnDestroy"
+            ],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "DynvisComponent-1"
+        },
+        {
+            "name": "DynvisComponent",
+            "id": "component-DynvisComponent-153c3a6ab597548bcb7ee7a54b751c58d023a82f4794785f5be57ed51717706e01a9e2e0b0a9f34f7bd27f673df1255674de5417ae1133bca060e19dff1b9c50-2",
+            "file": "src/app/old/dynvis.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "dynvis-chart",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./dynvis.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "lang",
+                    "defaultValue": "'d'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "vizId",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "scriptElement",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HTMLScriptElement",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 41,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "reinitializeWidget",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, AfterViewInit, OnDestroy, ElementRef, Renderer2 } from '@angular/core';\n\n@Component({\n  selector: 'dynvis-chart',\n  standalone: true,\n  templateUrl: './dynvis.component.html'\n})\nexport class DynvisComponent implements AfterViewInit, OnDestroy {\n  @Input() vizId: string = '';\n  @Input() lang: string = 'd';\n  \n  private scriptElement?: HTMLScriptElement;\n\n  constructor(\n    private renderer: Renderer2,\n    private elementRef: ElementRef\n  ) {}\n\n  ngAfterViewInit() {\n    // Vérifier si le script dynvis n'est pas déjà chargé\n    const existingScript = document.querySelector('script[src*=\"dynvis.min.js\"]');\n    \n    if (!existingScript) {\n      this.scriptElement = this.renderer.createElement('script') as HTMLScriptElement;\n      this.scriptElement.src = 'https://viz.bfs.admin.ch/libs/viz-bfs/dynvis/dynvis-v0.9/dynvis.min.js';\n      this.scriptElement.type = 'text/javascript';\n      this.renderer.appendChild(document.body, this.scriptElement);\n    } else {\n      // Si le script existe déjà, forcer la réinitialisation du widget\n      this.reinitializeWidget();\n    }\n  }\n\n  private reinitializeWidget() {\n    // Attendre que dynvis soit chargé et réinitialiser le widget\n    if ((window as any).dynvis) {\n      (window as any).dynvis.init();\n    }\n  }\n\n  ngOnDestroy() {\n    // Optionnel : nettoyer le script si nécessaire\n    // Note: on ne retire généralement pas le script car d'autres instances peuvent l'utiliser\n  }\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "elementRef",
+                        "type": "ElementRef",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "elementRef",
+                        "type": "ElementRef",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "implements": [
+                "AfterViewInit",
+                "OnDestroy"
+            ],
+            "isDuplicate": true,
+            "duplicateId": 2,
+            "duplicateName": "DynvisComponent-2",
+            "templateData": "<div class=\"dynvis-chart\">\n    <div \n        class=\"fso-datavis-widget\" \n        [attr.data-vizid]=\"vizId\" \n        [attr.data-lang]=\"lang\">\n    </div>\n</div>"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-2ec58e7a32463b9b6cd970cb31e08e29029a47873b1b978b2bb334fc7975f6f5b3557f06f1d8edb8d9117c1bc37b26d4301c2a5e8ccced6f4a56dde5c6a98af4",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppComponent } from './app.component';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "BarChartModule",
+            "id": "module-BarChartModule-feef0402f0f658ba62fbcf12f8f87bb2cbf9ad58fdad167cbf485d8c608c49ed27e4b251f86ba88365ed529b2618306251d89fdf73c828d13f62394bedf2fdc9",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/old/bar-chart.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { BarChartComponent } from './bar-chart.component';\n\n@NgModule({\n  declarations: [\n    BarChartComponent\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports: [\n    BarChartComponent\n  ]\n})\nexport class BarChartModule { }",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "BarChartComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "BarChartComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true,\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: false,\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true,\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false,\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": []
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/dw.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DWComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/dynvis.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DynvisComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/16",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/dynvis.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Window",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/old/bar-chart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BarChartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/old/bar-chart.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "BarChartData",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/old/dw-visualisation.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DatawrapperEmbedComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/old/dynvis-chart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DynvisComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/old/dynvis.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DynvisComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

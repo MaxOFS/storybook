@@ -1,0 +1,31 @@
+import { Meta, Canvas } from "@storybook/blocks";
+import { moduleMetadata } from '@storybook/angular';
+import * as chartStories from './columnChart.stories'
+
+<Meta title="Visualisation Types/Diagrams/Column Chart/Column Chart"/>
+
+# Column Chart
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do's and don'ts](#dos-and-donts)
+
+## Description
+A Column Chart is similar to a Bar Chart, both show comparisons among categories. The only difference is in the horizontal or vertical layout, by a simple inversion of the axes. The Bar Chart will have horizontal bars whereas the Column Chart will have vertical columns. The vertical layout is the best choice for short labels and trends (years), whereas the horizontal layout is the best choice for long text labels and trends.
+
+In a Column Chart, the X-axis represents the categories being compared, and the Y-axis represents a measured value. The X-axis will generally be set with a categorical ordinal scale. The height of the columns is proportional to the values displayed.
+<Canvas of={chartStories.description} />
+## Anatomy
+
+## Chart variations
+### Column chart with confidence interval
+<Canvas of={chartStories.confidence} />
+### Column chart with overlay
+<Canvas of={chartStories.overlay} />
+### Column chart with groups
+<Canvas of={chartStories.groups} />
+### Column chart in small multiples
+<Canvas of={chartStories.multiple} />
+### Column chart with diverging columns
+## Do's and don'ts
