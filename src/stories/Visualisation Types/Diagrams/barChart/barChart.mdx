@@ -13,7 +13,9 @@ import * as chartStories from './barChart.stories'
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
-A bar chart visualizes categorical data. It consists of rectangles whose length is proportional to the values displayed. One axis represents categories and the other axis represents values. It is also possible to combine a bar chart with a line.
+A Bar Chart is similar to a Column Chart, both show comparisons among categories. The only difference is in the horizontal or vertical layout, by a simple inversion of the axes. The Bar Chart will have horizontal bars whereas the Column Chart will have vertical columns. The horizontal layout is the best choice for long text labels and trends, whereas the vertical layout is the best choice for short labels and trends.
+
+In a Bar Chart, the Y-axis represents the categories being compared while the X-axis represents a measured value. The Y-axis will generally be set with a categorical ordinal scale. The length of the bars is proportional to the values displayed.
 <Canvas of={chartStories.Description} />
 ## Anatomy
 <img src="../images/barChart_anatomy.png" alt="alt"/>
@@ -25,9 +27,7 @@ The lower and upper margin of the confidence interval is shown by an overlay. Us
 <Canvas of={chartStories.Overlay} />
 ### Bar chart in groups
 <Canvas of={chartStories.Groups} />
-A Grouped Bar Charts is used when two or more data sets are displayed side-by-side and grouped together under the same categories. It is a standard way to compare the size of things, and it allows to compare multiple series. However, it can become tricky to read with more than 2 series. The horizontal layout is the best choice for long text labels and trends. Grouped bar charts can group the categories on the same axis.
 ### Bar chart with diverging bars
-A Diverging Bar Chart is used to compare categories and to highlight 2 directions in the data over a single dimension. It should be used when the data includes negative and positive values. The Y-axis represents the categories being compared. The X-axis represents a measured value with a Zero-Line around which the bars are distributed with a possible diverging color scheme. The length of the bars is proportional to the values displayed.
 <Canvas of={chartStories.divergent} />
 ## Do's and don'ts
 ### Axis starts at 0

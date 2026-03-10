@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as chartStories from './bubbleChart.stories'
 
 
 <Meta title="Visualisation Types/Diagrams/Bubble Chart"/>
@@ -13,9 +13,19 @@ import { moduleMetadata } from '@storybook/angular';
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
-A Bubble Chart is used to look at the relationships between three numerical variables. The first and second variable will be plotted in function of values along the X and Y-axes as a scatterplot. The third variable will determine the size of the points, and therefore their respective weight. It is important that the value of the third variable corresponds to the area of the bubble and not its diameter. In order to avoid hiding the small circles with the overlaying of big circles, it is mandatory to plot the smallest circles in front of the larger ones.
+A Bubble Chart is used to look at the relationships between three numerical variables. The first and second variable will be plotted in function of values along the X and Y-axes as a scatterplot. The third variable will determine the size of the points, and therefore their respective weight.
+It is important that the value of the third variable corresponds to the area of the bubble and not its diameter. In order to avoid hiding the small circles with the overlaying of big circles, it is mandatory to plot the smallest circles in front of the larger ones.
+<Canvas of={chartStories.description} />
 ## Anatomy
 
 ## Chart variations
-
+### Categorical Bubble Chart
+<Canvas of={chartStories.categorical} />
 ## Do's and don'ts
+- Superimposition treatment needs attention, small points in front of big points, to avoid loss of information
+- The size/weight variable should be represented by the area of point and not the diameter
+- The radius of the symbols is not the square root of the amount. Flannery correction should be applied
+- Axes should start at zero
+- Labels are mandatory
+- Optional labels should not be superimposed
+- Avoid too many superimposed elements
