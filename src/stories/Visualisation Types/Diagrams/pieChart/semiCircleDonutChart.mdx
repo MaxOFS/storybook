@@ -14,9 +14,11 @@ import { moduleMetadata } from '@storybook/angular';
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
-
+A semi circle donut chart is used to display proportional data across a half ring, where each segment is a share of the whole. It takes the half ring form in order to mimic the layout of the Parlament where elected politicians are seated in an hemicycle. 
 ## Anatomy
 
 ## Chart variations
 ## Do's and don'ts
-
+- Only use if the data points are not independant observations and their sum is meaningful.
+- Only use in the domain of politics as this type of visualisation is strongly associated with election results.
+- Limit the number of segments to 5, 7 maximum. Consider grouping smaller parties into an "other" category. (*MH: comme pour les piecharts?*)

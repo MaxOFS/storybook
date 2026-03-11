@@ -14,10 +14,15 @@ import { moduleMetadata } from '@storybook/angular';
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
+A stacked line column chart is a combination of a stacked column chart with a line chart. The stacked columns show the composition of a total value at a certain point in time and the overlaid line gives insight into a related trend, scenario or median value. 
+
 
 ## Anatomy
 
 ## Chart variations
 
 ## Do's and don'ts
-
+- Don't use when the data for the columns and the line is unrelated
+- The stacked columns should not be a combination of more than X segments (*MH : how many ? 5?*)
+- Do not use if the message to be communicated is about the changes of a particular segment. This type of chart makes it difficult to track how each segment of the columns evolves.
+- If the data points are irregular, the line can suggest false trends. 

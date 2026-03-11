@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 
-import { DWComponent } from '../../../app/dw.component';
+import { DWComponent } from '../../../../app/dw.component';
 
 const meta: Meta<DWComponent> = {
     title: 'VisualisationTypes/bubbleChart',
