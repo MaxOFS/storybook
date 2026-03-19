@@ -15,12 +15,12 @@ type Story = StoryObj<DWComponent>;
 
 export const description: Story = {
   args: {
-    iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-stackedButterfly/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/butterfly/gr-stackedButterfly/index.html",
   },
 }
 
 export const groups: Story = {
     args: {
-      iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-stackedButterfly-groups/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/butterfly/gr-stackedButterfly-groups/index.html",
     },
   }

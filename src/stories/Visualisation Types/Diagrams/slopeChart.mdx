@@ -1,5 +1,6 @@
 import { Meta, Canvas } from "@storybook/blocks";
 import { moduleMetadata } from '@storybook/angular';
+import * as chartStories from './slopeChart.stories'
 
 
 
@@ -16,6 +17,7 @@ import { moduleMetadata } from '@storybook/angular';
 A slope chart is a line chart that represents a variable at two different points in time.
 The time is shown horizontally, while the values are placed vertically. The evolution is represented by the slope.
 A parallel coordinate chart is an extension of the slope chart with more than two different time points.
+<Canvas of={chartStories.description} />
 ## Anatomy
 
 ## Chart variations

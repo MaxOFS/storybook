@@ -15,35 +15,30 @@ type Story = StoryObj<DWComponent>;
 
 export const Description: Story = {
   args: {
-    iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-barChart/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/barChart/gr-barChart/index.html",
   },
 }
 
 export const Confidence: Story = {
   args: {
-    iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-barChart-confidence/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/barChart/gr-barChart-confidence/index.html",
   }
 }
 
 export const Overlay: Story = {
   args: {
-    iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-barChart-overlay/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/barChart/gr-barChart-overlay/index.html",
   }
 }
 
 export const Groups: Story = {
   args: {
-    iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-barChart-groups/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/barChart/gr-barChart-groups/index.html",
   }
 }
 
 export const divergent: Story = {
   args: {
-    iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-barChart-diverging/index.html",
-  }
-}
-export const DODONT: Story = {
-  args: {
-    iframeUrl: "https://datawrapper.dwcdn.net/06e47d874010f337cd3b12d38b4aa8ac/1/"
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/barChart/gr-barChart-diverging/index.html",
   }
 }

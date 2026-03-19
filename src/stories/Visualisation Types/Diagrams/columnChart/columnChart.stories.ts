@@ -15,30 +15,30 @@ type Story = StoryObj<DWComponent>;
 
 export const description: Story = {
   args: {
-    iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-column/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/column/gr-column/index.html",
   },
 }
 
 export const confidence: Story = {
     args: {
-      iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-column-confidence/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/column/gr-column-confidence/index.html",
     },
 }
 
 export const overlay: Story = {
     args: {
-      iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-column-overlay/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/column/gr-column-overlay/index.html",
     },
 }
 
 export const multiple: Story = {
     args: {
-      iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-column-multiple/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/column/gr-column-multiple/index.html",
     },
 }
 
 export const groups: Story = {
     args: {
-      iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-column-groups/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/column/gr-column-groups/index.html",
     },
 }

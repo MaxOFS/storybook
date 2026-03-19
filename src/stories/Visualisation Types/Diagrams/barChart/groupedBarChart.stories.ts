@@ -15,20 +15,20 @@ type Story = StoryObj<DWComponent>;
 
 export const Description: Story = {
   args: {
-    iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-groupedBar/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/barChart/gr-groupedBar/index.html",
   },
 }
 
 export const overlay: Story = {
     args: {
-      iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-groupedBar-overlay/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/barChart/gr-groupedBar-overlay/index.html",
     },
   }
 
 
 export const groups: Story = {
     args: {
-      iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-groupedBar-groups/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/barChart/gr-groupedBar-groups/index.html",
     },
   }
 

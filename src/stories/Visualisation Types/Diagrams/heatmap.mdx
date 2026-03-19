@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as chartStories from './heatmap.stories'
 
 
 <Meta title="Visualisation Types/Diagrams/Heatmap"/>
@@ -16,6 +16,7 @@ import { moduleMetadata } from '@storybook/angular';
 A heatmap is a two-dimensional matrix. It allows to show the relationship between 2 variables and to see a correlation pattern in a simple way.
 
 Each cell contains a numerical value accompanied by a color for better visualization, which is more intense and darker for high values.
+<Canvas of={chartStories.description} />
 ## Anatomy
 
 ## Chart variations

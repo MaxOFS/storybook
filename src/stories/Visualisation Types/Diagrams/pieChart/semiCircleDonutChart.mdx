@@ -1,11 +1,11 @@
 import { Meta, Canvas } from "@storybook/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as chartStories from './semiCircleDonutChart.stories'
 
 
 <Meta title="Visualisation Types/Diagrams/Pie Chart/Semi Circle Donut Chart"/>
 
-# Donut Chart
+# Semi Circle Donut Chart
 
 ## Table of contents
 - [Description](#description)
@@ -15,6 +15,7 @@ import { moduleMetadata } from '@storybook/angular';
 
 ## Description
 A semi circle donut chart is used to display proportional data across a half ring, where each segment is a share of the whole. It takes the half ring form in order to mimic the layout of the Parlament where elected politicians are seated in an hemicycle. 
+<Canvas of={chartStories.description} />
 ## Anatomy
 
 ## Chart variations

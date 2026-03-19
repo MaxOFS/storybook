@@ -15,12 +15,12 @@ type Story = StoryObj<DWComponent>;
 
 export const description: Story = {
   args: {
-    iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-boxplot/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/boxplot/gr-boxplot/index.html",
   },
 }
   
 export const groups: Story = {
     args: {
-      iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-boxplot-groups/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/boxplot/gr-boxplot-groups/index.html",
     },
   }

@@ -15,24 +15,24 @@ type Story = StoryObj<DWComponent>;
 
 export const description: Story = {
   args: {
-    iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-butterfly/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/butterfly/gr-butterfly/index.html",
   },
 }
   
 export const confidence: Story = {
     args: {
-      iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-butterfly-confidence/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/butterfly/gr-butterfly-confidence/index.html",
     },
   }
 
 export const overlay: Story = {
     args: {
-      iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-butterfly-overlay/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/butterfly/gr-butterfly-overlay/index.html",
     },
   }
 
   export const groups: Story = {
     args: {
-      iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-butterfly-groups/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/butterfly/gr-butterfly-groups/index.html",
     },
   }

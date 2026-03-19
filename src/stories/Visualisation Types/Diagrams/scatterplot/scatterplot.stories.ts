@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { DWComponent } from '../../../../app/dw.component';
 
 const meta: Meta<DWComponent> = {
-    title: 'VisualisationTypes/lineColumnChart',
+    title: 'VisualisationTypes/scatterplot',
     component: DWComponent,
     tags: ['!dev', '!autodocs'],
     args: {
@@ -15,6 +15,12 @@ type Story = StoryObj<DWComponent>;
 
 export const description: Story = {
   args: {
-    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/column/gr-columnLine/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/scatter/gr-scatter/index.html",
   },
+}
+
+export const categorical: Story = {
+    args: {
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/scatter/gr-scatter-categorical/index.html",
+    },
 }

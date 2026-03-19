@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as chartStories from './spaghettiLineChart.stories'
 
 
 <Meta title="Visualisation Types/Diagrams/Line Chart/Spaghetti Line Chart"/>
@@ -15,6 +15,7 @@ import { moduleMetadata } from '@storybook/angular';
 
 ## Description
 A spaghetti line chart is used to show the trend and range of shape of multiple related variables. It is best used to showcase a collective pattern across a wide range of observations. 
+<Canvas of={chartStories.description} />
 ## Anatomy
 
 ## Chart variations

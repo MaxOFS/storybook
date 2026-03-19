@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as chartStories from './donutChart.stories'
 
 
 <Meta title="Visualisation Types/Diagrams/Pie Chart/Donut Chart"/>
@@ -15,9 +15,12 @@ import { moduleMetadata } from '@storybook/angular';
 
 ## Description
 A donut chart is functionally identical to a pie chart, with the exception of a blank center and the ability to support multiple statistics at once. Doughnut charts provide a better data intensity ratio to standard pie charts since the blank center can be used to display additional, related data.
+<Canvas of={chartStories.description} />
 ## Anatomy
 
 ## Chart variations
 ### Multiple Donut Charts
+<Canvas of={chartStories.multiple} />
+
 ## Do's and don'ts
 
