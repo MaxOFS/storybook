@@ -1,0 +1,4993 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Components Manifest</title>
+  <style>
+      :root {
+          --bg: #0b0c10;
+          --panel: #121318;
+          --muted: #9aa0a6;
+          --fg: #e8eaed;
+          --ok: #22c55e;
+          --info: #1e88e5;
+          --err: #c62828;
+          --ok-bg: #0c1a13;
+          --info-bg: #0c1624;
+          --err-bg: #1a0e0e;
+          --chip: #1f2330;
+          --border: #2b2f3a;
+          --link: #8ab4f8;
+          --active-ring: 1px; /* 1px active ring for pills and toggles */
+      }
+
+      * {
+          box-sizing: border-box;
+      }
+
+      html,
+      body {
+          margin: 0;
+          background: var(--bg);
+          color: var(--fg);
+          font: 14px/1.5 system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Ubuntu,
+          Cantarell,
+          'Helvetica Neue',
+          Arial,
+          'Noto Sans';
+      }
+
+      .wrap {
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 16px 20px;
+      }
+
+      header {
+          position: sticky;
+          top: 0;
+          backdrop-filter: blur(6px);
+          background: color-mix(in srgb, var(--bg) 84%, transparent);
+          border-bottom: 1px solid var(--border);
+          z-index: 10;
+      }
+
+      h1 {
+          font-size: 20px;
+          margin: 0 0 6px;
+      }
+
+      .summary {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+          align-items: center;
+      }
+
+      /* Top filter pills */
+      .filter-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 6px 12px;
+          border: 1px solid var(--border);
+          border-radius: 999px;
+          background: var(--panel);
+          text-decoration: none;
+          cursor: pointer;
+          user-select: none;
+          color: var(--fg);
+      }
+
+      .filter-pill.ok {
+          color: #b9f6ca;
+          border-color: color-mix(in srgb, var(--ok) 55%, var(--border));
+          background: color-mix(in srgb, var(--ok) 18%, #000);
+      }
+
+      .filter-pill.info {
+          color: #b3d9ff;
+          border-color: color-mix(in srgb, var(--info) 55%, var(--border));
+          background: var(--info-bg);
+      }
+
+      .filter-pill.err {
+          color: #ff9aa0;
+          border-color: color-mix(in srgb, var(--err) 55%, var(--border));
+          background: var(--err-bg);
+      }
+
+      .filter-pill.all {
+          color: #d7dbe0;
+          border-color: var(--border);
+          background: var(--panel);
+      }
+
+      .filter-pill[aria-disabled='true'] {
+          cursor: default;
+          text-decoration: none;
+      }
+
+      .filter-pill:focus,
+      .filter-pill:active {
+          outline: none;
+          box-shadow: none;
+      }
+
+      /* Selected top pill ring via :target */
+      #filter-all:target ~ header .filter-pill[data-k='all'],
+      #filter-errors:target ~ header .filter-pill[data-k='errors'],
+      #filter-infos:target ~ header .filter-pill[data-k='infos'],
+      #filter-story-errors:target ~ header .filter-pill[data-k='story-errors'],
+      #filter-doc-errors:target ~ header .filter-pill[data-k='docs'],
+      #filter-docs:target ~ header .filter-pill[data-k='docs'] {
+          box-shadow: 0 0 0 var(--active-ring) currentColor;
+          border-color: currentColor;
+      }
+
+      /* Hidden targets for filtering */
+      #filter-all,
+      #filter-errors,
+      #filter-infos,
+      #filter-story-errors,
+      #filter-doc-errors,
+      #filter-docs {
+          display: none;
+      }
+
+      main {
+          padding: 36px 0 40px;
+      }
+
+      .grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 18px;
+      }
+
+      /* one card per row */
+
+      .card {
+          border: 1px solid var(--border);
+          background: var(--panel);
+          border-radius: 14px;
+          padding: 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+      }
+
+      .head {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+      }
+
+      .title {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+      }
+
+      .title h2 {
+          font-size: 16px;
+          margin: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+      }
+
+      .meta {
+          font-size: 12px;
+          color: var(--muted);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+      }
+
+      .kv {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+      }
+
+      .chip {
+          font-size: 12px;
+          padding: 4px 8px;
+          border-radius: 999px;
+          background: var(--chip);
+          border: 1px solid var(--border);
+      }
+
+      .hint {
+          color: var(--muted);
+          font-size: 12px;
+      }
+
+      .badges {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+      }
+
+      /* Per-card badges: labels become toggles when clickable */
+      .badge {
+          font-size: 12px;
+          padding: 3px 8px;
+          border-radius: 999px;
+          border: 1px solid var(--border);
+          background: var(--chip);
+          color: #d7dbe0;
+      }
+
+      .badge.ok {
+          color: #b9f6ca;
+          border-color: color-mix(in srgb, var(--ok) 55%, var(--border));
+      }
+
+      .badge.info {
+          color: #b3d9ff;
+          border-color: color-mix(in srgb, var(--info) 55%, var(--border));
+      }
+
+      .badge.err {
+          color: #ff9aa0;
+          border-color: color-mix(in srgb, var(--err) 55%, var(--border));
+      }
+
+      .as-toggle {
+          cursor: pointer;
+      }
+
+      /* 1px ring on active toggle */
+      .tg-err:checked + label.as-toggle,
+      .tg-info:checked + label.as-toggle,
+      .tg-stories:checked + label.as-toggle,
+      .tg-docs:checked + label.as-toggle,
+      .tg-content:checked + label.as-toggle,
+      .tg-props:checked + label.as-toggle {
+          box-shadow: 0 0 0 var(--active-ring) currentColor;
+          border-color: currentColor;
+      }
+
+      /* Panels: hidden by default, shown when respective toggle checked */
+      .panels {
+          display: grid;
+          gap: 10px;
+      }
+
+      .panel {
+          display: none;
+      }
+
+      .tg-err:checked ~ .panels .panel-err {
+          display: grid;
+      }
+
+      .tg-info:checked ~ .panels .panel-info {
+          display: grid;
+          gap: 8px;
+      }
+
+      .tg-stories:checked ~ .panels .panel-stories {
+          display: grid;
+          gap: 8px;
+      }
+
+      .tg-docs:checked ~ .panels .panel-docs {
+          display: grid;
+          gap: 8px;
+      }
+
+      .tg-content:checked ~ .panels .panel-content {
+          display: grid;
+          gap: 8px;
+      }
+
+      .tg-props:checked ~ .panels .panel-props {
+          display: grid;
+      }
+
+      /* Colored notes for prop type error + info */
+      .note {
+          padding: 12px;
+          border: 1px solid var(--border);
+          border-radius: 10px;
+      }
+
+      .note.err {
+          border-color: color-mix(in srgb, var(--err) 55%, var(--border));
+          background: var(--err-bg);
+          color: #ffd1d4;
+      }
+
+      .note.info {
+          border-color: color-mix(in srgb, var(--info) 55%, var(--border));
+          background: var(--info-bg);
+          color: #d6e8ff;
+      }
+
+      .note.ok {
+          border-color: color-mix(in srgb, var(--ok) 55%, var(--border));
+          background: var(--ok-bg);
+          color: var(--fg);
+      }
+
+      .note-title {
+          font-weight: 600;
+          margin-bottom: 6px;
+      }
+
+      .note-body {
+          white-space: normal;
+      }
+
+      /* Story error cards */
+      .ex {
+          padding: 10px;
+          border: 1px solid var(--border);
+          border-radius: 10px;
+          background: #0f131b;
+      }
+
+      .ex.err {
+          border-color: color-mix(in srgb, var(--err) 55%, var(--border));
+      }
+
+      .row {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          flex-wrap: wrap;
+      }
+
+      .status-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          display: inline-block;
+      }
+
+      .dot-ok {
+          background: var(--ok);
+      }
+
+      .dot-err {
+          background: var(--err);
+      }
+
+      .ex-name {
+          font-weight: 600;
+      }
+
+      /* Error groups (visible in errors filter) */
+      .error-groups {
+          display: none;
+          margin-bottom: 16px;
+      }
+
+      .group {
+          border: 1px solid var(--border);
+          background: var(--panel);
+          border-radius: 14px;
+          overflow: hidden;
+      }
+
+      .group + .group {
+          margin-top: 12px;
+      }
+
+      .group-header {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 12px 14px;
+          cursor: pointer;
+          border-bottom: 1px solid var(--border);
+      }
+
+      .group-header:hover {
+          background: #141722;
+      }
+
+      .group-title {
+          font-weight: 600;
+          flex: 1;
+      }
+
+      .group-count {
+          font-size: 12px;
+          color: var(--muted);
+      }
+
+      .group-cards {
+          display: none;
+          padding: 12px;
+      }
+
+      .group .card {
+          margin: 12px 0;
+      }
+
+      .group .card:first-child {
+          margin-top: 0;
+      }
+
+      .group .card:last-child {
+          margin-bottom: 0;
+      }
+
+      /* caret rotation */
+      .group-tg:checked + label .caret {
+          transform: rotate(90deg);
+      }
+
+      .caret {
+          transition: transform 0.15s ease;
+      }
+
+      /* toggle body */
+      .group-tg:checked ~ .group-cards {
+          display: block;
+      }
+
+      /* CSS-only filtering of cards via top pills */
+      #filter-errors:target ~ main .card:not(.has-error):not(.has-story-error) {
+          display: none;
+      }
+
+      #filter-infos:target ~ main .card:not(.has-info) {
+          display: none;
+      }
+
+      #filter-story-errors:target ~ main .card:not(.has-story-error) {
+          display: none;
+      }
+
+      #filter-doc-errors:target ~ main .card:not(.has-doc-error) {
+          display: none;
+      }
+
+      #filter-docs:target ~ main .card:has(> .tg-docs),
+      #filter-docs:target ~ main .card.is-doc {
+          display: block;
+      }
+
+      #filter-docs:target ~ main .card:not(:has(> .tg-docs)):not(.is-doc) {
+          display: none;
+      }
+
+      #filter-all:target ~ main .card {
+          display: block;
+      }
+
+      /* In errors view, hide standalone component-error cards in the regular grid (they will appear in groups) */
+      #filter-errors:target ~ main .grid .card.has-error {
+          display: none;
+      }
+
+      /* Show grouped section only in errors view */
+      #filter-errors:target ~ main .error-groups {
+          display: block;
+      }
+
+      /* Section titles */
+      .section-title {
+          font-size: 16px;
+          font-weight: 600;
+          color: var(--muted);
+          margin: 24px 0 12px;
+          padding-bottom: 8px;
+          border-bottom: 1px solid var(--border);
+      }
+      .section-title:first-child {
+          margin-top: 0;
+      }
+
+      /* When a toggle is checked, show the corresponding panel */
+      .card > .tg-err:checked ~ .panels .panel-err {
+          display: grid;
+      }
+      
+      .card > .tg-info:checked ~ .panels .panel-info {
+          display: grid;
+      }
+      
+      .card > .tg-stories:checked ~ .panels .panel-stories {
+          display: grid;
+      }
+
+      .card > .tg-docs:checked ~ .panels .panel-docs {
+          display: grid;
+      }
+
+      .card > .tg-content:checked ~ .panels .panel-content {
+          display: grid;
+      }
+
+      /* Add vertical spacing around panels only when any panel is visible */
+      .card > .tg-err:checked ~ .panels,
+      .card > .tg-info:checked ~ .panels,
+      .card > .tg-stories:checked ~ .panels,
+      .card > .tg-docs:checked ~ .panels,
+      .card > .tg-content:checked ~ .panels,
+      .card > .tg-props:checked ~ .panels {
+          margin: 10px 0;
+      }
+
+      /* Optional: a subtle 1px ring on the active badge, using :has() if available */
+      @supports selector(.card:has(.tg-err:checked)) {
+          .card:has(.tg-err:checked) label[for$='-err'],
+          .card:has(.tg-info:checked) label[for$='-info'],
+          .card:has(.tg-stories:checked) label[for$='-stories'],
+          .card:has(.tg-docs:checked) label[for$='-docs'],
+          .card:has(.tg-content:checked) label[for$='-content'],
+          .card:has(.tg-props:checked) label[for$='-props'] {
+              box-shadow: 0 0 0 1px currentColor;
+              border-color: currentColor;
+          }
+      }
+
+      /* Wrap long lines in code blocks at ~120 characters */
+      pre, code {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      }
+      pre {
+          white-space: pre-wrap;
+          overflow-wrap: anywhere;
+          word-break: break-word;
+          overflow-x: auto; /* fallback for extremely long tokens */
+          margin: 8px 0 0;
+      }
+      pre > code {
+          display: block;
+          white-space: inherit;
+          overflow-wrap: inherit;
+          word-break: inherit;
+          inline-size: min(100%, 120ch);
+      }
+
+      /* MDX content container for docs */
+      .mdx-content {
+          background: #0f131b;
+          border: 1px solid var(--border);
+          border-radius: 10px;
+          padding: 12px;
+          max-height: 400px;
+          overflow-y: auto;
+          margin-top: 8px;
+      }
+  </style>
+</head>
+<body>
+<!-- Hidden targets for the top-level filters -->
+<span id="filter-all"></span>
+<span id="filter-errors"></span>
+<span id="filter-infos"></span>
+<span id="filter-story-errors"></span>
+<span id="filter-doc-errors"></span>
+<span id="filter-docs"></span>
+<header>
+  <div class="wrap">
+    <h1>Manifest Debugger</h1>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">88 docs ok</a></div>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <div class="note info" style="margin-bottom: 16px;">
+            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>0.0s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
+            <pre><code>typescript: {
+  reactDocgen: 'react-docgen-typescript',
+}</code></pre>
+            Note: <code>react-docgen-typescript</code> can be slower. If performance is acceptable for your project, it generally produces better results.
+            <a href="https://storybook.js.org/docs/api/main-config/main-config-typescript#reactdocgen" target="_blank">Learn more</a>
+          </div>
+    
+    
+    <h2 class="section-title">Unattached Docs</h2>
+    <div class="grid" role="list">
+      
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Accessibility/Colors</h2>
+      <div class="badges">
+        
+        <label for="doc-0-accessibility-colors-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Accessibility/Colors.mdx">accessibility-colors--docs · ./src/stories/Accessibility/Colors.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-0-accessibility-colors-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+&lt;Meta title=&quot;Accessibility/Colors&quot;/&gt;
+
+# Rules of Accessibility for Colors
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Accessibility/Text</h2>
+      <div class="badges">
+        
+        <label for="doc-1-accessibility-text-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Accessibility/Text.mdx">accessibility-text--docs · ./src/stories/Accessibility/Text.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-1-accessibility-text-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Accessibility/Text&quot;/&gt;
+
+# Rules of Accessibility for texts
+## Plus petit titre
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Accessibility/Introduction</h2>
+      <div class="badges">
+        
+        <label for="doc-2-accessibility-introduction-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Accessibility/accessibility-intro.mdx">accessibility-introduction--docs · ./src/stories/Accessibility/accessibility-intro.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-2-accessibility-introduction-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+&lt;Meta title=&quot;Accessibility/Introduction&quot;/&gt;
+# Accessibility
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/Colors/Introduction</h2>
+      <div class="badges">
+        
+        <label for="doc-3-corporate-colors-introduction-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/Colors/colors.mdx">corporate-colors-introduction--docs · ./src/stories/Corporate/Colors/colors.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-3-corporate-colors-introduction-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, ColorPalette, ColorItem } from &#39;@storybook/addon-docs/blocks&#39;;
+ 
+&lt;Meta title=&quot;Corporate/Colors/Introduction&quot; /&gt;
+ 
+
+# Introduction to Colors
+In order to create a clear recognition of the FSO graphics, the color palette was completely revised. In addition, it was ensured that all colors are barrier-free and comply with the [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/).
+
+The colors of a graphic are primarily intended to help the reader distinguish (dissociate) or connect (associate) things. However, the graphic creator must always try to use colors in a way that supports the message and readability. The same applies to the legend - it should be as logical and easy to read as possible.
+
+The color should be used with care and as a complement to other visual variables such as position, shape or size. It is therefore recommended to use colors in the FSO&#39;s visualisations with moderation in order to maintain neutrality and objectivity. 
+
+In order to make the application of colors easier, the new color palettes are divided into the following groups :
+- [Qualitative colors](?path=/docs/corporate-colors-qualitative-colors--docs)
+- [Sequential colors](?path=/docs/corporate-colors-sequential-colors--docs)
+- [Diverging colors](?path=/docs/corporate-colors-diverging-colors--docs)
+- [Political parties colors](?path=/docs/corporate-colors-political-parties-colors--docs)
+- [Corporate colors](?path=/docs/corporate-colors-corporate-colors--docs)
+- [Themes colors](?path=/docs/corporate-colors-themes-colors--docs)
+
+
+&lt;ColorPalette&gt;
+  &lt;ColorItem
+    title=&quot;BFS Blue&quot;
+    subtitle=&quot;Standard Palette&quot;
+    colors={{ 3: &#39;#728CD7&#39;}}
+  /&gt;
+  &lt;ColorItem
+    colors={{ 2: &#39;#C2CEF2&#39;, 4: &#39;#728CD7&#39;}}
+  /&gt;
+  &lt;ColorItem
+    colors={{ 1: &#39;#C2CEF2&#39;, 3: &#39;#728CD7&#39;, 5: &#39;#2B408C&#39; }}
+  /&gt;
+  &lt;ColorItem 
+    title=&quot;theme.color.primary&quot; 
+    subtitle=&quot;Coral&quot; 
+    colors={{ WildWatermelon: &#39;#FF4785&#39; }} 
+  /&gt;
+  &lt;ColorItem 
+    title=&quot;theme.color.secondary&quot; 
+    subtitle=&quot;Ocean&quot; 
+    colors={{ DodgerBlue: &#39;#1EA7FD&#39; }} 
+  /&gt;
+  &lt;ColorItem
+    title=&quot;theme.color.positive&quot;
+    subtitle=&quot;Green&quot;
+    colors={{
+      Apple: &#39;rgba(102,191,60,1)&#39;,
+      Apple80: &#39;rgba(102,191,60,.8)&#39;,
+      Apple60: &#39;rgba(102,191,60,.6)&#39;,
+      Apple30: &#39;rgba(102,191,60,.3)&#39;,
+    }}
+  /&gt;
+  &lt;ColorItem
+    title=&quot;gradient&quot;
+    subtitle=&quot;Grayscale&quot;
+    colors={{
+      Gradient: &#39;linear-gradient(to right,white,black)&#39;,
+    }}
+  /&gt;
+  &lt;ColorItem
+    title=&quot;gradient&quot;
+    subtitle=&quot;Grayscale&quot;
+    colors={[&#39;linear-gradient(65deg,white,black)&#39;]}
+  /&gt;
+&lt;/ColorPalette&gt;</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/Colors/Corporate colors</h2>
+      <div class="badges">
+        
+        <label for="doc-4-corporate-colors-corporate-colors-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/Colors/corporate.mdx">corporate-colors-corporate-colors--docs · ./src/stories/Corporate/Colors/corporate.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-4-corporate-colors-corporate-colors-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, ColorPalette, ColorItem } from &#39;@storybook/addon-docs/blocks&#39;;
+ 
+&lt;Meta title=&quot;Corporate/Colors/Corporate colors&quot; /&gt;
+ 
+
+# Introduction to Corporate colors
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/Colors/Diverging colors</h2>
+      <div class="badges">
+        
+        <label for="doc-5-corporate-colors-diverging-colors-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/Colors/diverging.mdx">corporate-colors-diverging-colors--docs · ./src/stories/Corporate/Colors/diverging.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-5-corporate-colors-diverging-colors-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, ColorPalette, ColorItem } from &#39;@storybook/addon-docs/blocks&#39;;
+ 
+&lt;Meta title=&quot;Corporate/Colors/Diverging colors&quot; /&gt;
+ 
+
+# Introduction to Diverging colors
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/Colors/Political parties colors</h2>
+      <div class="badges">
+        
+        <label for="doc-6-corporate-colors-political-parties-colors-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/Colors/political.mdx">corporate-colors-political-parties-colors--docs · ./src/stories/Corporate/Colors/political.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-6-corporate-colors-political-parties-colors-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, ColorPalette, ColorItem } from &#39;@storybook/addon-docs/blocks&#39;;
+ 
+&lt;Meta title=&quot;Corporate/Colors/Political parties colors&quot; /&gt;
+ 
+
+# Introduction to Political parties colors
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/Colors/Qualitative colors</h2>
+      <div class="badges">
+        
+        <label for="doc-7-corporate-colors-qualitative-colors-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/Colors/qualitative.mdx">corporate-colors-qualitative-colors--docs · ./src/stories/Corporate/Colors/qualitative.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-7-corporate-colors-qualitative-colors-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, ColorPalette, ColorItem } from &#39;@storybook/addon-docs/blocks&#39;;
+ 
+&lt;Meta title=&quot;Corporate/Colors/Qualitative colors&quot; /&gt;
+ 
+
+# Introduction to Qualitative colors
+The qualitative colors used to represent unrelated categories and should **always be applied in the same order** (Color 01 to 08). The Grey color is used to represent neutral classes, e.g. &quot;total&quot;, &quot;others&quot; or &quot;unknown&quot;.
+
+
+&lt;ColorPalette&gt;
+  &lt;ColorItem
+    colors={{ &#39;BFS Blue&#39;: &#39;#728CD7&#39;, &#39;02 Violet&#39;: &#39;#4F25D2&#39;, &#39;03 Pink&#39;: &#39;#CD35AB&#39; }}
+  /&gt;
+  &lt;ColorItem
+    colors={{ &#39;04 Orange&#39;: &#39;#F56A00&#39;, &#39;05 Red&#39;: &#39;#DC0018&#39;, &#39;06 Green&#39;: &#39;#399D50&#39;}}
+  /&gt;
+  &lt;ColorItem
+    colors={{ &#39;07 Purple&#39;: &#39;#A332DE&#39;, &#39;08 Teal&#39;: &#39;#00A2B9&#39;, &#39;09 Grey (Neutral)&#39;: &#39;#8E8E8E&#39;}}
+  /&gt;
+&lt;/ColorPalette&gt;</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/Colors/Sequential colors</h2>
+      <div class="badges">
+        
+        <label for="doc-8-corporate-colors-sequential-colors-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/Colors/sequential.mdx">corporate-colors-sequential-colors--docs · ./src/stories/Corporate/Colors/sequential.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-8-corporate-colors-sequential-colors-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, ColorPalette, ColorItem } from &#39;@storybook/addon-docs/blocks&#39;;
+ 
+&lt;Meta title=&quot;Corporate/Colors/Sequential colors&quot; /&gt;
+ 
+
+# Introduction to Sequential colors
+&lt;ColorPalette&gt;
+  &lt;ColorItem
+    title=&quot;BFS Blue&quot;
+    subtitle=&quot;Standard Palette&quot;
+    colors={{ 3: &#39;#728CD7&#39;}}
+  /&gt;
+  &lt;ColorItem
+    colors={{ 2: &#39;#9AADE4&#39;, 4: &#39;#4B62B3&#39;}}
+  /&gt;
+  &lt;ColorItem
+    colors={{ 1: &#39;#C2CEF2&#39;, 3: &#39;#728CD7&#39;, 5: &#39;#2B408C&#39; }}
+  /&gt;
+  &lt;ColorItem
+    colors={{ 2: &#39;#9AADE4&#39;, 3: &#39;#728CD7&#39;,4: &#39;#4B62B3&#39;, 5: &#39;#2B408C&#39; }}
+  /&gt;
+  &lt;ColorItem
+    colors={{ 1: &#39;#C2CEF2&#39;, 2: &#39;#9AADE4&#39;, 3: &#39;#728CD7&#39;, 4: &#39;#4B62B3&#39;, 5: &#39;#2B408C&#39; }}
+  /&gt;
+  &lt;ColorItem
+    colors={{ 1: &#39;#C2CEF2&#39;, 2: &#39;#9AADE4&#39;, 3: &#39;#728CD7&#39;, 4: &#39;#4B62B3&#39;, 5: &#39;#2B408C&#39;, 6: &#39;#142966&#39; }}
+  /&gt;
+  &lt;ColorItem
+    title=&quot;BFS Blue additional shades for maps only&quot;
+    subtitle=&quot;Intermediate shades have been generated with Chroma.js (Input colors: 01, Primary, 06) to solely use for Map Visualizations&quot;
+    colors={{ &#39; 1&#39;: &#39;#C2CEF2&#39;, &#39;2-7&#39;: &#39;#9EB0E6&#39;, &#39;3-7&#39;: &#39;#7A92DA&#39;, &#39;4-7&#39;: &#39;#5D76BE&#39;, &#39;5-7&#39;: &#39;#445CA0&#39;, &#39;6-7&#39;: &#39;#2C4282&#39;, &#39; 6&#39;: &#39;#142966&#39; }}
+  /&gt;
+  &lt;ColorItem
+    colors={{ &#39; 1&#39;: &#39;#C2CEF2&#39;, &#39;2-8&#39;: &#39;#A3B4E7&#39;, &#39;3-8&#39;: &#39;#849BDD&#39;, &#39;4-8&#39;: &#39;#6982CC&#39;, &#39;5-8&#39;: &#39;#526BB1&#39;, &#39;6-8&#39;: &#39;#3D5497&#39;,&#39;7-8&#39;: &#39;#283E7E&#39;, &#39; 6&#39;: &#39;#142966&#39; }}
+  /&gt;
+  &lt;ColorItem
+    colors={{ &#39; 1&#39;: &#39;#C2CEF2&#39;, &#39;2-9&#39;: &#39;#A7B8E9&#39;, &#39;3-9&#39;: &#39;#8CA1E0&#39;, &#39;4-9&#39;: &#39;#718BD6&#39;, &#39;5-9&#39;: &#39;#5D76BE&#39;, &#39;6-9&#39;: &#39;#4A62A7&#39;,&#39;7-9&#39;: &#39;#384F91&#39;, &#39;8-9&#39;: &#39;#263C7B&#39;, &#39; 6&#39;: &#39;#142966&#39; }}
+  /&gt;
+  &lt;ColorItem
+    colors={{ &#39; 1&#39;: &#39;#C2CEF2&#39;, &#39;2-10&#39;: &#39;#AABAEA&#39;, &#39;3-10&#39;: &#39;#92A6E2&#39;, &#39;4-10&#39;: &#39;#7A92DA&#39;, &#39;5-10&#39;: &#39;#6680C9&#39;, &#39;6-10&#39;: &#39;#556DB4&#39;,&#39;7-10&#39;: &#39;#445CA0&#39;, &#39;8-10&#39;: &#39;#344A8C&#39;, &#39;9-10&#39;: &#39;#243979&#39;, &#39; 6&#39;: &#39;#142966&#39; }}
+  /&gt;
+
+&lt;/ColorPalette&gt;
+
+&lt;ColorPalette&gt;
+  &lt;ColorItem
+    title=&quot;Violet&quot;
+    subtitle=&quot;Standard Palette&quot;
+    colors={{ 3: &#39;#4F25D2&#39;}}
+  /&gt;
+  &lt;ColorItem
+    colors={{ 2: &#39;#AC97EA&#39;, 4: &#39;#6E4BDA&#39;}}
+  /&gt;
+  &lt;ColorItem
+    colors={{ 1: &#39;#CEC2F2&#39;, 3: &#39;#8D71E2&#39;, 5: &#39;#4F25D2&#39; }}
+  /&gt;
+  &lt;ColorItem
+    colors={{ 2: &#39;#AC97EA&#39;, 3: &#39;#8D71E2&#39;,4: &#39;#6E4BDA&#39;, 5: &#39;#4F25D2&#39; }}
+  /&gt;
+  &lt;ColorItem
+    colors={{ 1: &#39;#CEC2F2&#39;, 2: &#39;#AC97EA&#39;, 3: &#39;#8D71E2&#39;, 4: &#39;#6E4BDA&#39;, 5: &#39;#4F25D2&#39; }}
+  /&gt;
+  &lt;ColorItem
+    colors={{ 1: &#39;#CEC2F2&#39;, 2: &#39;#AC97EA&#39;, 3: &#39;#8D71E2&#39;, 4: &#39;#6E4BDA&#39;, 5: &#39;#4F25D2&#39;, 6: &#39;#142966&#39; }}
+  /&gt;
+  &lt;ColorItem
+    title=&quot;Violet additional shades for maps only&quot;
+    subtitle=&quot;Intermediate shades have been generated with Chroma.js (Input colors: 01, Primary, 06) to solely use for Map Visualizations&quot;
+    colors={{ 1: &#39;#CEC2F2&#39;, 2: &#39;#AC97EA&#39;, 3: &#39;#8D71E2&#39;, 4: &#39;#6E4BDA&#39;, 5: &#39;#4F25D2&#39;, 6: &#39;#142966&#39;}}
+  /&gt;
+&lt;/ColorPalette&gt;
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/Colors/Themes colors</h2>
+      <div class="badges">
+        
+        <label for="doc-9-corporate-colors-themes-colors-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/Colors/themes.mdx">corporate-colors-themes-colors--docs · ./src/stories/Corporate/Colors/themes.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-9-corporate-colors-themes-colors-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, ColorPalette, ColorItem } from &#39;@storybook/addon-docs/blocks&#39;;
+ 
+&lt;Meta title=&quot;Corporate/Colors/Themes colors&quot; /&gt;
+ 
+
+# Introduction to Themes colors
+
+To ensure consistency across charts that explore recurrent themes, the colors have been carefully assigned to represent the classes in a meaningful way. The themes color palettes commonly used by the FSO are :
+- [Languages](#languages)
+- [Religions](#religions)
+- [Economic sectors](#economic-sectors)
+- [Education](#education)
+- [Votes](#votes)
+- [Gender](#gender)
+- [Nationality and countries](#nationality-and-countries)
+- [Continents](#continents)
+- [Import and export](#import-and-export)
+
+
+## Languages
+&lt;ColorPalette&gt;
+  &lt;ColorItem
+    title=&quot;BFS Blue&quot;
+    subtitle=&quot;Standard Palette&quot;
+    colors={{ 3: &#39;#728CD7&#39;}}
+  /&gt;
+  &lt;ColorItem
+    colors={{ 2: &#39;#C2CEF2&#39;, 4: &#39;#728CD7&#39;}}
+  /&gt;
+  &lt;ColorItem
+    colors={{ 1: &#39;#C2CEF2&#39;, 3: &#39;#728CD7&#39;, 5: &#39;#2B408C&#39; }}
+  /&gt;
+  &lt;ColorItem 
+    title=&quot;theme.color.primary&quot; 
+    subtitle=&quot;Coral&quot; 
+    colors={{ WildWatermelon: &#39;#FF4785&#39; }} 
+  /&gt;
+  &lt;ColorItem 
+    title=&quot;theme.color.secondary&quot; 
+    subtitle=&quot;Ocean&quot; 
+    colors={{ DodgerBlue: &#39;#1EA7FD&#39; }} 
+  /&gt;
+  &lt;ColorItem
+    title=&quot;theme.color.positive&quot;
+    subtitle=&quot;Green&quot;
+    colors={{
+      Apple: &#39;rgba(102,191,60,1)&#39;,
+      Apple80: &#39;rgba(102,191,60,.8)&#39;,
+      Apple60: &#39;rgba(102,191,60,.6)&#39;,
+      Apple30: &#39;rgba(102,191,60,.3)&#39;,
+    }}
+  /&gt;
+  &lt;ColorItem
+    title=&quot;gradient&quot;
+    subtitle=&quot;Grayscale&quot;
+    colors={{
+      Gradient: &#39;linear-gradient(to right,white,black)&#39;,
+    }}
+  /&gt;
+  &lt;ColorItem
+    title=&quot;gradient&quot;
+    subtitle=&quot;Grayscale&quot;
+    colors={[&#39;linear-gradient(65deg,white,black)&#39;]}
+  /&gt;
+&lt;/ColorPalette&gt;
+## Religions
+&lt;ColorPalette&gt;
+  &lt;ColorItem
+  /&gt;
+&lt;/ColorPalette&gt;
+## Economic sectors
+
+## Education
+
+## Votes
+
+## Gender
+
+## Nationality and countries
+
+## Continents
+
+## Import and export</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/Typography/Introduction</h2>
+      <div class="badges">
+        
+        <label for="doc-10-corporate-typography-introduction-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/Typography/typography.mdx">corporate-typography-introduction--docs · ./src/stories/Corporate/Typography/typography.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-10-corporate-typography-introduction-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta } from &quot;@storybook/addon-docs/blocks&quot;;
+
+&lt;Meta title=&quot;Corporate/Typography/Introduction&quot; /&gt;
+
+# Typography
+## Large Scale (Desktop)
+Heading 1 (24px/28px)
+&lt;h1&gt;Heading 1 may have more words&lt;/h1&gt;
+Heading 2 (20px/26px)
+&lt;h2&gt;Heading 2 may have more words&lt;/h2&gt;
+Heading 3 - Bold (18px/24px)
+&lt;h3&gt;&lt;b&gt;Heading 3 emphasises the group shown&lt;/b&gt;&lt;/h3&gt;
+Heading 4 - Bold (14px/18px)
+&lt;h4&gt;&lt;b&gt;Heading 4 is less important than the other headings&lt;/b&gt;&lt;/h4&gt;
+Paragraph 1 (16px/20px)
+&lt;p1&gt;shows the information we give. We can be very precise and use the space we need. We will also pay attention to the words we use - it is essential that we use the words our target group is familiar with.&lt;/p1&gt;
+Paragraph 2 (14px/18px)
+&lt;p2&gt;shows the information we give. We can be very precise and use the space we need. We will also pay attention to the words we use - it is essential that we use the words our target group is familiar with.&lt;/p2&gt;
+
+
+## Small Scale (Mobile)
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/UI-Elements/Buttons</h2>
+      <div class="badges">
+        
+        <label for="doc-11-corporate-ui-elements-buttons-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/UI-Elements/buttons.mdx">corporate-ui-elements-buttons--docs · ./src/stories/Corporate/UI-Elements/buttons.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-11-corporate-ui-elements-buttons-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Corporate/UI-Elements/Buttons&quot;/&gt;
+
+# Buttons
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/UI-Elements/Controls</h2>
+      <div class="badges">
+        
+        <label for="doc-12-corporate-ui-elements-controls-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/UI-Elements/controls.mdx">corporate-ui-elements-controls--docs · ./src/stories/Corporate/UI-Elements/controls.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-12-corporate-ui-elements-controls-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Corporate/UI-Elements/Controls&quot;/&gt;
+
+# Controls
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/UI-Elements/Dropdowns</h2>
+      <div class="badges">
+        
+        <label for="doc-13-corporate-ui-elements-dropdowns-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/UI-Elements/dropdowns.mdx">corporate-ui-elements-dropdowns--docs · ./src/stories/Corporate/UI-Elements/dropdowns.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-13-corporate-ui-elements-dropdowns-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Corporate/UI-Elements/Dropdowns&quot;/&gt;
+
+# Dropdowns
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/UI-Elements/Export Buttons</h2>
+      <div class="badges">
+        
+        <label for="doc-14-corporate-ui-elements-export-buttons-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/UI-Elements/exportButtons.mdx">corporate-ui-elements-export-buttons--docs · ./src/stories/Corporate/UI-Elements/exportButtons.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-14-corporate-ui-elements-export-buttons-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Corporate/UI-Elements/Export Buttons&quot;/&gt;
+
+# Export Buttons
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/UI-Elements/Sliders</h2>
+      <div class="badges">
+        
+        <label for="doc-15-corporate-ui-elements-sliders-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/UI-Elements/sliders.mdx">corporate-ui-elements-sliders--docs · ./src/stories/Corporate/UI-Elements/sliders.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-15-corporate-ui-elements-sliders-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Corporate/UI-Elements/Sliders&quot;/&gt;
+
+# Sliders
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/UI-Elements/Tooltips</h2>
+      <div class="badges">
+        
+        <label for="doc-16-corporate-ui-elements-tooltips-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/UI-Elements/tooltips.mdx">corporate-ui-elements-tooltips--docs · ./src/stories/Corporate/UI-Elements/tooltips.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-16-corporate-ui-elements-tooltips-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Corporate/UI-Elements/Tooltips&quot;/&gt;
+
+# Tooltips
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Corporate/Introduction</h2>
+      <div class="badges">
+        
+        <label for="doc-17-corporate-introduction-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Corporate/corporate-intro.mdx">corporate-introduction--docs · ./src/stories/Corporate/corporate-intro.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-17-corporate-introduction-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta } from &quot;@storybook/addon-docs/blocks&quot;;
+
+&lt;Meta title=&quot;Corporate/Introduction&quot; /&gt;
+
+# Corporate
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Cross-Media/Introduction</h2>
+      <div class="badges">
+        
+        <label for="doc-18-cross-media-introduction-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Cross-Media/crossmedia-intro.mdx">cross-media-introduction--docs · ./src/stories/Cross-Media/crossmedia-intro.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-18-cross-media-introduction-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta } from &quot;@storybook/addon-docs/blocks&quot;;
+
+&lt;Meta title=&quot;Cross-Media/Introduction&quot; /&gt;
+
+# Accessibility
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Cross-Media/Exporting Visualisations</h2>
+      <div class="badges">
+        
+        <label for="doc-19-cross-media-exporting-visualisations-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Cross-Media/exportViz.mdx">cross-media-exporting-visualisations--docs · ./src/stories/Cross-Media/exportViz.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-19-cross-media-exporting-visualisations-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Cross-Media/Exporting Visualisations&quot;/&gt;
+
+# Guide to the export of visualisations
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Cross-Media/Layout Desktop</h2>
+      <div class="badges">
+        
+        <label for="doc-20-cross-media-layout-desktop-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Cross-Media/layoutDesktop.mdx">cross-media-layout-desktop--docs · ./src/stories/Cross-Media/layoutDesktop.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-20-cross-media-layout-desktop-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Cross-Media/Layout Desktop&quot;/&gt;
+
+# Layout for Desktop representation
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Cross-Media/Layout Mobile</h2>
+      <div class="badges">
+        
+        <label for="doc-21-cross-media-layout-mobile-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Cross-Media/layoutMobile.mdx">cross-media-layout-mobile--docs · ./src/stories/Cross-Media/layoutMobile.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-21-cross-media-layout-mobile-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Cross-Media/Layout Mobile&quot;/&gt;
+
+# Layout for Mobile representation
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Cross-Media/Layout Social Media</h2>
+      <div class="badges">
+        
+        <label for="doc-22-cross-media-layout-social-media-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Cross-Media/layoutSOME.mdx">cross-media-layout-social-media--docs · ./src/stories/Cross-Media/layoutSOME.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-22-cross-media-layout-social-media-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Cross-Media/Layout Social Media&quot;/&gt;
+
+# Layout for Social Media representation
+## Plus petit titre
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Readability/Best Practices/Chart Chooser</h2>
+      <div class="badges">
+        
+        <label for="doc-23-readability-best-practices-chart-chooser-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Readability/Best Practices/chartChooser.mdx">readability-best-practices-chart-chooser--docs · ./src/stories/Readability/Best Practices/chartChooser.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-23-readability-best-practices-chart-chooser-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Readability/Best Practices/Chart Chooser&quot;/&gt;
+
+# Chart Chooser
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Readability/Best Practices/Chart Junk</h2>
+      <div class="badges">
+        
+        <label for="doc-24-readability-best-practices-chart-junk-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Readability/Best Practices/chartJunk.mdx">readability-best-practices-chart-junk--docs · ./src/stories/Readability/Best Practices/chartJunk.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-24-readability-best-practices-chart-junk-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Readability/Best Practices/Chart Junk&quot;/&gt;
+
+# Common mistakes and bias
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Readability/Best Practices/Objectives</h2>
+      <div class="badges">
+        
+        <label for="doc-25-readability-best-practices-objectives-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Readability/Best Practices/objectives.mdx">readability-best-practices-objectives--docs · ./src/stories/Readability/Best Practices/objectives.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-25-readability-best-practices-objectives-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Readability/Best Practices/Objectives&quot;/&gt;
+
+# Objectives for a visualisation
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Readability/Best Practices/Visual Hierarchy</h2>
+      <div class="badges">
+        
+        <label for="doc-26-readability-best-practices-visual-hierarchy-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Readability/Best Practices/visualHierarchy.mdx">readability-best-practices-visual-hierarchy--docs · ./src/stories/Readability/Best Practices/visualHierarchy.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-26-readability-best-practices-visual-hierarchy-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Readability/Best Practices/Visual Hierarchy&quot;/&gt;
+
+# Visual Hierarchy
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Readability/General Anatomy/Axis</h2>
+      <div class="badges">
+        
+        <label for="doc-27-readability-general-anatomy-axis-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Readability/General Anatomy/axis.mdx">readability-general-anatomy-axis--docs · ./src/stories/Readability/General Anatomy/axis.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-27-readability-general-anatomy-axis-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Readability/General Anatomy/Axis&quot;/&gt;
+
+# Axis
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Readability/General Anatomy/Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-28-readability-general-anatomy-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Readability/General Anatomy/chart.mdx">readability-general-anatomy-chart--docs · ./src/stories/Readability/General Anatomy/chart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-28-readability-general-anatomy-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Readability/General Anatomy/Chart&quot;/&gt;
+
+# Chart
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Readability/General Anatomy/Comment</h2>
+      <div class="badges">
+        
+        <label for="doc-29-readability-general-anatomy-comment-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Readability/General Anatomy/comment.mdx">readability-general-anatomy-comment--docs · ./src/stories/Readability/General Anatomy/comment.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-29-readability-general-anatomy-comment-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Readability/General Anatomy/Comment&quot;/&gt;
+
+# Comment
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Readability/General Anatomy/Description</h2>
+      <div class="badges">
+        
+        <label for="doc-30-readability-general-anatomy-description-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Readability/General Anatomy/description.mdx">readability-general-anatomy-description--docs · ./src/stories/Readability/General Anatomy/description.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-30-readability-general-anatomy-description-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Readability/General Anatomy/Description&quot;/&gt;
+
+# Description
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Readability/General Anatomy/Footer</h2>
+      <div class="badges">
+        
+        <label for="doc-31-readability-general-anatomy-footer-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Readability/General Anatomy/footer.mdx">readability-general-anatomy-footer--docs · ./src/stories/Readability/General Anatomy/footer.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-31-readability-general-anatomy-footer-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Readability/General Anatomy/Footer&quot;/&gt;
+
+# Footer
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Readability/General Anatomy/Legend</h2>
+      <div class="badges">
+        
+        <label for="doc-32-readability-general-anatomy-legend-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Readability/General Anatomy/legend.mdx">readability-general-anatomy-legend--docs · ./src/stories/Readability/General Anatomy/legend.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-32-readability-general-anatomy-legend-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Readability/General Anatomy/Legend&quot;/&gt;
+
+# Legend
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Readability/General Anatomy/Subtitle</h2>
+      <div class="badges">
+        
+        <label for="doc-33-readability-general-anatomy-subtitle-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Readability/General Anatomy/subtitle.mdx">readability-general-anatomy-subtitle--docs · ./src/stories/Readability/General Anatomy/subtitle.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-33-readability-general-anatomy-subtitle-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Readability/General Anatomy/Subtitle&quot;/&gt;
+
+# Subtitle
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Readability/General Anatomy/Title</h2>
+      <div class="badges">
+        
+        <label for="doc-34-readability-general-anatomy-title-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Readability/General Anatomy/title.mdx">readability-general-anatomy-title--docs · ./src/stories/Readability/General Anatomy/title.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-34-readability-general-anatomy-title-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+&lt;Meta title=&quot;Readability/General Anatomy/Title&quot;/&gt;
+
+# Title
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Readability/Introduction</h2>
+      <div class="badges">
+        
+        <label for="doc-35-readability-introduction-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Readability/readability-intro.mdx">readability-introduction--docs · ./src/stories/Readability/readability-intro.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-35-readability-introduction-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta } from &quot;@storybook/addon-docs/blocks&quot;;
+
+&lt;Meta title=&quot;Readability/Introduction&quot; /&gt;
+
+# Readability
+## Plus petit titre</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Area Chart/Simple Area Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-36-visualisation-types-diagrams-area-chart-simple-area-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/areaChart/areaChart.mdx">visualisation-types-diagrams-area-chart-simple-area-chart--docs · ./src/stories/Visualisation Types/Diagrams/areaChart/areaChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-36-visualisation-types-diagrams-area-chart-simple-area-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./areaChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Area Chart/Simple Area Chart&quot;/&gt;
+
+# Area Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+An area chart is used to visualize changes to a metric value over time. Because it has only one metric, it serves the same function as a simple line chart. An area chart is distinguished from a line chart by the addition of shading between lines and a baseline, like in a bar chart.
+&lt;Canvas of={chartStories.Description} /&gt;
+## Anatomy
+
+## Chart variations
+### Area chart with breaks
+&lt;Canvas of={chartStories.breaks} /&gt;
+### Area chart with diverging areas
+A Diverging Area Chart will present a standard area chart but with a diverging display of the data around a Base-line or Zero-line. It is used to compare values and to highlight 2 directions in the data over a single dimension. It should be used when the data includes negative and positive values. A diverging area chart however will have a zero-line or base-line with diverging areas on each side, which can in turn be highlighted by diverging colors. The shaded area of these charts allows a balance to be shown – either against a baseline or between two series. 
+&lt;Canvas of={chartStories.diverging} /&gt;
+## Do&#39;s and don&#39;ts
+- Time intervals should be equal
+- Avoid too complex data
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Area Chart/Stacked Area Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-37-visualisation-types-diagrams-area-chart-stacked-area-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/areaChart/stackedAreaChart.mdx">visualisation-types-diagrams-area-chart-stacked-area-chart--docs · ./src/stories/Visualisation Types/Diagrams/areaChart/stackedAreaChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-37-visualisation-types-diagrams-area-chart-stacked-area-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./stackedAreaChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Area Chart/Stacked Area Chart&quot;/&gt;
+
+# Stacked Area Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A stacked Area Chart shows the evolution of the variable along the X-axis, but also its relationship with the other variables and with the total (along the Y-axis). Each variable is represented by an individual, colored area.
+The variables are stacked upon each other. In other words, each variable is stacked upon the previous in such a way that the previous serves as base-line to the next. The area between the X-axis and the top variable represents the total of all the variables.
+
+This allows to check on the same figure the evolution of both the total of a numeric variable, and the importance of each group. 
+
+Use the stacked area chart to show trends over time among related items.
+&lt;Canvas of={chartStories.Description} /&gt;
+## Anatomy
+
+## Chart variations
+### Stacked area chart with breaks
+&lt;Canvas of={chartStories.breaks} /&gt;
+## Do&#39;s and don&#39;ts
+- Y-axis should start at zero
+- Exception made of the first line (closest to the X-axis), the values represented are added on top of the previous category, this means that the exact value can’t be read on the graph but needs to be calculated. What is shown is the relative importance of each group and the total of the stacked variables.
+- Negative values can’t be treated
+- Time intervals should be equal
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Arrow Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-38-visualisation-types-diagrams-arrow-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/arrowChart.mdx">visualisation-types-diagrams-arrow-chart--docs · ./src/stories/Visualisation Types/Diagrams/arrowChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-38-visualisation-types-diagrams-arrow-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./arrowChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Arrow Chart&quot;/&gt;
+
+# Arrow Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+The arrow chart is a specialised form of the connected dot plot (dumbbell plot). While a dumbbell plot treats both endpoints symmetrically, the arrow chart introduces directionality: an arrowhead at the end point unambiguously signals whether a value has increased or decreased, and by how much. This makes it particularly effective for before/after comparisons, temporal evolution, or any transition between two states.
+
+Categories are displayed along the vertical axis; the horizontal axis carries the shared quantitative scale. Each row is one category, represented by a single arrow spanning from the start value to the end value. Colour and arrowhead direction encode whether the change is positive or negative.
+&lt;Canvas of={chartStories.Description} /&gt;
+## Anatomy
+
+## Chart variations
+### Arrow chart with groups
+&lt;Canvas of={chartStories.groups} /&gt;
+## Do&#39;s and don&#39;ts
+
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Bar Chart/Bar Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-39-visualisation-types-diagrams-bar-chart-bar-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/barChart/barChart.mdx">visualisation-types-diagrams-bar-chart-bar-chart--docs · ./src/stories/Visualisation Types/Diagrams/barChart/barChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-39-visualisation-types-diagrams-bar-chart-bar-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./barChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Bar Chart/Bar Chart&quot;/&gt;
+
+# Bar Chart
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A Bar Chart is similar to a Column Chart, both show comparisons among categories. The only difference is in the horizontal or vertical layout, by a simple inversion of the axes. The Bar Chart will have horizontal bars whereas the Column Chart will have vertical columns. The horizontal layout is the best choice for long text labels and trends, whereas the vertical layout is the best choice for short labels and trends.
+
+In a Bar Chart, the Y-axis represents the categories being compared while the X-axis represents a measured value. The Y-axis will generally be set with a categorical ordinal scale. The length of the bars is proportional to the values displayed.
+&lt;Canvas of={chartStories.Description} /&gt;
+## Anatomy
+&lt;img src=&quot;../images/barChart_anatomy.png&quot; alt=&quot;alt&quot;/&gt;
+## Chart variations
+### Bar chart with a confidence interval
+&lt;Canvas of={chartStories.Confidence} /&gt;
+The lower and upper margin of the confidence interval is shown by an overlay. Usually we use the 95%-margin which has to be mentioned in the legend. In charts with only one colour, the hatched area is two steps darker than the bar chart. If there are multiple colours or different shades of the base colour, we use black #333333 instead.
+### Bar chart with an overlay (mark?)
+&lt;Canvas of={chartStories.Overlay} /&gt;
+### Bar chart in groups
+&lt;Canvas of={chartStories.Groups} /&gt;
+### Bar chart with diverging bars
+&lt;Canvas of={chartStories.divergent} /&gt;
+## Do&#39;s and don&#39;ts
+### Axis starts at 0
+Diagrams must always start at 0 otherwise the perception is distorted (unless the diagram represents an index, in which case the 100 value is mandatory). Deviations are allowed if the interruption is clearly marked. 
+### Horizontal layout
+All charts with long labels, have to be rotated by 90° to be compatible with small screens (mobile). 
+### Sort unordered categories by metric
+Appropriate sorting, which is almost always based on a metric, is important to effectively convey information in a bar chart and increase readability.
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Bar Chart/Grouped Bar Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-40-visualisation-types-diagrams-bar-chart-grouped-bar-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/barChart/groupedBarChart.mdx">visualisation-types-diagrams-bar-chart-grouped-bar-chart--docs · ./src/stories/Visualisation Types/Diagrams/barChart/groupedBarChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-40-visualisation-types-diagrams-bar-chart-grouped-bar-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./groupedBarChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Bar Chart/Grouped Bar Chart&quot;/&gt;
+
+# Grouped Bar Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A Grouped Bar Charts is used when two or more data sets are displayed side-by-side and grouped together under the same categories. It is a standard way to compare the size of things, and it allows to compare multiple series. However, it can become tricky to read with more than 2 series. The horizontal layout is the best choice for long text labels and trends. Grouped bar charts can group the categories on the same axis.
+&lt;Canvas of={chartStories.Description} /&gt;
+## Anatomy
+
+## Chart variations
+### Grouped bar chart with groups
+&lt;Canvas of={chartStories.groups} /&gt;
+### Grouped bar chart with confidence interval
+&lt;Canvas of={chartStories.confidence} /&gt;
+### Grouped bar chart with overlay
+&lt;Canvas of={chartStories.overlay} /&gt;
+## Do&#39;s and don&#39;ts
+### Axis starts at 0
+Diagrams must always start at 0 otherwise the perception is distorted (unless the diagram represents an index, in which case the 100 value is mandatory). Deviations are allowed if the interruption is clearly marked. 
+### Horizontal layout
+All charts with long labels, have to be rotated by 90° to be compatible with small screens (mobile). 
+### Sort unordered categories by metric
+Appropriate sorting, which is almost always based on a metric, is important to effectively convey information in a bar chart and increase readability.
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Bar Chart/Stacked Bar Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-41-visualisation-types-diagrams-bar-chart-stacked-bar-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/barChart/stackedBarChart.mdx">visualisation-types-diagrams-bar-chart-stacked-bar-chart--docs · ./src/stories/Visualisation Types/Diagrams/barChart/stackedBarChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-41-visualisation-types-diagrams-bar-chart-stacked-bar-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./stackedBarChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Bar Chart/Stacked Bar Chart&quot;/&gt;
+
+# Stacked Bar Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A Stacked Bar Chart is a simple way of showing part-to-whole relationships but can be difficult to read with more than a few components. The size of the components is more effective to read in a stacked bar chart than in a pie chart because it is a surface comparison. A stacked bar chart uses color differences to show several dimensions. To do this, each bar is split into a set of dimension items, distinguished by color, while maintaining the total bar length. A Stacked Bar chart is presented with horizontal bars. A horizontal layout is the best choice for long text labels and trends, whereas a vertical layout is the best choice for short labels and trends. 
+&lt;Canvas of={chartStories.Description2} /&gt;
+## Anatomy
+
+## Chart variations
+### Stacked bar chart in groups
+&lt;Canvas of={chartStories.groups} /&gt;
+## Do&#39;s and don&#39;ts
+### Axis starts at 0
+Diagrams must always start at 0 otherwise the perception is distorted (unless the diagram represents an index, in which case the 100 value is mandatory). Deviations are allowed if the interruption is clearly marked. 
+### Horizontal layout
+All charts with long labels, have to be rotated by 90° to be compatible with small screens (mobile). 
+### Sort unordered categories by metric
+Appropriate sorting, which is almost always based on a metric, is important to effectively convey information in a bar chart and increase readability.
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Boxplot/Boxplot</h2>
+      <div class="badges">
+        
+        <label for="doc-42-visualisation-types-diagrams-boxplot-boxplot-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/boxplot/boxplot.mdx">visualisation-types-diagrams-boxplot-boxplot--docs · ./src/stories/Visualisation Types/Diagrams/boxplot/boxplot.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-42-visualisation-types-diagrams-boxplot-boxplot-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./boxplot.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Boxplot/Boxplot&quot;/&gt;
+
+# Boxplot
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+Boxplot charts are used to summarize multiple distributions of quantitative data. It displays a central rectangle which extends from the 25th quantile (Q25) to the 75th quantile (Q75) and which is intersected by a line representing the median (Q50 or 50th quantile). This median line displays the value for which half of the data is below and the other half is above. The lines outside the rectangle are called whiskers and generally represent the 10th and 90th quantile (Q10 and Q90). Outliers may be plotted as individual points. The spacings between the different parts of the box indicate the degree of dispersion (spread) and skewness (asymmetry) in the data, and show outliers.
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+### Boxplot with groups
+&lt;Canvas of={chartStories.groups} /&gt;
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Boxplot/Grouped Boxplot Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-43-visualisation-types-diagrams-boxplot-grouped-boxplot-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/boxplot/groupedBoxplot.mdx">visualisation-types-diagrams-boxplot-grouped-boxplot-chart--docs · ./src/stories/Visualisation Types/Diagrams/boxplot/groupedBoxplot.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-43-visualisation-types-diagrams-boxplot-grouped-boxplot-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Boxplot/Grouped Boxplot Chart&quot;/&gt;
+
+# Grouped Boxplot Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A Grouped Boxplot is used when two or more data sets are displayed side-by-side and grouped together under the same categories. are used to summarize multiple distributions of quantitative data. It displays a central rectangle which extends from the 25th quantile (Q25) to the 75th quantile (Q75) and which is intersected by a line representing the median (Q50 or 50th quantile). This median line displays the value for which half of the data is below and the other half is above. The lines outside the rectangle are called whiskers and generally represent the 10th and 90th quantile (Q10 and Q90). Outliers may be plotted as individual points. The spacings between the different parts of the box indicate the degree of dispersion (spread) and skewness (asymmetry) in the data, and show outliers.
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts
+
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Bump Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-44-visualisation-types-diagrams-bump-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/bumpChart.mdx">visualisation-types-diagrams-bump-chart--docs · ./src/stories/Visualisation Types/Diagrams/bumpChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-44-visualisation-types-diagrams-bump-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Bump Chart&quot;/&gt;
+
+# Bump Chart
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A bump chart is used to showcase the changes in rank over time of multiple groups or individuals. This type of chart is effective in showing trends, comparing evolutions. A notable example of a bump chart is the one made by GitHub to showcase [the top programming languages](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/)
+
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Butterfly Chart/Butterfly Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-45-visualisation-types-diagrams-butterfly-chart-butterfly-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/butterflyChart/butterflyChart.mdx">visualisation-types-diagrams-butterfly-chart-butterfly-chart--docs · ./src/stories/Visualisation Types/Diagrams/butterflyChart/butterflyChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-45-visualisation-types-diagrams-butterfly-chart-butterfly-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./butterflyChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Butterfly Chart/Butterfly Chart&quot;/&gt;
+
+# Butterfly Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A Butterfly Chart allows two variables that share the same modalities to be compared side by side. In this way, the differences between the variables can be quickly identified. A Butterfly Chart presents 2 bar charts back-to-back. The categories or intervals are presented vertically.
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+### Butterfly chart with a confidence interval
+&lt;Canvas of={chartStories.confidence} /&gt;
+### Butterfly chart with marks
+&lt;Canvas of={chartStories.overlay} /&gt;
+### Butterfly chart with groups
+&lt;Canvas of={chartStories.groups} /&gt;
+## Do&#39;s and don&#39;ts
+
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Butterfly Chart/Pyramid Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-46-visualisation-types-diagrams-butterfly-chart-pyramid-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/butterflyChart/pyramidChart.mdx">visualisation-types-diagrams-butterfly-chart-pyramid-chart--docs · ./src/stories/Visualisation Types/Diagrams/butterflyChart/pyramidChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-46-visualisation-types-diagrams-butterfly-chart-pyramid-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./pyramidChart.stories&#39;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Butterfly Chart/Pyramid Chart&quot;/&gt;
+
+# Pyramid Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A population pyramid, also called an age pyramid or age picture diagram, is a graphical illustration that shows the distribution of various age groups in a population, which forms the shape of a pyramid when the population is growing.
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts
+
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Butterfly Chart/Stacked Butterfly Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-47-visualisation-types-diagrams-butterfly-chart-stacked-butterfly-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/butterflyChart/stackedButterflyChart.mdx">visualisation-types-diagrams-butterfly-chart-stacked-butterfly-chart--docs · ./src/stories/Visualisation Types/Diagrams/butterflyChart/stackedButterflyChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-47-visualisation-types-diagrams-butterfly-chart-stacked-butterfly-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./stackedButterflyChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Butterfly Chart/Stacked Butterfly Chart&quot;/&gt;
+
+# Stacked Butterfly Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A Stacked Pyramid is used when two or more data sets are displayed on top of each other and grouped together under the same categories. A population pyramid, also called an age pyramid or age picture diagram, is a graphical illustration that shows the distribution of various age groups in a population, which forms the shape of a pyramid when the population is growing.
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+### Stacked butterfly chart with groups
+&lt;Canvas of={chartStories.groups} /&gt;
+## Do&#39;s and don&#39;ts
+
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Butterfly Chart/Stacked Pyramid Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-48-visualisation-types-diagrams-butterfly-chart-stacked-pyramid-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/butterflyChart/stackedPyramidChart.mdx">visualisation-types-diagrams-butterfly-chart-stacked-pyramid-chart--docs · ./src/stories/Visualisation Types/Diagrams/butterflyChart/stackedPyramidChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-48-visualisation-types-diagrams-butterfly-chart-stacked-pyramid-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Butterfly Chart/Stacked Pyramid Chart&quot;/&gt;
+
+# Stacked Pyramid Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A stacked Pyramid chart is similar to a standard pyramid chart in which it illustrates the distribution of various age groups. The main difference being that it showcases the distribution of multiple groups.
+
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts
+- Do not use if you want to represent precise values, this type is best used to convey trends.
+- Use only when you have more than 3 age groups  </code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Chord Diagram</h2>
+      <div class="badges">
+        
+        <label for="doc-49-visualisation-types-diagrams-chord-diagram-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/chordChart.mdx">visualisation-types-diagrams-chord-diagram--docs · ./src/stories/Visualisation Types/Diagrams/chordChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-49-visualisation-types-diagrams-chord-diagram-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Chord Diagram&quot;/&gt;
+
+# Chord Diagram
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A chord diagram is used to display the links between multiple entities in a matrix. The entities are placed around a circle and the bi-directionnal flows between them typically are represented as arcs connecting each entity with each other.
+
+## Anatomy
+
+## Chart variations
+## Do&#39;s and don&#39;ts
+
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Column Chart/Column Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-50-visualisation-types-diagrams-column-chart-column-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/columnChart/columnChart.mdx">visualisation-types-diagrams-column-chart-column-chart--docs · ./src/stories/Visualisation Types/Diagrams/columnChart/columnChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-50-visualisation-types-diagrams-column-chart-column-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./columnChart.stories&#39;
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Column Chart/Column Chart&quot;/&gt;
+
+# Column Chart
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A Column Chart is similar to a Bar Chart, both show comparisons among categories. The only difference is in the horizontal or vertical layout, by a simple inversion of the axes. The Bar Chart will have horizontal bars whereas the Column Chart will have vertical columns. The vertical layout is the best choice for short labels and trends (years), whereas the horizontal layout is the best choice for long text labels and trends.
+
+In a Column Chart, the X-axis represents the categories being compared, and the Y-axis represents a measured value. The X-axis will generally be set with a categorical ordinal scale. The height of the columns is proportional to the values displayed.
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+### Column chart with confidence interval
+&lt;Canvas of={chartStories.confidence} /&gt;
+### Column chart with overlay
+&lt;Canvas of={chartStories.overlay} /&gt;
+### Column chart with groups
+&lt;Canvas of={chartStories.groups} /&gt;
+### Column chart in small multiples
+&lt;Canvas of={chartStories.multiple} /&gt;
+### Column chart with diverging columns
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Column Chart/Grouped Column Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-51-visualisation-types-diagrams-column-chart-grouped-column-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/columnChart/groupedColumnChart.mdx">visualisation-types-diagrams-column-chart-grouped-column-chart--docs · ./src/stories/Visualisation Types/Diagrams/columnChart/groupedColumnChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-51-visualisation-types-diagrams-column-chart-grouped-column-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Column Chart/Grouped Column Chart&quot;/&gt;
+
+# Grouped Column Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A Grouped Column Chart is used when two or more data sets are displayed side-by-side and grouped together under the same categories. It is a standard way to compare the size of things, and it allows to compare multiple series. However, it can become tricky to read with more than 2 series. The vertical layout is the best choice for date/time. Grouped column charts can group the categories on the same axis.
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts
+
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Column Chart/Line Column Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-52-visualisation-types-diagrams-column-chart-line-column-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/columnChart/lineColumnChart.mdx">visualisation-types-diagrams-column-chart-line-column-chart--docs · ./src/stories/Visualisation Types/Diagrams/columnChart/lineColumnChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-52-visualisation-types-diagrams-column-chart-line-column-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./lineColumnChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Column Chart/Line Column Chart&quot;/&gt;
+
+# Line Column Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A line chart displays the changes in values of one numerical variable, generally over a period of time. The vertical bars show the changes in values of another numerical variable. The X-axis usually represents a continuous (often time) quantitative variable.
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts
+
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Column Chart/Stacked Column Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-53-visualisation-types-diagrams-column-chart-stacked-column-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/columnChart/stackedColumnChart.mdx">visualisation-types-diagrams-column-chart-stacked-column-chart--docs · ./src/stories/Visualisation Types/Diagrams/columnChart/stackedColumnChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-53-visualisation-types-diagrams-column-chart-stacked-column-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./stackedColumnChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Column Chart/Stacked Column Chart&quot;/&gt;
+
+# Stacked Column Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A Stacked Column Chart is a simple way of showing part-to-whole relationships but can be difficult to read with more than a few components. The size of the components is more effective to read in a Stacked Column Chart than in a pie chart. 
+
+A Stacked Column Chart uses color differences to show several dimensions. To do this, each bar is split into a set of dimension items, distinguished by color, while maintaining the total bar height.
+
+A vertical layout is the best choice for short labels and trends.
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts
+
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Column Chart/Stacked Line Column Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-54-visualisation-types-diagrams-column-chart-stacked-line-column-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/columnChart/stackedLineColumnChart.mdx">visualisation-types-diagrams-column-chart-stacked-line-column-chart--docs · ./src/stories/Visualisation Types/Diagrams/columnChart/stackedLineColumnChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-54-visualisation-types-diagrams-column-chart-stacked-line-column-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Column Chart/Stacked Line Column Chart&quot;/&gt;
+
+# Stacked Line Column Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A stacked line column chart is a combination of a stacked column chart with a line chart. The stacked columns show the composition of a total value at a certain point in time and the overlaid line gives insight into a related trend, scenario or median value. 
+
+
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts
+- Don&#39;t use when the data for the columns and the line is unrelated
+- The stacked columns should not be a combination of more than X segments (*MH : how many ? 5?*)
+- Do not use if the message to be communicated is about the changes of a particular segment. This type of chart makes it difficult to track how each segment of the columns evolves.
+- If the data points are irregular, the line can suggest false trends. </code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Dotplot</h2>
+      <div class="badges">
+        
+        <label for="doc-55-visualisation-types-diagrams-dotplot-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/dotplot.mdx">visualisation-types-diagrams-dotplot--docs · ./src/stories/Visualisation Types/Diagrams/dotplot.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-55-visualisation-types-diagrams-dotplot-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./dotplot.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Dotplot&quot;/&gt;
+
+# Dotplot
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A Dotplot or Dumbbell Chart is used to display a difference. It is useful for showing changes between two points in time, two conditions, or between two groups. At each end, the line has its attributed color dot (2 colors in total, one for each category being represented).
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+&lt;Canvas of={chartStories.groups} /&gt;
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Heatmap</h2>
+      <div class="badges">
+        
+        <label for="doc-56-visualisation-types-diagrams-heatmap-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/heatmap.mdx">visualisation-types-diagrams-heatmap--docs · ./src/stories/Visualisation Types/Diagrams/heatmap.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-56-visualisation-types-diagrams-heatmap-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./heatmap.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Heatmap&quot;/&gt;
+
+# Heatmap
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A heatmap is a two-dimensional matrix. It allows to show the relationship between 2 variables and to see a correlation pattern in a simple way.
+
+Each cell contains a numerical value accompanied by a color for better visualization, which is more intense and darker for high values.
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Histogram</h2>
+      <div class="badges">
+        
+        <label for="doc-57-visualisation-types-diagrams-histogram-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/histogram.mdx">visualisation-types-diagrams-histogram--docs · ./src/stories/Visualisation Types/Diagrams/histogram.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-57-visualisation-types-diagrams-histogram-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Histogram&quot;/&gt;
+
+# Histogram
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A histogram shows the distribution of a continuous quantitative variable.
+
+The height represents the frequency of the classes defined on the X-axis. The classes must have the same range of values.
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Line Chart/Line Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-58-visualisation-types-diagrams-line-chart-line-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/lineChart/lineChart.mdx">visualisation-types-diagrams-line-chart-line-chart--docs · ./src/stories/Visualisation Types/Diagrams/lineChart/lineChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-58-visualisation-types-diagrams-line-chart-line-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./lineChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Line Chart/Line Chart&quot;/&gt;
+
+# Line Chart
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A line chart is used to display changes in values for one or more variables. It is made of points which are connected by a line. It generally displays a change over a period of time but is also used to visualize distributions with a large amount of data (ex: normal distribution by Gauss). The X-axis usually represents a continuous (often time) quantitative variable. The Y-axis represents a numerical value.
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+### Small multiple line charts
+&lt;Canvas of={chartStories.multiple} /&gt;
+### Line Charts with breaks
+&lt;Canvas of={chartStories.breaks} /&gt;
+## Do&#39;s and don&#39;ts
+- Y-axis should generally start at zero
+- The time scale should present intervals of the same size</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Line Chart/Multiple Line Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-59-visualisation-types-diagrams-line-chart-multiple-line-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/lineChart/multiLineChart.mdx">visualisation-types-diagrams-line-chart-multiple-line-chart--docs · ./src/stories/Visualisation Types/Diagrams/lineChart/multiLineChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-59-visualisation-types-diagrams-line-chart-multiple-line-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./multiLineChart.stories&#39;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Line Chart/Multiple Line Chart&quot;/&gt;
+
+# Multiple Line Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A multiple line chart provides a clear way to compare the evolution of several numerical variables over time. 
+It is made of various variables respectively represented by points which are connected by a line. It generally displays changes over a period of time but is also used to visualize distributions with a large amount of data (ex: normal distribution by Gauss).
+
+The X-axis usually represents a continuous (often time) quantitative variable. The Y-axis represents a numerical value.
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+### Multiline Chart in small multiples 
+&lt;Canvas of={chartStories.multiple} /&gt;
+### Multiline Chart with breaks
+&lt;Canvas of={chartStories.breaks} /&gt;
+### Multiline Chart with confidence interval
+&lt;Canvas of={chartStories.confidence} /&gt;
+### 
+## Do&#39;s and don&#39;ts
+
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Line Chart/Spaghetti Line Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-60-visualisation-types-diagrams-line-chart-spaghetti-line-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/lineChart/spaghettiLineChart.mdx">visualisation-types-diagrams-line-chart-spaghetti-line-chart--docs · ./src/stories/Visualisation Types/Diagrams/lineChart/spaghettiLineChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-60-visualisation-types-diagrams-line-chart-spaghetti-line-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./spaghettiLineChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Line Chart/Spaghetti Line Chart&quot;/&gt;
+
+# Spaghetti Line Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A spaghetti line chart is used to show the trend and range of shape of multiple related variables. It is best used to showcase a collective pattern across a wide range of observations. 
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts
+
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Lollipop Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-61-visualisation-types-diagrams-lollipop-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/lollipopChart.mdx">visualisation-types-diagrams-lollipop-chart--docs · ./src/stories/Visualisation Types/Diagrams/lollipopChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-61-visualisation-types-diagrams-lollipop-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Lollipop Chart&quot;/&gt;
+
+# Lollipop Chart
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A Lollipop Chart replaces the bars in a Bar Chart with lines and dotss. This type of chart is preferable when there is a lot of data or when the reprented values are all relatively similar. Lines and dots in these cases are easier to visualize. In fact, Lollipops draw more attention to the data value than standard bars/columns and can also display rank and value effectively. 
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Marimekko</h2>
+      <div class="badges">
+        
+        <label for="doc-62-visualisation-types-diagrams-marimekko-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/marimekko.mdx">visualisation-types-diagrams-marimekko--docs · ./src/stories/Visualisation Types/Diagrams/marimekko.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-62-visualisation-types-diagrams-marimekko-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as marimekkoStories from &#39;./marimekko.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Marimekko&quot;/&gt;
+
+# Marimekko
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A Marimekko chart is used to represent qualitative variables. Unlike a normal stacked bar chart, both axes are variable.
+
+A bar is subdivided on one axis according to one qualitative variable, and then each subbar is subdivided on the other axis according to a second qualitative variable.
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts
+
+&lt;Canvas of={marimekkoStories.Default} /&gt;</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Pie Chart/Donut Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-63-visualisation-types-diagrams-pie-chart-donut-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/pieChart/donutChart.mdx">visualisation-types-diagrams-pie-chart-donut-chart--docs · ./src/stories/Visualisation Types/Diagrams/pieChart/donutChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-63-visualisation-types-diagrams-pie-chart-donut-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./donutChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Pie Chart/Donut Chart&quot;/&gt;
+
+# Donut Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A donut chart is functionally identical to a pie chart, with the exception of a blank center and the ability to support multiple statistics at once. Doughnut charts provide a better data intensity ratio to standard pie charts since the blank center can be used to display additional, related data.
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+### Multiple Donut Charts
+&lt;Canvas of={chartStories.multiple} /&gt;
+
+## Do&#39;s and don&#39;ts
+
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Pie Chart/Pie Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-64-visualisation-types-diagrams-pie-chart-pie-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/pieChart/pieChart.mdx">visualisation-types-diagrams-pie-chart-pie-chart--docs · ./src/stories/Visualisation Types/Diagrams/pieChart/pieChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-64-visualisation-types-diagrams-pie-chart-pie-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./pieChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Pie Chart/Pie Chart&quot;/&gt;
+
+# Pie Chart
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A pie chart is a common way of showing part-to-whole data. It is a circle divided into sectors corresponding to the expressions of a qualitative variable. It is used to show the proportion of each sector in relation to the total number. The length of the arc, as well as the angle of each sector, is proportional to the value represented.
+It is important to avoid comparing values with a pie chart. It is better to use another type of chart.
+&lt;Canvas of={chartStories.description} /&gt;
+
+## Anatomy
+
+## Chart variations
+### Multiple Pie Charts
+&lt;Canvas of={chartStories.multiple} /&gt;
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Pie Chart/Semi Circle Donut Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-65-visualisation-types-diagrams-pie-chart-semi-circle-donut-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/pieChart/semiCircleDonutChart.mdx">visualisation-types-diagrams-pie-chart-semi-circle-donut-chart--docs · ./src/stories/Visualisation Types/Diagrams/pieChart/semiCircleDonutChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-65-visualisation-types-diagrams-pie-chart-semi-circle-donut-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./semiCircleDonutChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Pie Chart/Semi Circle Donut Chart&quot;/&gt;
+
+# Semi Circle Donut Chart
+
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A semi circle donut chart is used to display proportional data across a half ring, where each segment is a share of the whole. It takes the half ring form in order to mimic the layout of the Parlament where elected politicians are seated in an hemicycle. 
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+## Do&#39;s and don&#39;ts
+- Only use if the data points are not independant observations and their sum is meaningful.
+- Only use in the domain of politics as this type of visualisation is strongly associated with election results.
+- Limit the number of segments to 5, 7 maximum. Consider grouping smaller parties into an &quot;other&quot; category. (*MH: comme pour les piecharts?*)
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Radar Chart/Radar Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-66-visualisation-types-diagrams-radar-chart-radar-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/radarChart/radarChart.mdx">visualisation-types-diagrams-radar-chart-radar-chart--docs · ./src/stories/Visualisation Types/Diagrams/radarChart/radarChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-66-visualisation-types-diagrams-radar-chart-radar-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Radar Chart/Radar Chart&quot;/&gt;
+
+# Radar Chart
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A radar chart (also known as spider charts, polar charts, web charts, or star plots) presents a way to visualise multivariate data. It is used to plot one group of values over various shared variables. 
+Each shared quantitative variable is represented by an axis starting at the center. All axes are radial. equally spaced, and of the same scale. The data is diusplayed on each axis and the connection of all data points forms a polygon.
+
+## Anatomy
+
+## Chart variations
+### Multiple Radar Charts
+## Do&#39;s and don&#39;ts
+- Make sure the variables are organised in a way that makes sense to the reader
+- Opposite rays are not contrasting
+- The position of each category does not convey any particular information</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Sankey</h2>
+      <div class="badges">
+        
+        <label for="doc-67-visualisation-types-diagrams-sankey-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/sankey.mdx">visualisation-types-diagrams-sankey--docs · ./src/stories/Visualisation Types/Diagrams/sankey.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-67-visualisation-types-diagrams-sankey-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Sankey&quot;/&gt;
+
+# Sankey (Alluvial Diagram)
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+In a sankey or alluvial diagram variables are assigned to vertical axes that are parallel. Values are represented with blocks on each axis. The height of a block represents the size of the cluster and the height of a stream field represents the size of the components contained in both blocks connected by the stream field.
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Scatterplot/Bubble Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-68-visualisation-types-diagrams-scatterplot-bubble-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/scatterplot/bubbleChart.mdx">visualisation-types-diagrams-scatterplot-bubble-chart--docs · ./src/stories/Visualisation Types/Diagrams/scatterplot/bubbleChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-68-visualisation-types-diagrams-scatterplot-bubble-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./bubbleChart.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Scatterplot/Bubble Chart&quot;/&gt;
+
+# Bubble Chart
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A Bubble Chart is used to look at the relationships between three numerical variables. The first and second variable will be plotted in function of values along the X and Y-axes as a scatterplot. The third variable will determine the size of the points, and therefore their respective weight.
+It is important that the value of the third variable corresponds to the area of the bubble and not its diameter. In order to avoid hiding the small circles with the overlaying of big circles, it is mandatory to plot the smallest circles in front of the larger ones.
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+### Categorical Bubble Chart
+&lt;Canvas of={chartStories.categorical} /&gt;
+## Do&#39;s and don&#39;ts
+- Superimposition treatment needs attention, small points in front of big points, to avoid loss of information
+- The size/weight variable should be represented by the area of point and not the diameter
+- The radius of the symbols is not the square root of the amount. Flannery correction should be applied
+- Axes should start at zero
+- Labels are mandatory
+- Optional labels should not be superimposed
+- Avoid too many superimposed elements</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Scatterplot/Scatterplot</h2>
+      <div class="badges">
+        
+        <label for="doc-69-visualisation-types-diagrams-scatterplot-scatterplot-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/scatterplot/scatterplot.mdx">visualisation-types-diagrams-scatterplot-scatterplot--docs · ./src/stories/Visualisation Types/Diagrams/scatterplot/scatterplot.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-69-visualisation-types-diagrams-scatterplot-scatterplot-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./scatterplot.stories&#39;
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Scatterplot/Scatterplot&quot;/&gt;
+
+# Scatterplot
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A scatterplot typically displays the values of two variables, in order to show their relationship. The data is displayed as a collection of points. The values of the first variable will determine the position of the points along the horizontal X-axis, and the values of the second variable will determine their position along the vertical Y-axis. 
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+### Categorical scatterplot
+&lt;Canvas of={chartStories.categorical} /&gt;
+### Connected scatterplot
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Slope Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-70-visualisation-types-diagrams-slope-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/slopeChart.mdx">visualisation-types-diagrams-slope-chart--docs · ./src/stories/Visualisation Types/Diagrams/slopeChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-70-visualisation-types-diagrams-slope-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as chartStories from &#39;./slopeChart.stories&#39;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Slope Chart&quot;/&gt;
+
+# Slope Chart
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A slope chart is a line chart that represents a variable at two different points in time.
+The time is shown horizontally, while the values are placed vertically. The evolution is represented by the slope.
+A parallel coordinate chart is an extension of the slope chart with more than two different time points.
+&lt;Canvas of={chartStories.description} /&gt;
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Treemap</h2>
+      <div class="badges">
+        
+        <label for="doc-71-visualisation-types-diagrams-treemap-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/treemap.mdx">visualisation-types-diagrams-treemap--docs · ./src/stories/Visualisation Types/Diagrams/treemap.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-71-visualisation-types-diagrams-treemap-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Treemap&quot;/&gt;
+
+# Treemap
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A treemap or tile chart represents hierarchical data in the form of nested rectangles, which in turn may contain other rectangles. It is a way to display the proportion of each modality as a function of the total, as an alternative to the pie chart.
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Waffle Chart/Stacked Waffle Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-72-visualisation-types-diagrams-waffle-chart-stacked-waffle-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/waffleChart/stackedWaffleChart.mdx">visualisation-types-diagrams-waffle-chart-stacked-waffle-chart--docs · ./src/stories/Visualisation Types/Diagrams/waffleChart/stackedWaffleChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-72-visualisation-types-diagrams-waffle-chart-stacked-waffle-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Waffle Chart/Stacked Waffle Chart&quot;/&gt;
+
+# Stacked Waffle Chart
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A stacked waffle chart shows the distribution of multiple categories amongst a group. Each cell is the same number of observations and helps visualize the repartition of each category.
+
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Waffle Chart/Waffle Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-73-visualisation-types-diagrams-waffle-chart-waffle-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/waffleChart/waffleChart.mdx">visualisation-types-diagrams-waffle-chart-waffle-chart--docs · ./src/stories/Visualisation Types/Diagrams/waffleChart/waffleChart.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-73-visualisation-types-diagrams-waffle-chart-waffle-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Waffle Chart/Waffle Chart&quot;/&gt;
+
+# Waffle Chart
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A waffle chart shows progress towards a target or a completion percentage. There is a grid of small cells, of which coloured cells represent the data.
+
+A chart can consist of one category or several categories. Multiple gridplots can be put together to show a comparison between different charts.
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Diagrams/Waterfall Chart</h2>
+      <div class="badges">
+        
+        <label for="doc-74-visualisation-types-diagrams-waterfall-chart-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Diagrams/waterfall.mdx">visualisation-types-diagrams-waterfall-chart--docs · ./src/stories/Visualisation Types/Diagrams/waterfall.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-74-visualisation-types-diagrams-waterfall-chart-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Diagrams/Waterfall Chart&quot;/&gt;
+
+# Waterfall Chart
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A cascade or waterfall chart is used to show the cumulative effect of values over time.
+In particular, it is used to show how an initial value is influenced by positive or negative values (visualization of balances).
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Maps/Cartograms</h2>
+      <div class="badges">
+        
+        <label for="doc-75-visualisation-types-maps-cartograms-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Maps/cartograms.mdx">visualisation-types-maps-cartograms--docs · ./src/stories/Visualisation Types/Maps/cartograms.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-75-visualisation-types-maps-cartograms-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Maps/Cartograms&quot;/&gt;
+
+# Cartograms
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Maps/Choropleth Map</h2>
+      <div class="badges">
+        
+        <label for="doc-76-visualisation-types-maps-choropleth-map-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Maps/choropleth.mdx">visualisation-types-maps-choropleth-map--docs · ./src/stories/Visualisation Types/Maps/choropleth.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-76-visualisation-types-maps-choropleth-map-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Maps/Choropleth Map&quot;/&gt;
+
+# Choropleth Map
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Maps/Colored Proportionnal Symbols Map</h2>
+      <div class="badges">
+        
+        <label for="doc-77-visualisation-types-maps-colored-proportionnal-symbols-map-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Maps/coloredPropSymbols.mdx">visualisation-types-maps-colored-proportionnal-symbols-map--docs · ./src/stories/Visualisation Types/Maps/coloredPropSymbols.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-77-visualisation-types-maps-colored-proportionnal-symbols-map-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Maps/Colored Proportionnal Symbols Map&quot;/&gt;
+
+# Colored Proportionnal Symbols Map
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Maps/Flow Map</h2>
+      <div class="badges">
+        
+        <label for="doc-78-visualisation-types-maps-flow-map-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Maps/flow.mdx">visualisation-types-maps-flow-map--docs · ./src/stories/Visualisation Types/Maps/flow.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-78-visualisation-types-maps-flow-map-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Maps/Flow Map&quot;/&gt;
+
+# Cartograms
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A Flow Map shows movements of objects between locations (administrative units). The values of one continuous variable are shown in two directions, and proportionally (variation of line-width).
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Maps/Proportionnal Symbols Map</h2>
+      <div class="badges">
+        
+        <label for="doc-79-visualisation-types-maps-proportionnal-symbols-map-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Maps/propSymbols.mdx">visualisation-types-maps-proportionnal-symbols-map--docs · ./src/stories/Visualisation Types/Maps/propSymbols.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-79-visualisation-types-maps-proportionnal-symbols-map-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Maps/Proportionnal Symbols Map&quot;/&gt;
+
+# Proportionnal Symbols Map
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Maps/Qualitative Map</h2>
+      <div class="badges">
+        
+        <label for="doc-80-visualisation-types-maps-qualitative-map-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Maps/qualitative.mdx">visualisation-types-maps-qualitative-map--docs · ./src/stories/Visualisation Types/Maps/qualitative.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-80-visualisation-types-maps-qualitative-map-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Maps/Qualitative Map&quot;/&gt;
+
+# Qualitative Map
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+
+## Anatomy
+
+## Chart variations
+
+## Do&#39;s and don&#39;ts</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Tables/Hierarchical Table</h2>
+      <div class="badges">
+        
+        <label for="doc-81-visualisation-types-tables-hierarchical-table-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Tables/hierarchicalTable.mdx">visualisation-types-tables-hierarchical-table--docs · ./src/stories/Visualisation Types/Tables/hierarchicalTable.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-81-visualisation-types-tables-hierarchical-table-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Tables/Hierarchical Table&quot;/&gt;
+
+# Hierarchical Table
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A hierarchical table is used in order to showcase structured data on multiple levels (p.ex: canton &gt; district &gt; municipality). It is helpful to analyse the repartition or organisation of a phenomena in relation to its structure.
+
+Lines are used to represent observations, organized in a hierarchical manner. Columns are assigned a variable each.
+
+## Anatomy
+
+## Chart variations
+
+### Hierarchical Table with total
+
+### Hierarchical Table with highlight
+
+## Do&#39;s and don&#39;ts
+- Not too many columns (* MH : how many maximum*)
+- Not too many hierarchical levels (* MH : how many maximum*)
+- One subject per table
+- No cell fusion to guarantee machine readability</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Tables/Multiple Header Table</h2>
+      <div class="badges">
+        
+        <label for="doc-82-visualisation-types-tables-multiple-header-table-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Tables/multipleHeaderTable.mdx">visualisation-types-tables-multiple-header-table--docs · ./src/stories/Visualisation Types/Tables/multipleHeaderTable.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-82-visualisation-types-tables-multiple-header-table-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Tables/Multiple Header Table&quot;/&gt;
+
+# Multiple Header Table
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A multiple header table is similar to a hierarchical table but the groups and hierarchical levels are based on the variables (columns) and not the observations (lines) of the grid. 
+## Anatomy
+
+## Chart variations
+### Multiple Header Table with flags
+
+### Multiple Header Table with total
+
+### Multiple Header Table with highlight
+
+## Do&#39;s and don&#39;ts
+- Not too many columns (* MH : how many maximum*)
+- One subject per table
+- No cell fusion to guarantee machine readability</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Tables/Simple Table</h2>
+      <div class="badges">
+        
+        <label for="doc-83-visualisation-types-tables-simple-table-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Tables/simpleTable.mdx">visualisation-types-tables-simple-table--docs · ./src/stories/Visualisation Types/Tables/simpleTable.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-83-visualisation-types-tables-simple-table-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Tables/Simple Table&quot;/&gt;
+
+# Simple Table
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A simple table represents data in the form of a grid with lines and columns. It is used to show structured and readable information. 
+
+Lines are used to represent observations, organized in a hierarchical manner. Columns are assigned a variable each.
+## Anatomy
+
+## Chart variations
+### Simple Table with flags
+
+### Simple Table with Search/Sort functionality
+
+### Simple Table with total
+
+### Simple Table with highlight
+
+## Do&#39;s and don&#39;ts
+- Not too many columns (* MH : how many maximum*)
+- One subject per table
+- No cell fusion to guarantee machine readability</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Visualisation Types/Tables/Table with Visualisation</h2>
+      <div class="badges">
+        
+        <label for="doc-84-visualisation-types-tables-table-with-visualisation-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/Visualisation Types/Tables/tableVisualisation.mdx">visualisation-types-tables-table-with-visualisation--docs · ./src/stories/Visualisation Types/Tables/tableVisualisation.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-84-visualisation-types-tables-table-with-visualisation-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+
+
+
+&lt;Meta title=&quot;Visualisation Types/Tables/Table with Visualisation&quot;/&gt;
+
+# Table with a visualisation
+## Table of contents
+- [Description](#description)
+- [Anatomy](#anatomy)
+- [Chart variations](#chart-variations)
+- [Do&#39;s and don&#39;ts](#dos-and-donts)
+
+## Description
+A table with a visualisation is a hybrid table containing numerical data and graphical elements in the same grid. It is used in order to put emphasis on certain trends, comparisons or rankings by integrating mini-graphs (bars, sparklines or icons) in the cells of a table.
+
+Lines are used to represent observations, organized in a hierarchical manner. Columns are assigned a numerical variable or visual elements, if they add something to the readability, each.
+## Anatomy
+
+## Chart variations
+### Table with bars
+
+### Table with sparklines
+
+### Table with columns
+
+### Table with icons
+
+## Do&#39;s and don&#39;ts
+- A [heatmap](?path=/docs/visualisation-types-diagrams-heatmap--docs) is a type of visualisation in itself. 
+- Not too many columns (* MH : how many maximum*)
+- One subject per table
+- No cell fusion to guarantee machine readability</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Changelog</h2>
+      <div class="badges">
+        
+        <label for="doc-85-changelog-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/changelog.mdx">changelog--docs · ./src/stories/changelog.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-85-changelog-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta } from &quot;@storybook/addon-docs/blocks&quot;;
+
+&lt;Meta title=&quot;Changelog&quot;/&gt;
+
+# Changelog
+## Credits
+This changelog infrastructure was taken as is from the [Raven Design System](https://cuweb.github.io/rds/?path=/docs/get-started-introduction--docs) of Carleton University. 
+## Informations
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+Prefix the change with one of these keywords:
+
+- Added: for new features.
+- Breaking: for higher visibility of breaking changes
+- Changed: for changes in existing functionality.
+- Deprecated: for soon-to-be removed features.
+- Removed: for now removed features.
+- Fixed: for any bug fixes.
+- Security: in case of vulnerabilities.
+
+## [Unreleased]
+
+## [0.0.0]
+### Added
+- Initial Setup of infrastructure and some developper tests
+### Changed
+- Changed stuff</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> dev-tests/PAGE</h2>
+      <div class="badges">
+        
+        <label for="doc-86-dev-tests-page-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/dev-tests/arborescence.mdx">dev-tests-page--docs · ./src/stories/dev-tests/arborescence.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-86-dev-tests-page-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta, Canvas } from &quot;@storybook/addon-docs/blocks&quot;;
+import { moduleMetadata } from &#39;@storybook/angular&#39;;
+import * as DWStories from &#39;./dw.stories&#39;
+import * as DynvisStories from &#39;./dynvis.stories&#39;
+
+Cette page est pour tester l&#39;apparition de contenu dans une arborescence pluri-Niveau
+
+&lt;Meta title=&quot;dev-tests/PAGE&quot; /&gt;
+
+#DW Implementation
+This is the test for implementing a dw chart but on a simple component
+
+&lt;Canvas of={DWStories.Default} /&gt;
+
+&lt;Canvas of={DynvisStories.Default} /&gt;</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+<article
+  class="card is-doc no-doc-error"
+  role="listitem"
+  aria-label="Docs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Introduction</h2>
+      <div class="badges">
+        
+        <label for="doc-87-introduction-docs-content" class="badge ok as-toggle">view content</label>
+      </div>
+    </div>
+    <div class="meta" title="./src/stories/overview.mdx">introduction--docs · ./src/stories/overview.mdx</div>
+    
+  </div>
+
+  <!-- Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="doc-87-introduction-docs-content" class="tg tg-content" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-content">
+          <div class="mdx-content">
+            <pre><code>import { Meta } from &quot;@storybook/addon-docs/blocks&quot;;
+
+&lt;Meta title=&quot;Introduction&quot;/&gt;
+
+# Grand Titre
+## Plus petit titre
+
+</code></pre>
+          </div>
+        </div>
+  </div>
+</article>
+    </div>
+    
+  </div>
+</main>
+</body>
+</html>  

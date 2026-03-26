@@ -15,13 +15,13 @@ type Story = StoryObj<DWComponent>;
 
 export const Description: Story = {
   args: {
-    iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-arrowChart/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/arrow/gr-arrowChart/index.html",
   },
 }
 
 export const groups: Story = {
     args: {
-      iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-arrowChart-groups/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/arrow/gr-arrowChart-groups/index.html",
     },
   }
 

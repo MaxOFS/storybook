@@ -15,18 +15,18 @@ type Story = StoryObj<DWComponent>;
 
 export const Description1: Story = {
   args: {
-    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/barChart/gr-stackedBar/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/bar/gr-stackedBar/index.html",
   },
 }
 
 export const Description2: Story = {
     args: {
-      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/barChart/gr-stackedBar2/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/bar/gr-stackedBar2/index.html",
     },
   }
 
 export const groups: Story = {
     args: {
-      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/barChart/gr-stackedBar-groups/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/bar/gr-stackedBar-groups/index.html",
     },
   }

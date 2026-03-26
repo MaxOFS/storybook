@@ -15,19 +15,19 @@ type Story = StoryObj<DWComponent>;
 
 export const Description: Story = {
   args: {
-    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/areaChart/gr-areaChart/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/area/gr-areaChart/index.html",
   },
 }
 
 export const breaks: Story = {
     args: {
-      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/areaChart/gr-areaChart-breaks/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/area/gr-areaChart-breaks/index.html",
     },
   }
   
 export const diverging: Story = {
     args: {
-      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/areaChart/gr-areaChart-diverging/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/area/gr-areaChart-diverging/index.html",
     },
   }
   

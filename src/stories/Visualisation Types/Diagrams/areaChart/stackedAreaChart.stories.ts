@@ -15,13 +15,13 @@ type Story = StoryObj<DWComponent>;
 
 export const Description: Story = {
   args: {
-    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/areaChart/gr-stackedArea/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/area/gr-stackedArea/index.html",
   },
 }
 
 export const breaks: Story = {
     args: {
-      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/areaChart/gr-stackedArea-breaks/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/area/gr-stackedArea-breaks/index.html",
     },
   }
 

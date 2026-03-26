@@ -1,7 +1,33 @@
-import { Meta, Canvas } from "@storybook/blocks";
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
 
 <Meta title="Accessibility/Colors"/>
 
 # Rules of Accessibility for Colors
-## Plus petit titre
+Color should not be used as the only visual variable to communicate an information or to distinguish a visual element.
+If color is used to communicate information, it must be accessible to all users, including users with color difficulties or limited vision. 
+
+It is therefore essential to have a sufficient contrast and color palettes that are also accessible to people with color blindness. 
+## Contrast
+According to the WCAG 2.1 guidelines, the contrast must be at least 3:1. 
+## Color tools
+In order to generate an accessible color scale, the following tools can be used:
+### Adobe color
+As a first step, it is important to pick colors that provide a minimun contrast of 3:1. The Adobe Color Accessibility Tool displays the contrast and provides a preview of the color in action for graphic components.
+
+### VizPalette
+As soon as colors with enough contrast have been picked, the VizPalette tool is a great tool, to see how the different colors interact with each other in combination and how they look in action by generating the different views for:
+
+#### Deuteranomaly (2,7%)
+
+#### Protanomaly (0,66%)
+
+#### Protanopia (0,59%)
+
+#### Deuteranopia (0,56%)
+
+### Chroma.js
+In order to create sequential or diverging colors Chroma.js is a great tool to mastering multi-hued, multi-stops color scales.
+
+### Adobe Illustrator
+Adobe Illustrator tool allows to visualize the window with Protanopia or Deuteranopia colorblindness (View > Proof Setup)
