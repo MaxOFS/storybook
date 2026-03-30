@@ -27,18 +27,18 @@ export const Confidence: Story = {
 
 export const Overlay: Story = {
   args: {
-    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/barChart/gr-barChart-overlay/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/bar/gr-barChart-overlay/index.html",
   }
 }
 
 export const Groups: Story = {
   args: {
-    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/barChart/gr-barChart-groups/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/bar/gr-barChart-groups/index.html",
   }
 }
 
 export const divergent: Story = {
   args: {
-    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/barChart/gr-barChart-diverging/index.html",
+    iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/bar/gr-barChart-diverging/index.html",
   }
 }
