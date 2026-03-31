@@ -18,7 +18,7 @@ A Bar Chart is similar to a Column Chart, both show comparisons among categories
 In a Bar Chart, the Y-axis represents the categories being compared while the X-axis represents a measured value. The Y-axis will generally be set with a categorical ordinal scale. The length of the bars is proportional to the values displayed.
 <Canvas of={chartStories.Description} />
 ## Anatomy
-<img src="./barChart_anatomy.png" alt="alt"/>
+<img src="./vizTypes/barChart_anatomy.png" alt="alt"/>
 ## Chart variations
 ### Bar chart with a confidence interval
 <Canvas of={chartStories.Confidence} />
@@ -32,7 +32,10 @@ The lower and upper margin of the confidence interval is shown by an overlay. Us
 ## Do's and don'ts
 ### Axis starts at 0
 Diagrams must always start at 0 otherwise the perception is distorted (unless the diagram represents an index, in which case the 100 value is mandatory). Deviations are allowed if the interruption is clearly marked. 
+<img src="./vizTypes/barChart_DoDont_Axis0.png" alt="alt"/>
 ### Horizontal layout
 All charts with long labels, have to be rotated by 90° to be compatible with small screens (mobile). 
+<img src="./vizTypes/barChart_DoDont_Horizontal.png" alt="alt"/>
 ### Sort unordered categories by metric
 Appropriate sorting, which is almost always based on a metric, is important to effectively convey information in a bar chart and increase readability.
+<img src="./vizTypes/barChart_DoDont_Sort.png" alt="alt"/>
