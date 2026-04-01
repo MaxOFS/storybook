@@ -15,6 +15,11 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    options: {
+      storySort:{
+        order: ['Introduction', 'Changelog', 'Readability',['Introduction'], 'Corporate', ['Introduction'], 'Accessibility',['Introduction'], 'Cross-Media',['Introduction']]
+      }
+    },
   },
 };
 
