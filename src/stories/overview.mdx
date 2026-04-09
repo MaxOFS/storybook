@@ -12,24 +12,32 @@ It is also important that static and interactive visualizations share a common d
 The FSO’s visualizations are designed for a large audience and must be accessible to the whole population. The guidelines are compliant with the Web Content Accessibility Guidelines (WCAG) 2.1.
 
 The FSO disseminates statistical information by using visualizations across many communication channels (print publication, web, mobile, SOME). It is therefore very important that visualizations are reusable and cross-media.
+
 <div style={{ display: 'flex', justifyContent: 'center' }}>
-    <table>
-      <thead>
-        <tr>
-          <th>Readability</th>
-          <th>Corporate</th>
-          <th>Accessibility</th>
-          <th>Cross-media</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>![](./readability.svg)</td>
-          <td>![](./corporate.svg)</td>
-          <td>![](./accessibility.svg)</td>
-          <td>![](./crossmedia.svg)</td>
+    <table
+      style={{
+        width: "60vw",
+        height: "25vh",
+        border: "none",
+        borderCollapse: "collapse"
+      }}>
+      <tbody style={{ border: "none" }}>
+        <tr style={{ border: "none" }}>
+          <td style={{ border: "none" }}>![](./readability.svg)</td>
+          <td style={{ border: "none" }}>![](./corporate.svg)</td>
+          <td style={{ border: "none" }}>![](./accessibility.svg)</td>
+          <td style={{ border: "none" }}>![](./crossmedia.svg)</td>
         </tr>
       </tbody>
+        <tr
+        style={{
+          border: "none"
+        }}>
+        <td style={{ border: "none", textAlign: "center" }}>Readability</td>
+        <td style={{ border: "none", textAlign: "center" }}>Corporate</td>
+        <td style={{ border: "none", textAlign: "center" }}>Accessibility</td>
+        <td style={{ border: "none", textAlign: "center" }}>Cross-media</td>
+      </tr>
     </table>
 </div>
 ## Guidelines audience
@@ -42,23 +50,15 @@ These guidelines are in compliance with the W3C web standards, the AA level defi
 These guidelines are constantly evolving in line with innovations and developments in the field of data visualisation. It is therefore essential to define which parts of the documentation are stable or are still in progress.
 
 We have therefore set up a Stability Index with 4 different levels described below.
-<div style={{ display: 'flex', justifyContent: 'center' }}>
-    <table>
-      <thead>
-        <tr>
-          <th>![](./stable.png)</th>
-          <th>![](./unstable.png)</th>
-          <th>![](./experimental.png)</th>
-          <th>![](./underconstruction.png)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>IN USE: These rules have been approved and are considered “ready to use”. It should not be changed unless serious issues are identified.</td>
-          <td>DO NOT USE: These rules may be subject to major changes or even be removed.</td>
-          <td>USE WITH CAUTION: These rules have not been approved and are considered as a “draft “. There may be some changes in the near future.</td>
-          <td>SOON TO BE IN USE: These rules are currently in the process of being established. It will be available soon.</td>
-        </tr>
-      </tbody>
-    </table>
-</div>
+
+<img src="./stable.png" alt="status stable" width="120px" style={{ marginTop: "26px", display: "block" }}/>
+<b>IN USE:</b> These rules have been approved and are considered “ready to use”. It should not be changed unless serious issues are identified.
+
+<img src="./unstable.png" alt="status unstable" width="120px" style={{ marginTop: "35px", display: "block" }}/>
+<b>DO NOT USE:</b> These rules may be subject to major changes or even be removed.
+
+<img src="./experimental.png" alt="status experimental" width="120px" style={{ marginTop: "35px", display: "block" }}/>
+<b>USE WITH CAUTION:</b> These rules have not been approved and are considered as a “draft “. There may be some changes in the near future.
+
+<img src="./underconstruction.png" alt="status underconstruction" width="120px" style={{ marginTop: "35px", display: "block" }}/>
+<b>SOON TO BE IN USE:</b> These rules are currently in the process of being established. It will be available soon.
