@@ -60,10 +60,23 @@ head1 {
   color: #000000
 }
 
+head1M {
+  font-family: "Noto Sans";
+  font-size: 20px;
+  line-height: 26px;
+  color: #000000
+}
+
 head2 {
   font-family: "Noto Sans";
   font-size: 20px;
   line-height: 26px;
+  color: #000000
+}
+head2M {
+  font-family: "Noto Sans";
+  font-size: 18px;
+  line-height: 24px;
   color: #000000
 }
 
@@ -73,11 +86,23 @@ head3 {
   line-height: 24px;
   color: #000000
 }
+head3M {
+  font-family: "Noto Sans";
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000
+}
 
 head4 {
   font-family: "Noto Sans";
   font-size: 14px;
   line-height: 18px;
+  color: #000000
+}
+head4M {
+  font-family: "Noto Sans";
+  font-size: 12px;
+  line-height: 16px;
   color: #000000
 }
 
@@ -87,11 +112,23 @@ paragraph1 {
   line-height: 20px;
   color: #000000
 }
+paragraph1M {
+  font-family: "Noto Sans";
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000
+}
 
 paragraph2 {
   font-family: "Noto Sans";
   font-size: 14px;
   line-height: 18px;
+  color: #000000
+}
+paragraph2M {
+  font-family: "Noto Sans";
+  font-size: 12px;
+  line-height: 16px;
   color: #000000
 }
 
