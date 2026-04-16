@@ -1,8 +1,11 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as exportStories from './export.stories'
 
 <Meta title="Corporate/UI-Elements/Export Buttons"/>
 
 # Export Buttons
 ## Plus petit titre
+<Canvas of={exportStories.simple} />
+Every visualization can be downloaded in the following formats: csv, png, pdf or svg.
+On click a simple dropdown appears, where one of the desired output formats can be selected.

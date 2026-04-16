@@ -1,8 +1,17 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as sliderStories from './sliders.stories'
 
 <Meta title="Corporate/UI-Elements/Sliders"/>
 
 # Sliders
-## Plus petit titre
+A time slider is used to select time intervals for time-related data displays
+
+## Simple slider
+<Canvas of={sliderStories.simple} />
+In a simple slider only one point in time can be selected.
+## Range slider
+<Canvas of={sliderStories.range} />
+In a ranger slider a time range can be selected.
+## Block slider
+<Canvas of={sliderStories.block} />
