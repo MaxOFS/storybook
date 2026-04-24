@@ -1,7 +1,6 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
-
+import * as DynvisStories from './stackedPyramidChart.stories'
 
 <Meta title="Visualisation Types/Diagrams/Butterfly Chart/Stacked Pyramid Chart"/>
 
@@ -10,16 +9,13 @@ import { moduleMetadata } from '@storybook/angular';
 ## Table of contents
 - [Description](#description)
 - [Anatomy](#anatomy)
-- [Chart variations](#chart-variations)
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
 A stacked Pyramid chart is similar to a standard pyramid chart in which it illustrates the distribution of various age groups. The main difference being that it showcases the distribution of multiple groups.
-
+<Canvas of={DynvisStories.Default} />
 ## Anatomy
 <img src="./vizTypes/stackedPyramid_anatomy.png" alt="alt"/>
-## Chart variations
-
 ## Do's and don'ts
 - Do not use if you want to represent precise values, this type is best used to convey trends.
 - Use only when you have more than 3 age groups  

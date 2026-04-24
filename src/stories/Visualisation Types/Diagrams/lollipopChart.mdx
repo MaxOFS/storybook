@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as chartStories from './lollipopChart.stories'
 
 
 <Meta title="Visualisation Types/Diagrams/Lollipop Chart"/>
@@ -14,8 +14,12 @@ import { moduleMetadata } from '@storybook/angular';
 
 ## Description
 A Lollipop Chart replaces the bars in a Bar Chart with lines and dotss. This type of chart is preferable when there is a lot of data or when the reprented values are all relatively similar. Lines and dots in these cases are easier to visualize. In fact, Lollipops draw more attention to the data value than standard bars/columns and can also display rank and value effectively. 
+<Canvas of={chartStories.description} />
 ## Anatomy
 <img src="./vizTypes/lollipop_anatomy.png" alt="alt"/>
 ## Chart variations
-
+### Lollipop chart in groups
+<Canvas of={chartStories.groups} />
 ## Do's and don'ts
+- Attention, unlike a Dumbbell dot plot chart, the starting point is usually not marked by a dot in a Simple Lollipop Chart. It normally starts at Zero, as in a regular Bar Chart.
+- It is best to order the categories in function of X values (from biggest to lowest) for a better visual output

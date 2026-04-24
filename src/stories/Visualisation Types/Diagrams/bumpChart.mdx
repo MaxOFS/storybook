@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as chartStories from './bumpChart.stories'
 
 
 <Meta title="Visualisation Types/Diagrams/Bump Chart"/>
@@ -14,9 +14,10 @@ import { moduleMetadata } from '@storybook/angular';
 
 ## Description
 A bump chart is used to showcase the changes in rank over time of multiple groups or individuals. This type of chart is effective in showing trends, comparing evolutions. A notable example of a bump chart is the one made by GitHub to showcase [the top programming languages](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/)
-
+<Canvas of={chartStories.description} />
 ## Anatomy
 <img src="./vizTypes/bump_anatomy.png" alt="alt"/>
-## Chart variations
-
 ## Do's and don'ts
+- Keep rank axis top-to-bottom (1 = top)
+- Use bump charts when ordinal rank is what matters, not the underlying values. They make it easy to see which entities rise, fall, or hold steady across time.
+- When the chart has a narrative focus, mute background series to gray and emphasise the key series with a stronger colour and slightly heavier stroke.

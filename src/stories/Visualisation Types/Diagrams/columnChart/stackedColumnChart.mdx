@@ -10,7 +10,6 @@ import * as chartStories from './stackedColumnChart.stories'
 ## Table of contents
 - [Description](#description)
 - [Anatomy](#anatomy)
-- [Chart variations](#chart-variations)
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
@@ -22,7 +21,9 @@ A vertical layout is the best choice for short labels and trends.
 <Canvas of={chartStories.description} />
 ## Anatomy
 <img src="./vizTypes/stackedColumn_anatomy.png" alt="alt"/>
-## Chart variations
-
 ## Do's and don'ts
-
+- In the case of a single set of categories on the X-axis, it is best to order them in function of Y values (from biggest to lowest) for a better visualization output
+- Exception made of the first color item (closest to the X-axis), the values of the colored items represented are added on top of the previous category, this means that the exact value can’t be read on the graph but needs to be calculated. What is shown is the relative importance of each group and the total of the stacked variables.
+- Time intervals should be equal
+- Avoid too complex data
+- Avoid too many color categories

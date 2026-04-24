@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as chartStories from './histogram.stories'
 
 
 <Meta title="Visualisation Types/Diagrams/Histogram"/>
@@ -9,15 +9,14 @@ import { moduleMetadata } from '@storybook/angular';
 ## Table of contents
 - [Description](#description)
 - [Anatomy](#anatomy)
-- [Chart variations](#chart-variations)
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
 A histogram shows the distribution of a continuous quantitative variable.
 
 The height represents the frequency of the classes defined on the X-axis. The classes must have the same range of values.
+<Canvas of={chartStories.description} />
 ## Anatomy
 
-## Chart variations
-
 ## Do's and don'ts
+- Use equal bin widths throughout

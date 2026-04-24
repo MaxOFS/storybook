@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as DynvisStories from './chordChart.stories'
 
 
 <Meta title="Visualisation Types/Diagrams/Chord Diagram"/>
@@ -10,14 +10,14 @@ import { moduleMetadata } from '@storybook/angular';
 ## Table of contents
 - [Description](#description)
 - [Anatomy](#anatomy)
-- [Chart variations](#chart-variations)
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
 A chord diagram is used to display the links between multiple entities in a matrix. The entities are placed around a circle and the bi-directionnal flows between them typically are represented as arcs connecting each entity with each other.
-
+<Canvas of={DynvisStories.Default} />
 ## Anatomy
 <img src="./vizTypes/chord_anatomy.png" alt="alt"/>
-## Chart variations
 ## Do's and don'ts
-
+- The width of each chord at its endpoints should be proportional to the volume of flow it represents. Readers rely on chord width to judge the relative size of each relationship.
+- Place group labels radially outside the arc ring, close to the midpoint of each arc segment. Avoid placing labels inside the circle where they will overlap with chords.
+- Colour each chord to match its source group's arc segment. This makes it easy to trace which group is sending or receiving the most flow without needing to follow individual chords across the circle.
