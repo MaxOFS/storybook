@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as chartStories from './tableVisualisation.stories'
 
 
 <Meta title="Visualisation Types/Tables/Table with Visualisation"/>
@@ -8,7 +8,6 @@ import { moduleMetadata } from '@storybook/angular';
 # Table with a visualisation
 ## Table of contents
 - [Description](#description)
-- [Anatomy](#anatomy)
 - [Chart variations](#chart-variations)
 - [Do's and don'ts](#dos-and-donts)
 
@@ -16,19 +15,17 @@ import { moduleMetadata } from '@storybook/angular';
 A table with a visualization is a hybrid table containing numerical data and graphical elements in the same grid. It is used in order to put emphasis on certain trends, comparisons or rankings by integrating mini-graphs (bars, sparklines or icons) in the cells of a table.
 Lines are used to represent observations, organized in a hierarchical manner. Columns are assigned a numerical variable or visual elements, if they add something to the readability, each.
 
-## Anatomy
-
 ## Chart variations
 ### Table with bars
-
+<Canvas of={chartStories.bar} />
 ### Table with sparklines
-
+<Canvas of={chartStories.sparkline} />
 ### Table with columns
-
+<Canvas of={chartStories.column} />
 ### Table with icons
-
+<Canvas of={chartStories.icon} />
 ## Do's and don'ts
 - A [heatmap](?path=/docs/visualisation-types-diagrams-heatmap--docs) is a type of visualisation in itself. 
-- Not too many columns (* MH : how many maximum*)
+- Not too many columns
 - One subject per table
 - No cell fusion to guarantee machine readability

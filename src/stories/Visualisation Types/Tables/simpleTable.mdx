@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as chartStories from './simpleTable.stories'
 
 
 <Meta title="Visualisation Types/Tables/Simple Table"/>
@@ -8,7 +8,6 @@ import { moduleMetadata } from '@storybook/angular';
 # Simple Table
 ## Table of contents
 - [Description](#description)
-- [Anatomy](#anatomy)
 - [Chart variations](#chart-variations)
 - [Do's and don'ts](#dos-and-donts)
 
@@ -16,16 +15,18 @@ import { moduleMetadata } from '@storybook/angular';
 A simple table represents data in the form of a grid with lines and columns. It is used to show structured and readable information.
 Lines are used to represent observations, organized in a hierarchical manner. Columns are assigned a variable each. https://data.europa.eu/apps/data-
 visualisation-guide/intro-to-tidy-data
-
-## Anatomy
-
+<Canvas of={chartStories.description} />
 ## Chart variations
 ### Simple Table with total
+<Canvas of={chartStories.total} />
 ### Simple Table with highlight
+<Canvas of={chartStories.highlight} />
 ### Simple Table with flags
+<Canvas of={chartStories.flags} />
 ### Simple Table with Search/Sort functionality
+<Canvas of={chartStories.search} />
 
 ## Do's and don'ts
-- Not too many columns (* MH : how many maximum*)
+- Not too many columns
 - One subject per table
 - No cell fusion to guarantee machine readability

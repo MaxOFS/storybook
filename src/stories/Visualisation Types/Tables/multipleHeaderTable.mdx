@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as chartStories from './multipleHeaderTable.stories'
 
 
 <Meta title="Visualisation Types/Tables/Multiple Header Table"/>
@@ -8,23 +8,21 @@ import { moduleMetadata } from '@storybook/angular';
 # Multiple Header Table
 ## Table of contents
 - [Description](#description)
-- [Anatomy](#anatomy)
 - [Chart variations](#chart-variations)
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
 A multiple header table is similar to a hierarchical table but the groups and hierarchical levels are based on the variables (columns) and not the observations (lines) of the grid.
 Multiple header tables are not 100% machinereadable. Because merged header cells or multilevel headings break the predictable row/column associations required by machines.
-## Anatomy
-
+<Canvas of={chartStories.description} />
 ## Chart variations
 ### Multiple Header Table with flags
-
+<Canvas of={chartStories.flags} />
 ### Multiple Header Table with total
-
+<Canvas of={chartStories.total} />
 ### Multiple Header Table with highlight
-
+<Canvas of={chartStories.highlight} />
 ## Do's and don'ts
-- Not too many columns (* MH : how many maximum*)
+- Not too many columns
 - One subject per table
 - No cell fusion to guarantee machine readability
