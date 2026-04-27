@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { DynvisComponent } from '../../../app/dynvis.component';
 
 const meta: Meta<DynvisComponent> = {
-    title: 'Visualisation Types/Diagrams/Marimekko',
+    title: 'Visualisation Types/Diagrams/Treemap',
     component: DynvisComponent,
     tags: ['!dev', '!autodocs'],
     args: {
@@ -15,7 +15,7 @@ export default meta;
   
 export const Default: Story = {
     args: {
-      vizId: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/marimekko/gr-marimekko/VIZTYP-e-VIZID.html",
+      vizId: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/treemap/gr-treemap/VIZTYP-e-VIZID.html",
       lang: 'e'
     },
 }

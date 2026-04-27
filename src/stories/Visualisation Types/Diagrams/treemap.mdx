@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as treemapStories from './treemap.stories'
 
 
 <Meta title="Visualisation Types/Diagrams/Treemap"/>
@@ -9,13 +9,15 @@ import { moduleMetadata } from '@storybook/angular';
 ## Table of contents
 - [Description](#description)
 - [Anatomy](#anatomy)
-- [Chart variations](#chart-variations)
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
 A treemap or tile chart represents hierarchical data in the form of nested rectangles, which in turn may contain other rectangles. It is a way to display the proportion of each modality as a function of the total, as an alternative to the pie chart.
+<Canvas of={treemapStories.Default} />
 ## Anatomy
 <img src="./vizTypes/treemap_anatomy.png" alt="alt"/>
-## Chart variations
-
 ## Do's and don'ts
+- If the data has too many small categories, the visualization will be difficult
+- The data has to be hierarchical
+- Exact comparison between the categories should not be a primary concern
+- If optional color variable is used, a Legend will be necessary

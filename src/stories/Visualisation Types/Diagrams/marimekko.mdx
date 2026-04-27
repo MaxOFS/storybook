@@ -9,17 +9,17 @@ import * as marimekkoStories from './marimekko.stories'
 ## Table of contents
 - [Description](#description)
 - [Anatomy](#anatomy)
-- [Chart variations](#chart-variations)
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
 A Marimekko chart is used to represent qualitative variables. Unlike a normal stacked bar chart, both axes are variable.
 
 A bar is subdivided on one axis according to one qualitative variable, and then each subbar is subdivided on the other axis according to a second qualitative variable.
+<Canvas of={marimekkoStories.Default} />
 ## Anatomy
 <img src="./vizTypes/marimekko_anatomy.png" alt="alt"/>
-## Chart variations
 
 ## Do's and don'ts
-
-<Canvas of={marimekkoStories.Default} />
+- Keep the number of categories and segments small
+- Sort columns by width (largest to smallest) unless order is meaningful
+- A Marimekko chart encodes two dimensions at once: column width represents the share of a total (e.g. market size), and column height represents the composition within each category. Use it only when both dimensions are meaningful and worth showing together.

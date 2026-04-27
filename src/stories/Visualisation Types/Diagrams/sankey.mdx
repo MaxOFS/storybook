@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as sankeyStories from './sankey.stories'
 
 
 <Meta title="Visualisation Types/Diagrams/Sankey"/>
@@ -9,13 +9,17 @@ import { moduleMetadata } from '@storybook/angular';
 ## Table of contents
 - [Description](#description)
 - [Anatomy](#anatomy)
-- [Chart variations](#chart-variations)
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
 In a sankey or alluvial diagram variables are assigned to vertical axes that are parallel. Values are represented with blocks on each axis. The height of a block represents the size of the cluster and the height of a stream field represents the size of the components contained in both blocks connected by the stream field.
+<Canvas of={sankeyStories.Default} />
 ## Anatomy
 <img src="./vizTypes/sankey_anatomy.png" alt="alt"/>
-## Chart variations
-
 ## Do's and don'ts
+- The nodes should be arranged in an appropriate manner
+- There shouldn’t be too many flows with small quantities
+- Ther shouldn’t be a single flow dominating
+- There shouldn’t be too many individual flows
+- For better visualization, all the Y-axes should be ordered from biggest to smallest category block
+- There can’t be negative values
