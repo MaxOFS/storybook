@@ -17,7 +17,7 @@ const preview: Preview = {
     },
     options: {
       storySort:{
-        order: ['Introduction', 'Changelog', 'Readability',['Introduction'], 'Corporate', ['Introduction'], 'Accessibility',['Introduction'], 'Cross-Media',['Introduction']]
+        order: ['Introduction', 'Changelog', 'Readability',['Introduction'], 'Corporate', ['Introduction'], 'Accessibility',['Introduction'], 'Cross-Media',['Introduction'], 'Visualisation Types',['Introduction']]
       }
     },
   },
