@@ -13,12 +13,12 @@ import * as chartStories from './choropleth.stories'
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
-A Choropleth Quantitative Map shows how an indicator/variable changes across a geographic area. This map type displays the values of one continuous category with a color gradient (sequential color scheme), in relation to a statistical area (administrative unit) or an entity (ex: inhabitant). The data may include negative values, in which case there will be a different color for positive and negative values (qualitative color scheme)
+A Choropleth Quantitative Map shows how an indicator/variable changes across a geographic area. This map type displays the values of one continuous category with a color gradient (sequential color scheme), in relation to a statistical area (administrative unit) or an entity (ex: inhabitant). The data may include negative values, in which case there will be a different color for positive and negative values (qualitative color scheme).
 <Canvas of={chartStories.Description} />
 ## Anatomy
-
-## Chart variations
-
+<img src="./vizTypes/choropleth_anatomy.png" alt="alt"/>
 ## Do's and don'ts
 - Avoid visualization of absolute data (integer values)
 - Avoid too many categories
+- Include a complete legend with class boundaries
+- Choose a classification method appropriate to the data

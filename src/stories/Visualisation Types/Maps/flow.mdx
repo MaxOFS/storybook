@@ -4,8 +4,8 @@ import { moduleMetadata } from '@storybook/angular';
 
 
 <Meta title="Visualisation Types/Maps/Flow Map"/>
-
-# Cartograms
+<img src="./experimental.png" alt="status experimental" width="120px" style={{ marginTop: "35px", display: "block" }}/>
+# Flow maps
 ## Table of contents
 - [Description](#description)
 - [Anatomy](#anatomy)
@@ -13,9 +13,20 @@ import { moduleMetadata } from '@storybook/angular';
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
-A Flow Map shows movements of objects between locations (administrative units). The values of one continuous variable are shown in two directions, and proportionally (variation of line-width).
+Flow maps show movements or flows of data between locations. They can be used to visualise qualitative (categorical) or quantitative (numerical) data. Qualitative data is represented by colours, whilst quantitative data is visualised using line thickness, which illustrates the quantitative relationships. Arrows indicate the direction of the data flow, whilst points can additionnaly indicate the quantity of a second data set. 
+<img src="./vizTypes/flow_description.png" alt="alt"/>
 ## Anatomy
-
+<img src="./vizTypes/flow_anatomy.png" alt="alt"/>
 ## Chart variations
-
+### Straight flows
+<img src="./vizTypes/flow_straight.png" alt="alt"/>
+### Curved flows
+<img src="./vizTypes/flow_curved.png" alt="alt"/>
+### Straight two-way flows
+<img src="./vizTypes/flow_straightTwoway.png" alt="alt"/>
+### Curved two-way flows
+<img src="./vizTypes/flow_curvedTwoway.png" alt="alt"/>
 ## Do's and don'ts
+- Radial lines can create an optical illusion, which helps to better represent a route. With a small dataset, the curvature also makes it possible to avoid overlaps with points or other flows.
+- When dealing with large amounts of data, the visualisation should look as simple as possible. As such, straight-line flows are used, as these are easier to read. 
+- In principle, any layout can be used. However when dealing with large amounts of data, it is important to ensure good readability, which is why the data should, where necessary, be reduced or made easier to understand through additional interactivity.

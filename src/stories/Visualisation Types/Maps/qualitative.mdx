@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as chartStories from './qualitative.stories'
 
 
 <Meta title="Visualisation Types/Maps/Qualitative Map"/>
@@ -15,8 +15,11 @@ import { moduleMetadata } from '@storybook/angular';
 ## Description
 A Choropleth Qualitative Map shows how different categories are distributed geographically (over an administrative unit). It is done through the spatial distribution of discrete categories represented by different colors (see color guidelines). 
 With nominal type of categories, the chosen color types are qualitative, whereas with ordinal categories the chosen colors are sequential (color gradient). Both can be present in a single map. 
+<Canvas of={chartStories.Description} />
 ## Anatomy
-
-## Chart variations
+<img src="./vizTypes/qualitative_anatomy.png" alt="alt"/>
 
 ## Do's and don'ts
+- Keep the number of categories small
+- Ensure adjacent regions are visually distinguishable
+- Use a qualitative palette, distinct hues, equal perceptual weight

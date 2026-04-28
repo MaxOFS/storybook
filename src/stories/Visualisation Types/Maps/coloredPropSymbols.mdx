@@ -9,13 +9,17 @@ import * as chartStories from './coloredPropSymbols.stories'
 ## Table of contents
 - [Description](#description)
 - [Anatomy](#anatomy)
-- [Chart variations](#chart-variations)
 - [Do's and don'ts](#dos-and-donts)
 
 ## Description
+Coloured proportional symbols combine two visual encodings on a single map: symbol size represents an absolute quantity (such as a total count or aggregate value), while symbol colour encodes a second, independent variable. This second variable can typically be a qualitative category or a coarsely classed rate.
 <Canvas of={chartStories.Description} />
 ## Anatomy
-
-## Chart variations
+<img src="./vizTypes/colProportionnal_anatomy.png" alt="alt"/>
 
 ## Do's and don'ts
+- Provide two separate, clearly labelled legends
+- Ensure size and colour encode genuinely distinct variables
+- Use a solid stroke to keep symbols readable at all sizes
+- Use colour for qualitative categories or classed rates
+- Avoid too many categories

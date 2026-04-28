@@ -1,6 +1,6 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
-
+import * as chartStories from './propSymbols.stories'
 
 
 <Meta title="Visualisation Types/Maps/Proportionnal Symbols Map"/>
@@ -14,8 +14,14 @@ import { moduleMetadata } from '@storybook/angular';
 
 ## Description
 This map type will display a comparison among values of one continuous category, which may include negative values. The data values are shown proportionally.
+<Canvas of={chartStories.Description} />
 ## Anatomy
-
-## Chart variations
+<img src="./vizTypes/proportionnal_anatomy.png" alt="alt"/>
 
 ## Do's and don'ts
+- Scale symbol area proportionally to the value
+- Include a graduated size legend
+- Use for absolute counts that cannot be normalised
+- Anchor symbols to a specific position (typically the centroid of a region)
+- Avoid symbols that grow so large they obscure the base map
+- Avoid visualization of relative data (rates, percentages, etc.)
