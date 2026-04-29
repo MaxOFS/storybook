@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/angular';
+import { configureSort } from 'storybook-multilevel-sort';
 
 const config: StorybookConfig = {
   stories: [
@@ -22,5 +23,6 @@ const config: StorybookConfig = {
     check: false,
   }
 };
+
 
 export default config;

@@ -17,7 +17,7 @@ const preview: Preview = {
     },
     options: {
       storySort:{
-        order: ['Introduction', 'Changelog', 'Readability',['Introduction'], 'Corporate', ['Introduction'], 'Accessibility',['Introduction'], 'Cross-Media',['Introduction'], 'Visualisation Types',['Introduction']]
+        order: ['Introduction', 'Changelog', 'Readability',['Introduction'], 'Corporate', ['Introduction','Colors',['Introduction','Qualitatitive colours', 'Themes colours', 'Sequential colours', 'Diverging colours', 'Political parties colours', 'Corporate colours']], 'Accessibility',['Introduction'], 'Cross-Media',['Introduction'], 'Visualisation Types',['Introduction']]
       }
     },
   },
