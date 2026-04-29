@@ -10,7 +10,7 @@ import * as chartStories from './arrowChart.stories'
 - [Description](#description)
 - [Anatomy](#anatomy)
 - [Chart variations](#chart-variations)
-- [Do's and don'ts](#dos-and-donts)
+- [Points of attention](#points-of-attention)
 
 ## Description
 The arrow chart is a specialised form of the connected dot plot (dumbbell plot). While a dumbbell plot treats both endpoints symmetrically, the arrow chart introduces directionality: an arrowhead at the end point unambiguously signals whether a value has increased or decreased, and by how much. This makes it particularly effective for before/after comparisons, temporal evolution, or any transition between two states.
@@ -22,7 +22,7 @@ Categories are displayed along the vertical axis; the horizontal axis carries th
 ## Chart variations
 ### Arrow chart with groups
 <Canvas of={chartStories.groups} />
-## Do and don't
+## Points of attention
 - Always label the start value and end value.
 - Use arrows to encode direction and magnitude of change across a single time interval.
 - The visual length of an arrow should faithfully reflect the size of the change. Keep the axis scale consistent across all categories.

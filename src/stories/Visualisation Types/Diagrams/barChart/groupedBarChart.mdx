@@ -10,7 +10,7 @@ import * as chartStories from './groupedBarChart.stories'
 - [Description](#description)
 - [Anatomy](#anatomy)
 - [Chart variations](#chart-variations)
-- [Do's and don'ts](#dos-and-donts)
+- [Points of attention](#points-of-attention)
 
 ## Description
 A Grouped Bar Charts is used when two or more data sets are displayed side-by-side and grouped together under the same categories. It is a standard way to compare the size of things, and it allows to compare multiple series. However, it can become tricky to read with more than 2 series. The horizontal layout is the best choice for long text labels and trends. Grouped bar charts can group the categories on the same axis.
@@ -24,7 +24,7 @@ A Grouped Bar Charts is used when two or more data sets are displayed side-by-si
 <Canvas of={chartStories.confidence} />
 ### Grouped bar chart with overlay
 <Canvas of={chartStories.overlay} />
-## Do and don't
+## Point of attention
 ### Axis starts at 0
 Diagrams must always start at 0 otherwise the perception is distorted (unless the diagram represents an index, in which case the 100 value is mandatory). Deviations are allowed if the interruption is clearly marked. 
 ### Horizontal layout

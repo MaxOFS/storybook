@@ -10,7 +10,7 @@ import * as chartStories from './stackedAreaChart.stories'
 - [Description](#description)
 - [Anatomy](#anatomy)
 - [Chart variations](#chart-variations)
-- [Do's and don'ts](#dos-and-donts)
+- [Points of attention](#points-of-attention)
 
 ## Description
 A stacked Area Chart shows the evolution of the variable along the X-axis, but also its relationship with the other variables and with the total (along the Y-axis). Each variable is represented by an individual, coloured area.
@@ -25,7 +25,7 @@ Use the stacked area chart to show trends over time among related items.
 ## Chart variations
 ### Stacked area chart with breaks
 <Canvas of={chartStories.breaks} />
-## Do and don't
+## Points of attention
 - Y-axis should start at zero
 - Exception made of the first line (closest to the X-axis), the values represented are added on top of the previous category, this means that the exact value can’t be read on the graph but needs to be calculated. What is shown is the relative importance of each group and the total of the stacked variables.
 - Negative values can’t be treated
