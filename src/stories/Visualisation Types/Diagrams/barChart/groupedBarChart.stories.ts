@@ -35,6 +35,6 @@ export const groups: Story = {
 
 export const confidence: Story = {
     args: {
-      iframeUrl: "https://datavis-a.bfs.admin.ch/guidelines/assets/visualisationTypes/gr-groupedBar-confidence/index.html",
+      iframeUrl: "https://datavis.bfs.admin.ch/guidelines/visualisationTypes/diagrams/bar/gr-groupedBar-confidence/index.html",
     },
   }
