@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="exportSvg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1203.42 176.87">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .st0, .st1 {
+        fill: none;
+      }
+
+      .st2 {
+        fill: #757575;
+      }
+
+      .st2, .st3, .st4, .st5 {
+        isolation: isolate;
+      }
+
+      .st2, .st4, .st5 {
+        font-family: NotoSans, 'Noto Sans';
+        font-size: 12px;
+      }
+
+      .st6 {
+        fill-opacity: .6;
+      }
+
+      .st1 {
+        stroke: #757575;
+      }
+
+      .st7 {
+        fill: #ccc;
+      }
+
+      .st5 {
+        fill: #333;
+      }
+
+      .st8 {
+        fill: #399d50;
+      }
+    </style>
+  </defs>
+  <g id="__svelte-dw-svg">
+    <g id="container-svg_container-body-svg_datawrapper-TTYuJ-k7lwvj-svg">
+      <g id="container-svg_container-bodyTop-svg_datawrapper-TTYuJ-lmtz6e-svg">
+        <g id="container-svg_container-bodyCenter-svg_datawrapper-TTYuJ-1a857wv-svg">
+          <g id="chart-svg">
+            <rect class="st8" x="226.71" y="4.97" width="8" height="8"/>
+            <g class="st3">
+              <text class="st2" transform="translate(242.71 11.56)"><tspan x="0" y="0">P25</tspan></text>
+            </g>
+            <g class="st3">
+              <text class="st2" transform="translate(266.84 11.56)"><tspan x="0" y="0">cum - P75 cum</tspan></text>
+            </g>
+            <rect class="st7" x="366.85" y="4.97" width="8" height="8"/>
+            <g class="st3">
+              <text class="st2" transform="translate(382.85 11.56)"><tspan x="0" y="0">10</tspan></text>
+            </g>
+            <g class="st3">
+              <text class="st2" transform="translate(399.71 11.56)"><tspan x="0" y="0">et 90 centiles</tspan></text>
+            </g>
+            <rect class="st6" x="490.77" y="4.97" width="2" height="8"/>
+            <g class="st3">
+              <text class="st2" transform="translate(500.77 11.56)"><tspan x="0" y="0">Médiane</tspan></text>
+            </g>
+            <g id="grid-container-svg">
+              <g id="grid-svg">
+                <g id="x-grid-lines-svg_grid-x-svg_datawrapper-TTYuJ-bgupc2-svg">
+                  <line class="st1" x1="357.38" y1="169.36" x2="357.38" y2="56.36"/>
+                  <line class="st1" x1="426.08" y1="169.36" x2="426.08" y2="56.36"/>
+                  <line class="st1" x1="494.78" y1="169.36" x2="494.78" y2="56.36"/>
+                  <line class="st1" x1="563.49" y1="169.36" x2="563.49" y2="56.36"/>
+                  <line class="st1" x1="632.19" y1="169.36" x2="632.19" y2="56.36"/>
+                  <line class="st1" x1="700.89" y1="169.36" x2="700.89" y2="56.36"/>
+                  <line class="st1" x1="769.59" y1="169.36" x2="769.59" y2="56.36"/>
+                  <line class="st1" x1="838.29" y1="169.36" x2="838.29" y2="56.36"/>
+                  <line class="st1" x1="906.99" y1="169.36" x2="906.99" y2="56.36"/>
+                  <line class="st1" x1="975.69" y1="169.36" x2="975.69" y2="56.36"/>
+                </g>
+              </g>
+            </g>
+            <g class="st3">
+              <text class="st5" transform="translate(239.81 77.66)"><tspan x="0" y="0">Label1</tspan></text>
+            </g>
+            <rect class="st7" x="439.82" y="66.36" width="535.75" height="17"/>
+            <rect class="st8" x="507.84" y="66.36" width="238.12" height="17"/>
+            <rect class="st6" x="601.23" y="65.36" width="2" height="19"/>
+            <g class="st3">
+              <text class="st5" transform="translate(239.81 96.66)"><tspan x="0" y="0">Label2</tspan></text>
+            </g>
+            <rect class="st7" x="442.84" y="85.36" width="506.77" height="17"/>
+            <rect class="st8" x="508.93" y="85.36" width="234.97" height="17"/>
+            <rect class="st6" x="597.38" y="84.36" width="2" height="19"/>
+            <g class="st3">
+              <text class="st5" transform="translate(239.81 115.66)"><tspan x="0" y="0">Label3</tspan></text>
+            </g>
+            <rect class="st7" x="447.65" y="104.36" width="471.44" height="17"/>
+            <rect class="st8" x="510.99" y="104.36" width="213.95" height="17"/>
+            <rect class="st6" x="591.6" y="103.36" width="2" height="19"/>
+            <g class="st3">
+              <text class="st5" transform="translate(239.81 134.66)"><tspan x="0" y="0">Label4</tspan></text>
+            </g>
+            <rect class="st7" x="436.93" y="123.36" width="465.41" height="17"/>
+            <rect class="st8" x="506.04" y="123.36" width="199.25" height="17"/>
+            <rect class="st6" x="580.07" y="122.36" width="2" height="19"/>
+            <g class="st3">
+              <text class="st5" transform="translate(239.81 153.66)"><tspan x="0" y="0">Label5</tspan></text>
+            </g>
+            <rect class="st7" x="433.09" y="142.36" width="431.05" height="17"/>
+            <rect class="st8" x="489.15" y="142.36" width="185.64" height="17"/>
+            <rect class="st6" x="560.27" y="141.36" width="2" height="19"/>
+            <g id="grid-container-svg1" data-name="grid-container-svg">
+              <g id="grid-svg1" data-name="grid-svg">
+                <g id="x-tick-labels-svg_grid-x-svg_number-axis-svg_datawrapper-TTYuJ-6boht-svg">
+                  <g class="st3">
+                    <text class="st2" transform="translate(285.37 48.36)"><tspan x="0" y="0">0</tspan></text>
+                  </g>
+                  <g class="st3">
+                    <text class="st2" transform="translate(347.47 48.36)"><tspan x="0" y="0">500</tspan></text>
+                  </g>
+                  <g class="st3">
+                    <text class="st2" transform="translate(411.3 48.36)"><tspan x="0" y="0">1 000</tspan></text>
+                  </g>
+                  <g class="st3">
+                    <text class="st2" transform="translate(480.01 48.36)"><tspan x="0" y="0">1 500</tspan></text>
+                  </g>
+                  <g class="st3">
+                    <text class="st2" transform="translate(548.71 48.36)"><tspan x="0" y="0">2 000</tspan></text>
+                  </g>
+                  <g class="st3">
+                    <text class="st2" transform="translate(617.41 48.36)"><tspan x="0" y="0">2 500</tspan></text>
+                  </g>
+                  <g class="st3">
+                    <text class="st2" transform="translate(686.11 48.36)"><tspan x="0" y="0">3 000</tspan></text>
+                  </g>
+                  <g class="st3">
+                    <text class="st2" transform="translate(754.81 48.36)"><tspan x="0" y="0">3 500</tspan></text>
+                  </g>
+                  <g class="st3">
+                    <text class="st2" transform="translate(823.51 48.36)"><tspan x="0" y="0">4 000</tspan></text>
+                  </g>
+                  <g class="st3">
+                    <text class="st2" transform="translate(892.22 48.36)"><tspan x="0" y="0">4 500</tspan></text>
+                  </g>
+                  <g class="st3">
+                    <text class="st2" transform="translate(946.14 48.36)"><tspan x="0" y="0">5 000</tspan></text>
+                  </g>
+                </g>
+                <g id="x-base-lines-svg_grid-x-svg_datawrapper-TTYuJ-l0t1pf-svg">
+                  <line class="st1" x1="288.68" y1="169.36" x2="288.68" y2="56.36"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="147.89" y1="74.26" x2="232.39" y2="74.26"/>
+    <path d="M232.29,76.16c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st3">
+    <g class="st3">
+      <g class="st3">
+        <text class="st4" transform="translate(86.49 78.56)"><tspan x="0" y="0">Axis Label</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="147.13" y1="10.36" x2="220.14" y2="10.36"/>
+    <path d="M220.04,12.26c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st3">
+    <g class="st3">
+      <g class="st3">
+        <text class="st4" transform="translate(86.49 14.89)"><tspan x="0" y="0">Legend</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="118.34" y1="150.86" x2="433.48" y2="150.86"/>
+    <path d="M433.38,152.76c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st3">
+    <g class="st3">
+      <g class="st3">
+        <text class="st4" transform="translate(86.49 152.76)"><tspan x="0" y="0">Bar</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="118.34" y1="43.93" x2="279.35" y2="43.93"/>
+    <path d="M279.25,45.83c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st3">
+    <g class="st3">
+      <g class="st3">
+        <text class="st4" transform="translate(88.82 48.46)"><tspan x="0" y="0">Tick</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="1060.53" y1="95.66" x2="975.93" y2="95.66"/>
+    <path d="M976.03,93.76c-1,0-1.9.8-1.9,1.9s.8,1.9,1.9,1.9,1.9-.8,1.9-1.9-.8-1.9-1.9-1.9Z"/>
+  </g>
+  <g class="st3">
+    <g class="st3">
+      <g class="st3">
+        <text class="st4" transform="translate(1075.83 99.56)"><tspan x="0" y="0">Small Grid Line</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

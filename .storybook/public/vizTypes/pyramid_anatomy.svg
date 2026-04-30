@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="u4debc81d01334a719d9a467fd1650c3a" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlinkg="http://www.w3.org/1999/xlink" viewBox="0 0 1417.32 596.92">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .st0, .st1, .st2, .st3 {
+        fill: none;
+      }
+
+      .st4 {
+        font-size: 14px;
+      }
+
+      .st4, .st5, .st6, .st7, .st8 {
+        isolation: isolate;
+      }
+
+      .st4, .st5, .st6, .st8 {
+        font-family: NotoSans, 'Noto Sans';
+      }
+
+      .st9, .st10 {
+        fill: #fff;
+      }
+
+      .st5, .st2, .st11 {
+        display: none;
+      }
+
+      .st5, .st6 {
+        fill: #757575;
+      }
+
+      .st5, .st6, .st8 {
+        font-size: 12px;
+      }
+
+      .st1, .st2 {
+        stroke: #ccc;
+      }
+
+      .st12 {
+        fill: #a332de;
+      }
+
+      .st10 {
+        stroke: #fff;
+      }
+
+      .st13 {
+        fill: #069;
+        stroke: #069;
+      }
+
+      .st14 {
+        fill: #399d50;
+      }
+    </style>
+  </defs>
+  <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,500"/>
+  <g id="u37b6d18c0ac14dd7903e3f4a7b3dae89">
+    <g>
+      <g>
+        <g>
+          <g>
+            <g>
+              <text class="st6" transform="translate(689.79 44.83)"><tspan x="0" y="0">0</tspan></text>
+              <line class="st1" x1="693.09" y1="605.44" x2="693.09" y2="610.44"/>
+            </g>
+            <line class="st1" x1="632.71" y1="605.44" x2="632.71" y2="610.44"/>
+            <g>
+              <text class="st6" transform="translate(554.24 44.83)"><tspan x="0" y="0">20 000</tspan></text>
+              <line class="st1" x1="572.32" y1="605.44" x2="572.32" y2="610.44"/>
+            </g>
+            <line class="st1" x1="511.94" y1="605.44" x2="511.94" y2="610.44"/>
+            <g>
+              <text class="st6" transform="translate(433.47 44.83)"><tspan x="0" y="0">40 000</tspan></text>
+              <line class="st1" x1="451.55" y1="605.44" x2="451.55" y2="610.44"/>
+            </g>
+            <line class="st1" x1="391.17" y1="605.44" x2="391.17" y2="610.44"/>
+            <g>
+              <text class="st6" transform="translate(312.7 44.83)"><tspan x="0" y="0">60 000</tspan></text>
+              <line class="st1" x1="330.78" y1="605.44" x2="330.78" y2="610.44"/>
+            </g>
+            <line class="st1" x1="270.4" y1="605.44" x2="270.4" y2="610.44"/>
+            <g>
+              <text class="st6" transform="translate(191.93 44.83)"><tspan x="0" y="0">80 000</tspan></text>
+              <line class="st1" x1="210.01" y1="605.44" x2="210.01" y2="610.44"/>
+            </g>
+          </g>
+          <g>
+            <g>
+              <text class="st6" transform="translate(720.92 44.83)"><tspan x="0" y="0">0</tspan></text>
+              <line class="st1" x1="724.23" y1="605.44" x2="724.23" y2="610.44"/>
+            </g>
+            <line class="st1" x1="784.62" y1="605.44" x2="784.62" y2="610.44"/>
+            <g>
+              <text class="st6" transform="translate(826.92 44.83)"><tspan x="0" y="0">20 000</tspan></text>
+              <line class="st1" x1="845" y1="605.44" x2="845" y2="610.44"/>
+            </g>
+            <line class="st1" x1="905.39" y1="605.44" x2="905.39" y2="610.44"/>
+            <g>
+              <text class="st6" transform="translate(947.7 44.83)"><tspan x="0" y="0">40 000</tspan></text>
+              <line class="st1" x1="965.78" y1="605.44" x2="965.78" y2="610.44"/>
+            </g>
+            <line class="st1" x1="1026.17" y1="605.44" x2="1026.17" y2="610.44"/>
+            <g>
+              <text class="st6" transform="translate(1068.47 44.83)"><tspan x="0" y="0">60 000</tspan></text>
+              <line class="st1" x1="1086.55" y1="605.44" x2="1086.55" y2="610.44"/>
+            </g>
+            <line class="st1" x1="1146.94" y1="605.44" x2="1146.94" y2="610.44"/>
+            <g>
+              <text class="st6" transform="translate(1189.25 44.83)"><tspan x="0" y="0">80 000</tspan></text>
+              <line class="st1" x1="1207.33" y1="605.44" x2="1207.33" y2="610.44"/>
+            </g>
+          </g>
+        </g>
+        <g>
+          <g>
+            <line class="st1" x1="693.09" y1="583.44" x2="693.09" y2="46.83"/>
+            <line class="st2" x1="632.71" y1="583.44" x2="632.71" y2="46.83"/>
+            <line class="st1" x1="572.32" y1="583.44" x2="572.32" y2="46.83"/>
+            <line class="st2" x1="511.94" y1="583.44" x2="511.94" y2="46.83"/>
+            <line class="st1" x1="451.55" y1="583.44" x2="451.55" y2="46.83"/>
+            <line class="st2" x1="391.17" y1="583.44" x2="391.17" y2="46.83"/>
+            <line class="st1" x1="330.78" y1="583.44" x2="330.78" y2="46.83"/>
+            <line class="st2" x1="270.4" y1="583.44" x2="270.4" y2="46.83"/>
+            <line class="st1" x1="210.01" y1="583.44" x2="210.01" y2="46.83"/>
+          </g>
+          <g>
+            <line class="st1" x1="724.23" y1="583.44" x2="724.23" y2="46.83"/>
+            <line class="st2" x1="784.62" y1="583.44" x2="784.62" y2="46.83"/>
+            <line class="st1" x1="845" y1="583.44" x2="845" y2="46.83"/>
+            <line class="st2" x1="905.39" y1="583.44" x2="905.39" y2="46.83"/>
+            <line class="st1" x1="965.78" y1="583.44" x2="965.78" y2="46.83"/>
+            <line class="st2" x1="1026.17" y1="583.44" x2="1026.17" y2="46.83"/>
+            <line class="st1" x1="1086.55" y1="583.44" x2="1086.55" y2="46.83"/>
+            <line class="st2" x1="1146.94" y1="583.44" x2="1146.94" y2="46.83"/>
+            <line class="st1" x1="1207.33" y1="583.44" x2="1207.33" y2="46.83"/>
+          </g>
+        </g>
+        <g>
+          <text class="st6" transform="translate(429.47 18.11)"><tspan x="0" y="0">Men</tspan></text>
+          <text class="st6" transform="translate(946.14 18.11)"><tspan x="0" y="0">Women</tspan></text>
+        </g>
+        <g>
+          <g>
+            <text id="label0" class="st6" transform="translate(698.75 76.02)"><tspan x="0" y="0">99+</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label1" class="st5" transform="translate(702.05 81.18)"><tspan x="0" y="0">98</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label2" class="st5" transform="translate(702.05 86.34)"><tspan x="0" y="0">97</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label3" class="st5" transform="translate(702.05 91.5)"><tspan x="0" y="0">96</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label4" class="st5" transform="translate(702.05 96.66)"><tspan x="0" y="0">95</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label5" class="st5" transform="translate(702.05 101.82)"><tspan x="0" y="0">94</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label6" class="st5" transform="translate(702.05 106.98)"><tspan x="0" y="0">93</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label7" class="st5" transform="translate(702.05 112.14)"><tspan x="0" y="0">92</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label8" class="st5" transform="translate(702.05 117.3)"><tspan x="0" y="0">91</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label9" class="st6" transform="translate(702.05 122.46)"><tspan x="0" y="0">90</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label10" class="st5" transform="translate(702.05 127.62)"><tspan x="0" y="0">89</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label11" class="st5" transform="translate(702.05 132.78)"><tspan x="0" y="0">88</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label12" class="st5" transform="translate(702.05 137.94)"><tspan x="0" y="0">87</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label13" class="st5" transform="translate(702.05 143.1)"><tspan x="0" y="0">86</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label14" class="st5" transform="translate(702.05 148.26)"><tspan x="0" y="0">85</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label15" class="st5" transform="translate(702.05 153.42)"><tspan x="0" y="0">84</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label16" class="st5" transform="translate(702.05 158.58)"><tspan x="0" y="0">83</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label17" class="st5" transform="translate(702.05 163.74)"><tspan x="0" y="0">82</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label18" class="st5" transform="translate(702.05 168.91)"><tspan x="0" y="0">81</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label19" class="st6" transform="translate(702.05 174.07)"><tspan x="0" y="0">80</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label20" class="st5" transform="translate(702.05 179.23)"><tspan x="0" y="0">79</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label21" class="st5" transform="translate(702.05 184.39)"><tspan x="0" y="0">78</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label22" class="st5" transform="translate(702.05 189.55)"><tspan x="0" y="0">77</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label23" class="st5" transform="translate(702.05 194.71)"><tspan x="0" y="0">76</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label24" class="st5" transform="translate(702.05 199.87)"><tspan x="0" y="0">75</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label25" class="st5" transform="translate(702.05 205.03)"><tspan x="0" y="0">74</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label26" class="st5" transform="translate(702.05 210.19)"><tspan x="0" y="0">73</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label27" class="st5" transform="translate(702.05 215.35)"><tspan x="0" y="0">72</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label28" class="st5" transform="translate(702.05 220.51)"><tspan x="0" y="0">71</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label29" class="st6" transform="translate(702.05 225.67)"><tspan x="0" y="0">70</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label30" class="st5" transform="translate(702.05 230.83)"><tspan x="0" y="0">69</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label31" class="st5" transform="translate(702.05 235.99)"><tspan x="0" y="0">68</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label32" class="st5" transform="translate(702.05 241.15)"><tspan x="0" y="0">67</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label33" class="st5" transform="translate(702.05 246.31)"><tspan x="0" y="0">66</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label34" class="st5" transform="translate(702.05 251.47)"><tspan x="0" y="0">65</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label35" class="st5" transform="translate(702.05 256.63)"><tspan x="0" y="0">64</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label36" class="st5" transform="translate(702.05 261.79)"><tspan x="0" y="0">63</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label37" class="st5" transform="translate(702.05 266.95)"><tspan x="0" y="0">62</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label38" class="st5" transform="translate(702.05 272.11)"><tspan x="0" y="0">61</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label39" class="st6" transform="translate(702.05 277.27)"><tspan x="0" y="0">60</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label40" class="st5" transform="translate(702.05 282.43)"><tspan x="0" y="0">59</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label41" class="st5" transform="translate(702.05 287.59)"><tspan x="0" y="0">58</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label42" class="st5" transform="translate(702.05 292.75)"><tspan x="0" y="0">57</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label43" class="st5" transform="translate(702.05 297.91)"><tspan x="0" y="0">56</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label44" class="st5" transform="translate(702.05 303.07)"><tspan x="0" y="0">55</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label45" class="st5" transform="translate(702.05 308.23)"><tspan x="0" y="0">54</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label46" class="st5" transform="translate(702.05 313.39)"><tspan x="0" y="0">53</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label47" class="st5" transform="translate(702.05 318.55)"><tspan x="0" y="0">52</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label48" class="st5" transform="translate(702.05 323.71)"><tspan x="0" y="0">51</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label49" class="st6" transform="translate(702.05 328.87)"><tspan x="0" y="0">50</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label50" class="st5" transform="translate(702.05 334.03)"><tspan x="0" y="0">49</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label51" class="st5" transform="translate(702.05 339.19)"><tspan x="0" y="0">48</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label52" class="st5" transform="translate(702.05 344.35)"><tspan x="0" y="0">47</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label53" class="st5" transform="translate(702.05 349.51)"><tspan x="0" y="0">46</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label54" class="st5" transform="translate(702.05 354.67)"><tspan x="0" y="0">45</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label55" class="st5" transform="translate(702.05 359.83)"><tspan x="0" y="0">44</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label56" class="st5" transform="translate(702.05 364.99)"><tspan x="0" y="0">43</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label57" class="st5" transform="translate(702.05 370.15)"><tspan x="0" y="0">42</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label58" class="st5" transform="translate(702.05 375.31)"><tspan x="0" y="0">41</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label59" class="st6" transform="translate(702.05 380.47)"><tspan x="0" y="0">40</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label60" class="st5" transform="translate(702.05 385.63)"><tspan x="0" y="0">39</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label61" class="st5" transform="translate(702.05 390.79)"><tspan x="0" y="0">38</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label62" class="st5" transform="translate(702.05 395.95)"><tspan x="0" y="0">37</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label63" class="st5" transform="translate(702.05 401.11)"><tspan x="0" y="0">36</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label64" class="st5" transform="translate(702.05 406.27)"><tspan x="0" y="0">35</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label65" class="st5" transform="translate(702.05 411.44)"><tspan x="0" y="0">34</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label66" class="st5" transform="translate(702.05 416.6)"><tspan x="0" y="0">33</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label67" class="st5" transform="translate(702.05 421.76)"><tspan x="0" y="0">32</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label68" class="st5" transform="translate(702.05 426.92)"><tspan x="0" y="0">31</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label69" class="st6" transform="translate(702.05 432.08)"><tspan x="0" y="0">30</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label70" class="st5" transform="translate(702.05 437.24)"><tspan x="0" y="0">29</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label71" class="st5" transform="translate(702.05 442.4)"><tspan x="0" y="0">28</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label72" class="st5" transform="translate(702.05 447.56)"><tspan x="0" y="0">27</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label73" class="st5" transform="translate(702.05 452.72)"><tspan x="0" y="0">26</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label74" class="st5" transform="translate(702.05 457.88)"><tspan x="0" y="0">25</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label75" class="st5" transform="translate(702.05 463.04)"><tspan x="0" y="0">24</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label76" class="st5" transform="translate(702.05 468.2)"><tspan x="0" y="0">23</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label77" class="st5" transform="translate(702.05 473.36)"><tspan x="0" y="0">22</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label78" class="st5" transform="translate(702.05 478.52)"><tspan x="0" y="0">21</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label79" class="st6" transform="translate(702.05 483.68)"><tspan x="0" y="0">20</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label80" class="st5" transform="translate(702.05 488.84)"><tspan x="0" y="0">19</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label81" class="st5" transform="translate(702.05 494)"><tspan x="0" y="0">18</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label82" class="st5" transform="translate(702.05 499.16)"><tspan x="0" y="0">17</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label83" class="st5" transform="translate(702.05 504.32)"><tspan x="0" y="0">16</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label84" class="st5" transform="translate(702.05 509.48)"><tspan x="0" y="0">15</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label85" class="st5" transform="translate(702.05 514.64)"><tspan x="0" y="0">14</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label86" class="st5" transform="translate(702.05 519.8)"><tspan x="0" y="0">13</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label87" class="st5" transform="translate(702.05 524.96)"><tspan x="0" y="0">12</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label88" class="st5" transform="translate(702.05 530.12)"><tspan x="0" y="0">11</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label89" class="st6" transform="translate(702.05 535.28)"><tspan x="0" y="0">10</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label90" class="st5" transform="translate(705.36 540.44)"><tspan x="0" y="0">9</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label91" class="st5" transform="translate(705.36 545.6)"><tspan x="0" y="0">8</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label92" class="st5" transform="translate(705.36 550.76)"><tspan x="0" y="0">7</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label93" class="st5" transform="translate(705.36 555.92)"><tspan x="0" y="0">6</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label94" class="st5" transform="translate(705.36 561.08)"><tspan x="0" y="0">5</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label95" class="st5" transform="translate(705.36 566.24)"><tspan x="0" y="0">4</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label96" class="st5" transform="translate(705.36 571.4)"><tspan x="0" y="0">3</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label97" class="st5" transform="translate(705.36 576.56)"><tspan x="0" y="0">2</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label98" class="st5" transform="translate(705.36 581.72)"><tspan x="0" y="0">1</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+          <g>
+            <text id="label99" class="st6" transform="translate(705.36 586.88)"><tspan x="0" y="0">0</tspan></text>
+            <line class="st1" x1="701.09" y1="5.44" x2="701.09" y2="5.44"/>
+          </g>
+        </g>
+      </g>
+      <g>
+        <path class="st1" d="M158.16,5.44"/>
+        <rect id="_x30__x5F_Lrect" class="st14" x="689.08" y="68.37" width="4.02" height="4.66"/>
+        <rect id="_x31__x5F_Lrect" class="st14" x="690.23" y="73.54" width="2.87" height="4.66"/>
+        <rect id="_x32__x5F_Lrect" class="st14" x="688.49" y="78.7" width="4.61" height="4.66"/>
+        <rect id="_x33__x5F_Lrect" class="st14" x="685.49" y="83.86" width="7.61" height="4.66"/>
+        <rect id="_x34__x5F_Lrect" class="st14" x="681.96" y="89.02" width="11.14" height="4.66"/>
+        <rect id="_x35__x5F_Lrect" class="st14" x="676.91" y="94.18" width="16.18" height="4.66"/>
+        <rect id="_x36__x5F_Lrect" class="st14" x="671.38" y="99.34" width="21.71" height="4.66"/>
+        <rect id="_x37__x5F_Lrect" class="st14" x="664.24" y="104.5" width="28.85" height="4.66"/>
+        <rect id="_x38__x5F_Lrect" class="st14" x="656.91" y="109.66" width="36.18" height="4.66"/>
+        <rect id="_x39__x5F_Lrect" class="st14" x="647.11" y="114.82" width="45.99" height="4.66"/>
+        <rect id="_x31_0_x5F_Lrect" class="st14" x="637.72" y="119.98" width="55.37" height="4.66"/>
+        <rect id="_x31_1_x5F_Lrect" class="st14" x="629.06" y="125.14" width="64.03" height="4.66"/>
+        <rect id="_x31_2_x5F_Lrect" class="st14" x="617.73" y="130.3" width="75.36" height="4.66"/>
+        <rect id="_x31_3_x5F_Lrect" class="st14" x="607.12" y="135.46" width="85.98" height="4.66"/>
+        <rect id="_x31_4_x5F_Lrect" class="st14" x="595.19" y="140.62" width="97.91" height="4.66"/>
+        <rect id="_x31_5_x5F_Lrect" class="st14" x="585.83" y="145.78" width="107.27" height="4.66"/>
+        <rect id="_x31_6_x5F_Lrect" class="st14" x="565.54" y="150.94" width="127.55" height="4.66"/>
+        <rect id="_x31_7_x5F_Lrect" class="st14" x="547.08" y="156.1" width="146.02" height="4.66"/>
+        <rect id="_x31_8_x5F_Lrect" class="st14" x="533.27" y="161.26" width="159.82" height="4.66"/>
+        <rect id="_x31_9_x5F_Lrect" class="st14" x="520.57" y="166.42" width="172.52" height="4.66"/>
+        <rect id="_x32_0_x5F_Lrect" class="st14" x="509.13" y="171.58" width="183.96" height="4.66"/>
+        <rect id="_x32_1_x5F_Lrect" class="st14" x="496.07" y="176.74" width="197.03" height="4.66"/>
+        <rect id="_x32_2_x5F_Lrect" class="st14" x="489.83" y="181.9" width="203.26" height="4.66"/>
+        <rect id="_x32_3_x5F_Lrect" class="st14" x="483.08" y="187.06" width="210.01" height="4.66"/>
+        <rect id="_x32_4_x5F_Lrect" class="st14" x="480.83" y="192.22" width="212.27" height="4.66"/>
+        <rect id="_x32_5_x5F_Lrect" class="st14" x="472.05" y="197.38" width="221.04" height="4.66"/>
+        <rect id="_x32_6_x5F_Lrect" class="st14" x="474.16" y="202.54" width="218.93" height="4.66"/>
+        <rect id="_x32_7_x5F_Lrect" class="st14" x="463.66" y="207.7" width="229.43" height="4.66"/>
+        <rect id="_x32_8_x5F_Lrect" class="st14" x="459.14" y="212.86" width="233.95" height="4.66"/>
+        <rect id="_x32_9_x5F_Lrect" class="st14" x="448.4" y="218.02" width="244.69" height="4.66"/>
+        <rect id="_x33_0_x5F_Lrect" class="st14" x="435.93" y="223.18" width="257.17" height="4.66"/>
+        <rect id="_x33_1_x5F_Lrect" class="st14" x="420.4" y="228.34" width="272.69" height="4.66"/>
+        <rect id="_x33_2_x5F_Lrect" class="st14" x="410.94" y="233.5" width="282.15" height="4.66"/>
+        <rect id="_x33_3_x5F_Lrect" class="st14" x="400.08" y="238.66" width="293.01" height="4.66"/>
+        <rect id="_x33_4_x5F_Lrect" class="st14" x="383.89" y="243.82" width="309.21" height="4.66"/>
+        <rect id="_x33_5_x5F_Lrect" class="st14" x="365.51" y="248.98" width="327.58" height="4.66"/>
+        <rect id="_x33_6_x5F_Lrect" class="st14" x="350.75" y="254.14" width="342.34" height="4.66"/>
+        <rect id="_x33_7_x5F_Lrect" class="st14" x="331.33" y="259.3" width="361.77" height="4.66"/>
+        <rect id="_x33_8_x5F_Lrect" class="st14" x="313.31" y="264.46" width="379.79" height="4.66"/>
+        <rect id="_x33_9_x5F_Lrect" class="st14" x="294.06" y="269.62" width="399.03" height="4.66"/>
+        <rect id="_x34_0_x5F_Lrect" class="st14" x="290.35" y="274.78" width="402.75" height="4.66"/>
+        <rect id="_x34_1_x5F_Lrect" class="st14" x="291.47" y="279.94" width="401.62" height="4.66"/>
+        <rect id="_x34_2_x5F_Lrect" class="st14" x="295.86" y="285.1" width="397.23" height="4.66"/>
+        <rect id="_x34_3_x5F_Lrect" class="st14" x="298.23" y="290.26" width="394.86" height="4.66"/>
+        <rect id="_x34_4_x5F_Lrect" class="st14" x="302.55" y="295.42" width="390.54" height="4.66"/>
+        <rect id="_x34_5_x5F_Lrect" class="st14" x="309.48" y="300.58" width="383.61" height="4.66"/>
+        <rect id="_x34_6_x5F_Lrect" class="st14" x="311.39" y="305.74" width="381.7" height="4.66"/>
+        <rect id="_x34_7_x5F_Lrect" class="st14" x="317.9" y="310.9" width="375.2" height="4.66"/>
+        <rect id="_x34_8_x5F_Lrect" class="st14" x="328.06" y="316.06" width="365.04" height="4.66"/>
+        <rect id="_x34_9_x5F_Lrect" class="st14" x="324.73" y="321.23" width="368.37" height="4.66"/>
+        <rect id="_x35_0_x5F_Lrect" class="st14" x="331.72" y="326.39" width="361.37" height="4.66"/>
+        <rect id="_x35_1_x5F_Lrect" class="st14" x="329.92" y="331.55" width="363.18" height="4.66"/>
+        <rect id="_x35_2_x5F_Lrect" class="st14" x="322.55" y="336.71" width="370.55" height="4.66"/>
+        <rect id="_x35_3_x5F_Lrect" class="st14" x="319.44" y="341.87" width="373.65" height="4.66"/>
+        <rect id="_x35_4_x5F_Lrect" class="st14" x="313.15" y="347.03" width="379.95" height="4.66"/>
+        <rect id="_x35_5_x5F_Lrect" class="st14" x="299.51" y="352.19" width="393.59" height="4.66"/>
+        <rect id="_x35_6_x5F_Lrect" class="st14" x="298.81" y="357.35" width="394.29" height="4.66"/>
+        <rect id="_x35_7_x5F_Lrect" class="st14" x="294.95" y="362.51" width="398.15" height="4.66"/>
+        <rect id="_x35_8_x5F_Lrect" class="st14" x="297.9" y="367.67" width="395.2" height="4.66"/>
+        <rect id="_x35_9_x5F_Lrect" class="st14" x="291.82" y="372.83" width="401.27" height="4.66"/>
+        <rect id="_x36_0_x5F_Lrect" class="st14" x="292.59" y="377.99" width="400.5" height="4.66"/>
+        <rect id="_x36_1_x5F_Lrect" class="st14" x="290.08" y="383.15" width="403.01" height="4.66"/>
+        <rect id="_x36_2_x5F_Lrect" class="st14" x="290.9" y="388.31" width="402.2" height="4.66"/>
+        <rect id="_x36_3_x5F_Lrect" class="st14" x="280.69" y="393.47" width="412.41" height="4.66"/>
+        <rect id="_x36_4_x5F_Lrect" class="st14" x="286.45" y="398.63" width="406.65" height="4.66"/>
+        <rect id="_x36_5_x5F_Lrect" class="st14" x="282.14" y="403.79" width="410.95" height="4.66"/>
+        <rect id="_x36_6_x5F_Lrect" class="st14" x="286.5" y="408.95" width="406.59" height="4.66"/>
+        <rect id="_x36_7_x5F_Lrect" class="st14" x="293.97" y="414.11" width="399.13" height="4.66"/>
+        <rect id="_x36_8_x5F_Lrect" class="st14" x="307.63" y="419.27" width="385.46" height="4.66"/>
+        <rect id="_x36_9_x5F_Lrect" class="st14" x="317.2" y="424.43" width="375.9" height="4.66"/>
+        <rect id="_x37_0_x5F_Lrect" class="st14" x="327.74" y="429.59" width="365.35" height="4.66"/>
+        <rect id="_x37_1_x5F_Lrect" class="st14" x="328.74" y="434.75" width="364.35" height="4.66"/>
+        <rect id="_x37_2_x5F_Lrect" class="st14" x="341.25" y="439.91" width="351.84" height="4.66"/>
+        <rect id="_x37_3_x5F_Lrect" class="st14" x="354.69" y="445.07" width="338.41" height="4.66"/>
+        <rect id="_x37_4_x5F_Lrect" class="st14" x="365.95" y="450.23" width="327.14" height="4.66"/>
+        <rect id="_x37_5_x5F_Lrect" class="st14" x="368.17" y="455.39" width="324.93" height="4.66"/>
+        <rect id="_x37_6_x5F_Lrect" class="st14" x="394.3" y="460.55" width="298.8" height="4.66"/>
+        <rect id="_x37_7_x5F_Lrect" class="st14" x="401.4" y="465.71" width="291.7" height="4.66"/>
+        <rect id="_x37_8_x5F_Lrect" class="st14" x="412.49" y="470.87" width="280.61" height="4.66"/>
+        <rect id="_x37_9_x5F_Lrect" class="st14" x="407.54" y="476.03" width="285.55" height="4.66"/>
+        <rect id="_x38_0_x5F_Lrect" class="st14" x="401.11" y="481.19" width="291.98" height="4.66"/>
+        <rect id="_x38_1_x5F_Lrect" class="st14" x="399.84" y="486.35" width="293.26" height="4.66"/>
+        <rect id="_x38_2_x5F_Lrect" class="st14" x="409.1" y="491.51" width="284" height="4.66"/>
+        <rect id="_x38_3_x5F_Lrect" class="st14" x="408.28" y="496.67" width="284.81" height="4.66"/>
+        <rect id="_x38_4_x5F_Lrect" class="st14" x="410.13" y="501.83" width="282.96" height="4.66"/>
+        <rect id="_x38_5_x5F_Lrect" class="st14" x="407.98" y="506.99" width="285.12" height="4.66"/>
+        <rect id="_x38_6_x5F_Lrect" class="st14" x="410.42" y="512.15" width="282.68" height="4.66"/>
+        <rect id="_x38_7_x5F_Lrect" class="st14" x="406" y="517.31" width="287.1" height="4.66"/>
+        <rect id="_x38_8_x5F_Lrect" class="st14" x="409.98" y="522.47" width="283.11" height="4.66"/>
+        <rect id="_x38_9_x5F_Lrect" class="st14" x="403.61" y="527.63" width="289.48" height="4.66"/>
+        <rect id="_x39_0_x5F_Lrect" class="st14" x="402.47" y="532.79" width="290.63" height="4.66"/>
+        <rect id="_x39_1_x5F_Lrect" class="st14" x="403.66" y="537.95" width="289.43" height="4.66"/>
+        <rect id="_x39_2_x5F_Lrect" class="st14" x="407.39" y="543.11" width="285.7" height="4.66"/>
+        <rect id="_x39_3_x5F_Lrect" class="st14" x="407.53" y="548.27" width="285.56" height="4.66"/>
+        <rect id="_x39_4_x5F_Lrect" class="st14" x="415.28" y="553.43" width="277.82" height="4.66"/>
+        <rect id="_x39_5_x5F_Lrect" class="st14" x="416.65" y="558.59" width="276.44" height="4.66"/>
+        <rect id="_x39_6_x5F_Lrect" class="st14" x="407.66" y="563.76" width="285.43" height="4.66"/>
+        <rect id="_x39_7_x5F_Lrect" class="st14" x="431.71" y="568.92" width="261.38" height="4.66"/>
+        <rect id="_x39_8_x5F_Lrect" class="st14" x="444.45" y="574.08" width="248.65" height="4.66"/>
+        <rect id="_x39_9_x5F_Lrect" class="st14" x="456.77" y="579.24" width="236.32" height="4.66"/>
+      </g>
+      <g>
+        <path class="st14" d="M158.16,5.44"/>
+        <rect id="_x30__x5F_Rrect" class="st12" x="724.23" y="68.37" width="18.1" height="4.66"/>
+        <rect id="_x31__x5F_Rrect" class="st12" x="724.23" y="73.54" width="10.5" height="4.66"/>
+        <rect id="_x32__x5F_Rrect" class="st12" x="724.23" y="78.7" width="15.73" height="4.66"/>
+        <rect id="_x33__x5F_Rrect" class="st12" x="724.23" y="83.86" width="21.3" height="4.66"/>
+        <rect id="_x34__x5F_Rrect" class="st12" x="724.23" y="89.02" width="28.15" height="4.66"/>
+        <rect id="_x35__x5F_Rrect" class="st12" x="724.23" y="94.18" width="37.79" height="4.66"/>
+        <rect id="_x36__x5F_Rrect" class="st12" x="724.23" y="99.34" width="47" height="4.66"/>
+        <rect id="_x37__x5F_Rrect" class="st12" x="724.23" y="104.5" width="59.13" height="4.66"/>
+        <rect id="_x38__x5F_Rrect" class="st12" x="724.23" y="109.66" width="69.89" height="4.66"/>
+        <rect id="_x39__x5F_Rrect" class="st12" x="724.23" y="114.82" width="82.21" height="4.66"/>
+        <rect id="_x31_0_x5F_Rrect" class="st12" x="724.23" y="119.98" width="94.01" height="4.66"/>
+        <rect id="_x31_1_x5F_Rrect" class="st12" x="724.23" y="125.14" width="106.16" height="4.66"/>
+        <rect id="_x31_2_x5F_Rrect" class="st12" x="724.23" y="130.3" width="114.78" height="4.66"/>
+        <rect id="_x31_3_x5F_Rrect" class="st12" x="724.23" y="135.46" width="127.97" height="4.66"/>
+        <rect id="_x31_4_x5F_Rrect" class="st12" x="724.23" y="140.62" width="140.47" height="4.66"/>
+        <rect id="_x31_5_x5F_Rrect" class="st12" x="724.23" y="145.78" width="151.56" height="4.66"/>
+        <rect id="_x31_6_x5F_Rrect" class="st12" x="724.23" y="150.94" width="169.12" height="4.66"/>
+        <rect id="_x31_7_x5F_Rrect" class="st12" x="724.23" y="156.1" width="184.54" height="4.66"/>
+        <rect id="_x31_8_x5F_Rrect" class="st12" x="724.23" y="161.26" width="200.3" height="4.66"/>
+        <rect id="_x31_9_x5F_Rrect" class="st12" x="724.23" y="166.42" width="211.13" height="4.66"/>
+        <rect id="_x32_0_x5F_Rrect" class="st12" x="724.23" y="171.58" width="217.93" height="4.66"/>
+        <rect id="_x32_1_x5F_Rrect" class="st12" x="724.23" y="176.74" width="233.01" height="4.66"/>
+        <rect id="_x32_2_x5F_Rrect" class="st12" x="724.23" y="181.9" width="237.41" height="4.66"/>
+        <rect id="_x32_3_x5F_Rrect" class="st12" x="724.23" y="187.06" width="244.45" height="4.66"/>
+        <rect id="_x32_4_x5F_Rrect" class="st12" x="724.23" y="192.22" width="244.91" height="4.66"/>
+        <rect id="_x32_5_x5F_Rrect" class="st12" x="724.23" y="197.38" width="250.25" height="4.66"/>
+        <rect id="_x32_6_x5F_Rrect" class="st12" x="724.23" y="202.54" width="246.33" height="4.66"/>
+        <rect id="_x32_7_x5F_Rrect" class="st12" x="724.23" y="207.7" width="258.18" height="4.66"/>
+        <rect id="_x32_8_x5F_Rrect" class="st12" x="724.23" y="212.86" width="260.72" height="4.66"/>
+        <rect id="_x32_9_x5F_Rrect" class="st12" x="724.23" y="218.02" width="270.45" height="4.66"/>
+        <rect id="_x33_0_x5F_Rrect" class="st12" x="724.23" y="223.18" width="276.64" height="4.66"/>
+        <rect id="_x33_1_x5F_Rrect" class="st12" x="724.23" y="228.34" width="286.77" height="4.66"/>
+        <rect id="_x33_2_x5F_Rrect" class="st12" x="724.23" y="233.5" width="298.33" height="4.66"/>
+        <rect id="_x33_3_x5F_Rrect" class="st12" x="724.23" y="238.66" width="306.21" height="4.66"/>
+        <rect id="_x33_4_x5F_Rrect" class="st12" x="724.23" y="243.82" width="322.7" height="4.66"/>
+        <rect id="_x33_5_x5F_Rrect" class="st12" x="724.23" y="248.98" width="335.21" height="4.66"/>
+        <rect id="_x33_6_x5F_Rrect" class="st12" x="724.23" y="254.14" width="349.22" height="4.66"/>
+        <rect id="_x33_7_x5F_Rrect" class="st12" x="724.23" y="259.3" width="364.08" height="4.66"/>
+        <rect id="_x33_8_x5F_Rrect" class="st12" x="724.23" y="264.46" width="381.78" height="4.66"/>
+        <rect id="_x33_9_x5F_Rrect" class="st12" x="724.23" y="269.62" width="396.32" height="4.66"/>
+        <rect id="_x34_0_x5F_Rrect" class="st12" x="724.23" y="274.78" width="393.09" height="4.66"/>
+        <rect id="_x34_1_x5F_Rrect" class="st12" x="724.23" y="279.94" width="396.88" height="4.66"/>
+        <rect id="_x34_2_x5F_Rrect" class="st12" x="724.23" y="285.1" width="394.35" height="4.66"/>
+        <rect id="_x34_3_x5F_Rrect" class="st12" x="724.23" y="290.26" width="395.99" height="4.66"/>
+        <rect id="_x34_4_x5F_Rrect" class="st12" x="724.23" y="295.42" width="391.46" height="4.66"/>
+        <rect id="_x34_5_x5F_Rrect" class="st12" x="724.23" y="300.58" width="382.93" height="4.66"/>
+        <rect id="_x34_6_x5F_Rrect" class="st12" x="724.23" y="305.74" width="381.93" height="4.66"/>
+        <rect id="_x34_7_x5F_Rrect" class="st12" x="724.23" y="310.9" width="371.55" height="4.66"/>
+        <rect id="_x34_8_x5F_Rrect" class="st12" x="724.23" y="316.06" width="364.71" height="4.66"/>
+        <rect id="_x34_9_x5F_Rrect" class="st12" x="724.23" y="321.23" width="363.69" height="4.66"/>
+        <rect id="_x35_0_x5F_Rrect" class="st12" x="724.23" y="326.39" width="360.62" height="4.66"/>
+        <rect id="_x35_1_x5F_Rrect" class="st12" x="724.23" y="331.55" width="365.15" height="4.66"/>
+        <rect id="_x35_2_x5F_Rrect" class="st12" x="724.23" y="336.71" width="367.38" height="4.66"/>
+        <rect id="_x35_3_x5F_Rrect" class="st12" x="724.23" y="341.87" width="369.2" height="4.66"/>
+        <rect id="_x35_4_x5F_Rrect" class="st12" x="724.23" y="347.03" width="376.72" height="4.66"/>
+        <rect id="_x35_5_x5F_Rrect" class="st12" x="724.23" y="352.19" width="387.69" height="4.66"/>
+        <rect id="_x35_6_x5F_Rrect" class="st12" x="724.23" y="357.35" width="389.61" height="4.66"/>
+        <rect id="_x35_7_x5F_Rrect" class="st12" x="724.23" y="362.51" width="395.19" height="4.66"/>
+        <rect id="_x35_8_x5F_Rrect" class="st12" x="724.23" y="367.67" width="387.89" height="4.66"/>
+        <rect id="_x35_9_x5F_Rrect" class="st12" x="724.23" y="372.83" width="392.68" height="4.66"/>
+        <rect id="_x36_0_x5F_Rrect" class="st12" x="724.23" y="377.99" width="394.41" height="4.66"/>
+        <rect id="_x36_1_x5F_Rrect" class="st12" x="724.23" y="383.15" width="396.43" height="4.66"/>
+        <rect id="_x36_2_x5F_Rrect" class="st12" x="724.23" y="388.31" width="392.17" height="4.66"/>
+        <rect id="_x36_3_x5F_Rrect" class="st12" x="724.23" y="393.47" width="401.78" height="4.66"/>
+        <rect id="_x36_4_x5F_Rrect" class="st12" x="724.23" y="398.63" width="398.14" height="4.66"/>
+        <rect id="_x36_5_x5F_Rrect" class="st12" x="724.23" y="403.79" width="399.15" height="4.66"/>
+        <rect id="_x36_6_x5F_Rrect" class="st12" x="724.23" y="408.95" width="390.27" height="4.66"/>
+        <rect id="_x36_7_x5F_Rrect" class="st12" x="724.23" y="414.11" width="387.91" height="4.66"/>
+        <rect id="_x36_8_x5F_Rrect" class="st12" x="724.23" y="419.27" width="370.69" height="4.66"/>
+        <rect id="_x36_9_x5F_Rrect" class="st12" x="724.23" y="424.43" width="359.84" height="4.66"/>
+        <rect id="_x37_0_x5F_Rrect" class="st12" x="724.23" y="429.59" width="352.32" height="4.66"/>
+        <rect id="_x37_1_x5F_Rrect" class="st12" x="724.23" y="434.75" width="346.61" height="4.66"/>
+        <rect id="_x37_2_x5F_Rrect" class="st12" x="724.23" y="439.91" width="331.82" height="4.66"/>
+        <rect id="_x37_3_x5F_Rrect" class="st12" x="724.23" y="445.07" width="320.04" height="4.66"/>
+        <rect id="_x37_4_x5F_Rrect" class="st12" x="724.23" y="450.23" width="305.49" height="4.66"/>
+        <rect id="_x37_5_x5F_Rrect" class="st12" x="724.23" y="455.39" width="299.5" height="4.66"/>
+        <rect id="_x37_6_x5F_Rrect" class="st12" x="724.23" y="460.55" width="276.82" height="4.66"/>
+        <rect id="_x37_7_x5F_Rrect" class="st12" x="724.23" y="465.71" width="269.85" height="4.66"/>
+        <rect id="_x37_8_x5F_Rrect" class="st12" x="724.23" y="470.87" width="262.29" height="4.66"/>
+        <rect id="_x37_9_x5F_Rrect" class="st12" x="724.23" y="476.03" width="264" height="4.66"/>
+        <rect id="_x38_0_x5F_Rrect" class="st12" x="724.23" y="481.19" width="260.98" height="4.66"/>
+        <rect id="_x38_1_x5F_Rrect" class="st12" x="724.23" y="486.35" width="260.17" height="4.66"/>
+        <rect id="_x38_2_x5F_Rrect" class="st12" x="724.23" y="491.51" width="260.48" height="4.66"/>
+        <rect id="_x38_3_x5F_Rrect" class="st12" x="724.23" y="496.67" width="265.32" height="4.66"/>
+        <rect id="_x38_4_x5F_Rrect" class="st12" x="724.23" y="501.83" width="268.21" height="4.66"/>
+        <rect id="_x38_5_x5F_Rrect" class="st12" x="724.23" y="506.99" width="272.9" height="4.66"/>
+        <rect id="_x38_6_x5F_Rrect" class="st12" x="724.23" y="512.15" width="267.65" height="4.66"/>
+        <rect id="_x38_7_x5F_Rrect" class="st12" x="724.23" y="517.31" width="269.81" height="4.66"/>
+        <rect id="_x38_8_x5F_Rrect" class="st12" x="724.23" y="522.47" width="268.27" height="4.66"/>
+        <rect id="_x38_9_x5F_Rrect" class="st12" x="724.23" y="527.63" width="273.12" height="4.66"/>
+        <rect id="_x39_0_x5F_Rrect" class="st12" x="724.23" y="532.79" width="272.9" height="4.66"/>
+        <rect id="_x39_1_x5F_Rrect" class="st12" x="724.23" y="537.95" width="277.03" height="4.66"/>
+        <rect id="_x39_2_x5F_Rrect" class="st12" x="724.23" y="543.11" width="271.08" height="4.66"/>
+        <rect id="_x39_3_x5F_Rrect" class="st12" x="724.23" y="548.27" width="270.25" height="4.66"/>
+        <rect id="_x39_4_x5F_Rrect" class="st12" x="724.23" y="553.43" width="265.13" height="4.66"/>
+        <rect id="_x39_5_x5F_Rrect" class="st12" x="724.23" y="558.59" width="260.6" height="4.66"/>
+        <rect id="_x39_6_x5F_Rrect" class="st12" x="724.23" y="563.76" width="271.55" height="4.66"/>
+        <rect id="_x39_7_x5F_Rrect" class="st12" x="724.23" y="568.92" width="245.99" height="4.66"/>
+        <rect id="_x39_8_x5F_Rrect" class="st12" x="724.23" y="574.08" width="235.73" height="4.66"/>
+        <rect id="_x39_9_x5F_Rrect" class="st12" x="724.23" y="579.24" width="224.1" height="4.66"/>
+      </g>
+    </g>
+  </g>
+  <g id="u9a54e3c4553a4ea6acbc2dcf58c2417f" class="st11">
+    <g>
+      <g>
+        <rect class="st10" x="654.16" y="609.44" width="25" height="20"/>
+        <g id="txtcd252c0549bf4af5bdc54e7a8ec7a678">
+          <text class="st4" transform="translate(679.16 609.44)"><tspan x="0" y="0">Referenzszenario A-00-2025</tspan></text>
+        </g>
+        <circle class="st3" cx="664.16" cy="619.44" r="11.5"/>
+        <circle class="st13" cx="664.16" cy="619.44" r="9"/>
+        <circle class="st9" cx="664.16" cy="619.44" r="4"/>
+      </g>
+      <g>
+        <rect class="st10" x="699.16" y="609.44" width="25" height="20"/>
+        <g id="txt04df81c57e6746dfa026d5c1bffd872c">
+          <text class="st4" transform="translate(724.16 609.44)"><tspan x="0" y="0">&quot;hohes&quot; Szenario B-00-2025</tspan></text>
+        </g>
+        <circle class="st3" cx="709.16" cy="619.44" r="11.5"/>
+        <circle class="st1" cx="709.16" cy="619.44" r="9"/>
+        <circle class="st9" cx="709.16" cy="619.44" r="4"/>
+      </g>
+      <g>
+        <rect class="st10" x="744.16" y="609.44" width="25" height="20"/>
+        <g id="txtb13097c6e87f43148682fad34c15ea18">
+          <text class="st4" transform="translate(769.16 609.44)"><tspan x="0" y="0">&quot;tiefes&quot; Szenario C-00-2025</tspan></text>
+        </g>
+        <circle class="st3" cx="754.16" cy="619.44" r="11.5"/>
+        <circle class="st1" cx="754.16" cy="619.44" r="9"/>
+        <circle class="st9" cx="754.16" cy="619.44" r="4"/>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="1293.73" y1="147.11" x2="1209.13" y2="147.11"/>
+    <path d="M1209.23,145.21c-1,0-1.9.8-1.9,1.9s.8,1.9,1.9,1.9,1.9-.8,1.9-1.9-.8-1.9-1.9-1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(1309.03 151.01)"><tspan x="0" y="0">Small Grid Line</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="116.07" y1="14.78" x2="425.24" y2="14.78"/>
+    <path d="M425.14,16.68c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(55.2 19.21)"><tspan x="0" y="0">Axis Label</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="84.54" y1="39.79" x2="188.97" y2="39.79"/>
+    <path d="M188.87,41.69c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(55.2 44.33)"><tspan x="0" y="0">Tick</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="116.07" y1="73.03" x2="697.38" y2="73.03"/>
+    <path d="M697.28,74.93c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(55.2 76.2)"><tspan x="0" y="0">Bar Label</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="1359.75" y1="266.79" x2="1097.58" y2="266.79"/>
+    <path d="M1097.68,264.89c-1,0-1.9.8-1.9,1.9s.8,1.9,1.9,1.9,1.9-.8,1.9-1.9-.8-1.9-1.9-1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(1374.24 268.57)"><tspan x="0" y="0">Bar</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

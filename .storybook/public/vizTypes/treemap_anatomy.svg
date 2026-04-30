@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="u817d2df708f0470080ddb3de183690a5" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlinkg="http://www.w3.org/1999/xlink" viewBox="0 0 1559.06 500">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .st1, .st2, .st3 {
+        isolation: isolate;
+      }
+
+      .st2 {
+        font-family: NotoSans, 'Noto Sans';
+      }
+
+      .st2, .st3 {
+        font-size: 12px;
+      }
+
+      .st4 {
+        fill: #728cd7;
+      }
+
+      .st3 {
+        fill: #fff;
+        font-family: ArialMT, Arial;
+      }
+    </style>
+  </defs>
+  <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,500"/>
+  <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="https://viz.bfs.admin.ch/libs/viz-bfs/dynvis/dynvis-v0.9/dynvis.css"/>
+  <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="https://viz.bfs.admin.ch/css/bund/vendors.css"/>
+  <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="https://viz.bfs.admin.ch/css/bund/custom-icons.css"/>
+  <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="https://viz.bfs.admin.ch/css/bund/fabricator.css"/>
+  <g id="u066fc40fa1a14271aa6d6767e126716c">
+    <g>
+      <g>
+        <rect class="st4" x="147.53" width="500" height="296"/>
+        <rect class="st4" x="147.53" y="297" width="500" height="203"/>
+        <rect class="st4" x="648.53" width="314" height="253"/>
+        <rect class="st4" x="648.53" y="254" width="314" height="246"/>
+        <rect class="st4" x="963.53" width="161" height="305"/>
+        <rect class="st4" x="1125.53" width="155" height="305"/>
+        <rect class="st4" x="1281.53" width="130" height="305"/>
+        <rect class="st4" x="963.53" y="306" width="242" height="104"/>
+        <rect class="st4" x="963.53" y="411" width="242" height="89"/>
+        <rect class="st4" x="1206.53" y="306" width="144" height="98"/>
+        <rect class="st4" x="1206.53" y="405" width="144" height="95"/>
+        <rect class="st4" x="1351.53" y="306" width="60" height="99"/>
+        <rect class="st4" x="1351.53" y="406" width="60" height="94"/>
+      </g>
+      <g>
+        <text class="st3" transform="translate(152.53 17)"><tspan x="0" y="0">Graubunden</tspan></text>
+        <text class="st3" transform="translate(152.53 314)"><tspan x="0" y="0">Valais</tspan></text>
+        <text class="st3" transform="translate(653.53 17)"><tspan x="0" y="0">Zurich Region</tspan></text>
+        <text class="st3" transform="translate(653.53 271)"><tspan x="0" y="0">Bern Region</tspan></text>
+        <text class="st3" transform="translate(968.53 17)"><tspan x="0" y="0">Geneva</tspan></text>
+        <text class="st3" transform="translate(1130.53 17)"><tspan x="0" y="0">Lucerne / Lake Lucerne</tspan></text>
+        <text class="st3" transform="translate(1286.53 17)"><tspan x="0" y="0">Vaud</tspan></text>
+        <text class="st3" transform="translate(968.53 323)"><tspan x="0" y="0">Eastern Switzerland</tspan></text>
+        <text class="st3" transform="translate(968.53 428)"><tspan x="0" y="0">Basel Region</tspan></text>
+        <text class="st3" transform="translate(1211.53 323)"><tspan x="0" y="0">Aargau and Solothurn Region</tspan></text>
+        <text class="st3" transform="translate(1211.53 422)"><tspan x="0" y="0">Ticino</tspan></text>
+        <text class="st3" transform="translate(1356.53 323)"><tspan x="0" y="0">Jura &amp; Three Lakes</tspan></text>
+        <text class="st3" transform="translate(1356.53 423)"><tspan x="0" y="0">Fribourg Region</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="61.66" y1="50.56" x2="212.3" y2="50.56"/>
+    <path d="M212.2,52.46c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st1">
+    <g class="st1">
+      <g class="st1">
+        <g class="st1">
+          <text class="st2" transform="translate(29.32 54.09)"><tspan x="0" y="0">Box</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="89.84" y1="14.89" x2="176.2" y2="14.89"/>
+    <path d="M176.1,16.79c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st1">
+    <g class="st1">
+      <g class="st1">
+        <g class="st1">
+          <text class="st2" transform="translate(29.32 16.79)"><tspan x="0" y="0">Box Label</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

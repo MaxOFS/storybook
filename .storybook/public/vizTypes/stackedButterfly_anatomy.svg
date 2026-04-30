@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="exportSvg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1203.42 256">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .st0, .st1, .st2 {
+        fill: none;
+      }
+
+      .st3 {
+        fill: #4b62b3;
+      }
+
+      .st4 {
+        fill: #fff;
+      }
+
+      .st5 {
+        fill: #f99f5a;
+      }
+
+      .st6 {
+        fill: #757575;
+      }
+
+      .st6, .st7, .st8, .st9 {
+        isolation: isolate;
+      }
+
+      .st6, .st8, .st9 {
+        font-family: NotoSans, 'Noto Sans';
+        font-size: 12px;
+      }
+
+      .st10 {
+        fill: #cc5000;
+      }
+
+      .st1 {
+        stroke: #757575;
+      }
+
+      .st11 {
+        fill: #9aade4;
+      }
+
+      .st9 {
+        fill: #333;
+      }
+
+      .st2 {
+        stroke: #fff;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <rect class="st4" x="226.71" y="0" width="750" height="256"/>
+  <g id="__svelte-dw-svg">
+    <g id="container-svg_container-body-svg_datawrapper-EtPia-k7lwvj-svg">
+      <g id="container-svg_container-bodyTop-svg_datawrapper-EtPia-lmtz6e-svg">
+        <g id="container-svg_container-bodyCenter-svg_datawrapper-EtPia-1a857wv-svg">
+          <g id="chart-svg">
+            <rect class="st3" x="226.71" y="4.97" width="8" height="8"/>
+            <g class="st7">
+              <text class="st6" transform="translate(242.71 11.56)"><tspan x="0" y="0">Variable1</tspan></text>
+            </g>
+            <rect class="st11" x="312.3" y="4.97" width="8" height="8"/>
+            <g class="st7">
+              <text class="st6" transform="translate(328.3 11.56)"><tspan x="0" y="0">Variable2</tspan></text>
+            </g>
+            <rect class="st10" x="397.9" y="4.97" width="8" height="8"/>
+            <g class="st7">
+              <text class="st6" transform="translate(413.9 11.56)"><tspan x="0" y="0">Variable3</tspan></text>
+            </g>
+            <rect class="st5" x="483.49" y="4.97" width="8" height="8"/>
+            <g class="st7">
+              <text class="st6" transform="translate(499.49 11.56)"><tspan x="0" y="0">Variable4</tspan></text>
+            </g>
+            <g id="grid-container-svg">
+              <g id="grid-svg">
+                <g id="x-grid-lines-svg_grid-x-svg_datawrapper-EtPia-bgupc2-svg">
+                  <line class="st1" x1="288.68" y1="207.36" x2="288.68" y2="56.36"/>
+                  <line class="st1" x1="374.56" y1="207.36" x2="374.56" y2="56.36"/>
+                  <line class="st1" x1="460.43" y1="207.36" x2="460.43" y2="56.36"/>
+                  <line class="st1" x1="546.31" y1="207.36" x2="546.31" y2="56.36"/>
+                  <line class="st1" x1="718.06" y1="207.36" x2="718.06" y2="56.36"/>
+                  <line class="st1" x1="803.94" y1="207.36" x2="803.94" y2="56.36"/>
+                  <line class="st1" x1="889.82" y1="207.36" x2="889.82" y2="56.36"/>
+                  <line class="st1" x1="975.69" y1="207.36" x2="975.69" y2="56.36"/>
+                </g>
+              </g>
+            </g>
+            <g class="st7">
+              <text class="st9" transform="translate(239.81 77.66)"><tspan x="0" y="0">Label1</tspan></text>
+            </g>
+            <rect class="st3" x="518.62" y="66.36" width="113.58" height="17"/>
+            <path class="st2" d="M517.62,66.36v17"/>
+            <rect class="st11" x="414.98" y="66.36" width="102.66" height="17"/>
+            <path class="st2" d="M413.98,66.36v17"/>
+            <rect class="st10" x="632.18" y="66.36" width="116.08" height="17"/>
+            <path class="st2" d="M749.26,66.36v17"/>
+            <rect class="st5" x="749.24" y="66.36" width="107.3" height="17"/>
+            <g class="st7">
+              <text class="st9" transform="translate(239.81 96.66)"><tspan x="0" y="0">Label2</tspan></text>
+            </g>
+            <rect class="st3" x="466.69" y="85.36" width="165.5" height="17"/>
+            <path class="st2" d="M465.69,85.36v17"/>
+            <rect class="st11" x="350.34" y="85.36" width="115.38" height="17"/>
+            <path class="st2" d="M349.34,85.36v17"/>
+            <rect class="st10" x="632.18" y="85.36" width="118.25" height="17"/>
+            <path class="st2" d="M751.43,85.36v17"/>
+            <rect class="st5" x="751.41" y="85.36" width="92.38" height="17"/>
+            <g class="st7">
+              <text class="st9" transform="translate(239.81 115.66)"><tspan x="0" y="0">Label3</tspan></text>
+            </g>
+            <rect class="st3" x="432.82" y="104.36" width="199.38" height="17"/>
+            <path class="st2" d="M431.82,104.36v17"/>
+            <rect class="st11" x="346.12" y="104.36" width="85.72" height="17"/>
+            <path class="st2" d="M345.12,104.36v17"/>
+            <rect class="st10" x="632.18" y="104.36" width="132.7" height="17"/>
+            <path class="st2" d="M765.88,104.36v17"/>
+            <rect class="st5" x="765.87" y="104.36" width="75.39" height="17"/>
+            <g class="st7">
+              <text class="st9" transform="translate(239.81 134.66)"><tspan x="0" y="0">Label4</tspan></text>
+            </g>
+            <rect class="st3" x="429.12" y="123.36" width="203.08" height="17"/>
+            <path class="st2" d="M428.12,123.36v17"/>
+            <rect class="st11" x="362.09" y="123.36" width="66.05" height="17"/>
+            <path class="st2" d="M361.09,123.36v17"/>
+            <rect class="st10" x="632.18" y="123.36" width="118.41" height="17"/>
+            <path class="st2" d="M751.59,123.36v17"/>
+            <rect class="st5" x="751.57" y="123.36" width="53.47" height="17"/>
+            <g class="st7">
+              <text class="st9" transform="translate(239.81 153.66)"><tspan x="0" y="0">Label5</tspan></text>
+            </g>
+            <rect class="st3" x="464.71" y="142.36" width="167.48" height="17"/>
+            <path class="st2" d="M463.71,142.36v17"/>
+            <rect class="st11" x="403.34" y="142.36" width="60.39" height="17"/>
+            <path class="st2" d="M402.34,142.36v17"/>
+            <rect class="st10" x="632.18" y="142.36" width="151.39" height="17"/>
+            <path class="st2" d="M784.57,142.36v17"/>
+            <rect class="st5" x="784.55" y="142.36" width="44.09" height="17"/>
+            <g class="st7">
+              <text class="st9" transform="translate(239.81 172.66)"><tspan x="0" y="0">Label6</tspan></text>
+            </g>
+            <rect class="st3" x="509.74" y="161.36" width="122.45" height="17"/>
+            <path class="st2" d="M508.74,161.36v17"/>
+            <rect class="st11" x="457.87" y="161.36" width="50.89" height="17"/>
+            <path class="st2" d="M456.87,161.36v17"/>
+            <rect class="st10" x="632.18" y="161.36" width="123.36" height="17"/>
+            <path class="st2" d="M756.54,161.36v17"/>
+            <rect class="st5" x="756.52" y="161.36" width="24.52" height="17"/>
+            <g class="st7">
+              <text class="st9" transform="translate(239.81 191.66)"><tspan x="0" y="0">Label7</tspan></text>
+            </g>
+            <rect class="st3" x="577.02" y="180.36" width="55.17" height="17"/>
+            <path class="st2" d="M576.02,180.36v17"/>
+            <rect class="st11" x="552.38" y="180.36" width="23.66" height="17"/>
+            <path class="st2" d="M551.38,180.36v17"/>
+            <rect class="st10" x="632.18" y="180.36" width="55.59" height="17"/>
+            <path class="st2" d="M688.77,180.36v17"/>
+            <rect class="st5" x="688.76" y="180.36" width="10.47" height="17"/>
+            <g id="grid-container-svg1" data-name="grid-container-svg">
+              <g id="grid-svg1" data-name="grid-svg">
+                <g id="x-tick-labels-svg_grid-x-svg_number-axis-svg_datawrapper-EtPia-6boht-svg">
+                  <g class="st7">
+                    <text class="st6" transform="translate(277.1 48.36)"><tspan x="0" y="0">40%</tspan></text>
+                  </g>
+                  <g class="st7">
+                    <text class="st6" transform="translate(362.98 48.36)"><tspan x="0" y="0">30%</tspan></text>
+                  </g>
+                  <g class="st7">
+                    <text class="st6" transform="translate(448.86 48.36)"><tspan x="0" y="0">20%</tspan></text>
+                  </g>
+                  <g class="st7">
+                    <text class="st6" transform="translate(534.73 48.36)"><tspan x="0" y="0">10%</tspan></text>
+                  </g>
+                  <g class="st7">
+                    <text class="st6" transform="translate(623.92 48.36)"><tspan x="0" y="0">0%</tspan></text>
+                  </g>
+                  <g class="st7">
+                    <text class="st6" transform="translate(706.49 48.36)"><tspan x="0" y="0">10%</tspan></text>
+                  </g>
+                  <g class="st7">
+                    <text class="st6" transform="translate(792.37 48.36)"><tspan x="0" y="0">20%</tspan></text>
+                  </g>
+                  <g class="st7">
+                    <text class="st6" transform="translate(878.24 48.36)"><tspan x="0" y="0">30%</tspan></text>
+                  </g>
+                  <g class="st7">
+                    <text class="st6" transform="translate(952.54 48.36)"><tspan x="0" y="0">40%</tspan></text>
+                  </g>
+                </g>
+                <g id="x-base-lines-svg_grid-x-svg_datawrapper-EtPia-l0t1pf-svg">
+                  <line class="st1" x1="632.19" y1="207.36" x2="632.19" y2="56.36"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="82.81" y1="8.87" x2="219.92" y2="8.87"/>
+    <path d="M219.82,10.77c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(29.09 14.41)"><tspan x="0" y="0">Legend</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="94.44" y1="73.56" x2="236.24" y2="73.56"/>
+    <path d="M236.14,75.46c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(30.25 77.68)"><tspan x="0" y="0">Axis Label</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="63.58" y1="44.26" x2="273.73" y2="44.26"/>
+    <path d="M273.63,46.16c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(30.25 48.38)"><tspan x="0" y="0">Tick</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="63.58" y1="112.65" x2="444.53" y2="112.65"/>
+    <path d="M444.43,114.55c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(30.37 114.55)"><tspan x="0" y="0">Bar</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="1061.41" y1="76.8" x2="976.81" y2="76.8"/>
+    <path d="M976.91,74.9c-1,0-1.9.8-1.9,1.9s.8,1.9,1.9,1.9,1.9-.8,1.9-1.9-.8-1.9-1.9-1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(1076.71 80.7)"><tspan x="0" y="0">Small Grid Line</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

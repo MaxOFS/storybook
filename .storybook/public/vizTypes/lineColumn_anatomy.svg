@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="exportSvg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1203.42 312.21">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .st0, .st1, .st2, .st3, .st4 {
+        fill: none;
+      }
+
+      .st5 {
+        fill: #fff;
+        stroke-miterlimit: 16;
+      }
+
+      .st5, .st3 {
+        stroke: #f56a00;
+        stroke-width: 2px;
+      }
+
+      .st6 {
+        fill: #757575;
+      }
+
+      .st6, .st7, .st8, .st9, .st10 {
+        isolation: isolate;
+      }
+
+      .st6, .st8, .st9 {
+        font-family: NotoSans, 'Noto Sans';
+        font-size: 12px;
+      }
+
+      .st1, .st4 {
+        stroke: #757575;
+      }
+
+      .st2 {
+        stroke: #fff;
+      }
+
+      .st2, .st3 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .st9 {
+        fill: #333;
+      }
+
+      .st4 {
+        stroke-linecap: square;
+      }
+
+      .st10 {
+        fill: #728cd7;
+        opacity: .8;
+      }
+    </style>
+  </defs>
+  <g id="__svelte-dw-svg">
+    <g id="container-svg_container-body-svg_datawrapper-yohMi-k7lwvj-svg">
+      <g id="container-svg_container-bodyTop-svg_datawrapper-yohMi-lmtz6e-svg">
+        <g id="container-svg_container-bodyCenter-svg_datawrapper-yohMi-1a857wv-svg">
+          <g id="chart-svg">
+            <g id="svg-main-svg">
+              <g id="group-svg">
+                <g id="y-grid-svg">
+                  <g id="y-grid-lines-svg_grid-y-svg_datawrapper-yohMi-1e0z195-svg">
+                    <line class="st1" x1="246.72" y1="9" x2="923.71" y2="9"/>
+                    <line class="st1" x1="246.72" y1="55.26" x2="923.71" y2="55.26"/>
+                    <line class="st1" x1="246.72" y1="101.52" x2="923.71" y2="101.52"/>
+                    <line class="st1" x1="246.72" y1="147.78" x2="923.71" y2="147.78"/>
+                    <line class="st1" x1="246.72" y1="194.04" x2="923.71" y2="194.04"/>
+                    <line class="st1" x1="246.72" y1="263.44" x2="923.71" y2="263.44"/>
+                    <line class="st1" x1="246.72" y1="286.57" x2="923.71" y2="286.57"/>
+                  </g>
+                </g>
+                <g id="area-fills-svg">
+                  <path id="area-variable-1-zero-baseline-0" class="st10" d="M256.72,240.31h656.99v-18.27h-5.44v1h-5.43v.62h-5.43v.18h-5.43v-1.28h-5.44v-7.93h-5.43v.55h-5.43v-2.74h-5.43v-1.08h-5.44v4.4h-5.43v-.3h-5.43v1.71h-5.43v-2.31h-5.44v-6.94h-5.43v6.94h-5.43v9.25h-5.43v2.31h-5.44v-2.31h-10.85v-2.31h-5.43v-.14h-5.44v5.85h-5.43v-.49h-5.43v4.46h-5.43v3.89h-5.44v-1.28h-5.43v-8.06h-5.43v-2.46h-5.43v-3.55h-5.44v-1.74h-5.43v-7.26h-5.43v2.66h-5.43v7.81h-5.44v.1h-5.43v3.35h-5.43v1.62h-5.43v3.39h-5.44v.27h-5.43v3.56h-5.43v-6.82h-5.43v-.39h-5.44v2.13h-5.43v4.84h-5.43v4.26h-5.43v4.62h-5.44v11.42h-5.43v-.67h-5.43v-23.73h-5.43v-3.23h-5.44v-6.09h-5.43v5h-5.43v6.06h-5.43v-15.35h-5.44v-3.4h-5.43v-2.86h-5.43v3.85h-5.43v5.22h-5.44v-10.45h-5.43v-13.03h-5.43v-9.75h-5.43v-9.08h-5.44v35.75h-5.43v-.73h-5.43v-1.14h-5.43v.43h-5.44v.41h-5.43v-.23h-5.43v-.33h-5.43v-.2h-5.44v-1.52h-5.43v1.3h-5.43v5.88h-5.43v-4.11h-5.44v-3.08h-5.43v1.13h-5.43v-1.88h-5.43v13.47h-5.44v2.07h-5.43v-1.35h-5.43v1.93h-5.43v1.17h-5.44v6.29h-5.43v-.81h-5.43v-.5h-5.43v-.07h-5.44v-1.04h-5.43v.62h-5.43v-2.53h-5.43v-1.54h-5.44v3.99h-5.43v-1.63h-5.43v2.27h-5.43v2.89h-5.44v-2.01h-5.43v.56h-5.43v-3.23h-5.43v.97h-5.44v-.05h-5.43v-3.02h-5.43v2.01h-5.43v-3.12h-5.44v6.69h-5.43v5.52h-5.43v11.15h-5.43v-12.64h-5.44v-2.4h-5.43v.13h-5.43v-6.36h-5.43v-.99h-5.44v-2.82h-5.43v3.48h-5.43v-14.81h-5.43v2.38h-5.44v-3.52h-5.43v1.2h-5.43v-1.67h-5.43v2.74h-5.44v-1.55h-5.43v-.43h-5.43v-3.49h-5.43v.94h-5.43v31.42Z"/>
+                </g>
+                <g id="lines-svg">
+                  <g id="Variable1-svg">
+                    <g id="Variable1-svg1" data-name="Variable1-svg">
+                      <path id="Variable1" class="st2" d="M256.72,214.53v-5.65h5.43v-.94h5.43v3.49h5.43v.43h5.43v1.55h5.44v-2.74h5.43v1.67h5.43v-1.2h5.43v3.52h5.44v-2.38h5.43v14.81h5.43v-3.48h5.43v2.82h5.44v.99h5.43v6.36h5.43v-.13h5.43v2.4h5.44v12.64h5.43v-11.15h5.43v-5.52h5.43v-6.69h5.44v3.12h5.43v-2.01h5.43v3.02h5.43v.05h5.44v-.97h5.43v3.23h5.43v-.56h5.43v2.01h5.44v-2.89h5.43v-2.27h5.43v1.63h5.43v-3.99h5.44v1.54h5.43v2.53h5.43v-.62h5.43v1.04h5.44v.07h5.43v.5h5.43v.81h5.43v-6.29h5.44v-1.17h5.43v-1.93h5.43v1.35h5.43v-2.07h5.44v-13.47h5.43v1.88h5.43v-1.13h5.43v3.08h5.44v4.11h5.43v-5.88h5.43v-1.3h5.43v1.52h5.44v.2h5.43v.33h5.43v.23h5.43v-.41h5.44v-.43h5.43v1.14h5.43v.73h5.43v-35.75h5.44v9.08h5.43v9.75h5.43v13.03h5.43v10.45h5.44v-5.22h5.43v-3.85h5.43v2.86h5.43v3.4h5.44v15.35h5.43v-6.06h5.43v-5h5.43v6.09h5.44v3.23h5.43v23.73h5.43v.67h5.43v-11.42h5.44v-4.62h5.43v-4.26h5.43v-4.84h5.43v-2.13h5.44v.39h5.43v6.82h5.43v-3.56h5.43v-.27h5.44v-3.39h5.43v-1.62h5.43v-3.35h5.43v-.1h5.44v-7.81h5.43v-2.66h5.43v7.26h5.43v1.74h5.44v3.55h5.43v2.46h5.43v8.06h5.43v1.28h5.44v-3.89h5.43v-4.46h5.43v.49h5.43v-5.85h5.44v.14h5.43v2.31h10.85v2.31h5.44v-2.31h5.43v-9.25h5.43v-6.94h5.43v6.94h5.44v2.31h5.43v-1.71h5.43v.3h5.43v-4.4h5.44v1.08h5.43v2.74h5.43v-.55h5.43v7.93h5.44v1.28h5.43v-.18h5.43v-.62h5.43v-1h5.44"/>
+                    </g>
+                  </g>
+                  <g id="Variable2-svg">
+                    <g id="Variable2-svg1" data-name="Variable2-svg">
+                      <path id="Variable2" class="st3" d="M256.72,163.54l5.43-1.04,5.43-1.09,5.43-.99,5.43-.98,5.44-.94,5.43-1.05,5.43-1,5.43-1.06,5.44-.94,5.43-1.04,5.43-.5,5.43-.63,5.44-.53,5.43-.49,5.43-.25,5.43-.26,5.44-.16,5.43.32,5.43-.11,5.43-.32,5.44-.58,5.43-.46,5.43-.54,5.43-.43,5.44-.43,5.43-.47,5.43-.34,5.43-.37,5.44-.29,5.43-.4,5.43-.5,5.43-.43,5.44-.6,5.43-.54,5.43-.44,5.43-.47,5.44-.42,5.43-.42,5.43-.4,5.43-.37,5.44-.64,5.43-.7,5.43-.78,5.43-.73,5.44-.83,5.43-1.43,5.43-1.37,5.43-1.44,5.44-1.31,5.43-1.14,5.43-1.43,5.43-1.51,5.44-1.46,5.43-1.46,5.43-1.47,5.43-1.47,5.44-1.51,5.43-1.55,5.43-1.51,5.43-1.5,5.44-3.43,5.43-3.02,5.43-2.55,5.43-1.85,5.44-1.26,5.43-1.58,5.43-1.83,5.43-1.68,5.44-1.49,5.43-.56,5.43-.94,5.43-1.26,5.44-.89,5.43-.69,5.43.82,5.43.85,5.44.13,5.43-.16,5.43-.43,5.43-.73,5.44-.87,5.43-.85,5.43-.42,5.43-.65,5.44-.67,5.43-.89,5.43-1,5.43-1.23,5.44-1.25,5.43-1.78,5.43-2.13,5.43-1.51,5.44-1.4,5.43-1.17,5.43-1,5.43-.44,5.44-.35,5.43-.63,5.43-.95,5.43-.92,5.44-1.19,5.43-1.35,5.43-1.16,5.43-1.18,5.44-1.02,5.43-1.15,5.43-1.96,5.43-2.51,5.44-1.94,5.43-1.81,5.43-2.1,5.43-1.95,5.44-2.33,5.43-2.27,5.43-2.07,5.43-2.14,5.44-1.49,5.43-1.4,5.43-1.42,5.43-1.49,5.44-1.58"/>
+                    </g>
+                    <g id="Variable2-svg2" data-name="Variable2-svg">
+                      <path class="st5" d="M917.71,38.17c0,2.21-1.79,4-4,4s-4-1.79-4-4,1.79-4,4-4,4,1.79,4,4"/>
+                    </g>
+                  </g>
+                </g>
+                <g id="x-grid-svg1" data-name="x-grid-svg">
+                  <g id="x-tick-labels-svg_date-axis-svg_grid-x-svg_datawrapper-yohMi-1hw4nop-svg_svelte-qac4x9-svg">
+                    <g class="st7">
+                      <text class="st6" transform="translate(243.5 308.57)"><tspan x="0" y="0">1900</tspan></text>
+                    </g>
+                    <g class="st7">
+                      <text class="st6" transform="translate(352.08 308.57)"><tspan x="0" y="0">1920</tspan></text>
+                    </g>
+                    <g class="st7">
+                      <text class="st6" transform="translate(460.67 308.57)"><tspan x="0" y="0">1940</tspan></text>
+                    </g>
+                    <g class="st7">
+                      <text class="st6" transform="translate(569.27 308.57)"><tspan x="0" y="0">1960</tspan></text>
+                    </g>
+                    <g class="st7">
+                      <text class="st6" transform="translate(677.86 308.57)"><tspan x="0" y="0">1980</tspan></text>
+                    </g>
+                    <g class="st7">
+                      <text class="st6" transform="translate(786.46 308.57)"><tspan x="0" y="0">2000</tspan></text>
+                    </g>
+                    <g class="st7">
+                      <text class="st6" transform="translate(900.49 308.57)"><tspan x="0" y="0">2021</tspan></text>
+                    </g>
+                  </g>
+                  <g id="x-tick-lines-svg_grid-x-svg_datawrapper-yohMi-jo7dkp-svg">
+                    <line class="st1" x1="256.72" y1="291.57" x2="256.72" y2="286.57"/>
+                    <line class="st1" x1="365.3" y1="291.57" x2="365.3" y2="286.57"/>
+                    <line class="st1" x1="473.89" y1="291.57" x2="473.89" y2="286.57"/>
+                    <line class="st1" x1="582.49" y1="291.57" x2="582.49" y2="286.57"/>
+                    <line class="st1" x1="691.08" y1="291.57" x2="691.08" y2="286.57"/>
+                    <line class="st1" x1="799.68" y1="291.57" x2="799.68" y2="286.57"/>
+                    <line class="st1" x1="913.71" y1="291.57" x2="913.71" y2="286.57"/>
+                  </g>
+                </g>
+                <g id="y-grid-svg1" data-name="y-grid-svg">
+                  <g id="y-tick-labels-svg_number-axis-svg_grid-y-svg_datawrapper-yohMi-15wn2db-svg">
+                    <g class="st7">
+                      <text class="st6" transform="translate(228.5 290.57)"><tspan x="0" y="0">−2</tspan></text>
+                    </g>
+                    <g class="st7">
+                      <text class="st6" transform="translate(228.5 267.44)"><tspan x="0" y="0">−1</tspan></text>
+                    </g>
+                    <g class="st7">
+                      <text class="st6" transform="translate(235.11 244.31)"><tspan x="0" y="0">0</tspan></text>
+                    </g>
+                    <g class="st7">
+                      <text class="st6" transform="translate(235.11 198.04)"><tspan x="0" y="0">2</tspan></text>
+                    </g>
+                    <g class="st7">
+                      <text class="st6" transform="translate(235.11 151.78)"><tspan x="0" y="0">4</tspan></text>
+                    </g>
+                    <g class="st7">
+                      <text class="st6" transform="translate(235.11 105.52)"><tspan x="0" y="0">6</tspan></text>
+                    </g>
+                    <g class="st7">
+                      <text class="st6" transform="translate(235.11 59.26)"><tspan x="0" y="0">8</tspan></text>
+                    </g>
+                    <g class="st7">
+                      <text class="st6" transform="translate(228.5 13)"><tspan x="0" y="0">10</tspan></text>
+                    </g>
+                  </g>
+                  <g id="y-base-lines-svg_grid-y-svg_datawrapper-yohMi-c64oop-svg">
+                    <line class="st4" x1="923.71" y1="240.31" x2="246.72" y2="240.31"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g id="Variable11" data-name="Variable1" class="st7">
+              <text class="st9" transform="translate(923.69 225.53)"><tspan x="0" y="0">Variable1</tspan></text>
+            </g>
+            <g id="Variable21" data-name="Variable2" class="st7">
+              <text class="st9" transform="translate(923.69 41.67)"><tspan x="0" y="0">Variable2</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(34.87 308.57)"><tspan x="0" y="0">Tick</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="90.16" y1="227.65" x2="263.7" y2="227.65"/>
+    <path d="M263.6,229.55c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(34.87 230.37)"><tspan x="0" y="0">Column</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="108.61" y1="8.95" x2="223.25" y2="8.95"/>
+    <path d="M223.15,10.85c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(34.13 12.95)"><tspan x="0" y="0">Grid label</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="90.16" y1="304.61" x2="239.91" y2="304.61"/>
+    <path d="M239.81,306.51c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g>
+    <line class="st0" x1="1010.99" y1="146.78" x2="926.39" y2="146.78"/>
+    <path d="M926.49,144.88c-1,0-1.9.8-1.9,1.9s.8,1.9,1.9,1.9,1.9-.8,1.9-1.9-.8-1.9-1.9-1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(1026.29 150.68)"><tspan x="0" y="0">Small Grid Line</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="1010.99" y1="81.9" x2="754.22" y2="81.9"/>
+    <path d="M754.32,80c-1,0-1.9.8-1.9,1.9s.8,1.9,1.9,1.9,1.9-.8,1.9-1.9-.8-1.9-1.9-1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(1026.29 85.89)"><tspan x="0" y="0">Line</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="1010.99" y1="37.17" x2="981.39" y2="37.17"/>
+    <path d="M981.49,35.27c-1,0-1.9.8-1.9,1.9s.8,1.9,1.9,1.9,1.9-.8,1.9-1.9-.8-1.9-1.9-1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(1026.9 41.07)"><tspan x="0" y="0">Variable label</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

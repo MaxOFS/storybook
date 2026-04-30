@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="exportSvg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1203.42 363.89">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .st0, .st1, .st2, .st3 {
+        fill: none;
+      }
+
+      .st4, .st5 {
+        fill: #f56a00;
+      }
+
+      .st6 {
+        fill: #757575;
+      }
+
+      .st6, .st7, .st8 {
+        isolation: isolate;
+      }
+
+      .st6, .st8 {
+        font-family: NotoSans, 'Noto Sans';
+        font-size: 12px;
+      }
+
+      .st9, .st10 {
+        fill: #728cd7;
+      }
+
+      .st2, .st3 {
+        stroke: #757575;
+      }
+
+      .st5, .st10 {
+        stroke: #fff;
+        stroke-width: .3px;
+      }
+
+      .st3 {
+        stroke-linecap: square;
+      }
+
+      .st11 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="st1" x="226.71" y="0" width="750" height="361.8"/>
+    </clipPath>
+  </defs>
+  <g id="__svelte-dw-svg">
+    <g id="container-svg_container-body-svg_datawrapper-Eggl9-k7lwvj-svg">
+      <g id="container-svg_container-bodyTop-svg_datawrapper-Eggl9-lmtz6e-svg">
+        <g id="container-svg_container-bodyCenter-svg_datawrapper-Eggl9-1a857wv-svg">
+          <g id="chart-svg">
+            <g class="st11">
+              <g id="svg-main-svg">
+                <g id="container-svg">
+                  <g id="grid-svg_below-svg">
+                    <g id="y-grid-lines-svg_grid-y-svg_datawrapper-Eggl9-bgupc2-svg">
+                      <line class="st2" x1="263.42" y1="261.7" x2="976.71" y2="261.7"/>
+                      <line class="st2" x1="263.42" y1="188.58" x2="976.71" y2="188.58"/>
+                      <line class="st2" x1="263.42" y1="115.47" x2="976.71" y2="115.47"/>
+                      <line class="st2" x1="263.42" y1="42.36" x2="976.71" y2="42.36"/>
+                    </g>
+                  </g>
+                  <g id="columns-svg">
+                    <g id="series-svg">
+                      <rect id="Variable1-0" class="st10" x="273.3" y="61.81" width="22.4" height="272.85"/>
+                      <path class="st10" d="M273.3,61.81h22.4v272.85h-22.4V61.81Z"/>
+                      <rect id="Variable1-01" data-name="Variable1-0" class="st10" x="338.14" y="73.51" width="22.4" height="261.15"/>
+                      <path class="st10" d="M338.14,73.51h22.4v261.15h-22.4V73.51Z"/>
+                      <rect id="Variable1-02" data-name="Variable1-0" class="st10" x="402.99" y="85.5" width="22.4" height="249.16"/>
+                      <path class="st10" d="M402.99,85.5h22.4v249.16h-22.4V85.5Z"/>
+                      <rect id="Variable1-03" data-name="Variable1-0" class="st10" x="467.83" y="95.44" width="22.4" height="239.21"/>
+                      <path class="st10" d="M467.83,95.44h22.4v239.21h-22.4V95.44Z"/>
+                      <rect id="Variable1-04" data-name="Variable1-0" class="st10" x="532.68" y="105.68" width="22.4" height="228.98"/>
+                      <path class="st10" d="M532.68,105.68h22.4v228.98h-22.4V105.68Z"/>
+                      <rect id="Variable1-05" data-name="Variable1-0" class="st10" x="597.52" y="117.08" width="22.4" height="217.57"/>
+                      <path class="st10" d="M597.52,117.08h22.4v217.57h-22.4V117.08Z"/>
+                      <rect id="Variable1-06" data-name="Variable1-0" class="st10" x="662.37" y="127.32" width="22.4" height="207.34"/>
+                      <path class="st10" d="M662.37,127.32h22.4v207.34h-22.4V127.32Z"/>
+                      <rect id="Variable1-07" data-name="Variable1-0" class="st10" x="727.21" y="135.65" width="22.4" height="199"/>
+                      <path class="st10" d="M727.21,135.65h22.4v199h-22.4v-199Z"/>
+                      <rect id="Variable1-08" data-name="Variable1-0" class="st10" x="792.05" y="141.94" width="22.4" height="192.72"/>
+                      <path class="st10" d="M792.05,141.94h22.4v192.72h-22.4v-192.72Z"/>
+                      <rect id="Variable1-09" data-name="Variable1-0" class="st10" x="856.9" y="146.77" width="22.4" height="187.89"/>
+                      <path class="st10" d="M856.9,146.77h22.4v187.89h-22.4v-187.89Z"/>
+                      <rect id="Variable1-010" data-name="Variable1-0" class="st10" x="921.74" y="151.59" width="22.4" height="183.06"/>
+                      <path class="st10" d="M921.74,151.59h22.4v183.06h-22.4v-183.06Z"/>
+                    </g>
+                    <g id="series-svg1" data-name="series-svg">
+                      <rect id="Variable2-1" class="st5" x="295.99" y="321.94" width="22.4" height="12.71"/>
+                      <path class="st5" d="M295.99,321.94h22.4v12.71h-22.4v-12.71Z"/>
+                      <rect id="Variable2-11" data-name="Variable2-1" class="st5" x="360.84" y="323.55" width="22.4" height="11.11"/>
+                      <path class="st5" d="M360.84,323.55h22.4v11.11h-22.4v-11.11Z"/>
+                      <rect id="Variable2-12" data-name="Variable2-1" class="st5" x="425.68" y="323.84" width="22.4" height="10.81"/>
+                      <path class="st5" d="M425.68,323.84h22.4v10.81h-22.4v-10.81Z"/>
+                      <rect id="Variable2-13" data-name="Variable2-1" class="st5" x="490.53" y="323.99" width="22.4" height="10.67"/>
+                      <path class="st5" d="M490.53,323.99h22.4v10.67h-22.4v-10.67Z"/>
+                      <rect id="Variable2-14" data-name="Variable2-1" class="st5" x="555.37" y="323.99" width="22.4" height="10.67"/>
+                      <path class="st5" d="M555.37,323.99h22.4v10.67h-22.4v-10.67Z"/>
+                      <rect id="Variable2-15" data-name="Variable2-1" class="st5" x="620.22" y="324.43" width="22.4" height="10.23"/>
+                      <path class="st5" d="M620.22,324.43h22.4v10.23h-22.4v-10.23Z"/>
+                      <rect id="Variable2-16" data-name="Variable2-1" class="st5" x="685.06" y="324.58" width="22.4" height="10.08"/>
+                      <path class="st5" d="M685.06,324.58h22.4v10.08h-22.4v-10.08Z"/>
+                      <rect id="Variable2-17" data-name="Variable2-1" class="st5" x="749.91" y="324.58" width="22.4" height="10.08"/>
+                      <path class="st5" d="M749.91,324.58h22.4v10.08h-22.4v-10.08Z"/>
+                      <rect id="Variable2-18" data-name="Variable2-1" class="st5" x="814.75" y="324.87" width="22.4" height="9.79"/>
+                      <path class="st5" d="M814.75,324.87h22.4v9.79h-22.4v-9.79Z"/>
+                      <rect id="Variable2-19" data-name="Variable2-1" class="st5" x="879.59" y="325.31" width="22.4" height="9.35"/>
+                      <path class="st5" d="M879.59,325.31h22.4v9.35h-22.4v-9.35Z"/>
+                      <rect id="Variable2-110" data-name="Variable2-1" class="st5" x="944.44" y="325.31" width="22.4" height="9.35"/>
+                      <path class="st5" d="M944.44,325.31h22.4v9.35h-22.4v-9.35Z"/>
+                    </g>
+                  </g>
+                  <g id="grid-svg_above-svg">
+                    <g id="y-tick-labels-svg_grid-y-svg_number-axis-svg_datawrapper-Eggl9-1a2scu3-svg">
+                      <g class="st7">
+                        <text class="st6" transform="translate(251.81 338.81)"><tspan x="0" y="0">0</tspan></text>
+                      </g>
+                      <g class="st7">
+                        <text class="st6" transform="translate(238.59 265.7)"><tspan x="0" y="0">500</tspan></text>
+                      </g>
+                      <g class="st7">
+                        <text class="st6" transform="translate(228.87 192.58)"><tspan x="0" y="0">1 000</tspan></text>
+                      </g>
+                      <g class="st7">
+                        <text class="st6" transform="translate(228.87 119.47)"><tspan x="0" y="0">1 500</tspan></text>
+                      </g>
+                      <g class="st7">
+                        <text class="st6" transform="translate(228.87 46.36)"><tspan x="0" y="0">2 000</tspan></text>
+                      </g>
+                    </g>
+                    <g id="y-base-lines-svg_grid-y-svg_datawrapper-Eggl9-l0t1pf-svg">
+                      <line class="st3" x1="976.71" y1="334.81" x2="263.42" y2="334.81"/>
+                    </g>
+                    <g id="x-tick-lines-svg_grid-x-svg_datawrapper-Eggl9-cg45gq-svg">
+                      <line class="st2" x1="295.84" y1="339.81" x2="295.84" y2="334.81"/>
+                      <line class="st2" x1="360.69" y1="339.81" x2="360.69" y2="334.81"/>
+                      <line class="st2" x1="425.53" y1="339.81" x2="425.53" y2="334.81"/>
+                      <line class="st2" x1="490.38" y1="339.81" x2="490.38" y2="334.81"/>
+                      <line class="st2" x1="555.22" y1="339.81" x2="555.22" y2="334.81"/>
+                      <line class="st2" x1="620.07" y1="339.81" x2="620.07" y2="334.81"/>
+                      <line class="st2" x1="684.91" y1="339.81" x2="684.91" y2="334.81"/>
+                      <line class="st2" x1="749.76" y1="339.81" x2="749.76" y2="334.81"/>
+                      <line class="st2" x1="814.6" y1="339.81" x2="814.6" y2="334.81"/>
+                      <line class="st2" x1="879.44" y1="339.81" x2="879.44" y2="334.81"/>
+                      <line class="st2" x1="944.29" y1="339.81" x2="944.29" y2="334.81"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g class="st7">
+              <text class="st6" transform="translate(282.62 356.8)"><tspan x="0" y="0">2013</tspan></text>
+            </g>
+            <g class="st7">
+              <text class="st6" transform="translate(347.46 356.8)"><tspan x="0" y="0">2014</tspan></text>
+            </g>
+            <g class="st7">
+              <text class="st6" transform="translate(412.3 356.8)"><tspan x="0" y="0">2015</tspan></text>
+            </g>
+            <g class="st7">
+              <text class="st6" transform="translate(477.15 356.8)"><tspan x="0" y="0">2016</tspan></text>
+            </g>
+            <g class="st7">
+              <text class="st6" transform="translate(541.99 356.8)"><tspan x="0" y="0">2017</tspan></text>
+            </g>
+            <g class="st7">
+              <text class="st6" transform="translate(606.84 356.8)"><tspan x="0" y="0">2018</tspan></text>
+            </g>
+            <g class="st7">
+              <text class="st6" transform="translate(671.68 356.8)"><tspan x="0" y="0">2019</tspan></text>
+            </g>
+            <g class="st7">
+              <text class="st6" transform="translate(736.52 356.8)"><tspan x="0" y="0">2020</tspan></text>
+            </g>
+            <g class="st7">
+              <text class="st6" transform="translate(801.37 356.8)"><tspan x="0" y="0">2021</tspan></text>
+            </g>
+            <g class="st7">
+              <text class="st6" transform="translate(866.21 356.8)"><tspan x="0" y="0">2022</tspan></text>
+            </g>
+            <g class="st7">
+              <text class="st6" transform="translate(931.05 356.8)"><tspan x="0" y="0">2023</tspan></text>
+            </g>
+            <rect class="st9" x="226.71" y="4.97" width="8" height="8"/>
+            <g class="st7">
+              <text class="st6" transform="translate(242.71 11.56)"><tspan x="0" y="0">Variable1</tspan></text>
+            </g>
+            <rect class="st4" x="312.3" y="4.97" width="8" height="8"/>
+            <g class="st7">
+              <text class="st6" transform="translate(328.3 11.56)"><tspan x="0" y="0">Variable2</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(35.18 356.78)"><tspan x="0" y="0">Tick</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="106.88" y1="217.88" x2="280.42" y2="217.88"/>
+    <path d="M280.32,219.78c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(35.3 220.88)"><tspan x="0" y="0">Column</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="108.93" y1="42.64" x2="223.57" y2="42.64"/>
+    <path d="M223.47,44.54c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(34.45 46.64)"><tspan x="0" y="0">Grid label</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="94.53" y1="352.9" x2="279.37" y2="352.9"/>
+    <path d="M279.27,354.8c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g>
+    <line class="st0" x1="1064.28" y1="115.37" x2="979.68" y2="115.37"/>
+    <path d="M979.78,113.47c-1,0-1.9.8-1.9,1.9s.8,1.9,1.9,1.9,1.9-.8,1.9-1.9-.8-1.9-1.9-1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(1079.58 119.27)"><tspan x="0" y="0">Small Grid Line</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="86.71" y1="9.97" x2="222.74" y2="9.97"/>
+    <path d="M222.64,11.87c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st7">
+    <g class="st7">
+      <g class="st7">
+        <text class="st8" transform="translate(35.18 14.92)"><tspan x="0" y="0">Legend</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

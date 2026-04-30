@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="exportSvg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1203.42 416.89">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .st0, .st1, .st2 {
+        fill: none;
+      }
+
+      .st0, .st3, .st4, .st5 {
+        stroke-width: .5px;
+      }
+
+      .st1 {
+        opacity: .8;
+        stroke: #333;
+      }
+
+      .st1, .st6, .st7, .st8 {
+        isolation: isolate;
+      }
+
+      .st9 {
+        clip-path: url(#clippath-1);
+      }
+
+      .st3 {
+        fill: #4f25d2;
+      }
+
+      .st3, .st4, .st5 {
+        stroke: #fff;
+        stroke-linejoin: bevel;
+      }
+
+      .st4 {
+        fill: #728cd7;
+      }
+
+      .st7, .st8 {
+        font-family: NotoSans, 'Noto Sans';
+        font-size: 12px;
+      }
+
+      .st10, .st8 {
+        fill: #333;
+      }
+
+      .st5 {
+        fill: #f56a00;
+      }
+
+      .st11 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="st2" x="414.21" y="29" width="375" height="375"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="st2" x="226.71" y="10" width="750" height="413"/>
+    </clipPath>
+  </defs>
+  <g id="__svelte-dw-svg">
+    <g id="container-svg_container-body-svg_datawrapper-j5w5R-k7lwvj-svg">
+      <g id="container-svg_container-bodyTop-svg_datawrapper-j5w5R-lmtz6e-svg">
+        <g id="container-svg_container-bodyCenter-svg_datawrapper-j5w5R-1a857wv-svg">
+          <g id="chart-svg">
+            <g class="st11">
+              <g id="group-svg">
+                <g id="pie-svg">
+                  <g id="slice-svg">
+                    <path class="st4" d="M601.71,29c103.55,0,187.5,83.95,187.5,187.5,0,103.55-83.95,187.5-187.5,187.5-91.78,0-170.08-66.44-185-157.01l64.75-10.67c10.95,66.41,73.66,111.38,140.07,100.43,66.41-10.95,111.38-73.66,100.43-140.07-9.7-58.87-60.59-102.05-120.25-102.05V29Z"/>
+                  </g>
+                  <g id="slice-svg1" data-name="slice-svg">
+                    <path class="st5" d="M416.71,246.99c-13.14-79.72,26.26-158.89,97.79-196.48l30.53,58.09c-46.49,24.43-72.1,75.89-63.56,127.71l-64.75,10.67Z"/>
+                  </g>
+                  <g id="slice-svg2" data-name="slice-svg">
+                    <path class="st3" d="M514.49,50.52c26.9-14.13,56.83-21.52,87.22-21.52v65.62c-19.75,0-39.21,4.8-56.69,13.99l-30.53-58.09Z"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g class="st9">
+              <g id="line-container-svg">
+                <g id="line-group-svg">
+                  <path class="st1" d="M813.21,350.12h-54.06l-39.5-33.53"/>
+                  <circle class="st10" cx="719.65" cy="316.59" r="2"/>
+                </g>
+                <g id="line-group-svg1" data-name="line-group-svg">
+                  <path class="st1" d="M390.21,124.49h26.63l46.38,23.09"/>
+                  <circle class="st10" cx="463.23" cy="147.58" r="2"/>
+                </g>
+                <g id="line-group-svg2" data-name="line-group-svg">
+                  <path class="st1" d="M390.21,18.5h152.86l21.58,47.82"/>
+                  <circle class="st10" cx="564.65" cy="66.32" r="2"/>
+                </g>
+              </g>
+            </g>
+            <g class="st6">
+              <text class="st8" transform="translate(818.21 353.62)"><tspan x="0" y="0">Variable1</tspan></text>
+              <text class="st8" transform="translate(873.79 353.62)"><tspan x="0" y="0">(72,4)</tspan></text>
+            </g>
+            <g class="st6">
+              <text class="st8" transform="translate(305.34 22)"><tspan x="0" y="0">Variable3</tspan></text>
+              <text class="st8" transform="translate(360.91 22)"><tspan x="0" y="0">(7,7)</tspan></text>
+            </g>
+            <g class="st6">
+              <text class="st8" transform="translate(298.48 127.99)"><tspan x="0" y="0">Variable2</tspan></text>
+              <text class="st8" transform="translate(354.05 127.99)"><tspan x="0" y="0">(19,9)</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="127.71" y1="123.99" x2="289.76" y2="123.99"/>
+    <path d="M289.66,125.89c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st6">
+    <g class="st6">
+      <g class="st6">
+        <g class="st6">
+          <text class="st7" transform="translate(56.78 127.12)"><tspan x="0" y="0">Part Label</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="89.99" y1="322.18" x2="470.94" y2="322.18"/>
+    <path d="M470.84,324.08c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st6">
+    <g class="st6">
+      <g class="st6">
+        <g class="st6">
+          <text class="st7" transform="translate(56.78 324.08)"><tspan x="0" y="0">Part</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

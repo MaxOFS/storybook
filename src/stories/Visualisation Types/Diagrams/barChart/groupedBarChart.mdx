@@ -16,11 +16,12 @@ import * as chartStories from './groupedBarChart.stories'
 A Grouped Bar Charts is used when two or more data sets are displayed side-by-side and grouped together under the same categories. It is a standard way to compare the size of things, and it allows to compare multiple series. However, it can become tricky to read with more than 2 series. The horizontal layout is the best choice for long text labels and trends. Grouped bar charts can group the categories on the same axis.
 <Canvas of={chartStories.Description} />
 ## Anatomy
-<img src="./vizTypes/groupedBar_anatomy.png" alt="alt"/>
+<img src="./vizTypes/groupedBar_anatomy.svg" alt="alt" width ="100%"/>
 ## Chart variations
 ### Grouped bar chart with groups
 <Canvas of={chartStories.groups} />
 ### Grouped bar chart with confidence interval
+The lower and upper margin of the confidence interval is shown by an overlay. Usually we use the 95%-margin which has to be mentioned in the legend. In charts with only one colour, the hatched area is two steps darker than the bar chart. If there are multiple colours or different shades of the base colour, we use black #333333 instead.
 <Canvas of={chartStories.confidence} />
 ### Grouped bar chart with overlay
 <Canvas of={chartStories.overlay} />

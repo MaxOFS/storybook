@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="u3b20a4a84bb9428c9df3bc4c5a216929" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xlinkg="http://www.w3.org/1999/xlink" viewBox="0 0 1559.06 424.11">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #c2cef2;
+      }
+
+      .st0, .st1, .st2 {
+        stroke: #fff;
+        stroke-width: 2px;
+      }
+
+      .st3 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .st3, .st4, .st5, .st6, .st7, .st8, .st9, .st10 {
+        fill: none;
+      }
+
+      .st11 {
+        clip-path: url(#clippath-4);
+      }
+
+      .st4 {
+        stroke-width: 28.42px;
+      }
+
+      .st4, .st7, .st8 {
+        stroke: #728cd7;
+      }
+
+      .st5 {
+        stroke-width: 10.49px;
+      }
+
+      .st5, .st10 {
+        stroke: #c2cef2;
+      }
+
+      .st1 {
+        fill: #2b408c;
+      }
+
+      .st6 {
+        stroke: #2b408c;
+        stroke-width: 35.32px;
+      }
+
+      .st7 {
+        stroke-width: 23.13px;
+      }
+
+      .st8 {
+        stroke-width: 164.16px;
+      }
+
+      .st12 {
+        clip-path: url(#clippath-1);
+      }
+
+      .st13, .st14, .st15, .st16 {
+        isolation: isolate;
+      }
+
+      .st17 {
+        clip-path: url(#clippath-5);
+      }
+
+      .st14 {
+        font-family: NotoSans, 'Noto Sans';
+      }
+
+      .st14, .st15 {
+        font-size: 12px;
+      }
+
+      .st18 {
+        clip-path: url(#clippath-3);
+      }
+
+      .st10 {
+        stroke-width: 84.12px;
+      }
+
+      .st15, .st16 {
+        font-family: ArialMT, Arial;
+      }
+
+      .st2 {
+        fill: #728cd7;
+      }
+
+      .st19 {
+        clip-path: url(#clippath-2);
+      }
+
+      .st16 {
+        font-size: 8px;
+      }
+
+      .st20 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="st9" x="252.53" y="15.15" width="1054" height="70.63"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="st9" x="252.53" y="56.56" width="1054" height="61.26"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <rect class="st9" x="252.53" y="24.17" width="1054" height="328.32"/>
+    </clipPath>
+    <clipPath id="clippath-3">
+      <rect class="st9" x="252.53" y="265.17" width="1054" height="64.39"/>
+    </clipPath>
+    <clipPath id="clippath-4">
+      <rect class="st9" x="252.53" y="256.21" width="1054" height="82.32"/>
+    </clipPath>
+    <clipPath id="clippath-5">
+      <rect class="st9" x="252.53" y="282.26" width="1054" height="168.25"/>
+    </clipPath>
+  </defs>
+  <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,500"/>
+  <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="https://viz.bfs.admin.ch/libs/viz-bfs/dynvis/dynvis-v0.9/dynvis.css"/>
+  <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="https://viz.bfs.admin.ch/css/bund/vendors.css"/>
+  <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="https://viz.bfs.admin.ch/css/bund/custom-icons.css"/>
+  <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="https://viz.bfs.admin.ch/css/bund/fabricator.css"/>
+  <g id="u64b38da33be647b5bd07bbd9d40ac4d3">
+    <g>
+      <g>
+        <g class="st20">
+          <path class="st6" d="M252.53,50.47h1054"/>
+        </g>
+        <g class="st12">
+          <path class="st7" d="M252.53,79.69c527,0,527,15,1054,15"/>
+        </g>
+        <g class="st19">
+          <path class="st8" d="M252.53,188.33h1054"/>
+        </g>
+        <g class="st18">
+          <path class="st5" d="M252.53,275.66c527,0,527,43.42,1054,43.42"/>
+        </g>
+        <g class="st11">
+          <path class="st4" d="M252.53,310.11c527,0,527-25.49,1054-25.49"/>
+        </g>
+        <g class="st17">
+          <path class="st10" d="M252.53,366.38h1054"/>
+        </g>
+      </g>
+      <g>
+        <rect class="st1" x="237.53" y="31.81" width="15" height="60.44"/>
+        <rect class="st2" x="237.53" y="105.25" width="15" height="176.65"/>
+        <rect class="st0" x="237.53" y="294.9" width="15" height="114.54"/>
+        <rect class="st1" x="1306.53" y="31.81" width="15" height="37.32"/>
+        <rect class="st2" x="1306.53" y="82.13" width="15" height="217.71"/>
+        <rect class="st0" x="1306.53" y="312.83" width="15" height="96.61"/>
+      </g>
+      <g>
+        <g class="st13">
+          <text class="st16" transform="translate(180.27 64.02)"><tspan x="0" y="0">Confederation</tspan></text>
+        </g>
+        <g class="st13">
+          <text class="st16" transform="translate(200.73 195.56)"><tspan x="0" y="0">Cantons</tspan></text>
+        </g>
+        <g class="st13">
+          <text class="st16" transform="translate(189.63 354.16)"><tspan x="0" y="0">Communes</tspan></text>
+        </g>
+        <g class="st13">
+          <text class="st16" transform="translate(1328.53 52.45)"><tspan x="0" y="0">Confederation</tspan></text>
+        </g>
+        <g class="st13">
+          <text class="st16" transform="translate(1328.53 192.96)"><tspan x="0" y="0">Cantons</tspan></text>
+        </g>
+        <g class="st13">
+          <text class="st16" transform="translate(1328.53 363.12)"><tspan x="0" y="0">Communes</tspan></text>
+        </g>
+      </g>
+      <g>
+        <text class="st15" transform="translate(158.66 20.44)"><tspan x="0" y="0">Unit from which financing comes</tspan></text>
+        <text class="st15" transform="translate(1249.33 20.44)"><tspan x="0" y="0">Unit making expenditure</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st3" x1="102.53" y1="15.15" x2="154.87" y2="15.15"/>
+    <path d="M154.77,17.05c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st13">
+    <g class="st13">
+      <g class="st13">
+        <g class="st13">
+          <text class="st14" transform="translate(28.78 18.87)"><tspan x="0" y="0">Source title</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st3" x1="105.94" y1="62.03" x2="171.47" y2="62.03"/>
+    <path d="M171.37,63.93c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st13">
+    <g class="st13">
+      <g class="st13">
+        <g class="st13">
+          <text class="st14" transform="translate(29.39 64.83)"><tspan x="0" y="0">Source label</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st3" x1="105.94" y1="135.77" x2="243.23" y2="135.77"/>
+    <path d="M243.13,137.67c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st13">
+    <g class="st13">
+      <g class="st13">
+        <g class="st13">
+          <text class="st14" transform="translate(29.39 140.3)"><tspan x="0" y="0">Source node</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st3" x1="67.78" y1="239.27" x2="265.99" y2="239.27"/>
+    <path d="M265.89,241.17c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st13">
+    <g class="st13">
+      <g class="st13">
+        <g class="st13">
+          <text class="st14" transform="translate(29.39 243.8)"><tspan x="0" y="0">Flow</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="st13">
+    <g class="st13">
+      <g class="st13">
+        <g class="st13">
+          <text class="st14" transform="translate(1452.8 21.53)"><tspan x="0" y="0">Target title</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="st13">
+    <g class="st13">
+      <g class="st13">
+        <g class="st13">
+          <text class="st14" transform="translate(1453.4 52.55)"><tspan x="0" y="0">Target label</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="st13">
+    <g class="st13">
+      <g class="st13">
+        <g class="st13">
+          <text class="st14" transform="translate(1453.4 142.95)"><tspan x="0" y="0">Target node</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st3" x1="1436.82" y1="17.05" x2="1387.67" y2="17.05"/>
+    <path d="M1387.77,15.15c-1,0-1.9.8-1.9,1.9s.8,1.9,1.9,1.9,1.9-.8,1.9-1.9-.8-1.9-1.9-1.9Z"/>
+  </g>
+  <g>
+    <line class="st3" x1="1439.95" y1="50.47" x2="1384.52" y2="50.47"/>
+    <path d="M1384.62,48.57c-1,0-1.9.8-1.9,1.9s.8,1.9,1.9,1.9,1.9-.8,1.9-1.9-.8-1.9-1.9-1.9Z"/>
+  </g>
+  <g>
+    <line class="st3" x1="1439.95" y1="138.42" x2="1313.7" y2="138.42"/>
+    <path d="M1313.8,136.52c-1,0-1.9.8-1.9,1.9s.8,1.9,1.9,1.9,1.9-.8,1.9-1.9-.8-1.9-1.9-1.9Z"/>
+  </g>
+</svg>

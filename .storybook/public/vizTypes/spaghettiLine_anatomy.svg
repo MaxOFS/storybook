@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="exportSvg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1203.42 305">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #4f25d2;
+      }
+
+      .st0, .st1, .st2, .st3, .st4 {
+        isolation: isolate;
+      }
+
+      .st0, .st1, .st3, .st4 {
+        font-family: NotoSans, 'Noto Sans';
+        font-size: 12px;
+      }
+
+      .st5 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .st5, .st6, .st7, .st8, .st9, .st10 {
+        fill: none;
+      }
+
+      .st6, .st11, .st12, .st8 {
+        stroke-width: 2px;
+      }
+
+      .st6, .st12 {
+        stroke: #4f25d2;
+      }
+
+      .st6, .st8, .st9 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .st11, .st12 {
+        fill: #fff;
+        stroke-miterlimit: 16;
+      }
+
+      .st11, .st8 {
+        stroke: #f56a00;
+      }
+
+      .st1 {
+        fill: #757575;
+      }
+
+      .st7, .st10 {
+        stroke: #757575;
+      }
+
+      .st4 {
+        fill: #ce4900;
+      }
+
+      .st9 {
+        stroke: #8e8e8e;
+      }
+
+      .st10 {
+        stroke-linecap: square;
+      }
+    </style>
+  </defs>
+  <g id="__svelte-dw-svg">
+    <g id="container-svg_container-body-svg_datawrapper-eKz4U-k7lwvj-svg">
+      <g id="container-svg_container-bodyTop-svg_datawrapper-eKz4U-lmtz6e-svg">
+        <g id="container-svg_container-bodyCenter-svg_datawrapper-eKz4U-1a857wv-svg">
+          <g id="chart-svg">
+            <g id="svg-main-svg">
+              <g id="group-svg">
+                <g id="y-grid-svg">
+                  <g id="y-grid-lines-svg_grid-y-svg_datawrapper-eKz4U-1e0z195-svg">
+                    <line class="st7" x1="277.15" y1="9" x2="917.71" y2="9"/>
+                    <line class="st7" x1="277.15" y1="52.77" x2="917.71" y2="52.77"/>
+                    <line class="st7" x1="277.15" y1="96.54" x2="917.71" y2="96.54"/>
+                    <line class="st7" x1="277.15" y1="140.31" x2="917.71" y2="140.31"/>
+                    <line class="st7" x1="277.15" y1="184.09" x2="917.71" y2="184.09"/>
+                    <line class="st7" x1="277.15" y1="227.86" x2="917.71" y2="227.86"/>
+                  </g>
+                </g>
+                <g id="lines-svg">
+                  <g id="Variable22-svg">
+                    <g id="Variable22-svg1" data-name="Variable22-svg">
+                      <path id="Variable22" class="st8" d="M287.15,141.64l44.3-24.07,44.3-28.42,44.42,10.6,44.3,14.38,44.3,29.82,44.3,8.31,44.42,8.01,44.3,4.56,44.3,6.56,44.3,8.9,44.42-1.67,44.3-2.87,44.3-21.59,44.3-22.62"/>
+                    </g>
+                    <g id="Variable22-svg2" data-name="Variable22-svg">
+                      <path class="st11" d="M911.71,131.53c0,2.21-1.79,4-4,4s-4-1.79-4-4,1.79-4,4-4,4,1.79,4,4"/>
+                    </g>
+                  </g>
+                  <g id="Variable1-svg">
+                    <g id="Variable1-svg1" data-name="Variable1-svg">
+                      <path id="Variable1" class="st9" d="M287.15,34.78l44.3,2.61,44.3-24.87,44.42,23.24,44.3,19.13,44.3,14.36,44.3,10.32,44.42-2.42,44.3-4.18,44.3-.88,44.3-4.39,44.42,12.24,44.3-17.92,44.3-18.17,44.3-13.48"/>
+                    </g>
+                  </g>
+                  <g id="Variable2-svg">
+                    <g id="Variable2-svg1" data-name="Variable2-svg">
+                      <path id="Variable2" class="st9" d="M287.15,136.74l44.3-6.87,44.3-9.26,44.42,3.9,44.3,18.38,44.3,6.33,44.3,2.39,44.42,9.49,44.3.91,44.3-8.42,44.3-2.03,44.42,6.69,44.3,5.52,44.3-29.16,44.3-23.76"/>
+                    </g>
+                  </g>
+                  <g id="Variable3-svg">
+                    <g id="Variable3-svg1" data-name="Variable3-svg">
+                      <path id="Variable3" class="st9" d="M287.15,224.52l44.3-5.9,44.3-.66,44.42-.54,44.3,4.93,44.3,4.35,44.3,3.84,44.42.12,44.3,1.88,44.3,1.6,44.3-1.06,44.42,1.09,44.3-3.97,44.3-2.75,44.3-4.48"/>
+                    </g>
+                  </g>
+                  <g id="Variable4-svg">
+                    <g id="Variable4-svg1" data-name="Variable4-svg">
+                      <path id="Variable4" class="st9" d="M287.15,269.37l44.3.25,44.3-.54,44.42-.08,44.3.37,44.3.86,44.3-.07,44.42-.33,44.3.17,44.3.13,44.3-.07,44.42-.23,44.3.19,44.3-.27,44.3-.26"/>
+                    </g>
+                  </g>
+                  <g id="Variable5-svg">
+                    <g id="Variable5-svg1" data-name="Variable5-svg">
+                      <path id="Variable5" class="st9" d="M287.15,261.72l44.3-.61,44.3-.39,44.42-1.07,44.3,1.8,44.3,1.16,44.3-.18,44.42.33,44.3-.42,44.3.69,44.3.25,44.42,1.13,44.3-2.49,44.3-1.23,44.3-1.03"/>
+                    </g>
+                  </g>
+                  <g id="Variable6-svg">
+                    <g id="Variable6-svg1" data-name="Variable6-svg">
+                      <path id="Variable6" class="st9" d="M287.15,268.75l44.3-.39,44.3-.56,44.42.83,44.3-.36,44.3.29,44.3-.4,44.42.76,44.3-.21,44.3-.02,44.3.07h44.42s44.3-.39,44.3-.39l44.3.39,44.3-.81"/>
+                    </g>
+                  </g>
+                  <g id="Variable7-svg">
+                    <g id="Variable7-svg1" data-name="Variable7-svg">
+                      <path id="Variable7" class="st9" d="M287.15,268.99l44.3.1,44.3-.35,44.42.14,44.3-.41,44.3.81,44.3-.12,44.42-.21,44.3-.04,44.3.24,44.3-.05,44.42.27,44.3-.2,44.3.09,44.3-.78"/>
+                    </g>
+                  </g>
+                  <g id="Variable8-svg">
+                    <g id="Variable8-svg1" data-name="Variable8-svg">
+                      <path id="Variable8" class="st9" d="M287.15,268.45l44.3.29h44.3s44.42-.12,44.42-.12l44.3-.3,44.3.65,44.3-.26,44.42.57,44.3.16,44.3.71,44.3-2.17,44.42.98,44.3-.06,44.3-.09,44.3-.73"/>
+                    </g>
+                  </g>
+                  <g id="Variable9-svg">
+                    <g id="Variable9-svg1" data-name="Variable9-svg">
+                      <path id="Variable9" class="st9" d="M287.15,257.35l44.3-.51,44.3.77,44.42.37,44.3-.33,44.3,2.21,44.3-.06,44.42,1.15,44.3,1.13,44.3.61,44.3.58,44.42-1.05,44.3-.46,44.3-3.51,44.3,2.36"/>
+                    </g>
+                  </g>
+                  <g id="Variable10-svg">
+                    <g id="Variable10-svg1" data-name="Variable10-svg">
+                      <path id="Variable10" class="st9" d="M287.15,238.06l44.3,2.47,44.3-10.54,44.42.54,44.3,5.1,44.3,1.88,44.3,3.6,44.42,2.23,44.3.12,44.3,2.45,44.3.07,44.42.37,44.3-2.8,44.3-5.7,44.3-.74"/>
+                    </g>
+                  </g>
+                  <g id="Variable11-svg">
+                    <g id="Variable11-svg1" data-name="Variable11-svg">
+                      <path id="Variable11" class="st9" d="M287.15,235.58l44.3-.61,44.3-6.75,44.42,3.98,44.3,3.71,44.3.66,44.3,4.12,44.42-1.31,44.3,1.36,44.3-1.28,44.3-.85,44.42,1.24,44.3-9.01,44.3-6.8,44.3-2.78"/>
+                    </g>
+                  </g>
+                  <g id="Variable12-svg">
+                    <g id="Variable12-svg1" data-name="Variable12-svg">
+                      <path id="Variable12" class="st9" d="M287.15,228.27l44.3-4.89,44.3-10.95,44.42,6.59,44.3,5.59,44.3,1.15,44.3-.34,44.42-1.73,44.3,2.83,44.3-1.35,44.3,2.29,44.42-5.24,44.3-5.86,44.3-7.25,44.3-5.18"/>
+                    </g>
+                  </g>
+                  <g id="Variable13-svg">
+                    <g id="Variable13-svg1" data-name="Variable13-svg">
+                      <path id="Variable13" class="st9" d="M287.15,242.87l44.3.58,44.3-2.33,44.42-3.43,44.3.02,44.3,5.92,44.3,1.9,44.42,1.85,44.3,2.78,44.3-1.39,44.3-.18,44.42-2.77,44.3-1.38,44.3-7.58,44.3.24"/>
+                    </g>
+                  </g>
+                  <g id="Variable14-svg">
+                    <g id="Variable14-svg1" data-name="Variable14-svg">
+                      <path id="Variable14" class="st9" d="M287.15,263.02l44.3,1.2,44.3-.43,44.42.56,44.3-1.18,44.3.5,44.3-.1,44.42-.3,44.3.1,44.3.73,44.3.15,44.42-.57,44.3-1.37,44.3-1.39,44.3-.9"/>
+                    </g>
+                  </g>
+                  <g id="Variable15-svg">
+                    <g id="Variable15-svg1" data-name="Variable15-svg">
+                      <path id="Variable15" class="st9" d="M287.15,266.93l44.3.07,44.3-1.55,44.42,1.61,44.3.03,44.3.25,44.3.51,44.42.34,44.3-.04,44.3-.42,44.3.12,44.42.15,44.3-.73,44.3-1.02,44.3.36"/>
+                    </g>
+                  </g>
+                  <g id="Variable16-svg">
+                    <g id="Variable16-svg1" data-name="Variable16-svg">
+                      <path id="Variable16" class="st9" d="M287.15,270.45l44.3.38h44.3s44.42-.01,44.42-.01l44.3-.04,44.3.17,44.3-.47,44.42.34,44.3.06,44.3.14,44.3-.1,44.42-.02,44.3-.49,44.3-.04,44.3.1"/>
+                    </g>
+                  </g>
+                  <g id="Variable17-svg">
+                    <g id="Variable17-svg1" data-name="Variable17-svg">
+                      <path id="Variable17" class="st9" d="M287.15,220.67l44.3-.23,44.3-2.72,44.42,6.05,44.3,3.55,44.3,3.65,44.3,1.4,44.42,1.53,44.3-2.62,44.3-.47,44.3-1.04,44.42,1.3,44.3-6.3,44.3-5.52,44.3-4.73"/>
+                    </g>
+                  </g>
+                  <g id="Variable19-svg">
+                    <g id="Variable19-svg1" data-name="Variable19-svg">
+                      <path id="Variable19" class="st9" d="M287.15,202.2l44.3-2.74,44.3-4.43,44.42,1.55,44.3,4.64,44.3,11.58,44.3-12.93,44.42,20.1,44.3-3.23,44.3,1.26,44.3,1.22,44.42-3.2,44.3-14.89,44.3-3.14,44.3-3.87"/>
+                    </g>
+                  </g>
+                  <g id="Variable20-svg">
+                    <g id="Variable20-svg1" data-name="Variable20-svg">
+                      <path id="Variable20" class="st9" d="M287.15,249.58l44.3-.95,44.3-2.48,44.42-.39,44.3.59,44.3,1.4,44.3,1.29,44.42,2.5,44.3-1.29,44.3.77,44.3,1.95,44.42-1.99,44.3-6.39,44.3-1.52,44.3-2.11"/>
+                    </g>
+                  </g>
+                  <g id="Variable21-svg">
+                    <g id="Variable21-svg1" data-name="Variable21-svg">
+                      <path id="Variable21" class="st9" d="M287.15,228.84l44.3-2.45,44.3-3.11,44.42-.53,44.3,7.3,44.3,4.81,44.3-.11,44.42,6.09,44.3,1.12,44.3-1.29,44.3,6.27,44.42-3.59,44.3,3.64,44.3-8.98"/>
+                    </g>
+                  </g>
+                  <g id="Variable23-svg">
+                    <g id="Variable23-svg1" data-name="Variable23-svg">
+                      <path id="Variable23" class="st9" d="M287.15,238.46l44.3-.39,44.3-6.64,44.42,2.78,44.3,7.13,44.3.31,44.3.04,44.42,3.17,44.3,2.47,44.3-1.45,44.3.37,44.42-3.79,44.3-.74,44.3-1.54,44.3.73"/>
+                    </g>
+                  </g>
+                  <g id="Variable24-svg">
+                    <g id="Variable24-svg1" data-name="Variable24-svg">
+                      <path id="Variable24" class="st9" d="M287.15,242.11l44.3-2.57,44.3-4.3,44.42,1.35,44.3,3.38,44.3-2.48,44.3,4.86,44.42,3.56,44.3,3.23,44.3-2.4,44.3.09,44.42,2.39,44.3-2.59,44.3-1.81,44.3-1.73"/>
+                    </g>
+                  </g>
+                  <g id="Variable25-svg">
+                    <g id="Variable25-svg1" data-name="Variable25-svg">
+                      <path id="Variable25" class="st9" d="M287.15,136.14l44.3-23.88,44.3,14,44.42,15.87,44.3,8.59,44.3-7.78,44.3,15.02,44.42,3.54,44.3,1.44,44.3,4.74,44.3,10.21,44.42,10.07,44.3-12.26,44.3-9.29,44.3-8.89"/>
+                    </g>
+                  </g>
+                  <g id="Variable26-svg">
+                    <g id="Variable26-svg1" data-name="Variable26-svg">
+                      <path id="Variable26" class="st9" d="M287.15,264.33l44.3-.78,44.3-1.48,44.42-.36,44.3,2.03h44.3s44.3.51,44.3.51l44.42,1.4,44.3.63,44.3.38,44.3-.39,44.42-.73,44.3-.52,44.3-.63,44.3-1.47"/>
+                    </g>
+                  </g>
+                  <g id="Variable18-svg">
+                    <g id="Variable18-svg1" data-name="Variable18-svg">
+                      <path id="Variable18" class="st6" d="M287.15,253.19l44.3.44,44.3-1.46,44.42,1.55,44.3-.03,44.3,2.43,44.3.47,44.42,1.28,44.3-1.14,44.3.5,44.3.1,44.42-.1,44.3-4.28,44.3-4.37,44.3.96"/>
+                    </g>
+                    <g id="Variable18-svg2" data-name="Variable18-svg">
+                      <path class="st12" d="M911.71,249.55c0,2.21-1.79,4-4,4s-4-1.79-4-4,1.79-4,4-4,4,1.79,4,4"/>
+                    </g>
+                  </g>
+                </g>
+                <g id="x-grid-svg1" data-name="x-grid-svg">
+                  <g id="x-tick-labels-svg_date-axis-svg_grid-x-svg_datawrapper-eKz4U-1hw4nop-svg_svelte-qac4x9-svg">
+                    <g class="st2">
+                      <text class="st1" transform="translate(273.93 293.63)"><tspan x="0" y="0">2010</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(318.23 293.63)"><tspan x="0" y="0">2011</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(362.53 293.63)"><tspan x="0" y="0">2012</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(406.95 293.63)"><tspan x="0" y="0">2013</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(451.25 293.63)"><tspan x="0" y="0">2014</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(495.55 293.63)"><tspan x="0" y="0">2015</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(539.85 293.63)"><tspan x="0" y="0">2016</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(584.27 293.63)"><tspan x="0" y="0">2017</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(628.57 293.63)"><tspan x="0" y="0">2018</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(672.87 293.63)"><tspan x="0" y="0">2019</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(717.17 293.63)"><tspan x="0" y="0">2020</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(761.59 293.63)"><tspan x="0" y="0">2021</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(805.89 293.63)"><tspan x="0" y="0">2022</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(850.19 293.63)"><tspan x="0" y="0">2023</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(894.49 293.63)"><tspan x="0" y="0">2024</tspan></text>
+                    </g>
+                  </g>
+                  <g id="x-tick-lines-svg_grid-x-svg_datawrapper-eKz4U-jo7dkp-svg">
+                    <line class="st7" x1="287.15" y1="276.63" x2="287.15" y2="271.63"/>
+                    <line class="st7" x1="331.45" y1="276.63" x2="331.45" y2="271.63"/>
+                    <line class="st7" x1="375.75" y1="276.63" x2="375.75" y2="271.63"/>
+                    <line class="st7" x1="420.17" y1="276.63" x2="420.17" y2="271.63"/>
+                    <line class="st7" x1="464.47" y1="276.63" x2="464.47" y2="271.63"/>
+                    <line class="st7" x1="508.77" y1="276.63" x2="508.77" y2="271.63"/>
+                    <line class="st7" x1="553.07" y1="276.63" x2="553.07" y2="271.63"/>
+                    <line class="st7" x1="597.49" y1="276.63" x2="597.49" y2="271.63"/>
+                    <line class="st7" x1="641.79" y1="276.63" x2="641.79" y2="271.63"/>
+                    <line class="st7" x1="686.09" y1="276.63" x2="686.09" y2="271.63"/>
+                    <line class="st7" x1="730.39" y1="276.63" x2="730.39" y2="271.63"/>
+                    <line class="st7" x1="774.81" y1="276.63" x2="774.81" y2="271.63"/>
+                    <line class="st7" x1="819.11" y1="276.63" x2="819.11" y2="271.63"/>
+                    <line class="st7" x1="863.41" y1="276.63" x2="863.41" y2="271.63"/>
+                    <line class="st7" x1="907.71" y1="276.63" x2="907.71" y2="271.63"/>
+                  </g>
+                </g>
+                <g id="y-grid-svg1" data-name="y-grid-svg">
+                  <g id="y-tick-labels-svg_number-axis-svg_grid-y-svg_datawrapper-eKz4U-15wn2db-svg">
+                    <g class="st2">
+                      <text class="st1" transform="translate(265.54 275.63)"><tspan x="0" y="0">0</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(235.99 231.86)"><tspan x="0" y="0">20 000</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(235.99 188.09)"><tspan x="0" y="0">40 000</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(235.99 144.31)"><tspan x="0" y="0">60 000</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(235.99 100.54)"><tspan x="0" y="0">80 000</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(229.38 56.77)"><tspan x="0" y="0">100 000</tspan></text>
+                    </g>
+                    <g class="st2">
+                      <text class="st1" transform="translate(229.38 13)"><tspan x="0" y="0">120 000</tspan></text>
+                    </g>
+                  </g>
+                  <g id="y-base-lines-svg_grid-y-svg_datawrapper-eKz4U-c64oop-svg">
+                    <line class="st10" x1="917.71" y1="271.63" x2="277.15" y2="271.63"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g id="Variable221" data-name="Variable22" class="st2">
+              <text class="st4" transform="translate(917.69 135.02)"><tspan x="0" y="0">Variable22</tspan></text>
+            </g>
+            <g id="Variable181" data-name="Variable18" class="st2">
+              <text class="st0" transform="translate(917.69 253.05)"><tspan x="0" y="0">Variable18</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="st2">
+    <g class="st2">
+      <g class="st2">
+        <text class="st3" transform="translate(44.79 293.73)"><tspan x="0" y="0">Tick</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st5" x1="106.49" y1="142.44" x2="280.02" y2="142.44"/>
+    <path d="M279.92,144.34c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st2">
+    <g class="st2">
+      <g class="st2">
+        <text class="st3" transform="translate(44.9 145.44)"><tspan x="0" y="0">Line</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st5" x1="114.71" y1="51.77" x2="218.26" y2="52.77"/>
+    <path d="M218.16,54.67c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st2">
+    <g class="st2">
+      <g class="st2">
+        <text class="st3" transform="translate(44.9 54.29)"><tspan x="0" y="0">Grid label</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st5" x1="83.14" y1="291.85" x2="267.98" y2="291.85"/>
+    <path d="M267.88,293.75c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g>
+    <line class="st5" x1="1057.71" y1="52.89" x2="922.49" y2="52.89"/>
+    <path d="M922.59,50.99c-1,0-1.9.8-1.9,1.9s.8,1.9,1.9,1.9,1.9-.8,1.9-1.9-.8-1.9-1.9-1.9Z"/>
+  </g>
+  <g class="st2">
+    <g class="st2">
+      <g class="st2">
+        <text class="st3" transform="translate(1071.05 55.79)"><tspan x="0" y="0">Small Grid Line</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st5" x1="1071.05" y1="131.19" x2="986.45" y2="131.19"/>
+    <path d="M986.55,129.29c-1,0-1.9.8-1.9,1.9s.8,1.9,1.9,1.9,1.9-.8,1.9-1.9-.8-1.9-1.9-1.9Z"/>
+  </g>
+  <g class="st2">
+    <g class="st2">
+      <g class="st2">
+        <text class="st3" transform="translate(1086.35 135.09)"><tspan x="0" y="0">Variable Label</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

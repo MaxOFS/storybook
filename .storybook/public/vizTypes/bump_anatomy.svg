@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="exportSvg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1203.42 748.89">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0, .st1, .st2, .st3, .st4 {
+        fill: none;
+      }
+
+      .st0, .st5 {
+        stroke: #dc0018;
+      }
+
+      .st0, .st3, .st4 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+
+      .st1 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .st6 {
+        fill: #1f893d;
+      }
+
+      .st6, .st7, .st8, .st9, .st10, .st11 {
+        isolation: isolate;
+      }
+
+      .st6, .st7, .st9, .st10, .st11 {
+        font-family: NotoSans, 'Noto Sans';
+        font-size: 12px;
+      }
+
+      .st5, .st12, .st13 {
+        fill: #fff;
+        stroke-miterlimit: 28;
+        stroke-width: 2px;
+      }
+
+      .st7 {
+        fill: #757575;
+      }
+
+      .st12, .st4 {
+        stroke: #8e8e8e;
+      }
+
+      .st2 {
+        stroke: #757575;
+      }
+
+      .st10 {
+        fill: #777;
+      }
+
+      .st13, .st3 {
+        stroke: #399d50;
+      }
+
+      .st11 {
+        fill: #dc0018;
+      }
+    </style>
+  </defs>
+  <g id="__svelte-dw-svg">
+    <g id="container-svg_container-body-svg_datawrapper-MsXfW-k7lwvj-svg">
+      <g id="container-svg_container-bodyTop-svg_datawrapper-MsXfW-lmtz6e-svg">
+        <g id="container-svg_container-bodyCenter-svg_datawrapper-MsXfW-1a857wv-svg">
+          <g id="chart-svg">
+            <g id="svg-main-svg">
+              <g id="group-svg">
+                <g id="lines-svg">
+                  <g id="ZH-svg">
+                    <g id="ZH-svg1" data-name="ZH-svg">
+                      <path id="ZH" class="st4" d="M256.57,45.45c93.51-13.15,187.03-26.3,280.54-26.3h409.6"/>
+                    </g>
+                    <g id="ZH-svg2" data-name="ZH-svg">
+                      <path class="st12" d="M263.57,45.45c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,19.15c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,19.15c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,19.15c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="BE-svg">
+                    <g id="BE-svg1" data-name="BE-svg">
+                      <path id="BE" class="st4" d="M256.57,19.15c93.51,13.15,187.03,26.3,280.54,26.3h409.6"/>
+                    </g>
+                    <g id="BE-svg2" data-name="BE-svg">
+                      <path class="st12" d="M263.57,19.15c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,45.45c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,45.45c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,45.45c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="VD-svg">
+                    <g id="VD-svg1" data-name="VD-svg">
+                      <path id="VD" class="st4" d="M256.57,71.75h690.14"/>
+                    </g>
+                    <g id="VD-svg2" data-name="VD-svg">
+                      <path class="st12" d="M263.57,71.75c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,71.75c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,71.75c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,71.75c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="AG-svg">
+                    <g id="AG-svg1" data-name="AG-svg">
+                      <path id="AG" class="st4" d="M256.57,124.36h280.54c93.51,0,187.03-26.3,280.54-26.3h129.06"/>
+                    </g>
+                    <g id="AG-svg2" data-name="AG-svg">
+                      <path class="st12" d="M263.57,124.36c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,124.36c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,98.05c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,98.05c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="SG-svg">
+                    <g id="SG-svg1" data-name="SG-svg">
+                      <path id="SG" class="st4" d="M256.57,98.06h280.54c93.51,0,187.03,26.3,280.54,26.3h129.06"/>
+                    </g>
+                    <g id="SG-svg2" data-name="SG-svg">
+                      <path class="st12" d="M263.57,98.05c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,98.05c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,124.36c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,124.36c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="GE-svg">
+                    <g id="GE-svg1" data-name="GE-svg">
+                      <path id="GE" class="st4" d="M256.57,203.26c93.51-8.77,187.03-17.53,280.54-26.3,93.51-8.77,187.03-26.3,280.54-26.3h129.06"/>
+                    </g>
+                    <g id="GE-svg2" data-name="GE-svg">
+                      <path class="st12" d="M263.57,203.26c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,176.96c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,150.66c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,150.66c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="LU-svg">
+                    <g id="LU-svg1" data-name="LU-svg">
+                      <path id="LU" class="st4" d="M256.57,150.66h280.54c93.51,0,187.03,26.3,280.54,26.3h129.06"/>
+                    </g>
+                    <g id="LU-svg2" data-name="LU-svg">
+                      <path class="st12" d="M263.57,150.66c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,150.66c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,176.96c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,176.96c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="VS-svg">
+                    <g id="VS-svg1" data-name="VS-svg">
+                      <path id="VS" class="st4" d="M256.57,282.16h280.54c93.51,0,187.03-34.02,280.54-52.6,43.02-8.55,86.04-17.42,129.06-26.3"/>
+                    </g>
+                    <g id="VS-svg2" data-name="VS-svg">
+                      <path class="st12" d="M263.57,282.16c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,282.16c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,229.56c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,203.26c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="TI-svg">
+                    <g id="TI-svg1" data-name="TI-svg">
+                      <path id="TI" class="st4" d="M256.57,176.96c93.51,26.3,187.03,52.6,280.54,52.6s187.03-26.3,280.54-26.3c43.02,0,86.04,13.15,129.06,26.3"/>
+                    </g>
+                    <g id="TI-svg2" data-name="TI-svg">
+                      <path class="st12" d="M263.57,176.96c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,229.56c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,203.26c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,229.56c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="FR-svg">
+                    <g id="FR-svg1" data-name="FR-svg">
+                      <path id="FR" class="st4" d="M256.57,229.56c93.51,39.45,187.03,78.9,280.54,78.9h280.54c43.02,0,86.04-26.3,129.06-52.6"/>
+                    </g>
+                    <g id="FR-svg2" data-name="FR-svg">
+                      <path class="st12" d="M263.57,229.56c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,308.47c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,308.47c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,255.86c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="TG-svg">
+                    <g id="TG-svg1" data-name="TG-svg">
+                      <path id="TG" class="st4" d="M256.57,308.46c93.51,13.15,187.03,26.3,280.54,26.3h280.54c43.02,0,86.04-13.15,129.06-26.3"/>
+                    </g>
+                    <g id="TG-svg2" data-name="TG-svg">
+                      <path class="st12" d="M263.57,308.47c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,334.77c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,334.77c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,308.47c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="SO-svg">
+                    <g id="SO-svg1" data-name="SO-svg">
+                      <path id="SO" class="st4" d="M256.57,387.37c93.51-65.75,187.03-131.51,280.54-131.51s187.03,8.77,280.54,26.3c43.02,8.07,86.04,30.33,129.06,52.6"/>
+                    </g>
+                    <g id="SO-svg2" data-name="SO-svg">
+                      <path class="st12" d="M263.57,387.37c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,255.86c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,282.16c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,334.77c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="GR-svg">
+                    <g id="GR-svg1" data-name="GR-svg">
+                      <path id="GR" class="st4" d="M256.57,361.07h280.54c93.51,0,187.03,26.3,280.54,26.3,43.02,0,86.04-13.15,129.06-26.3"/>
+                    </g>
+                    <g id="GR-svg2" data-name="GR-svg">
+                      <path class="st12" d="M263.57,361.07c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,361.07c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,387.37c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,361.07c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="BS-svg">
+                    <g id="BS-svg1" data-name="BS-svg">
+                      <path id="BS" class="st4" d="M256.57,334.77c93.51-65.75,187.03-131.51,280.54-131.51s187.03,128.18,280.54,157.81c43.02,13.63,86.04,19.96,129.06,26.3"/>
+                    </g>
+                    <g id="BS-svg2" data-name="BS-svg">
+                      <path class="st12" d="M263.57,334.77c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,203.26c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,361.07c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,387.37c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="SZ-svg">
+                    <g id="SZ-svg1" data-name="SZ-svg">
+                      <path id="SZ" class="st4" d="M256.57,466.27c93.51-13.15,187.03-26.3,280.54-26.3h409.6"/>
+                    </g>
+                    <g id="SZ-svg2" data-name="SZ-svg">
+                      <path class="st12" d="M263.57,466.27c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,439.97c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,439.97c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,439.97c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="SH-svg">
+                    <g id="SH-svg1" data-name="SH-svg">
+                      <path id="SH" class="st4" d="M256.57,518.88c93.51-13.15,187.03-26.3,280.54-26.3h409.6"/>
+                    </g>
+                    <g id="SH-svg2" data-name="SH-svg">
+                      <path class="st12" d="M263.57,518.88c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,492.57c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,492.57c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,492.57c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="AR-svg">
+                    <g id="AR-svg1" data-name="AR-svg">
+                      <path id="AR" class="st4" d="M256.57,492.58c93.51,8.77,187.03,17.53,280.54,26.3,93.51,8.77,187.03,26.3,280.54,26.3h129.06"/>
+                    </g>
+                    <g id="AR-svg2" data-name="AR-svg">
+                      <path class="st12" d="M263.57,492.57c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,518.88c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,545.18c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,545.18c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="GL-svg">
+                    <g id="GL-svg1" data-name="GL-svg">
+                      <path id="GL" class="st4" d="M256.57,545.18c93.51,13.15,187.03,26.3,280.54,26.3h280.54c43.02,0,86.04,13.15,129.06,26.3"/>
+                    </g>
+                    <g id="GL-svg2" data-name="GL-svg">
+                      <path class="st12" d="M263.57,545.18c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,571.48c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,571.48c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,597.78c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="OW-svg">
+                    <g id="OW-svg1" data-name="OW-svg">
+                      <path id="OW" class="st4" d="M256.57,624.08h280.54c93.51,0,187.03,26.3,280.54,26.3,43.02,0,86.04-13.15,129.06-26.3"/>
+                    </g>
+                    <g id="OW-svg2" data-name="OW-svg">
+                      <path class="st12" d="M263.57,624.08c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,624.08c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,650.38c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,624.08c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="UR-svg">
+                    <g id="UR-svg1" data-name="UR-svg">
+                      <path id="UR" class="st4" d="M256.57,597.78h280.54c93.51,0,187.03,10.49,280.54,26.3,43.02,7.28,86.04,16.79,129.06,26.3"/>
+                    </g>
+                    <g id="UR-svg2" data-name="UR-svg">
+                      <path class="st12" d="M263.57,597.78c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,597.78c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,624.08c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,650.38c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="AI-svg">
+                    <g id="AI-svg1" data-name="AI-svg">
+                      <path id="AI" class="st4" d="M256.57,650.38c93.51,13.15,187.03,26.3,280.54,26.3h409.6"/>
+                    </g>
+                    <g id="AI-svg2" data-name="AI-svg">
+                      <path class="st12" d="M263.57,650.38c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M544.11,676.68c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M824.65,676.68c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st12" d="M953.71,676.68c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="BL-svg">
+                    <g id="BL-svg1" data-name="BL-svg">
+                      <path id="BL" class="st3" d="M256.57,413.67h280.54c93.51,0,187.03-157.81,280.54-157.81,43.02,0,86.04,13.15,129.06,26.3"/>
+                    </g>
+                    <g id="BL-svg2" data-name="BL-svg">
+                      <path class="st13" d="M263.57,413.67c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st13" d="M544.11,413.67c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st13" d="M824.65,255.86c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st13" d="M953.71,282.16c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="ZG-svg">
+                    <g id="ZG-svg1" data-name="ZG-svg">
+                      <path id="ZG" class="st3" d="M256.57,571.48c93.51-4.38,187.03-8.77,280.54-26.3,93.51-17.53,187.03-78.9,280.54-78.9h129.06"/>
+                    </g>
+                    <g id="ZG-svg2" data-name="ZG-svg">
+                      <path class="st13" d="M263.57,571.48c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st13" d="M544.11,545.18c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st13" d="M824.65,466.27c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st13" d="M953.71,466.27c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="NW-svg">
+                    <g id="NW-svg1" data-name="NW-svg">
+                      <path id="NW" class="st3" d="M256.57,676.68c93.51-6.58,187.03-13.15,280.54-26.3,93.51-13.15,187.03-34.03,280.54-52.6,43.02-8.55,86.04-17.42,129.06-26.3"/>
+                    </g>
+                    <g id="NW-svg2" data-name="NW-svg">
+                      <path class="st13" d="M263.57,676.68c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st13" d="M544.11,650.38c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st13" d="M824.65,597.78c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st13" d="M953.71,571.48c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="NE-svg">
+                    <g id="NE-svg1" data-name="NE-svg">
+                      <path id="NE" class="st0" d="M256.57,255.86c93.51,56.99,187.03,113.97,280.54,131.51,93.51,17.54,187.03,26.3,280.54,26.3h129.06"/>
+                    </g>
+                    <g id="NE-svg2" data-name="NE-svg">
+                      <path class="st5" d="M263.57,255.86c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st5" d="M544.11,387.37c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st5" d="M824.65,413.67c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st5" d="M953.71,413.67c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                  <g id="JU-svg">
+                    <g id="JU-svg1" data-name="JU-svg">
+                      <path id="JU" class="st0" d="M256.57,439.97c93.51,6.58,187.03,13.15,280.54,26.3,93.51,13.15,187.03,52.6,280.54,52.6h129.06"/>
+                    </g>
+                    <g id="JU-svg2" data-name="JU-svg">
+                      <path class="st5" d="M263.57,439.97c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st5" d="M544.11,466.27c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st5" d="M824.65,518.88c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                      <path class="st5" d="M953.71,518.88c0,3.87-3.13,7-7,7s-7-3.13-7-7,3.13-7,7-7,7,3.13,7,7"/>
+                    </g>
+                  </g>
+                </g>
+                <g id="x-grid-svg1" data-name="x-grid-svg">
+                  <g id="x-tick-labels-svg_date-axis-svg_grid-x-svg_datawrapper-MsXfW-1hw4nop-svg_svelte-qac4x9-svg">
+                    <g class="st8">
+                      <text class="st7" transform="translate(243.36 738.14)"><tspan x="0" y="0">1900</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(523.9 738.14)"><tspan x="0" y="0">1950</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(804.44 738.14)"><tspan x="0" y="0">2000</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(933.49 738.14)"><tspan x="0" y="0">2023</tspan></text>
+                    </g>
+                  </g>
+                  <g id="x-tick-lines-svg_grid-x-svg_datawrapper-MsXfW-jo7dkp-svg">
+                    <line class="st2" x1="256.57" y1="721.14" x2="256.57" y2="716.14"/>
+                    <line class="st2" x1="537.11" y1="721.14" x2="537.11" y2="716.14"/>
+                    <line class="st2" x1="817.65" y1="721.14" x2="817.65" y2="716.14"/>
+                    <line class="st2" x1="946.71" y1="721.14" x2="946.71" y2="716.14"/>
+                  </g>
+                </g>
+                <g id="y-grid-svg1" data-name="y-grid-svg">
+                  <g id="y-tick-labels-svg_number-axis-svg_grid-y-svg_datawrapper-MsXfW-15wn2db-svg">
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 680.68)"><tspan x="0" y="0">26</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 654.38)"><tspan x="0" y="0">25</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 628.08)"><tspan x="0" y="0">24</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 601.78)"><tspan x="0" y="0">23</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 575.48)"><tspan x="0" y="0">22</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 549.18)"><tspan x="0" y="0">21</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 522.88)"><tspan x="0" y="0">20</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 496.57)"><tspan x="0" y="0">19</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 470.27)"><tspan x="0" y="0">18</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 443.97)"><tspan x="0" y="0">17</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 417.67)"><tspan x="0" y="0">16</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 391.37)"><tspan x="0" y="0">15</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 365.07)"><tspan x="0" y="0">14</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 338.77)"><tspan x="0" y="0">13</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 312.47)"><tspan x="0" y="0">12</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 286.16)"><tspan x="0" y="0">11</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(228.36 259.86)"><tspan x="0" y="0">10</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(234.96 233.56)"><tspan x="0" y="0">9</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(234.96 207.26)"><tspan x="0" y="0">8</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(234.96 180.96)"><tspan x="0" y="0">7</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(234.96 154.66)"><tspan x="0" y="0">6</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(234.96 128.36)"><tspan x="0" y="0">5</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(234.96 102.05)"><tspan x="0" y="0">4</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(234.96 75.75)"><tspan x="0" y="0">3</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(234.96 49.45)"><tspan x="0" y="0">2</tspan></text>
+                    </g>
+                    <g class="st8">
+                      <text class="st7" transform="translate(234.96 23.15)"><tspan x="0" y="0">1</tspan></text>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g id="ZH1" data-name="ZH" class="st8">
+              <text class="st10" transform="translate(956.69 22.64)"><tspan x="0" y="0">ZH</tspan></text>
+            </g>
+            <g id="BE1" data-name="BE" class="st8">
+              <text class="st10" transform="translate(956.69 48.94)"><tspan x="0" y="0">BE</tspan></text>
+            </g>
+            <g id="VD1" data-name="VD" class="st8">
+              <text class="st10" transform="translate(956.69 75.25)"><tspan x="0" y="0">VD</tspan></text>
+            </g>
+            <g id="AG1" data-name="AG" class="st8">
+              <text class="st10" transform="translate(956.69 101.55)"><tspan x="0" y="0">AG</tspan></text>
+            </g>
+            <g id="SG1" data-name="SG" class="st8">
+              <text class="st10" transform="translate(956.69 127.84)"><tspan x="0" y="0">SG</tspan></text>
+            </g>
+            <g id="GE1" data-name="GE" class="st8">
+              <text class="st10" transform="translate(956.69 154.16)"><tspan x="0" y="0">GE</tspan></text>
+            </g>
+            <g id="LU1" data-name="LU" class="st8">
+              <text class="st10" transform="translate(956.69 180.45)"><tspan x="0" y="0">LU</tspan></text>
+            </g>
+            <g id="VS1" data-name="VS" class="st8">
+              <text class="st10" transform="translate(956.69 206.75)"><tspan x="0" y="0">VS</tspan></text>
+            </g>
+            <g id="TI1" data-name="TI" class="st8">
+              <text class="st10" transform="translate(956.69 233.05)"><tspan x="0" y="0">TI</tspan></text>
+            </g>
+            <g id="FR1" data-name="FR" class="st8">
+              <text class="st10" transform="translate(956.69 259.36)"><tspan x="0" y="0">FR</tspan></text>
+            </g>
+            <g id="TG1" data-name="TG" class="st8">
+              <text class="st10" transform="translate(956.69 311.95)"><tspan x="0" y="0">TG</tspan></text>
+            </g>
+            <g id="SO1" data-name="SO" class="st8">
+              <text class="st10" transform="translate(956.69 338.27)"><tspan x="0" y="0">SO</tspan></text>
+            </g>
+            <g id="GR1" data-name="GR" class="st8">
+              <text class="st10" transform="translate(956.69 364.56)"><tspan x="0" y="0">GR</tspan></text>
+            </g>
+            <g id="BS1" data-name="BS" class="st8">
+              <text class="st10" transform="translate(956.69 390.86)"><tspan x="0" y="0">BS</tspan></text>
+            </g>
+            <g id="SZ1" data-name="SZ" class="st8">
+              <text class="st10" transform="translate(956.69 443.47)"><tspan x="0" y="0">SZ</tspan></text>
+            </g>
+            <g id="SH1" data-name="SH" class="st8">
+              <text class="st10" transform="translate(956.69 496.06)"><tspan x="0" y="0">SH</tspan></text>
+            </g>
+            <g id="AR1" data-name="AR" class="st8">
+              <text class="st10" transform="translate(956.69 548.67)"><tspan x="0" y="0">AR</tspan></text>
+            </g>
+            <g id="GL1" data-name="GL" class="st8">
+              <text class="st10" transform="translate(956.69 601.27)"><tspan x="0" y="0">GL</tspan></text>
+            </g>
+            <g id="OW1" data-name="OW" class="st8">
+              <text class="st10" transform="translate(956.69 627.58)"><tspan x="0" y="0">OW</tspan></text>
+            </g>
+            <g id="UR1" data-name="UR" class="st8">
+              <text class="st10" transform="translate(956.69 653.88)"><tspan x="0" y="0">UR</tspan></text>
+            </g>
+            <g id="AI1" data-name="AI" class="st8">
+              <text class="st10" transform="translate(956.69 680.17)"><tspan x="0" y="0">AI</tspan></text>
+            </g>
+            <g id="BL1" data-name="BL" class="st8">
+              <text class="st6" transform="translate(956.69 285.66)"><tspan x="0" y="0">BL</tspan></text>
+            </g>
+            <g id="ZG1" data-name="ZG" class="st8">
+              <text class="st6" transform="translate(956.69 469.77)"><tspan x="0" y="0">ZG</tspan></text>
+            </g>
+            <g id="NW1" data-name="NW" class="st8">
+              <text class="st6" transform="translate(956.69 574.97)"><tspan x="0" y="0">NW</tspan></text>
+            </g>
+            <g id="NE1" data-name="NE" class="st8">
+              <text class="st11" transform="translate(956.69 417.16)"><tspan x="0" y="0">NE</tspan></text>
+            </g>
+            <g id="JU1" data-name="JU" class="st8">
+              <text class="st11" transform="translate(956.69 522.38)"><tspan x="0" y="0">JU</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st1" x1="142.62" y1="17.95" x2="227.12" y2="17.95"/>
+    <path d="M227.02,19.85c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st8">
+    <g class="st8">
+      <g class="st8">
+        <text class="st9" transform="translate(81.22 22.25)"><tspan x="0" y="0">Line Label</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st1" x1="115.95" y1="71.75" x2="279.15" y2="71.75"/>
+    <path d="M279.05,73.65c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st8">
+    <g class="st8">
+      <g class="st8">
+        <text class="st9" transform="translate(82.38 75.65)"><tspan x="0" y="0">Line</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <line class="st1" x1="115.95" y1="718.64" x2="254.77" y2="718.64"/>
+    <path d="M254.67,720.54c1,0,1.9-.8,1.9-1.9,0-1-.8-1.9-1.9-1.9s-1.9.8-1.9,1.9.8,1.9,1.9,1.9Z"/>
+  </g>
+  <g class="st8">
+    <g class="st8">
+      <g class="st8">
+        <text class="st9" transform="translate(82.38 721.74)"><tspan x="0" y="0">Tick</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
