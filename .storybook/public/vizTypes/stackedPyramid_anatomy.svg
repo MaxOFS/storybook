@@ -68,25 +68,33 @@
       <g>
         <rect class="st10" x="151.03" y="8.44" width="12" height="12"/>
         <g class="st5">
-          <text class="st7" transform="translate(171.03 18.44)"><tspan x="0" y="0">Hommes non issus de la migration</tspan></text>
+          <g class="st5">
+            <text class="st7" transform="translate(171.03 18.44)"><tspan x="0" y="0">Variable 1</tspan></text>
+          </g>
         </g>
       </g>
       <g>
-        <rect class="st11" x="383.51" y="8.44" width="12" height="12"/>
+        <rect class="st11" x="240.51" y="8.44" width="12" height="12"/>
         <g class="st5">
-          <text class="st7" transform="translate(403.51 18.44)"><tspan x="0" y="0">Hommes issus de la migration</tspan></text>
+          <g class="st5">
+            <text class="st7" transform="translate(260.51 18.44)"><tspan x="0" y="0">Variable 2</tspan></text>
+          </g>
         </g>
       </g>
       <g>
-        <rect class="st9" x="590.79" y="8.44" width="12" height="12"/>
+        <rect class="st9" x="327.79" y="8.44" width="12" height="12"/>
         <g class="st5">
-          <text class="st7" transform="translate(610.79 18.44)"><tspan x="0" y="0">Femmes non issues de la migration</tspan></text>
+          <g class="st5">
+            <text class="st7" transform="translate(347.79 18.44)"><tspan x="0" y="0">Variable 3</tspan></text>
+          </g>
         </g>
       </g>
       <g>
-        <rect class="st4" x="826.89" y="8.44" width="12" height="12"/>
+        <rect class="st4" x="412.89" y="8.44" width="12" height="12"/>
         <g class="st5">
-          <text class="st7" transform="translate(846.89 18.44)"><tspan x="0" y="0">Femmes issues de la migration</tspan></text>
+          <g class="st5">
+            <text class="st7" transform="translate(432.89 18.44)"><tspan x="0" y="0">Variable 4</tspan></text>
+          </g>
         </g>
       </g>
     </g>
@@ -97,77 +105,113 @@
         <g>
           <g>
             <g>
-              <text class="st8" transform="translate(760.62 57.18)"><tspan x="0" y="0">0</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(760.62 57.18)"><tspan x="0" y="0">0</tspan></text>
+              </g>
               <line class="st1" x1="763.96" y1="467.81" x2="763.96" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(671.92 57.18)"><tspan x="0" y="0">10 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(671.92 57.18)"><tspan x="0" y="0">10 000</tspan></text>
+              </g>
               <line class="st1" x1="690.27" y1="467.81" x2="690.27" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(598.23 57.18)"><tspan x="0" y="0">20 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(598.23 57.18)"><tspan x="0" y="0">20 000</tspan></text>
+              </g>
               <line class="st1" x1="616.58" y1="467.81" x2="616.58" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(524.53 57.18)"><tspan x="0" y="0">30 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(524.53 57.18)"><tspan x="0" y="0">30 000</tspan></text>
+              </g>
               <line class="st1" x1="542.89" y1="467.81" x2="542.89" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(450.84 57.18)"><tspan x="0" y="0">40 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(450.84 57.18)"><tspan x="0" y="0">40 000</tspan></text>
+              </g>
               <line class="st1" x1="469.19" y1="467.81" x2="469.19" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(377.15 57.18)"><tspan x="0" y="0">50 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(377.15 57.18)"><tspan x="0" y="0">50 000</tspan></text>
+              </g>
               <line class="st1" x1="395.5" y1="467.81" x2="395.5" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(303.46 57.18)"><tspan x="0" y="0">60 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(303.46 57.18)"><tspan x="0" y="0">60 000</tspan></text>
+              </g>
               <line class="st1" x1="321.81" y1="467.81" x2="321.81" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(229.77 57.18)"><tspan x="0" y="0">70 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(229.77 57.18)"><tspan x="0" y="0">70 000</tspan></text>
+              </g>
               <line class="st1" x1="248.12" y1="467.81" x2="248.12" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(156.08 57.18)"><tspan x="0" y="0">80 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(156.08 57.18)"><tspan x="0" y="0">80 000</tspan></text>
+              </g>
               <line class="st1" x1="174.43" y1="467.81" x2="174.43" y2="472.81"/>
             </g>
           </g>
           <g>
             <g>
-              <text class="st8" transform="translate(791.76 57.18)"><tspan x="0" y="0">0</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(791.76 57.18)"><tspan x="0" y="0">0</tspan></text>
+              </g>
               <line class="st1" x1="795.09" y1="467.81" x2="795.09" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(850.43 57.18)"><tspan x="0" y="0">10 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(850.43 57.18)"><tspan x="0" y="0">10 000</tspan></text>
+              </g>
               <line class="st1" x1="868.78" y1="467.81" x2="868.78" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(924.12 57.18)"><tspan x="0" y="0">20 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(924.12 57.18)"><tspan x="0" y="0">20 000</tspan></text>
+              </g>
               <line class="st1" x1="942.48" y1="467.81" x2="942.48" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(997.81 57.18)"><tspan x="0" y="0">30 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(997.81 57.18)"><tspan x="0" y="0">30 000</tspan></text>
+              </g>
               <line class="st1" x1="1016.17" y1="467.81" x2="1016.17" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(1071.51 57.18)"><tspan x="0" y="0">40 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(1071.51 57.18)"><tspan x="0" y="0">40 000</tspan></text>
+              </g>
               <line class="st1" x1="1089.86" y1="467.81" x2="1089.86" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(1145.2 57.18)"><tspan x="0" y="0">50 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(1145.2 57.18)"><tspan x="0" y="0">50 000</tspan></text>
+              </g>
               <line class="st1" x1="1163.55" y1="467.81" x2="1163.55" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(1218.89 57.18)"><tspan x="0" y="0">60 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(1218.89 57.18)"><tspan x="0" y="0">60 000</tspan></text>
+              </g>
               <line class="st1" x1="1237.24" y1="467.81" x2="1237.24" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(1292.58 57.18)"><tspan x="0" y="0">70 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(1292.58 57.18)"><tspan x="0" y="0">70 000</tspan></text>
+              </g>
               <line class="st1" x1="1310.93" y1="467.81" x2="1310.93" y2="472.81"/>
             </g>
             <g>
-              <text class="st8" transform="translate(1366.27 57.18)"><tspan x="0" y="0">80 000</tspan></text>
+              <g class="st5">
+                <text class="st8" transform="translate(1366.27 57.18)"><tspan x="0" y="0">80 000</tspan></text>
+              </g>
               <line class="st1" x1="1384.62" y1="467.81" x2="1384.62" y2="472.81"/>
             </g>
           </g>
@@ -198,67 +242,99 @@
         </g>
         <g>
           <g>
-            <text id="label1_0" class="st8" transform="translate(772.85 88.15)"><tspan x="0" y="0">89</tspan></text>
+            <g id="label1_0" class="st5">
+              <text class="st8" transform="translate(772.85 88.15)"><tspan x="0" y="0">89</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_4" class="st8" transform="translate(772.85 107.68)"><tspan x="0" y="0">85</tspan></text>
+            <g id="label1_4" class="st5">
+              <text class="st8" transform="translate(772.85 107.68)"><tspan x="0" y="0">85</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_9" class="st8" transform="translate(772.85 132.09)"><tspan x="0" y="0">80</tspan></text>
+            <g id="label1_9" class="st5">
+              <text class="st8" transform="translate(772.85 132.09)"><tspan x="0" y="0">80</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_14" class="st8" transform="translate(772.85 156.51)"><tspan x="0" y="0">75</tspan></text>
+            <g id="label1_14" class="st5">
+              <text class="st8" transform="translate(772.85 156.51)"><tspan x="0" y="0">75</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_19" class="st8" transform="translate(772.85 180.92)"><tspan x="0" y="0">70</tspan></text>
+            <g id="label1_19" class="st5">
+              <text class="st8" transform="translate(772.85 180.92)"><tspan x="0" y="0">70</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_24" class="st8" transform="translate(772.85 205.33)"><tspan x="0" y="0">65</tspan></text>
+            <g id="label1_24" class="st5">
+              <text class="st8" transform="translate(772.85 205.33)"><tspan x="0" y="0">65</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_29" class="st8" transform="translate(772.85 229.75)"><tspan x="0" y="0">60</tspan></text>
+            <g id="label1_29" class="st5">
+              <text class="st8" transform="translate(772.85 229.75)"><tspan x="0" y="0">60</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_34" class="st8" transform="translate(772.85 254.16)"><tspan x="0" y="0">55</tspan></text>
+            <g id="label1_34" class="st5">
+              <text class="st8" transform="translate(772.85 254.16)"><tspan x="0" y="0">55</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_39" class="st8" transform="translate(772.85 278.58)"><tspan x="0" y="0">50</tspan></text>
+            <g id="label1_39" class="st5">
+              <text class="st8" transform="translate(772.85 278.58)"><tspan x="0" y="0">50</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_44" class="st8" transform="translate(772.85 302.99)"><tspan x="0" y="0">45</tspan></text>
+            <g id="label1_44" class="st5">
+              <text class="st8" transform="translate(772.85 302.99)"><tspan x="0" y="0">45</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_49" class="st8" transform="translate(772.85 327.4)"><tspan x="0" y="0">40</tspan></text>
+            <g id="label1_49" class="st5">
+              <text class="st8" transform="translate(772.85 327.4)"><tspan x="0" y="0">40</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_54" class="st8" transform="translate(772.85 351.82)"><tspan x="0" y="0">35</tspan></text>
+            <g id="label1_54" class="st5">
+              <text class="st8" transform="translate(772.85 351.82)"><tspan x="0" y="0">35</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_59" class="st8" transform="translate(772.85 376.23)"><tspan x="0" y="0">30</tspan></text>
+            <g id="label1_59" class="st5">
+              <text class="st8" transform="translate(772.85 376.23)"><tspan x="0" y="0">30</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_64" class="st8" transform="translate(772.85 400.64)"><tspan x="0" y="0">25</tspan></text>
+            <g id="label1_64" class="st5">
+              <text class="st8" transform="translate(772.85 400.64)"><tspan x="0" y="0">25</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_69" class="st8" transform="translate(772.85 425.06)"><tspan x="0" y="0">20</tspan></text>
+            <g id="label1_69" class="st5">
+              <text class="st8" transform="translate(772.85 425.06)"><tspan x="0" y="0">20</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <g>
-            <text id="label1_71" class="st8" transform="translate(772.85 447.51)"><tspan x="0" y="0">15</tspan></text>
+            <g id="label1_71" class="st5">
+              <text class="st8" transform="translate(772.85 447.51)"><tspan x="0" y="0">15</tspan></text>
+            </g>
             <line class="st2" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
           </g>
           <line class="st3" x1="771.96" y1="33.81" x2="771.96" y2="33.81"/>
@@ -578,7 +654,9 @@
     <g class="st5">
       <g class="st5">
         <g class="st5">
-          <text class="st6" transform="translate(1412.63 94.15)"><tspan x="0" y="0">Small Grid Line</tspan></text>
+          <g class="st5">
+            <text class="st6" transform="translate(1412.63 94.15)"><tspan x="0" y="0">Small Grid Line</tspan></text>
+          </g>
         </g>
       </g>
     </g>
@@ -591,7 +669,9 @@
     <g class="st5">
       <g class="st5">
         <g class="st5">
-          <text class="st6" transform="translate(14.97 17.61)"><tspan x="0" y="0">Legend</tspan></text>
+          <g class="st5">
+            <text class="st6" transform="translate(14.97 17.61)"><tspan x="0" y="0">Legend</tspan></text>
+          </g>
         </g>
       </g>
     </g>
@@ -604,7 +684,9 @@
     <g class="st5">
       <g class="st5">
         <g class="st5">
-          <text class="st6" transform="translate(14.97 56.77)"><tspan x="0" y="0">Tick</tspan></text>
+          <g class="st5">
+            <text class="st6" transform="translate(14.97 56.77)"><tspan x="0" y="0">Tick</tspan></text>
+          </g>
         </g>
       </g>
     </g>
@@ -617,7 +699,9 @@
     <g class="st5">
       <g class="st5">
         <g class="st5">
-          <text class="st6" transform="translate(17.59 90.68)"><tspan x="0" y="0">Bar Label</tspan></text>
+          <g class="st5">
+            <text class="st6" transform="translate(17.59 90.68)"><tspan x="0" y="0">Bar Label</tspan></text>
+          </g>
         </g>
       </g>
     </g>
@@ -630,7 +714,9 @@
     <g class="st5">
       <g class="st5">
         <g class="st5">
-          <text class="st6" transform="translate(1474.89 235.98)"><tspan x="0" y="0">Bar</tspan></text>
+          <g class="st5">
+            <text class="st6" transform="translate(1474.89 235.98)"><tspan x="0" y="0">Bar</tspan></text>
+          </g>
         </g>
       </g>
     </g>
