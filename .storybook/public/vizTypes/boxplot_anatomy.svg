@@ -52,24 +52,6 @@
       <g id="container-svg_container-bodyTop-svg_datawrapper-TTYuJ-lmtz6e-svg">
         <g id="container-svg_container-bodyCenter-svg_datawrapper-TTYuJ-1a857wv-svg">
           <g id="chart-svg">
-            <rect class="st8" x="226.71" y="4.97" width="8" height="8"/>
-            <g class="st3">
-              <text class="st2" transform="translate(242.71 11.56)"><tspan x="0" y="0">P25</tspan></text>
-            </g>
-            <g class="st3">
-              <text class="st2" transform="translate(266.84 11.56)"><tspan x="0" y="0">cum - P75 cum</tspan></text>
-            </g>
-            <rect class="st7" x="366.85" y="4.97" width="8" height="8"/>
-            <g class="st3">
-              <text class="st2" transform="translate(382.85 11.56)"><tspan x="0" y="0">10</tspan></text>
-            </g>
-            <g class="st3">
-              <text class="st2" transform="translate(399.71 11.56)"><tspan x="0" y="0">et 90 centiles</tspan></text>
-            </g>
-            <rect class="st6" x="490.77" y="4.97" width="2" height="8"/>
-            <g class="st3">
-              <text class="st2" transform="translate(500.77 11.56)"><tspan x="0" y="0">Médiane</tspan></text>
-            </g>
             <g id="grid-container-svg">
               <g id="grid-svg">
                 <g id="x-grid-lines-svg_grid-x-svg_datawrapper-TTYuJ-bgupc2-svg">
@@ -87,70 +69,102 @@
               </g>
             </g>
             <g class="st3">
-              <text class="st5" transform="translate(239.81 77.66)"><tspan x="0" y="0">Label1</tspan></text>
+              <g class="st3">
+                <text class="st5" transform="translate(239.81 77.66)"><tspan x="0" y="0">Label1</tspan></text>
+              </g>
             </g>
             <rect class="st7" x="439.82" y="66.36" width="535.75" height="17"/>
             <rect class="st8" x="507.84" y="66.36" width="238.12" height="17"/>
             <rect class="st6" x="601.23" y="65.36" width="2" height="19"/>
             <g class="st3">
-              <text class="st5" transform="translate(239.81 96.66)"><tspan x="0" y="0">Label2</tspan></text>
+              <g class="st3">
+                <text class="st5" transform="translate(239.81 96.66)"><tspan x="0" y="0">Label2</tspan></text>
+              </g>
             </g>
             <rect class="st7" x="442.84" y="85.36" width="506.77" height="17"/>
             <rect class="st8" x="508.93" y="85.36" width="234.97" height="17"/>
             <rect class="st6" x="597.38" y="84.36" width="2" height="19"/>
             <g class="st3">
-              <text class="st5" transform="translate(239.81 115.66)"><tspan x="0" y="0">Label3</tspan></text>
+              <g class="st3">
+                <text class="st5" transform="translate(239.81 115.66)"><tspan x="0" y="0">Label3</tspan></text>
+              </g>
             </g>
             <rect class="st7" x="447.65" y="104.36" width="471.44" height="17"/>
             <rect class="st8" x="510.99" y="104.36" width="213.95" height="17"/>
             <rect class="st6" x="591.6" y="103.36" width="2" height="19"/>
             <g class="st3">
-              <text class="st5" transform="translate(239.81 134.66)"><tspan x="0" y="0">Label4</tspan></text>
+              <g class="st3">
+                <text class="st5" transform="translate(239.81 134.66)"><tspan x="0" y="0">Label4</tspan></text>
+              </g>
             </g>
             <rect class="st7" x="436.93" y="123.36" width="465.41" height="17"/>
             <rect class="st8" x="506.04" y="123.36" width="199.25" height="17"/>
             <rect class="st6" x="580.07" y="122.36" width="2" height="19"/>
             <g class="st3">
-              <text class="st5" transform="translate(239.81 153.66)"><tspan x="0" y="0">Label5</tspan></text>
+              <g class="st3">
+                <text class="st5" transform="translate(239.81 153.66)"><tspan x="0" y="0">Label5</tspan></text>
+              </g>
             </g>
             <rect class="st7" x="433.09" y="142.36" width="431.05" height="17"/>
             <rect class="st8" x="489.15" y="142.36" width="185.64" height="17"/>
             <rect class="st6" x="560.27" y="141.36" width="2" height="19"/>
-            <g id="grid-container-svg1" data-name="grid-container-svg">
-              <g id="grid-svg1" data-name="grid-svg">
+            <g id="grid-container-svg1">
+              <g id="grid-svg1">
                 <g id="x-tick-labels-svg_grid-x-svg_number-axis-svg_datawrapper-TTYuJ-6boht-svg">
                   <g class="st3">
-                    <text class="st2" transform="translate(285.37 48.36)"><tspan x="0" y="0">0</tspan></text>
+                    <g class="st3">
+                      <text class="st2" transform="translate(285.37 48.36)"><tspan x="0" y="0">0</tspan></text>
+                    </g>
                   </g>
                   <g class="st3">
-                    <text class="st2" transform="translate(347.47 48.36)"><tspan x="0" y="0">500</tspan></text>
+                    <g class="st3">
+                      <text class="st2" transform="translate(347.47 48.36)"><tspan x="0" y="0">500</tspan></text>
+                    </g>
                   </g>
                   <g class="st3">
-                    <text class="st2" transform="translate(411.3 48.36)"><tspan x="0" y="0">1 000</tspan></text>
+                    <g class="st3">
+                      <text class="st2" transform="translate(411.3 48.36)"><tspan x="0" y="0">1 000</tspan></text>
+                    </g>
                   </g>
                   <g class="st3">
-                    <text class="st2" transform="translate(480.01 48.36)"><tspan x="0" y="0">1 500</tspan></text>
+                    <g class="st3">
+                      <text class="st2" transform="translate(480.01 48.36)"><tspan x="0" y="0">1 500</tspan></text>
+                    </g>
                   </g>
                   <g class="st3">
-                    <text class="st2" transform="translate(548.71 48.36)"><tspan x="0" y="0">2 000</tspan></text>
+                    <g class="st3">
+                      <text class="st2" transform="translate(548.71 48.36)"><tspan x="0" y="0">2 000</tspan></text>
+                    </g>
                   </g>
                   <g class="st3">
-                    <text class="st2" transform="translate(617.41 48.36)"><tspan x="0" y="0">2 500</tspan></text>
+                    <g class="st3">
+                      <text class="st2" transform="translate(617.41 48.36)"><tspan x="0" y="0">2 500</tspan></text>
+                    </g>
                   </g>
                   <g class="st3">
-                    <text class="st2" transform="translate(686.11 48.36)"><tspan x="0" y="0">3 000</tspan></text>
+                    <g class="st3">
+                      <text class="st2" transform="translate(686.11 48.36)"><tspan x="0" y="0">3 000</tspan></text>
+                    </g>
                   </g>
                   <g class="st3">
-                    <text class="st2" transform="translate(754.81 48.36)"><tspan x="0" y="0">3 500</tspan></text>
+                    <g class="st3">
+                      <text class="st2" transform="translate(754.81 48.36)"><tspan x="0" y="0">3 500</tspan></text>
+                    </g>
                   </g>
                   <g class="st3">
-                    <text class="st2" transform="translate(823.51 48.36)"><tspan x="0" y="0">4 000</tspan></text>
+                    <g class="st3">
+                      <text class="st2" transform="translate(823.51 48.36)"><tspan x="0" y="0">4 000</tspan></text>
+                    </g>
                   </g>
                   <g class="st3">
-                    <text class="st2" transform="translate(892.22 48.36)"><tspan x="0" y="0">4 500</tspan></text>
+                    <g class="st3">
+                      <text class="st2" transform="translate(892.22 48.36)"><tspan x="0" y="0">4 500</tspan></text>
+                    </g>
                   </g>
                   <g class="st3">
-                    <text class="st2" transform="translate(946.14 48.36)"><tspan x="0" y="0">5 000</tspan></text>
+                    <g class="st3">
+                      <text class="st2" transform="translate(946.14 48.36)"><tspan x="0" y="0">5 000</tspan></text>
+                    </g>
                   </g>
                 </g>
                 <g id="x-base-lines-svg_grid-x-svg_datawrapper-TTYuJ-l0t1pf-svg">
@@ -170,7 +184,9 @@
   <g class="st3">
     <g class="st3">
       <g class="st3">
-        <text class="st4" transform="translate(86.49 78.56)"><tspan x="0" y="0">Axis Label</tspan></text>
+        <g class="st3">
+          <text class="st4" transform="translate(86.49 78.56)"><tspan x="0" y="0">Axis Label</tspan></text>
+        </g>
       </g>
     </g>
   </g>
@@ -181,7 +197,9 @@
   <g class="st3">
     <g class="st3">
       <g class="st3">
-        <text class="st4" transform="translate(86.49 14.89)"><tspan x="0" y="0">Legend</tspan></text>
+        <g class="st3">
+          <text class="st4" transform="translate(86.49 14.89)"><tspan x="0" y="0">Legend</tspan></text>
+        </g>
       </g>
     </g>
   </g>
@@ -192,7 +210,9 @@
   <g class="st3">
     <g class="st3">
       <g class="st3">
-        <text class="st4" transform="translate(86.49 152.76)"><tspan x="0" y="0">Bar</tspan></text>
+        <g class="st3">
+          <text class="st4" transform="translate(86.49 152.76)"><tspan x="0" y="0">Bar</tspan></text>
+        </g>
       </g>
     </g>
   </g>
@@ -203,7 +223,9 @@
   <g class="st3">
     <g class="st3">
       <g class="st3">
-        <text class="st4" transform="translate(88.82 48.46)"><tspan x="0" y="0">Tick</tspan></text>
+        <g class="st3">
+          <text class="st4" transform="translate(88.82 48.46)"><tspan x="0" y="0">Tick</tspan></text>
+        </g>
       </g>
     </g>
   </g>
@@ -214,8 +236,28 @@
   <g class="st3">
     <g class="st3">
       <g class="st3">
-        <text class="st4" transform="translate(1075.83 99.56)"><tspan x="0" y="0">Small Grid Line</tspan></text>
+        <g class="st3">
+          <text class="st4" transform="translate(1075.83 99.56)"><tspan x="0" y="0">Small Grid Line</tspan></text>
+        </g>
       </g>
     </g>
+  </g>
+  <rect class="st8" x="230.9" y="6.46" width="8" height="8"/>
+  <g class="st3">
+    <text class="st2" transform="translate(246.9 13.05)"><tspan x="0" y="0">P25</tspan></text>
+  </g>
+  <g class="st3">
+    <text class="st2" transform="translate(271.03 13.05)"><tspan x="0" y="0">- P75</tspan></text>
+  </g>
+  <rect class="st7" x="316.01" y="6.46" width="8" height="8"/>
+  <g class="st3">
+    <text class="st2" transform="translate(332.01 13.05)"><tspan x="0" y="0">10th</tspan></text>
+  </g>
+  <g class="st3">
+    <text class="st2" transform="translate(360.62 13.05)"><tspan x="0" y="0">and 90th centiles</tspan></text>
+  </g>
+  <rect x="473.86" y="6.46" width="2" height="8"/>
+  <g class="st3">
+    <text class="st2" transform="translate(483.86 13.05)"><tspan x="0" y="0">Median</tspan></text>
   </g>
 </svg>
