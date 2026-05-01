@@ -6,15 +6,76 @@ import { moduleMetadata } from '@storybook/angular';
 <img src="./stable.png" alt="status stable" width="120px" style={{ marginTop: "26px", display: "block" }}/>
 # Dropdowns
 A dropdown menu displays a list of contents, navigation points, and functions without flooding the user with many options simultaneously.
-## Single choice dropdown
-<iframe
-  src="https://swiss.github.io/designsystem/iframe.html?globals=&args=&id=components-form-select--example"
-  width="100%"
-  height="83px"
-/>
-## Multiple choice dropdown
-<iframe
-  src="https://swiss.github.io/designsystem/iframe.html?globals=&args=&id=components-form-multiselect--example"
-  width="100%"
-  height="205px"
-/>
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <table
+      style={{
+        width: "60vw",
+        height: "25vh",
+        border: "none",
+        borderCollapse: "collapse"
+      }}>
+      <tbody style={{ border: "none" }}>
+        <tr style={{ border: "none" }}>
+          <td style={{ border: "none", textAlign: "center" }}><b>Simple Dropdown</b></td>
+          <td style={{ border: "none", textAlign: "center" }}><b>Multiselect Dropdown</b></td>
+        </tr>
+      </tbody>
+        <tr
+        style={{
+          border: "none"
+        }}>
+          <td style={{ border: "none" }}>![](./corporate/simple-dropdown.png)</td>
+          <td style={{ border: "none" }}>![](./corporate/multiselect-dropdown.png)</td>
+      </tr>
+      <tr
+        style={{
+          border: "none"
+        }}>
+          <td style={{ border: "none", textAlign: "center" }}>In a simple dropdown only <b>one</b> item out of the list can be selected.</td>
+          <td style={{ border: "none", textAlign: "center" }}>In a multiselect dropdown <b>several</b> items out of the list can be selected by enabling the checkboxes. </td>
+      </tr>
+    </table>
+</div>
+
+## Dropdown - States
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <table
+      style={{
+        width: "60vw",
+        height: "25vh",
+        border: "none",
+        borderCollapse: "collapse"
+      }}>
+      <tbody style={{ border: "none" }}>
+        
+      </tbody>
+        <tr
+        style={{
+          border: "none"
+        }}>
+          <td style={{ border: "none" }}>![](./corporate/simple-dropdown-default.png)</td>
+          <td style={{ border: "none" }}>![](./corporate/simple-dropdown-hover.png)</td>
+      </tr>
+      <tr
+        style={{
+          border: "none"
+        }}>
+          <td style={{ border: "none", textAlign: "center" }}><b>Default State</b><br/>Label: 14px, Regular, #454545<br/>Outline: #CCCCCC, 1px<br/>Arrow: #454545</td>
+          <td style={{ border: "none", textAlign: "center" }}><b>Hover State</b><br/>Label: 14px, Regular, #454545<br/>Outline: #757575, 1px<br/>Arrow: #454545</td>
+      </tr>
+      <tr
+        style={{
+          border: "none"
+        }}>
+          <td style={{ border: "none" }}>![](./corporate/simple-dropdown-press.png)</td>
+          <td style={{ border: "none" }}>![](./corporate/simple-dropdown-focus.png)</td>
+      </tr>
+      <tr
+        style={{
+          border: "none"
+        }}>
+          <td style={{ border: "none", textAlign: "center" }}><b>Press State</b><br/>Label: 14px, Regular, #454545<br/>Fill: #D5D5D5<br/>Outline: #006699, 1px<br/>Arrow: #454545</td>
+          <td style={{ border: "none", textAlign: "center" }}><b>Focus State</b><br/>Label: 14px, Regular, #454545<br/>Outline: #CCCCCC, 1px<br/>Arrow: #454545<br/>Focus: #000000, 2px</td>
+      </tr>
+    </table>
+</div>
