@@ -1,0 +1,199 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import { moduleMetadata } from '@storybook/angular';
+
+<Meta title="Readability/Best Practices/Chart Junk"/>
+<img src="./stable.png" alt="status stable" width="100px"/>
+# Chart Junk
+
+Chart junk is any visual element in a chart that does not contribute to the reader's understanding of the data. The term was introduced by Edward Tufte in *The Visual Display of Quantitative Information* (1983), who defined it as graphical elements that are unnecessary or actively counterproductive, decoration that competes with the data for the reader's attention.
+
+Removing harmful chart junk is one of the most reliable ways to improve readability. Every pixel that does not encode information and actively misleads the reader increases cognitive load without return. In FSO publications, which must function across formats and audiences, this principle is especially consequential: what reads as decorative at desktop scale can become illegible at print or small-screen size.
+
+## Two categories of chart junk
+
+Not all non-data visual elements cause equal harm. Robert Kosara's distinction between **harmful junk** and **harmless junk** is a useful practical framework and one that practitioners consistently apply intuitively, even when they do not use those terms. 
+
+**Harmful junk** actively interferes with the reading and understanding of a chart. It distorts encoded values, obscures data, or makes the chart harder to interpret correctly. This kind of chart junk should always be removed. Examples include 3D perspective effects that distort relative sizes, busy background images that reduce contrast with data elements, and decorative forms that hide the true end of a bar or line.
+
+**Harmless junk** consists of decorative elements that do not improve comprehension but do not significantly hinder it either. Research by Bateman et al. (2010) found that embellished charts were recalled better by readers after three weeks, without a measurable loss in the ability to extract the chart's message. This does not justify decoration for its own sake, but it does mean that the decision to include or exclude non-data elements should be grounded in the specific purpose and audience of the chart.
+
+For FSO publications, which prioritise precise value reading, institutional credibility, and consistent cross-output reproduction — the appropriate position is closer to the minimalist end of the spectrum. The goal is not the most stripped-down chart possible, but the chart in which every element earns its place.
+
+## The "Big Duck" problem
+
+Tufte identifies a second, more structural form of chart junk that goes beyond individual decorative elements. He calls it the **Big Duck**, after a famous duck-shaped building in New York used as a shop to sell duck eggs: a building in which the entire structure is the decoration.
+
+In data visualisation, a "duck" is a chart in which the decorative form has taken over the entire structure, where data measures and structures have become design elements, and the chart communicates graphical style rather than quantitative information. A chart shaped like a product, a country, or a concept, where the shape itself is the dominant message, falls into this category.
+
+For FSO charts, the Big Duck pattern most commonly appears in infographic-style outputs where icons or silhouettes replace standard chart geometries. These are not always harmful to the message, but they sacrifice precise value reading and are not appropriate for publications where quantitative accuracy is the primary requirement.
+
+## Graphical integrity and distortion
+
+Chart junk is about excess decoration, but a related and equally important concern is **graphical integrity**: ensuring that the visual representation of numbers is proportional to the quantities it encodes. Tufte defines the **Lie Factor** as the ratio of the size of the effect shown in the graphic to the size of the effect in the data. A Lie Factor of 1 means perfect proportionality; values substantially above or below 1 indicate distortion, whether intentional or not.
+
+The most common sources of graphical distortion are:
+
+- **Non-zero baselines.** Starting the y-axis at a value other than zero exaggerates differences between bars. A bar chart whose y-axis begins at 90 instead of 0 can make a small absolute difference appear dramatic. For FSO bar and column charts, the baseline should start at zero unless there is an explicit and documented justification.
+- **Inconsistent scales.** Using non-uniform intervals on an axis, or different scales across small multiples that are meant to be compared, distorts the perceived relationship between values. Scales across comparable charts should be locked to the same range.
+- **Excessive pie slicing.** Pie charts with many small slices make it impossible to distinguish between categories. As a rule, pie charts with more than five or six segments should be replaced with a ranked bar chart or a grouped category chart.
+- **Pictograms as scaled encodings.** Replacing bars with icons sized to represent magnitude creates area distortion: a coin twice as tall appears approximately four times as large in area. This distortion cannot be corrected by reader effort.
+
+These distortions are distinct from decoration but are closely related: both involve ink that misrepresents the data rather than serving it.
+
+## What counts as harmful chart junk
+
+The following are the most common forms of harmful chart junk encountered in practice.
+
+### Decorative fills and patterns
+
+Replacing solid fills with textures, gradients, or cross-hatching patterns does not add information. These treatments fragment the visual surface and make area comparisons harder. Tufte specifically criticised the use of ornamental hatching in bars and area charts as a practice that adds visual noise without aiding comprehension. For FSO charts, use flat colours from the institutional palette. Textures are acceptable only where colour alone cannot distinguish elements — for example in print contexts where the chart will be reproduced in greyscale — and should be used sparingly even then.
+
+### Unnecessary gridlines and tick marks
+
+Gridlines exist to help the reader estimate values. Dense gridlines, or gridlines that are darker than the data series they support, invert this relationship: they draw attention away from the data. In most cases, light horizontal gridlines at major intervals are sufficient. Vertical gridlines are rarely needed in bar or line charts. Minor tick marks add visual noise without improving value-reading precision.
+
+### 3D effects
+
+Three-dimensional rendering of two-dimensional data — pie charts extruded into cones, bars given depth and shadow — introduces systematic distortion. The visual angle at which the reader perceives the chart changes the apparent size of the encoded values. A 3D pie chart makes the front slices appear larger than equivalent slices at the back. There is no situation in FSO data visualisation where a 3D effect improves accuracy or comprehension. It should not be used.
+
+### Redundant data labels
+
+Showing both a y-axis scale and individual data labels on every bar encodes the same information twice. Choose one: either a clear axis scale that lets the reader read approximate values, or targeted labels for the values that matter most in your argument. Full labelling of every data point is only justified when exact values are essential for all categories — in which case a table may serve the reader better than a chart.
+
+### Busy background images and fills
+
+Background images behind the chart plot area reduce the contrast between the data and the canvas, making value reading harder. This is a clear example of harmful junk: the background does not encode information and actively impairs perception of the data series. Chart plot areas should have a white or transparent background.
+
+### Heavy frames and borders
+
+Heavy borders around the chart plot area, around legends, or around individual chart elements add visual weight without contributing structure. A light or absent border typically produces a cleaner result. The chart frame, if present, should recede rather than compete with the content.
+
+## The data-ink ratio
+
+Tufte formalises the principle behind chart junk removal through the concept of the **data-ink ratio**: the proportion of a chart's ink that is used to represent actual data, as opposed to decoration or structure. A high data-ink ratio means that most of what the reader sees is data; a low ratio means that much of the visual surface is taken up by elements that carry no information.
+
+Formally: `data-ink ratio = data-ink / total ink used to print the graphic`
+
+The goal is not to minimise ink absolutely. Some non-data elements are necessary (axes, a legend, a title, source lines). The goal is to ensure that every non-data element earns its place by supporting comprehension. In practice, this means asking of each visual element: *if I removed this, would the reader lose information or comprehension?* If the answer is no to both, the element should be removed or reduced.
+
+## Chart junk vs. necessary structure
+
+Not all non-data elements are chart junk. The distinction matters:
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <table
+      style={{
+        width: "60vw",
+        height: "25vh",
+        border: "none",
+        borderCollapse: "collapse"
+      }}>
+      <tbody style={{ border: "none" }}>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}><b>Element</b></td>
+            <td style={{ border: "none", textAlign: "center" }}><b>Status</b></td>
+            <td style={{ border: "none", textAlign: "center" }}><b>Rationale</b></td>
+        </tr>
+      </tbody>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Axis labels and units</td>
+            <td style={{ border: "none", textAlign: "center" }}>Necessary</td>
+            <td style={{ border: "none", textAlign: "center" }}>Without them, values cannot be interpreted</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Legend</td>
+            <td style={{ border: "none", textAlign: "center" }}>Necessary when series > 1</td>
+            <td style={{ border: "none", textAlign: "center" }}>Identifies the encoding without annotation</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Light gridlines at major intervals</td>
+            <td style={{ border: "none", textAlign: "center" }}>Necessary</td>
+            <td style={{ border: "none", textAlign: "center" }}>Supports value estimation</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Chart title and subtitle</td>
+            <td style={{ border: "none", textAlign: "center" }}>Necessary</td>
+            <td style={{ border: "none", textAlign: "center" }}>Provides context the data alone cannot</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Source and note lines</td>
+            <td style={{ border: "none", textAlign: "center" }}>Necessary</td>
+            <td style={{ border: "none", textAlign: "center" }}>Required for FSO institutional standards</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Heavy axis borders</td>
+            <td style={{ border: "none", textAlign: "center" }}>Harmful junk</td>
+            <td style={{ border: "none", textAlign: "center" }}>Adds weight without structure</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Background images or fills</td>
+            <td style={{ border: "none", textAlign: "center" }}>Harmful junk</td>
+            <td style={{ border: "none", textAlign: "center" }}>Reduces contrast with data series</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Dense minor gridlines</td>
+            <td style={{ border: "none", textAlign: "center" }}>Harmful junk</td>
+            <td style={{ border: "none", textAlign: "center" }}>Competes with the data signal</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>3D effects</td>
+            <td style={{ border: "none", textAlign: "center" }}>Harmful junk</td>
+            <td style={{ border: "none", textAlign: "center" }}>Distorts encoded values</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Drop shadows</td>
+            <td style={{ border: "none", textAlign: "center" }}>Harmful junk</td>
+            <td style={{ border: "none", textAlign: "center" }}>Implies depth without encoding it</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Non-zero baseline (unjustified)</td>
+            <td style={{ border: "none", textAlign: "center" }}>Distortion</td>
+            <td style={{ border: "none", textAlign: "center" }}>Inflates apparent differences between values</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Inconsistent scales across comparables</td>
+            <td style={{ border: "none", textAlign: "center" }}>Distortion</td>
+            <td style={{ border: "none", textAlign: "center" }}>Misrepresents relative magnitude</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Decorative icons used as encodings</td>
+            <td style={{ border: "none", textAlign: "center" }}>Harmful junk</td>
+            <td style={{ border: "none", textAlign: "center" }}>Area distortion cannot be corrected by the reader</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Illustrations alongside correct encodings</td>
+            <td style={{ border: "none", textAlign: "center" }}>Context-dependent</td>
+            <td style={{ border: "none", textAlign: "center" }}>May aid memorability; acceptable if values remain readable</td>
+        </tr>
+    </table>
+</div>
+## Do / Don't
+
+### Do
+
+- Remove or lighten gridlines until they are clearly subordinate to the data series.
+- Use flat, solid fills from the FSO colour palette. Avoid gradients, textures, and patterns except where greyscale reproduction requires them.
+- Ask of every visual element: does removing this cost the reader information or comprehension? If neither, remove it.
+- Distinguish between harmful junk (distorts or obscures data) and harmless decoration (does not impair reading — assess against audience, medium, and communicative purpose).
+- Start bar and column chart baselines at zero. Document any justified exception explicitly.
+- Review charts at their intended output size (print, screen, small multiples). Chart junk and distortion are often more visible at smaller scales.
+- Ensure consistent scales across all charts intended to be compared directly.
+
+### Don't
+
+- Don't use 3D effects on any chart type. They distort encoded values and the distortion cannot be corrected by reader effort.
+- Don't place images or coloured fills behind the chart plot area. A white or transparent background maximises contrast with the data.
+- Don't frame chart elements (legend boxes, plot areas) with heavy borders. Let white space do the structural work.
+- Don't let the decorative form take over the chart structure (the "Big Duck" problem). If the shape of the chart is more salient than the data it encodes, the design has inverted its priorities.
+- Don't use pie charts with more than five or six segments. Switch to a ranked bar chart instead.
+- Don't confuse simplicity with loss of information. Removing chart junk should leave the data more visible, not less supported.
+
+---
+
+*References:*
+- Tufte, E.R. (1983). The Visual Display of Quantitative Information. Graphics Press.
+- Bateman, S. et al. (2010). Useful Junk? The Effects of Visual Embellishment on Comprehension and Memorability of Charts. CHI 2010.
+- Kosara, R. (2012). Three Types of Chart Junk. eagereyes.org.
+- Skau, D. et al. (2020). Revealing the Invisible: Understanding Practitioners' Perspectives on Chartjunk. arXiv:2009.02634.
+- Akbaba, D. et al. (2021). A Manifesto for Putting 'Chartjunk' in the Trash. AltVis 2021.
+- GeeksforGeeks (2025). Mastering Tufte's Data Visualization Principles. geeksforgeeks.org.
+- data.europa.eu (2023). Data Visualisation Guide: Chart junk and data ink.
