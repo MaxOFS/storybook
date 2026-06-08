@@ -1,0 +1,110 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import { moduleMetadata } from '@storybook/angular';
+
+<Meta title="Readability/Best Practices/Chart Chooser"/>
+<img src="./stable.png" alt="status stable" width="100px"/>
+# Chart Chooser
+The FSO Chart Chooser is an interactive decision-support tool that helps you select the most appropriate chart type for your data and your communicative intent. It is available at [chartchooser.bfs.admin.ch](https://www.chartchooser.bfs.admin.ch/en/).
+ 
+A well-chosen chart makes a dataset immediately readable while a poorly chosen one forces the reader to work harder or, worse, leads to misinterpretation. 
+The Chart Chooser formalises this decision by grounding it in three explicit questions: 
+*Which data relationship is most important in your story ?*, *How many variables do you want to represent ?* and *What kinds of variables is it ?*
+
+## How the tool works
+ 
+The Chart Chooser guides you through a two-step filter:
+ 
+**Step 1 — Data relationship.** Choose the primary message or relationship you want the reader to perceive. The available categories are:
+
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <table
+      style={{
+        width: "60vw",
+        height: "25vh",
+        border: "none",
+        borderCollapse: "collapse"
+      }}>
+      <tbody style={{ border: "none" }}>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}><b>Relationship</b></td>
+            <td style={{ border: "none", textAlign: "center" }}><b>Typical question answered</b></td>
+        </tr>
+      </tbody>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Comparison</td>
+            <td style={{ border: "none", textAlign: "center" }}>How do values differ across categories?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Ranking</td>
+            <td style={{ border: "none", textAlign: "center" }}>What is the order of magnitude?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Distribution</td>
+            <td style={{ border: "none", textAlign: "center" }}>How is the data spread?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Deviation</td>
+            <td style={{ border: "none", textAlign: "center" }}>How far from a reference or average?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Correlation</td>
+            <td style={{ border: "none", textAlign: "center" }}>Do two variables move together?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Whole</td>
+            <td style={{ border: "none", textAlign: "center" }}>What share does each part represent?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Flow</td>
+            <td style={{ border: "none", textAlign: "center" }}>How does quantity move between states?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Time</td>
+            <td style={{ border: "none", textAlign: "center" }}>How does a value change over time?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Spatial</td>
+            <td style={{ border: "none", textAlign: "center" }}>Where does something occur or concentrate?</td>
+        </tr>
+    </table>
+</div>
+ 
+**Step 2 — Data structure.** Refine by the number of variables (univariate / multivariate) and their measurement type (numerical / categorical, discrete / continuous).
+ 
+The tool returns the subset of chart types that are valid for the chosen combination. Each result links to a dedicated template page showing: the intended audience type, the analytical questions the chart answers, its dimensional requirements, and worked examples following FSO standards.
+
+## Why this matters for readability
+ 
+Chart selection is upstream of all other readability decisions because the chart type determines the visual encoding. If the encoding is wrong, no amount of refinement further in the production process will fix it.
+ 
+The Chart Chooser enforces a discipline that is easy to skip under time pressure: **start from the message, not from a familiar template.** A column chart or a pie chart may feel like a safe default, but if the story is about composition (part-to-whole), a stacked or normalised form — or even a treemap — may communicate the same data far more directly.
+ 
+For FSO publications, which serve audiences ranging from policy specialists to the general public, this discipline is especially important. The tool encodes collective institutional knowledge about which chart types perform well for which communicative tasks, reducing individual guesswork and improving consistency across teams and outputs.
+ 
+## Recommended workflow
+ 
+1. **Clarify your message first.** Before opening the tool, write one sentence describing what you want the reader to understand. This sentence will surface the relationship category you need.
+2. **Use the two-step filter.** Apply Step 1 (relationship) and Step 2 (data structure) rather than browsing the full chart gallery. The filter is there to constrain your options to only what is appropriate.
+3. **Compare the shortlisted types.** When the tool returns several valid chart types, read the template page for each. Pay attention to the *points of attention* section, it documents the limits and failure of each type.
+4. **Match complexity to your audience.** The tool surfaces chart types across a spectrum of complexity. A butterfly chart or a Marimekko may be analytically precise but cognitively demanding. Prefer the simpler option when the difference in precision is not meaningful for your use case.
+5. **Use the template as a starting point.** The template pages provide example data structures and visual layouts aligned with FSO standards. They are a reliable reference before creating a new diagram.
+
+## Scope of the tool
+ 
+The Chart Chooser covers **33 chart types** including standard statistical charts, composite charts (e.g. Column and Line), and thematic map types (Choropleth, Proportional Symbols, Flows). It does not cover tables or infographics, those require separate guidance.
+ 
+For spatial data, the tool should be used while keeping in mind that map choice involves additional considerations (projection, classification, symbolisation) that go beyond the scope of the Chart Chooser.
+ 
+
+## Do / Don't
+ 
+### Do
+ 
+- Start from the Chart Chooser whenever you are unsure which chart type to use.
+- Use the template pages as a checklist: audience type, data structure, and known limitations are all documented there.
+- Share the tool link with collaborators or clients who are defining visualisation requirements, so that chart selection is grounded in the same framework.
+### Don't
+ 
+- Don't choose a chart type because it looks interesting or novel. Novelty increases cognitive load. Prefer familiarity unless the communicative gain is clear.
+- Don't skip Step 2 (data structure). The relationship alone is not sufficient: a line chart and a multiple line chart serve the same time-series relationship but have very different legibility properties for multivariate data.
+- Don't treat the tool output as exhaustive. When none of the shortlisted charts feel right, step back and re-examine your Step 1 choice — your framing of the relationship may need revision.
