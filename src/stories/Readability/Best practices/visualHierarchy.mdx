@@ -1,0 +1,192 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import { moduleMetadata } from '@storybook/angular';
+
+<Meta title="Readability/Best Practices/Visual Hierarchy"/>
+<img src="./experimental.png" alt="status stable" width="100px"/>
+# Visual Hierarchy
+
+Visual hierarchy is the design discipline of telling the reader what to look at first, what to look at second, and what to look at last. In a well-structured chart or publication, every element occupies a position in a deliberate sequence and the visual properties of each element (its size, colour, position, and enclosure) reinforce that sequence rather than contradict it.
+
+For FSO publications, which serve audiences ranging from policy specialists to the general public, visual hierarchy is not an aesthetic preference. It is a functional requirement: a reader encountering a chart without clear hierarchy must reconstruct the intended reading order on their own, which increases cognitive load and raises the risk of misinterpretation. Establishing hierarchy explicitly removes that reconstruction effort.
+
+Visual hierarchy is created through five main mechanisms: **position**, **size**, **colour**, **layering**, and **enclosure**. Each is described below with FSO-specific conventions where they apply.
+
+## Position
+
+The simplest way to establish hierarchy is through placement. In left-to-right languages — including all FSO publication languages — readers begin at the top left of a page or chart and end at the bottom right. This reading order is consistent and can be relied upon to set expectations.
+
+The positional hierarchy for elements in a design is:
+
+> top left > top right > bottom left > bottom right
+
+The importance of elements placed at each of these positions should match their rank in this sequence. Concretely for FSO charts:
+
+- The **title** occupies the top-left or top-centre position. It is the first element the reader encounters and must be the most prominent text element on the chart.
+- The **subtitle** or explanatory line follows immediately below the title, in a smaller weight and size, providing the context or unit information the title alone cannot carry.
+- **Annotations** that explain features in the data sit close to the relevant data marks, at a visual weight below the title and subtitle but above axis labels.
+- **Axis labels and scale values** sit at the periphery of the plot area, where they are available for reference without competing with the data.
+- **Source lines, notes, and credits** appear at the bottom of the chart. They are necessary for institutional standards but should be the least visually prominent text elements on the page.
+
+When placing multiple charts in a publication or dashboard, the reading sequence must be considered. Charts higher and to the left in the layout will be seen first. Ensure the logical narrative order of the charts follows the spatial reading order, so the reader encounters context before conclusion.
+
+Note also that visualisations attract attention independently of their position: a striking chart may pull the eye even when it appears lower in the reading order. For this reason, FSO charts should be as self-contained as possible, any necessary elements required to understand the chart should be embedded in the chart itself, not left to surrounding body text.
+
+## Size
+
+Larger elements are perceived as more important than smaller ones. When the contrast in size is large enough, it can override positional hierarchy entirely: a very large chart placed below the fold will draw the eye before a small one placed at the top left.
+
+Within a single chart, the sizing of text elements should reflect their rank in the reading sequence. The FSO typographic hierarchy for chart elements is:
+
+> Title > Subtitle > Annotations > Data > Axis and value labels > Small print (source, notes, credits)
+
+Each level should be visibly smaller than the one above it by enough that the distinction is immediately perceptible without inspection. A title and subtitle that are the same size, or axis labels and data labels that are the same size, flatten the hierarchy and force the reader to determine importance through content rather than form.
+
+In multi-chart layouts and dashboards, the key visualisation can be given additional visual weight by making it larger than the supporting charts. Size contrast communicates priority. A key indicator or featured chart that is the same size as all surrounding charts loses its status as the primary focus.
+
+## Colour
+
+Colour is one of the strongest hierarchy mechanisms available, because it operates in parallel with size and position rather than competing with them. A small element in the wrong position can still be elevated in the hierarchy if it carries a highly saturated or contrasting colour.
+
+The FSO convention for colour-based hierarchy within a chart is:
+
+- **Accent colour** (the FSO primary colour or the most prominent hue in the palette) for the data series or categories that carry the primary message of the chart. This is the element the reader should notice first.
+- **Black** for the most important text elements: the title, subtitle and any annotations that are central to the message.
+- **Light grey** for supporting structural elements: gridlines, tick marks, axis lines.
+
+This pattern means that colour is doing two things simultaneously: encoding categorical membership (which series is which) and encoding importance (which series to look at first). These two functions must not contradict each other.
+
+A common failure mode is applying a high-contrast, saturated colour to non-data elements such as logos, borders, or source lines. A red logo in the bottom-right corner, for example, draws the eye to the lowest-priority position on the chart, directly contradicting the positional hierarchy. Non-data elements should be rendered at a visual weight that keeps them subordinate to the data.
+
+## Layering
+
+Layering is a subtler hierarchy mechanism, most relevant for charts with overlapping data marks or annotations placed over a plot area.
+
+Elements that appear in front of (on top of) other elements are perceived as more important. In practice this means:
+
+- Annotation lines and labels should sit above (in front of) gridlines and axis lines, never behind them.
+- When data series overlap (as in area charts or stacked charts), the series that encodes the primary message should be rendered in front of the series present for context.
+- Reference lines (e.g. a European average or a regulatory threshold) should be clearly above the grid but visually subordinate to the data series — typically rendered as a dashed or lighter line rather than a solid prominent one.
+
+## Enclosure
+
+Enclosure promotes that element in the visual hierarchy by making it appear grouped and distinct from its surroundings. Enclosed elements attract attention.
+
+Enclosure should therefore be applied deliberately and sparingly. In FSO charts, legitimate uses of enclosure include:
+
+- A **light shaded background region** over a specific time interval in a line chart (e.g. a recession period or a policy period) to signal that the interval has a different status from the surrounding data.
+- A **callout box** for an annotation that is too long to fit as an inline label without ambiguity.
+
+Enclosure should not be used to decorate elements that are not meant to be highlighted. A heavy border around a legend box, a framed source line, or a boxed subtitle all elevate those elements in the hierarchy without justification. As noted in the Chart Junk guidelines, borders and boxes on elements that do not need emphasis are a form of chart junk — and in the context of hierarchy, they are actively misleading, because they imply importance that is not there.
+
+## Consistency across a publication
+
+In multi-chart publications, reports, and dashboards, visual hierarchy must be applied consistently across all charts. When the same element type (titles, annotations, axis labels) is rendered differently across charts in the same document — different sizes, different colours, different weights — the reader cannot rely on visual properties as reliable signals of importance. They must re-evaluate hierarchy independently for each chart, which is cognitively expensive.
+
+FSO institutional standards provide a typographic and colour framework that, when applied consistently, establishes hierarchy automatically across all outputs. Deviations from that framework should be documented and justified, and should not propagate across the publication.
+
+## FSO element hierarchy reference
+
+The table below summarises the expected visual weight and position for each standard FSO chart element, from highest to lowest priority:
+
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <table
+      style={{
+        width: "60vw",
+        height: "25vh",
+        border: "none",
+        borderCollapse: "collapse"
+      }}>
+      <tbody style={{ border: "none" }}>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}><b>Element</b></td>
+            <td style={{ border: "none", textAlign: "center" }}><b>Position</b></td>
+            <td style={{ border: "none", textAlign: "center" }}><b>Size</b></td>
+            <td style={{ border: "none", textAlign: "center" }}><b>Colour</b></td>
+        </tr>
+      </tbody>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Title</td>
+            <td style={{ border: "none", textAlign: "center" }}>Top (left-aligned or centred)</td>
+            <td style={{ border: "none", textAlign: "center" }}>Largest text element</td>
+            <td style={{ border: "none", textAlign: "center" }}>Black</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Subtitle / unit line</td>
+            <td style={{ border: "none", textAlign: "center" }}>Below title</td>
+            <td style={{ border: "none", textAlign: "center" }}>Clearly smaller than title</td>
+            <td style={{ border: "none", textAlign: "center" }}>Black</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Data series </td>
+            <td style={{ border: "none", textAlign: "center" }}>Plot area</td>
+            <td style={{ border: "none", textAlign: "center" }}>Full visual weight</td>
+            <td style={{ border: "none", textAlign: "center" }}>FSO accent colour</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Annotations</td>
+            <td style={{ border: "none", textAlign: "center" }}>Adjacent to relevant data marks</td>
+            <td style={{ border: "none", textAlign: "center" }}>Smaller than a subtitle but bigger than the legend</td>
+            <td style={{ border: "none", textAlign: "center" }}>Black</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>UI Elements</td>
+            <td style={{ border: "none", textAlign: "center" }}>Under the subtitle but above the legend (if present)</td>
+            <td style={{ border: "none", textAlign: "center" }}>Smaller than a subtitle but bigger than the legend</td>
+            <td style={{ border: "none", textAlign: "center" }}>Black</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Legend</td>
+            <td style={{ border: "none", textAlign: "center" }}>Under UI Elements and above the chart</td>
+            <td style={{ border: "none", textAlign: "center" }}>Meta Regular</td>
+            <td style={{ border: "none", textAlign: "center" }}>Light grey / Bold Black (currently for maps) ?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Axis labels</td>
+            <td style={{ border: "none", textAlign: "center" }}>Just above the y-axis and under the ticks in the middle of the x-axis </td>
+            <td style={{ border: "none", textAlign: "center" }}>Meta Regular</td>
+            <td style={{ border: "none", textAlign: "center" }}>Light grey</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Gridlines</td>
+            <td style={{ border: "none", textAlign: "center" }}>At regular intervals</td>
+            <td style={{ border: "none", textAlign: "center" }}> 2px</td>
+            <td style={{ border: "none", textAlign: "center" }}>Light Grey</td>
+        </tr>
+        
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Notes</td>
+            <td style={{ border: "none", textAlign: "center" }}>Between the chart and the footer</td>
+            <td style={{ border: "none", textAlign: "center" }}>Meta Regular</td>
+            <td style={{ border: "none", textAlign: "center" }}>Black</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Footer : Source, data status, fso number, copyright</td>
+            <td style={{ border: "none", textAlign: "center" }}>At the bottom of the chart</td>
+            <td style={{ border: "none", textAlign: "center" }}>Meta Regular</td>
+            <td style={{ border: "none", textAlign: "center" }}>Black</td>
+        </tr>
+    </table>
+</div>
+ 
+
+## Do / Don't
+
+### Do
+
+- Place the title top-left or top-centre, and ensure it is the largest and most prominent text element on the chart.
+- Apply the FSO typographic size sequence: title > subtitle > annotations > data labels > axis labels > footer. Make size differences clearly perceptible, not token.
+- Ensure reading order in multi-chart layouts follows the logical narrative: place context charts before conclusion charts in the spatial sequence.
+
+### Don't
+
+- Don't assign a high-contrast or saturated colour to non-data elements (logos, borders, source lines). It elevates them in the hierarchy against the intention of the design.
+- Don't flatten the typographic scale: titles and subtitles at the same font size, or axis labels and data labels at the same size, remove the signal that size is meant to provide.
+- Don't place the most important chart in a dashboard in a position that the reading order reaches last. If a chart must break the natural reading order, use size contrast to compensate.
+- Don't use enclosure decoratively. A border or box implies importance; if the element is not important, the border is actively misleading.
+- Don't allow hierarchy to vary inconsistently across charts in the same publication. Once a visual property (size, colour, position) is used as a hierarchy signal in one chart, it must carry the same meaning in all subsequent charts.
+
+---
+
+*References:*
+- data.europa.eu (2023). Data Visualisation Guide: Visual hierarchy (introduction, x & y positioning, sizing, colour, enclosure). [data.europa.eu/apps/data-visualisation-guide/tag/visual-hierarchy](https://data.europa.eu/apps/data-visualisation-guide/tag/visual-hierarchy)
+- Tufte, E.R. (1983). The Visual Display of Quantitative Information. Graphics Press.
