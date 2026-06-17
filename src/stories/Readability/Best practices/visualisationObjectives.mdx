@@ -1,0 +1,155 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import { moduleMetadata } from '@storybook/angular';
+
+<Meta title="Readability/Best Practices/Main Objectives"/>
+<img src="./stable.png" alt="status stable" width="100px"/>
+# Main Objectives of a Visualisation
+
+Every chart has two layers of objectives: what it is trying to communicate (its **communicative intent**) and what it must satisfy as a produced artefact (its **production standards**). Both must be defined before a chart is built. A chart that succeeds on one layer but fails on the other is not fit for publication.
+
+This page covers how to define and verify both layers. The communicative intent section connects directly to the [FSO Chart Chooser](/story/readability-best-practices-chart-chooser--docs), which formalises the relationship between intent and chart type selection. The production standards section establishes the institutional baseline that applies to all FSO outputs regardless of chart type.
+
+## The two purposes of data visualisation
+
+A useful starting point is the distinction between **exploratory** and **explanatory** data visualisation (data.europa.eu, 2023).
+
+In **exploratory** visualisation, the chart is a tool for the analyst. The goal is to become familiar with the data, identify patterns, and generate hypotheses. Design quality is secondary; iteration speed and integration with data manipulation steps matter more. Exploratory charts are not intended for publication.
+
+In **explanatory** visualisation, the chart is a communication artefact. The goal is to convey a specific pattern or message to a defined audience. Here, design decisions directly affect whether the intended message reaches the reader. All FSO publication charts are explanatory visualisations, and they must be designed as such from the outset.
+
+The practical consequence of this distinction is that a chart cannot be repurposed directly from an exploratory context into a publication. An exploratory chart that happened to reveal an interesting pattern still requires a deliberate design pass, defining the message, selecting the right encoding, applying visual hierarchy, and verifying that all production standards are met, before it is ready to be published.
+
+## Communicative intent
+
+Communicative intent is the single sentence that describes what you want your target audience to understand from the chart. It must be formulated before any design decision is made, because every downstream choice depends on it.
+
+A well-formed communicative intent statement has two components:
+
+1. **The data relationship** : what type of pattern the chart shows (comparison, distribution, trend over time, part-to-whole, etc.)
+2. **The finding** : what the data actually shows within that relationship (which category is highest, how the trend changed, what proportion dominates)
+
+### Connecting intent to chart type: the Chart Chooser
+
+The communicative intent statement surfaces the **data relationship** the chart must encode. This relationship is the primary input to the [FSO Chart Chooser](https://www.chartchooser.bfs.admin.ch/en/), which maps relationship categories to valid chart types.
+
+If the communicative intent cannot be mapped to one of these categories, the intent needs to be sharpened. A chart that tries to show two unrelated relationships simultaneously, for example, both a ranking and a time trend, will almost always fail to communicate either clearly. The USWDS data visualisation guidance states this directly: limit the "big idea" expressed in a visualisation to a single central theme, and use no more than two or three supporting concepts to reduce cognitive load (USWDS, 2022). It is often better to limit the number of messages to be transmitted from a single chart (even when the target audience is from an expert group).
+
+When the intent is clear and the relationship category is identified, use the Chart Chooser to retrieve the shortlist of valid chart types for that relationship and data structure. Select the simplest option on the shortlist that conveys the intended message without loss of precision for your audience.
+
+## Production standards
+
+Beyond communicative intent, every FSO chart must satisfy four institutional production objectives: **accuracy**, **clarity**, **reproducibility**, and **accessibility**. These are not sequential — they must be verified in parallel before publication.
+
+### Accuracy
+
+A chart is accurate when the visual representation is proportional to the quantities it encodes, and when the data it draws on is correct and current.
+
+Accuracy failures come in two forms. **Data errors** ,such as incorrect values, outdated figures, wrong aggregation, are pre-visualisation problems that no design decision can fix. Data validation must happen before chart construction. **Visual distortions**, such as non-zero baselines, inconsistent scales, 3D effects, are introduced during construction and are fully within the designer's control. Both are covered in more detail in the [Chart Junk](/story/readability-best-practices-chart-junk--docs) guidelines.
+
+For FSO publications, all data must be traceable to a source, and the source line must appear on every chart. If the data has been processed (aggregated, smoothed, indexed), the method must be documented either in the chart note or in accompanying metadata.
+
+### Clarity
+
+A chart is clear when a reader with the expected level of data literacy can extract the intended message without external assistance. Clarity is audience-relative: a chart designed for policy specialists may legitimately use more complex encodings than one designed for the general public.
+
+Clarity requires:
+
+- **A single dominant message.** If a reader cannot identify the main finding within the first few seconds of looking at the chart, the chart is not clear enough. Secondary findings can be present but must be visually subordinate.
+- **Self-contained context.** The chart must include everything the reader needs to interpret it correctly: a title, a unit, a scale, a source, and any annotations required to explain non-obvious features of the data. Relying on surrounding body text to supply essential context is not acceptable for publication charts.
+- **Appropriate complexity for the audience.** The USWDS guidance recommends preferring common chart types when the audience's data literacy is unknown, and sticking to familiar forms (bar charts, line charts) for explanatory visualisations aimed at a general public (USWDS, 2022).
+
+### Reproducibility
+
+A chart is reproducible when another analyst can regenerate it from its stated inputs using the same tools. For FSO charts, this means:
+
+- The data source and version are recorded in the source line and in the production file or notebook.
+- Any transformations applied to the data (filters, aggregations, index calculations) are documented.
+- The production file is stored in the team's shared environment, not only on a local machine.
+
+Reproducibility is a prerequisite for correction. If a data error is discovered after publication, the chart must be correctable and re-publishable. A chart that exists only as an exported image with no documented production trail cannot be corrected efficiently.
+
+### Accessibility
+
+A chart is accessible when its information is available to all readers, including those using assistive technologies or those who cannot distinguish colours reliably.
+
+The FSO Accessibility guidelines provide detailed requirements. For the purposes of this page, the core obligations at the production stage are:
+
+- **Colour contrast.** All text elements must meet WCAG AA contrast requirements against their background. Data series must be distinguishable without relying on colour alone — either through labelling, pattern, or shape variation.
+- **Text alternatives.** Every chart published in a digital context must have a text alternative (alt text or a linked data table) that conveys the same information as the visual. A data table alone is not equivalent to a chart: the text alternative must also state the communicative intent — the trend, comparison, or finding — not only reproduce the raw values (USWDS, 2022).
+
+## Checklist: before publication
+
+The following questions should be answerable for every chart before it is published:
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <table
+      style={{
+        width: "60vw",
+        height: "25vh",
+        border: "none",
+        borderCollapse: "collapse"
+      }}>
+      <tbody style={{ border: "none" }}>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}><b>Objective</b></td>
+            <td style={{ border: "none", textAlign: "center" }}><b>Verification question</b></td>
+        </tr>
+      </tbody>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Communicative intent</td>
+            <td style={{ border: "none", textAlign: "center" }}>Can you summarize the chart's message in one sentence containing the relationship, the finding and the implication for the audience ?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Chart type fit</td>
+            <td style={{ border: "none", textAlign: "center" }}>Is the chart type based on the chart chooser, id not is the choice documented justified ?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Intent visibility</td>
+            <td style={{ border: "none", textAlign: "center" }}>Is the title just a label or does it communicate the intent behind the chart ?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Data accuracy</td>
+            <td style={{ border: "none", textAlign: "center" }}>Is the source correct and validated by the data provider ?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Visual accuracy</td>
+            <td style={{ border: "none", textAlign: "center" }}>Does the chart follow the FSO guidelines for this type ?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Clarity</td>
+            <td style={{ border: "none", textAlign: "center" }}>Can the target audience reader understand the intent behind the chart without external assistance ?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Reproducibility</td>
+            <td style={{ border: "none", textAlign: "center" }}>Is the production file stored and documented so that the chart can be regenerated or corrected?</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Accessibility</td>
+            <td style={{ border: "none", textAlign: "center" }}>Do all text elements meet contrast requirements? Is a text alternative present that states the intent, not only the values?</td>
+        </tr>
+    </table>
+</div>
+
+## Do / Don't
+
+### Do
+
+- Write the communicative intent as a single sentence before opening any chart tool. Let the sentence drive every subsequent design decision.
+- Use the FSO Chart Chooser to move from intent to chart type. If the shortlist does not feel right, revisit the intent statement.
+- State the finding in the title. Reserve the subtitle for contextual information (unit, geography, time period) that the title cannot carry.
+- Verify all four production standards : accuracy, clarity, reproducibility, accessibility before publishing. Treat them as a parallel checklist, not a sequential one.
+- Design for the audience's data literacy, not for the author's. A chart that is clear to the analyst who built it is not necessarily clear to the reader who will encounter it.
+
+### Don't
+
+- Don't start building a chart before the communicative intent is defined. A chart built around the available data rather than around a message will rarely communicate clearly.
+- Don't try to show more than one main relationship in a single chart. If the data supports two distinct findings, consider two charts.
+- Don't use a title that names the dataset rather than the finding. A label is not a communicative act.
+- Don't treat the data table as a full accessibility substitute for the chart. The text alternative must convey the trend or finding, not only the values.
+- Don't publish a chart without a documented production trail. If the data changes or an error is found, the chart must be correctable.
+
+---
+
+*References:*
+- data.europa.eu (2023). Data Visualisation Guide: Graphic design introduction — exploratory vs. explanatory visualisation. [data.europa.eu/apps/data-visualisation-guide/graphic-design-introduction](https://data.europa.eu/apps/data-visualisation-guide/graphic-design-introduction)
+- U.S. Web Design System (2022). Data Visualizations — General Guidance. [designsystem.digital.gov/components/data-visualizations](https://designsystem.digital.gov/components/data-visualizations/)
+- FSO Chart Chooser. [chartchooser.bfs.admin.ch](https://www.chartchooser.bfs.admin.ch/en/)
