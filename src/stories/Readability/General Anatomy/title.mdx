@@ -1,0 +1,71 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import { moduleMetadata } from '@storybook/angular';
+
+<Meta title="Readability/General Anatomy/Title"/>
+
+# Title
+The title is the first element a reader encounters on a chart. It anchors the visual, conveys the main message, and sets the interpretive frame before any data is read. A well-written title reduces cognitive load by telling the reader what to look for; a vague or missing title forces them to reverse-engineer the chart's purpose from the data alone.
+ 
+At the FSO, chart titles serve both communicative and institutional functions: they must be informative enough to stand alone in a report or slide deck, and consistent enough to meet the standards of official statistical communication.
+
+## Description
+A chart title should be a short, self-contained statement that communicates the chart's main takeaway or its subject matter, depending on context.
+ 
+Two titling strategies are valid depending on the publication context:
+ 
+- **Descriptive title**: names the topic and the variables shown, without interpreting the data. Suited for publications where the analyst role is neutral and interpretation is left to the reader (*"Employment rate by canton, 2023"*).
+- **Informative (assertive) title**: states the main finding directly. Suited for editorial contexts, dashboards, or presentations where the author guides the reader's attention (*"Employment rates are highest in urban cantons"*).
+Both approaches are acceptable within the FSO guidelines, but they should not be mixed within the same publication. The choice of strategy must be made consistently at the document level.
+ 
+Regardless of strategy, a title should answer at minimum: **what** is being measured, and **when** or **where** it applies (if relevant). It should not duplicate information already available in the axis labels or caption.
+
+## Specs
+ 
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <table
+      style={{
+        width: "60vw",
+        height: "25vh",
+        border: "none",
+        borderCollapse: "collapse"
+      }}>
+      <tbody style={{ border: "none" }}>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}><b>Property</b></td>
+            <td style={{ border: "none", textAlign: "center" }}><b>Specification</b></td>
+        </tr>
+      </tbody>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Length</td>
+            <td style={{ border: "none", textAlign: "center" }}>1–2 lines; aim for under 10 words when possible</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Content</td>
+            <td style={{ border: "none", textAlign: "center" }}>Do not include units, time references or geographic scope in the title, place them in the axis label or subtitle. The only case where a time reference should be included in the title is if it is the only element of the subtitle.</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Font weight</td>
+            <td style={{ border: "none", textAlign: "center" }}>Use a different size from the other textual elements to make sure the title is read first after the chart.</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Position</td>
+            <td style={{ border: "none", textAlign: "center" }}>Top-left aligned, above the chart area</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "center" }}>Language</td>
+            <td style={{ border: "none", textAlign: "center" }}>Match the language of the publication; use official FSO terminology for indicators. No acronyms.</td>
+        </tr>
+    </table>
+</div>
+## Do / Don't
+### Do
+- State the finding in the title. Reserve the subtitle for contextual information (unit, geography, time period) that the title cannot carry.
+### Don't
+- Don't use a title that names the dataset rather than the finding. A label is not a communicative act.
+
+
+
+
+
+
+
