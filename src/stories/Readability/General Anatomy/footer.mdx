@@ -1,0 +1,68 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import { moduleMetadata } from '@storybook/angular';
+
+<Meta title="Readability/General Anatomy/Footer"/>
+
+# Footer
+
+The footer is the institutional baseline of a chart. It carries fixed administrative metadata : the copyright notice, the FSO publication number (BFS-Nummer), the data reference date, and the source. Unlike the notes area, which is contextual and varies by chart, the footer follows a standardised format applied consistently across all FSO outputs.
+
+The footer is not optional in official FSO publications. Its elements are defined by institutional conventions and must not be rearranged, abbreviated, or omitted.
+
+## Description
+
+The footer contains four elements, always presented in the same order and layout:
+
+- **Data reference date** : the date or period to which the data refers, expressed in a standardised format. Distinct from the publication date: a chart published in 2024 may refer to data from 2023 or earlier.
+
+- **Copyright** : the standard FSO copyright notice, asserting institutional ownership of the chart and its underlying data representation. Follows the form *© FSO [year]* or the full federal formulation as specified by the CD Bund guidelines.
+
+- **Source** : the data source, following the same citation format as in the notes area (*Source: FSO, [dataset], [year]*). When the chart's notes already carry a source line, the footer source must be consistent with it; the footer version may be more condensed if space requires.
+
+- **BFS-Nummer** : the FSO internal publication reference number that uniquely identifies the statistical product or publication the chart belongs to. Enables traceability back to the official publication catalogue.
+
+
+These four elements are typically set in two compact lines at the very bottom of the figure, visually separated by a padding from the notes area above.
+
+## Specifications
+
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <table
+      style={{
+        width: "60vw",
+        height: "25vh",
+        border: "none",
+        borderCollapse: "collapse"
+      }}>
+      <tbody style={{ border: "none" }}>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}><b>Property</b></td>
+            <td style={{ border: "none", textAlign: "left" }}><b>Specification</b></td>
+        </tr>
+      </tbody>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}>Data reference date</td>
+            <td style={{ border: "none", textAlign: "left" }}>Date of the diffusion of the data. Located at the top left part of the footer.</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}>Copyright</td>
+            <td style={{ border: "none", textAlign: "left" }}>*© FSO [year]* located at the top right part of the footer.</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}>BFS-Nummer</td>
+            <td style={{ border: "none", textAlign: "left" }}>Located at the bottom right corner of the footer.</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}>Source</td>
+            <td style={{ border: "none", textAlign: "left" }}>*Source : [source]* May be condensed in the footer if space is constrained. Located at the bottom left corner of the footer.</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}>Font size</td>
+            <td style={{ border: "none", textAlign: "left" }}>Smaller than the notes text</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}>Position</td>
+            <td style={{ border: "none", textAlign: "left" }}>Bottom of the figure, below the notes area</td>
+        </tr>
+    </table>
+</div>
