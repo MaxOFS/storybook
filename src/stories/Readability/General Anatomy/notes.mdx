@@ -1,0 +1,59 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import { moduleMetadata } from '@storybook/angular';
+
+<Meta title="Readability/General Anatomy/Notes"/>
+
+# Notes
+
+Notes appear between the chart area and the footer. They carry the methodological and interpretive information a reader needs to correctly understand the data such as explanations of formulas, definitions of calculated indicators, scope restrictions, breaks in series, or flags on data quality. They sit closer to the chart than the footer because their content is specific to the data shown, not to the institutional metadata of the publication.
+
+At the FSO, notes are the primary channel for **methodological transparency** at the chart level. They ensure that a chart can be interpreted correctly without the reader needing to consult the full methodology documentation of the underlying survey or dataset.
+
+## Description
+
+Notes are used to surface information that affects interpretation but that cannot fit naturally into the title, subtitle, or axis labels. Their content falls into four main categories:
+
+- **Formula or indicator definitions** : when a calculated metric is shown (an index, a rate, a ratio, a composite indicator), the formula or the plain-language definition should be stated. A reader should not have to infer what *"employment rate"* or *"real growth index"* means from context alone.
+- **Methodological qualifications** : scope restrictions (*"excluding agricultural sector"*), population definitions (*"resident population aged 15–64"*), weighting or adjustment methods (*"seasonally adjusted"*, *"chain-linked volumes"*), or changes in classification that affect comparability.
+- **Data quality flags** : provisional figures, estimated values, breaks in a time series due to methodological revision, or cells suppressed for statistical confidentiality.
+- **Reading aids** : clarification of symbols used in the chart (*"(e): estimate"*, *"(p): provisional"*), or an explanation of how to read a less familiar chart type used in that figure.
+
+Notes are not the place for source attribution (that goes in the footer), for editorial interpretation of the data, or for background context that belongs in the body text of the publication. If a methodological point is so significant that it changes the conclusions drawn from the chart, it should be addressed in the surrounding text.
+
+## Specifications
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <table
+      style={{
+        width: "60vw",
+        height: "25vh",
+        border: "none",
+        borderCollapse: "collapse"
+      }}>
+      <tbody style={{ border: "none" }}>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}><b>Property</b></td>
+            <td style={{ border: "none", textAlign: "left" }}><b>Specification</b></td>
+        </tr>
+      </tbody>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}>Position</td>
+            <td style={{ border: "none", textAlign: "left" }}>Below the chart area, above the footer</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}>Order</td>
+            <td style={{ border: "none", textAlign: "left" }}>Formula or indicator definitions first, then methodological qualifications, then data quality flags, then reading aids</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}>Length</td>
+            <td style={{ border: "none", textAlign: "left" }}>As concise as possible, one note per distinct point, avoid compound sentences covering multiple qualifications</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}>Font size</td>
+            <td style={{ border: "none", textAlign: "left" }}>Same as or slightly smaller than axis labels, larger than the footer text</td>
+        </tr>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}>Numbering</td>
+            <td style={{ border: "none", textAlign: "left" }}>Use numbered notes (*¹ ² ³*) when multiple notes must be anchored to specific data points or series in the chart</td>
+        </tr>
+    </table>
+</div>
