@@ -1,0 +1,106 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import { moduleMetadata } from '@storybook/angular';
+
+<Meta title="Readability/Storytelling"/>
+
+# Storytelling
+Storytelling is a communication method by which information is not simply presented in a dry, factual manner, but is woven into a narrative. This brings the data to life. This has two advantages: it captures the target audience's interest and ensures that the information stays in the recipients' minds for longer.
+
+For a statistical institution like the FSO, storytelling is a legitimate and necessary tool. The audiences for FSO publications range from policy specialists who read technical appendices to citizens encountering a press release for the first time. For the latter group in particular, a list of figures with no narrative structure is often insufficient: the reader has no way to know which numbers matter, what changed, or why it is relevant to them. A well-structured data story answers those questions without compromising the precision of the underlying data.
+
+This page covers what makes statistical data narratable, the techniques available to make data relatable to a general audience, and the practical principles for applying storytelling within the constraints of FSO institutional standards.
+
+## The four elements of a data story
+
+Most good data stories share four structural elements, identified across narrative and data visualisation literature :
+
+- **Context** : when and where the data was collected, what it measures, and what frame the reader needs to interpret it correctly
+- **Subject** : the entity the data describes: a country, a demographic group, a sector, a time period
+- **Events** : the changes, patterns, or comparisons the data reveals
+- **Effect** : what those changes mean: whether a trend has accelerated, reversed, stabilised, or converged with a reference
+
+A chart title that states only the topic (*"Unemployment rate, Switzerland, 2010–2024"*) supplies context and subject but skips events and effect. A title that states the finding (*"Swiss unemployment fell to a 15-year low in 2023, driven by growth in the services sector"*) supplies all four elements in two clauses. The second title requires no surrounding text to convey its message; the first requires the reader to extract the story from the chart themselves.
+
+The FSO convention, establishing a finding-oriented title supported by a subtitle carrying the technical context, is a direct application of this four-element structure.
+
+## Engagement: making data land with a general audience
+
+Numbers are abstract. The cognitive effort required to convert a figure into a felt understanding of its significance is substantial, and most readers will not make that effort spontaneously. Storytelling techniques reduce that effort. Three categories of technique are relevant for FSO outputs.
+
+### When data directly represents people
+
+Some FSO datasets measure individuals: incomes, health outcomes, mobility patterns, household composition. In these cases, each data point on a chart represents a real person. The gap between the abstract statistic and the human reality it encodes is small, and it can be closed with relatively light interventions:
+
+- **Naming the group** in the title or annotation rather than labelling it with a code (e.g. "single-parent households" rather than "household type 3b") keeps the subject human and interpretable.
+- **Stating the count in human terms** alongside the rate helps: "1 in 5 Swiss residents aged 65 or older lives alone" is more immediately graspable than "20.3% of the 65+ population."
+- **Anchoring aggregate statistics in recognisable life situations** — housing costs as a share of median income, commute times relative to working hours — connects the number to experience the reader already has a reference for.
+
+### When data relates to everyday life
+
+Data that does not measure individuals directly can still have a strong connection to readers' daily experience. Prices, air quality, transport infrastructure, energy consumption, and demographic shifts all affect daily life in ways readers can feel directly. This automatic relevance is an engagement entry point that requires no special technique to activate.
+
+For this category of data, the most important storytelling decision is **identifying what the reader would want to know** from the dataset, not what is analytically interesting to the author. The analytical and communicative framings of the same data can be very different. An analyst interested in long-run structural change in Swiss residential patterns may focus on decadal averages, a reader who rents an apartment in Lausanne wants to know whether rents have risen faster than wages in the last three years, and in which cantons. Both framings are legitimate but the storytelling question is which framing serves the intended audience.
+
+### When data needs to be made relatable
+
+Much of FSO's output involves quantities that are inherently difficult to perceive at scale: national GDP, total public expenditure, population counts in the hundreds of thousands, emissions in tonnes. A number so large that it has no perceptible reference point is processed by most readers as "very large" without any felt distinction from other very large numbers.
+
+The standard technique for grounding abstract quantities is **contextual rescaling**: expressing the quantity in units the reader has a reference for, or comparing it to a familiar benchmark.
+
+Practical approaches include:
+
+- **Per-capita conversion.** National expenditure on a policy divided by the number of residents converts an incomprehensible national total into a per-person cost that readers can compare to other things they spend money on.
+- **Temporal conversion.** An annual figure divided by 365 gives a daily equivalent that is easier to hold in mind.
+- **Proportional anchoring.** Expressing a quantity as a share of something the reader already knows (GDP, the federal budget, the area of a canton) gives it a frame.
+
+When using any rescaling technique, the original figure and the conversion method must be clearly stated in the chart note. Rescaling for accessibility must not obscure the underlying precision.
+
+## Narrative structure in multi-chart publications
+
+A single chart can carry a finding; a sequence of charts can carry an argument. The difference between a statistical publication that reads as a coherent narrative and one that reads as a fact appendix is whether the sequence of charts has been designed to build understanding progressively.
+
+A useful principle for structuring multi-chart sequences is to move from **general to specific**: establish the broad context first, then introduce the finding, then provide the supporting detail. This mirrors how good explanatory prose is structured, and it ensures that the reader has the frame they need before they encounter the data that requires it.
+
+In practice for FSO publications:
+
+- **Introduce the phenomenon before measuring it.** A chart showing Switzerland's age structure before a chart showing age-dependency ratios gives the reader the reference they need to interpret the ratio.
+- **Lead with the most policy-relevant finding.** In a press release or summary, the chart that most directly answers the question the audience is asking should come first, not last.
+- **Use consistent encodings across the sequence.** If blue represents Switzerland in chart 1, it should represent Switzerland in all subsequent charts. Readers build a mental model from the first chart and apply it to subsequent ones, inconsistency forces re-reading.
+- **Close with context or implication, not with data.** The final chart or text element in a sequence should tell the reader what to take away : a comparison to a benchmark, a reference to a policy period, or a pointer to further detail, not introduce a new measurement without framing.
+
+## The institutional constraint: accuracy before engagement
+
+Every storytelling technique described above is subordinate to the FSO's primary obligation: the data must be correctly and completely represented. Engagement that comes at the cost of accuracy is not acceptable.
+
+In practice this means:
+
+- Contextual rescaling must not suppress the source figure. If a per-capita conversion is used in the chart, the national total must appear in the note.
+- Finding-oriented titles must reflect what the data actually shows. A title that overstates a trend, implies causation where only correlation is established, or cherry-picks a favourable period is a data integrity failure, not a storytelling success.
+- All narrative framing (titles, annotations, surrounding text) must be consistent with the full dataset, not only the subset shown in the chart.
+
+The test for any storytelling decision is: *if a reader who trusted this chart checked the underlying data, would they feel informed or misled?* If the answer is anything other than informed, the technique has been misapplied.
+
+## Do / Don't
+
+### Do
+
+- Write finding-oriented titles that supply all four story elements: context, subject, event, and effect. The reader should not have to extract the story from the chart themselves.
+- Express large or abstract quantities in units the reader has a reference for, per capita, per day, as a share of a known total. Document the conversion in the chart note.
+- Structure multi-chart sequences from general to specific: context first, finding second, supporting detail third.
+- Name the human group behind aggregated statistics where the data permits, "single-parent households" rather than "household type 3b".
+- Use the audience's question, not the analyst's question, as the framing for the communicative intent. The two are often different.
+
+### Don't
+
+- Don't suppress the source figure when using a rescaled or converted presentation. The conversion aids comprehension, it does not replace the original data.
+- Don't use storytelling techniques to imply causation, directional policy recommendations, or certainty that the data does not support. The FSO's credibility rests on the distinction between what the data shows and what it might mean.
+- Don't structure a publication as a sequence of independently framed charts without a connecting logic. A sequence without narrative structure requires the reader to supply the connections themselves.
+- Don't confuse engagement with informality. A clear, direct, finding-oriented title is not less rigorous than a neutral topic label and it does not compromise institutional standards.
+- Don't rely on surrounding body text to supply context that belongs in the chart. Charts are frequently extracted from publications and encountered without the surrounding text; they must be self-contained.
+
+---
+
+## References
+- data.europa.eu (2023). Data Visualisation Guide: Storytelling (all pages). [data.europa.eu/apps/data-visualisation-guide/tag/storytelling](https://data.europa.eu/apps/data-visualisation-guide/tag/storytelling)
+- Tversky, B., cited in Riche, N.H. et al. (eds.) (2018). Data-Driven Storytelling. CRC Press / Routledge.
+- UK Office for National Statistics. Context Calculator. [ons.gov.uk](https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicsectorfinance/articles/theukcontributiontotheeubudget/2017-10-31)
