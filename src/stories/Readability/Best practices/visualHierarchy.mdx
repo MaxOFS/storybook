@@ -1,5 +1,7 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
+import * as chartStories from './visualHierarchy.stories'
+
 
 <Meta title="Readability/Best Practices/Visual Hierarchy"/>
 <img src="./stable.png" alt="status stable" width="100px"/>
@@ -37,9 +39,10 @@ Larger elements are perceived as more important than smaller ones. When the cont
 
 Within a single chart, the sizing of text elements should reflect their rank in the reading sequence. The FSO typographic hierarchy for chart elements is:
 
-> Title > Subtitle > Annotations > Data > Axis and value labels > Small print (source, notes, credits)
+> Title > Subtitle > Annotations > Axis labels, notes and value labels > Footer elements
 
-Each level should be visibly smaller than the one above it by enough that the distinction is immediately perceptible without inspection. A title and subtitle that are the same size, or axis labels and data labels that are the same size, flatten the hierarchy and force the reader to determine importance through content rather than form.
+<Canvas of={chartStories.Description} />
+Each level should be visibly smaller than the one above it by enough that the distinction is immediately perceptible without inspection. A title and subtitle that are the same size, flatten the hierarchy and force the reader to determine importance through content rather than form.
 
 In multi-chart layouts and dashboards, the key visualisation can be given additional visual weight by making it larger than the supporting charts. Size contrast communicates priority. A key indicator or featured chart that is the same size as all surrounding charts loses its status as the primary focus.
 
