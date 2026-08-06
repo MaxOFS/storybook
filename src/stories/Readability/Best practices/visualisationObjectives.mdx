@@ -1,15 +1,32 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
 
-<Meta title="Readability/Best Practices/Main Objectives"/>
+<Meta title="Readability/Best Practices/Chart Objectives"/>
 <img src="./stable.png" alt="status stable" width="100px"/>
-# Main Objectives of a Visualisation
+# Chart Objectives
 
-Every chart has two layers of objectives: what it is trying to communicate (its **communicative intent**) and what it must satisfy as a produced artefact (its **production standards**). Both must be defined before a chart is built. A chart that succeeds on one layer but fails on the other is not fit for publication.
+Every chart has two layers of objectives: what it is trying to communicate (its **communicative intent**) and what it must satisfy as a produced visualisation (its **production standards**). Both must be defined before a chart is built. A chart that succeeds on one layer but fails on the other is not fit for publication.
 
-This page covers how to define and verify both layers. The communicative intent section connects directly to the [FSO Chart Chooser](/story/readability-best-practices-chart-chooser--docs), which formalises the relationship between intent and chart type selection. The production standards section establishes the institutional baseline that applies to all FSO outputs regardless of chart type.
+This page covers how to define and verify both layers. The communicative intent section connects directly to the [FSO Chart Chooser](/docs/readability-best-practices-chart-chooser--docs), which formalises the relationship between intent and chart type selection. The production standards section establishes the institutional baseline that applies to all FSO outputs regardless of chart type.
 
 ## The two purposes of data visualisation
+
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <table
+      style={{
+        width: "60vw",
+        height: "25vh",
+        border: "none",
+        borderCollapse: "collapse"
+      }}>
+      <tbody style={{ border: "none" }}>
+        <tr style={{ border: "none" }}>
+          <td style={{ border: "none" }}>![](./readability/exploratory.png)</td>
+          <td style={{ border: "none" }}>![](./readability/explanatory.png)</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
 
 A useful starting point is the distinction between **exploratory** and **explanatory** data visualisation (data.europa.eu, 2023).
 
@@ -38,7 +55,7 @@ When the intent is clear and the relationship category is identified, use the Ch
 
 ## Production standards
 
-Beyond communicative intent, every FSO chart must satisfy four institutional production objectives: **accuracy**, **clarity**, **reproducibility**, and **accessibility**. These are not sequential — they must be verified in parallel before publication.
+Beyond communicative intent, every FSO chart must satisfy four institutional production objectives: **accuracy**, **clarity**, **reproducibility**, and **accessibility**. These are not sequential, they must be verified in parallel before publication.
 
 ### Accuracy
 
@@ -66,16 +83,9 @@ A chart is reproducible when another analyst can regenerate it from its stated i
 - Any transformations applied to the data (filters, aggregations, index calculations) are documented.
 - The production file is stored in the team's shared environment, not only on a local machine.
 
-Reproducibility is a prerequisite for correction. If a data error is discovered after publication, the chart must be correctable and re-publishable. A chart that exists only as an exported image with no documented production trail cannot be corrected efficiently.
-
 ### Accessibility
 
-A chart is accessible when its information is available to all readers, including those using assistive technologies or those who cannot distinguish colours reliably.
-
-The FSO Accessibility guidelines provide detailed requirements. For the purposes of this page, the core obligations at the production stage are:
-
-- **Colour contrast.** All text elements must meet WCAG AA contrast requirements against their background. Data series must be distinguishable without relying on colour alone — either through labelling, pattern, or shape variation.
-- **Text alternatives.** Every chart published in a digital context must have a text alternative (alt text or a linked data table) that conveys the same information as the visual. A data table alone is not equivalent to a chart: the text alternative must also state the communicative intent — the trend, comparison, or finding — not only reproduce the raw values (USWDS, 2022).
+A chart is accessible when its information is available to all readers, including those using assistive technologies or those who cannot distinguish colours reliably. The [FSO Accessibility guidelines](/docs/accessibility-introduction--docs) provide detailed requirements.
 
 ## Checklist: before publication
 
@@ -100,7 +110,7 @@ The following questions should be answerable for every chart before it is publis
         </tr>
         <tr style={{ border: "none" }}>
             <td style={{ border: "none", textAlign: "center" }}>Chart type fit</td>
-            <td style={{ border: "none", textAlign: "center" }}>Is the chart type based on the chart chooser, id not is the choice documented justified ?</td>
+            <td style={{ border: "none", textAlign: "center" }}>Is the chart type based on the chart chooser? If not, is the choice justified and documented ?</td>
         </tr>
         <tr style={{ border: "none" }}>
             <td style={{ border: "none", textAlign: "center" }}>Intent visibility</td>
@@ -128,6 +138,11 @@ The following questions should be answerable for every chart before it is publis
         </tr>
     </table>
 </div>
+
+## Aesthetics
+A chart that is accurate, clear, reproducible, and accessible can still fail to engage its reader if it is visually flat or carelessly composed. Aesthetic quality is not a layer added on top of the other objectives, nor is it in tension with them. It is a conglomeration of all our standards and rules. It is inspired by standard visualisation principles and is meant to be reproducible in all our published versions.
+
+A reader is more likely to engage with, trust, and remember a chart that is well-crafted than one that is merely correct. Treating aesthetic care as optional, or as something to add only once time permits, produces charts that meet the letter of the standards above while undermining their purpose: getting the message read at all.
 
 ## Do / Don't
 
