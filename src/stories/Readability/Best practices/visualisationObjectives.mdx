@@ -11,21 +11,27 @@ This page covers how to define and verify both layers. The communicative intent 
 
 ## The two purposes of data visualisation
 
-<div style={{ display: 'flex', justifyContent: 'center' }}>
-    <table
-      style={{
-        width: "60vw",
-        height: "25vh",
-        border: "none",
-        borderCollapse: "collapse"
-      }}>
-      <tbody style={{ border: "none" }}>
-        <tr style={{ border: "none" }}>
-          <td style={{ border: "none" }}>![](./readability/exploratory.png)</td>
-          <td style={{ border: "none" }}>![](./readability/explanatory.png)</td>
-        </tr>
-      </tbody>
-    </table>
+<div
+  style={{
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: '1rem',
+    width: '100%',
+  }}
+>
+  <div style={{ flex: '1 1 300px', maxWidth: '600px' }}>
+    <img
+      src="./readability/exploratory.png"
+      style={{ width: '100%', height: 'auto', display: 'block' }}
+    />
+  </div>
+  <div style={{ flex: '1 1 300px', maxWidth: '600px' }}>
+    <img
+      src="./readability/explanatory.png"
+      style={{ width: '100%', height: 'auto', display: 'block' }}
+    />
+  </div>
 </div>
 
 A useful starting point is the distinction between **exploratory** and **explanatory** data visualisation (data.europa.eu, 2023).
@@ -61,7 +67,7 @@ Beyond communicative intent, every FSO chart must satisfy four institutional pro
 
 A chart is accurate when the visual representation is proportional to the quantities it encodes, and when the data it draws on is correct and current.
 
-Accuracy failures come in two forms. **Data errors** ,such as incorrect values, outdated figures, wrong aggregation, are pre-visualisation problems that no design decision can fix. Data validation must happen before chart construction. **Visual distortions**, such as non-zero baselines, inconsistent scales, 3D effects, are introduced during construction and are fully within the designer's control. Both are covered in more detail in the [Chart Junk](/story/readability-best-practices-chart-junk--docs) guidelines.
+Accuracy failures come in two forms. **Data errors** ,such as incorrect values, outdated figures, wrong aggregation, are pre-visualisation problems that no design decision can fix. Data validation must happen before chart construction. **Visual distortions**, such as non-zero baselines, inconsistent scales, 3D effects, are introduced during construction and are fully within the designer's control. Both are covered in more detail in the [Chart Junk](/story/readability-best-practices-chart-junk--docs) section of the guidelines.
 
 For FSO publications, all data must be traceable to a source, and the source line must appear on every chart. If the data has been processed (aggregated, smoothed, indexed), the method must be documented either in the chart note or in accompanying metadata.
 
@@ -77,12 +83,10 @@ Clarity requires:
 
 ### Reproducibility
 
-A chart is reproducible when another analyst can regenerate it from its stated inputs using the same tools. For FSO charts, this means:
+A chart is reproducible when someone else can rebuild it, using only what is written down about it. It means the whole path from raw data to finished chart should be easy to follow, and easy to check, for **anyone**. Not just for the person who built it.
 
-- The data source and version are recorded in the source line and in the production file or notebook.
-- Any transformations applied to the data (filters, aggregations, index calculations) are documented.
-- The production file is stored in the team's shared environment, not only on a local machine.
-
+It means data that everyone can reach. The data behind the chart should be easy for any user to find. It should not sit only in someone's personal folder, an email, or a tool that only one person can open. Link directly to the dataset (.STAT/STAT-TAB, a published table, an open data source) whenever you can, instead of a private copy. 
+If the data was filtered, added up, indexed, or smoothed before it went into the chart, write it in the chart note or in the metadata. **A reader should be able to go from the published table to the chart without having to guess a missing step.**
 ### Accessibility
 
 A chart is accessible when its information is available to all readers, including those using assistive technologies or those who cannot distinguish colours reliably. The [FSO Accessibility guidelines](/docs/accessibility-introduction--docs) provide detailed requirements.
