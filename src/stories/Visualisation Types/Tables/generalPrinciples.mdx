@@ -1,5 +1,7 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
+import * as chartStories from './generalPrinciples.stories'
+
 
 <Meta title="Visualisation Types/Tables/General Principles"/>
 <img src="./stable.png" alt="status stable" width="100px"/>
@@ -7,13 +9,39 @@ import { moduleMetadata } from '@storybook/angular';
 # General Visualisation Principles for Tables
 ## Table of contents
 - [Tidy Data](#tidy-data)
+- [Table Usage](#table-usage)
 - [Points of attention](#points-of-attention)
 
 
 ## Tidy data
-https://data.europa.eu/apps/data-
-visualisation-guide/intro-to-tidy-data
-## Points of attention
+<div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+  <div style={{ flex: 1 }}>
+    <Canvas of={chartStories.wide} />
+  </div>
+  <div style={{ flex: 1 }}>
+    <Canvas of={chartStories.tidy} />
+  </div>
+</div>
+ 
+The tidy table treats the year as additionnal data and can therefore be easily filtered, plotted and used for other objectives. In order to structure data to be tidy, it all comes down to three rules :
+- Each variable is a column : *year* and *temperature* each get their own column, rather than years being spread across separate columns.
+- Each observation forms a row : one row per observed unit. In this case the city in a specific year.
+- Each value has its own cell : A value is a single measurement of an unit. It can be quantitative or qualitative. 
+
+## Table usage
+When to use a table :
+- A table is appropriate when the priority is reading exact values, making precise comparisons of figures, or accessing detailed data directly.
+- It is suitable when the message relies on the accuracy of the numbers rather than on highlighting trends or visual patterns.
+- The data in the table adheres to the tidy data principle
+- A clear message, unified concept, comparable values
+- Figures are easy to read, and overall proportions can be identified quickly
+
+When not to use a table :
+- Tabular presentation of disparate figures and concepts
+- Data does not adhere to the Tidy Data principle
+- Not suitable for visualising trends, variations or geographical distributions
+- Not suitable for a large volume of data, use Cube instead
+## Do / Don't
 - Not too many columns (3 to 5 columns maximum, this is in order to pay attention to mobile compatibility)
 - No cell fusion to guarantee machine readability
 - The number of rows in a table should not exceed 20. There are some exceptions to this rule such as for a table where each row is a swiss canton.
