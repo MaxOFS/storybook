@@ -25,6 +25,34 @@ Chart junk is about excess decoration, but a related and equally important conce
 
 The most common sources of graphical distortion are:
 
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <table
+      style={{
+        width: "60vw",
+        height: "25vh",
+        border: "none",
+        borderCollapse: "collapse"
+      }}>
+      <tbody style={{ border: "none" }}>
+        <tr style={{ border: "none" }}>
+          <td style={{ border: "none", textAlign: "center"}}>![](./readability/nonZeroBase.svg)</td>
+          <td style={{ border: "none", textAlign: "center"}}>![](./readability/inconsistentScales.svg)</td>
+          <td style={{ border: "none", textAlign: "center"}}>![](./readability/pieSlicing.svg)</td>
+          <td style={{ border: "none", textAlign: "center"}}>![](./readability/scaledEncoding.svg)</td>
+        </tr>
+      </tbody>
+        <tr
+        style={{
+          border: "none"
+        }}>
+        <td style={{ border: "none", textAlign: "center" }}>**Non-zero baselines**</td>
+        <td style={{ border: "none", textAlign: "center" }}>**Inconsistent scales**</td>
+        <td style={{ border: "none", textAlign: "center" }}>**Excessive pie slicing**</td>
+        <td style={{ border: "none", textAlign: "center" }}>**Pictograms as scaled encodings**</td>
+      </tr>
+    </table>
+</div>
+
 - **Non-zero baselines.** Starting the y-axis at a value other than zero exaggerates differences between bars. A bar chart whose y-axis begins at 90 instead of 0 can make a small absolute difference appear dramatic. For FSO bar and column charts, the baseline should start at zero unless there is an explicit and documented justification.
 - **Inconsistent scales.** Using non-uniform intervals on an axis, or different scales across small multiples that are meant to be compared, distorts the perceived relationship between values. Scales across comparable charts should be locked to the same range.
 - **Excessive pie slicing.** Pie charts with many small slices make it impossible to distinguish between categories. As a rule, pie charts with more than five or six segments should be replaced with a ranked bar chart or a grouped category chart.
@@ -42,6 +70,29 @@ Replacing solid fills with textures, gradients, or cross-hatching patterns does 
 
 ### Unnecessary gridlines and tick marks
 
+<div
+  style={{
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: '1rem',
+    width: '100%',
+  }}
+>
+  <div style={{ flex: '1 1 300px', maxWidth: '600px' }}>
+    <img
+      src="./readability/unecessaryGrid.svg"
+      style={{ width: '100%', height: 'auto', display: 'block' }}
+    />
+  </div>
+  <div style={{ flex: '1 1 300px', maxWidth: '600px' }}>
+    <img
+      src="./readability/okGrid.svg"
+      style={{ width: '100%', height: 'auto', display: 'block' }}
+    />
+  </div>
+</div>
+
 Gridlines exist to help the reader estimate values. Dense gridlines, or gridlines that are darker than the data series they support, invert this relationship: they draw attention away from the data. In most cases, light horizontal gridlines at major intervals are sufficient. Vertical gridlines are rarely needed in bar or line charts. Minor tick marks add visual noise without improving value-reading precision.
 
 ### 3D effects
@@ -50,7 +101,7 @@ Three-dimensional rendering of two-dimensional data introduces systematic distor
 
 ### Redundant data labels
 
-Showing both a y-axis scale and individual data labels on every bar encodes the same information twice. Choose one: either a clear axis scale that lets the reader read approximate values, or targeted labels for the values that matter most in your argument. Full labelling of every data point is only justified when exact values are essential for all categories — in which case a table may serve the reader better than a chart.
+Showing both a y-axis scale and individual data labels on every bar encodes the same information twice. Choose one: either a clear axis scale that lets the reader read approximate values, or targeted labels for the values that matter most in your argument. Full labelling of every data point is only justified when exact values are essential for all categories.
 
 ### Busy background images and fills
 
@@ -181,11 +232,11 @@ Not all non-data elements are chart junk. The distinction matters:
 
 ---
 
-*References:*
+## References 
 - Tufte, E.R. (1983). The Visual Display of Quantitative Information. Graphics Press.
 - Bateman, S. et al. (2010). Useful Junk? The Effects of Visual Embellishment on Comprehension and Memorability of Charts. CHI 2010.
 - Kosara, R. (2012). Three Types of Chart Junk. eagereyes.org.
 - Skau, D. et al. (2020). Revealing the Invisible: Understanding Practitioners' Perspectives on Chartjunk. arXiv:2009.02634.
 - Akbaba, D. et al. (2021). A Manifesto for Putting 'Chartjunk' in the Trash. AltVis 2021.
-- GeeksforGeeks (2025). Mastering Tufte's Data Visualization Principles. geeksforgeeks.org.
+- GeeksforGeeks (2025). Mastering Tufte's Data Visualization Principles. <a href="https://www.geeksforgeeks.org/" target="_blank" rel="noopener noreferrer">geeksforgeeks.org</a>.
 - data.europa.eu (2023). Data Visualisation Guide: Chart junk and data ink.
