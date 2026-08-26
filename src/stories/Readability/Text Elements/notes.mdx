@@ -1,7 +1,7 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
 import { moduleMetadata } from '@storybook/angular';
 
-<Meta title="Readability/General Anatomy/Notes"/>
+<Meta title="Readability/Text Elements/Notes"/>
 
 # Notes
 
@@ -20,7 +20,7 @@ Notes are used to surface information that affects interpretation but that canno
 
 Notes are not the place for source attribution (that goes in the footer), for editorial interpretation of the data, or for background context that belongs in the body text of the publication. If a methodological point is so significant that it changes the conclusions drawn from the chart, it should be addressed in the surrounding text.
 
-## Specifications
+## FSO Specifications
 <div style={{ display: 'flex', justifyContent: 'center' }}>
     <table
       style={{
@@ -36,10 +36,6 @@ Notes are not the place for source attribution (that goes in the footer), for ed
         </tr>
       </tbody>
         <tr style={{ border: "none" }}>
-            <td style={{ border: "none", textAlign: "left" }}>Position</td>
-            <td style={{ border: "none", textAlign: "left" }}>Below the chart area, above the footer</td>
-        </tr>
-        <tr style={{ border: "none" }}>
             <td style={{ border: "none", textAlign: "left" }}>Order</td>
             <td style={{ border: "none", textAlign: "left" }}>Formula or indicator definitions first, then methodological qualifications, then data quality flags, then reading aids</td>
         </tr>
@@ -48,12 +44,15 @@ Notes are not the place for source attribution (that goes in the footer), for ed
             <td style={{ border: "none", textAlign: "left" }}>As concise as possible, one note per distinct point, avoid compound sentences covering multiple qualifications</td>
         </tr>
         <tr style={{ border: "none" }}>
-            <td style={{ border: "none", textAlign: "left" }}>Font size</td>
-            <td style={{ border: "none", textAlign: "left" }}>Same as or slightly smaller than axis labels, larger than the footer text</td>
-        </tr>
-        <tr style={{ border: "none" }}>
             <td style={{ border: "none", textAlign: "left" }}>Numbering</td>
             <td style={{ border: "none", textAlign: "left" }}>Use numbered notes (*¹ ² ³*) when multiple notes must be anchored to specific data points or series in the chart</td>
         </tr>
     </table>
 </div>
+
+## Do / Don't
+### Do
+- To add a single note to a visualisation, use the * symbol.
+- When adding multiple notes, use numbers.
+### Don't
+- Add footnotes if there is space available for annotations or direct labelling directly on the visualisation.
