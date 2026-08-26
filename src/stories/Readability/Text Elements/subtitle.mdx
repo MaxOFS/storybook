@@ -1,0 +1,52 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import { moduleMetadata } from '@storybook/angular';
+
+<Meta title="Readability/Text Elements/Subtitle"/>
+
+# Subtitle
+The subtitle sits directly below the title and serves as a secondary layer of contextual information. Where the title names the subject or states the finding, the subtitle carries the details that qualify it: the geographic scope, the time period, the unit of measurement, the population covered, or a methodological note. Together, title and subtitle should make a chart fully self-contained without the reader needing to consult surrounding text.
+
+At the FSO, the subtitle is particularly important in standalone outputs : printed reports, infographics, and dashboards — where charts are often extracted from their original context and reproduced elsewhere.
+
+## Description
+ 
+A subtitle is optional, but should be used whenever the title alone does not provide sufficient context to interpret the data correctly. It is not a second title: it should never restate what the title already says, and it should not introduce a second finding or a new topic.
+ 
+The subtitle is the correct place for:
+ 
+- **Units of measurement** : when a unit cannot fit naturally in an axis label (*"In thousands of full-time equivalents"*)
+- **Time or geographic scope** : when not already encoded in the title, ui elements or axes (*"Switzerland, 2010–2023"*)
+- **Population or coverage notes** : when the data applies to a specific subset (*"Resident population aged 15 and over"*)
+- **Index or base year references** : for indexed series (*"Index base: 2015 = 100"*)
+It is not the correct place for source attribution (that belongs in the footer/caption) or for editorial commentary on the data.
+ 
+## FSO Specifications
+ 
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <table
+      style={{
+        width: "60vw",
+        height: "25vh",
+        border: "none",
+        borderCollapse: "collapse"
+      }}>
+      <tbody style={{ border: "none" }}>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}><b>Property</b></td>
+            <td style={{ border: "none", textAlign: "left" }}><b>Specification</b></td>
+        </tr>
+      </tbody>
+        <tr style={{ border: "none" }}>
+            <td style={{ border: "none", textAlign: "left" }}>Length</td>
+            <td style={{ border: "none", textAlign: "left" }}>1–2 lines; aim for under 10 words when possible</td>
+        </tr>
+    </table>
+</div>
+
+## Do / Don't
+### Do
+- The subtitle should be as short and concise as possible.
+- The subtitle should contain information relative to context such as categories, location, time or units (in this order). 
+### Don't
+- The subtitle repeats information that can be found in other elements of the chart (legend, axes or controls).
+- The subtitle contains only information on the time. 
