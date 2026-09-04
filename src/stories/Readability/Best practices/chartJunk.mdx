@@ -5,25 +5,25 @@ import { moduleMetadata } from '@storybook/angular';
 <img src="./stable.png" alt="status stable" width="100px"/>
 # Chart Junk
 
-Chart junk is any visual element in a chart that does not contribute to the reader's understanding of the data. The term was introduced by Edward Tufte in *The Visual Display of Quantitative Information* (1983), who defined it as graphical elements that are unnecessary or actively counterproductive, decoration that competes with the data for the reader's attention.
+Chart junk is anything in a chart that doesn't help the reader understand the data. Edward Tufte first used the term in *The Visual Display of Quantitative Information* (1983). He described it as graphical elements that aren't needed, or that actively get in the way, decoration that competes with the data for the reader's attention.
 
-Removing harmful chart junk is one of the most reliable ways to improve readability. Every pixel that does not encode information and actively misleads the reader increases cognitive load without return. In FSO publications, which must function across formats and audiences, this principle is especially consequential: what reads as decorative at desktop scale can become illegible at print or small-screen size.
+Removing harmful chart junk is one of the most reliable ways to make a chart easier to read. Every pixel that doesn't carry information, and that misleads the reader, makes the chart harder to read for no benefit. This matters a lot for FSO publications, since they need to work across many formats and audiences: something that looks like harmless decoration on a big screen can become unreadable in print or on a small screen.
 
 ## Two categories of chart junk
 
-Not all non-data visual elements cause equal harm. Robert Kosara's distinction between **harmful junk** and **harmless junk** is a useful practical framework and one that practitioners consistently apply intuitively, even when they do not use those terms. 
+Not all non-data visual elements do the same amount of harm. Robert Kosara's distinction between **harmful junk** and **harmless junk** is a useful way to think about this, and it matches what most people already do naturally, even if they don't use these exact words.
 
-**Harmful junk** actively interferes with the reading and understanding of a chart. It distorts encoded values, obscures data, or makes the chart harder to interpret correctly. This kind of chart junk should always be removed. Examples include 3D perspective effects that distort relative sizes, busy background images that reduce contrast with data elements, and decorative forms that hide the true end of a bar or line.
+**Harmful junk** gets in the way of reading and understanding a chart. It distorts the values shown, hides data, or makes the chart harder to interpret correctly. This kind of chart junk should always be removed. Examples include 3D effects that distort the size of things, busy background images that reduce contrast with the data, and decorative shapes that hide where a bar or line actually ends.
 
-**Harmless junk** consists of decorative elements that do not improve comprehension but do not significantly hinder it either. Research by Bateman et al. (2010) found that embellished charts were recalled better by readers after three weeks, without a measurable loss in the ability to extract the chart's message. This does not justify decoration for its own sake, but it does mean that the decision to include or exclude non-data elements should be grounded in the specific purpose and audience of the chart.
+**Harmless junk** is decoration that doesn't help readers understand the chart, but doesn't really hurt either. A study by Bateman et al. (2010) found that people remembered decorated charts better three weeks later, without losing their ability to understand the chart's message. This doesn't mean you should add decoration just for its own sake but it does mean the choice to include or leave out non-data elements should depend on the chart's specific purpose and audience.
 
-For FSO publications, which prioritise precise value reading, institutional credibility, and consistent cross-output reproduction — the appropriate position is closer to the minimalist end of the spectrum. The goal is not the most stripped-down chart possible, but the chart in which every element earns its place.
+FSO publications need readers to read exact values, need to be trusted, and need to look consistent across different outputs. For these reasons, FSO charts should lean towards the minimalist end of the scale. The goal isn't to strip the chart down as much as possible, it's to make sure every element in the chart earns its place.
 
 ## Graphical integrity and distortion
 
-Chart junk is about excess decoration, but a related and equally important concern is **graphical integrity**: ensuring that the visual representation of numbers is proportional to the quantities it encodes. Tufte defines the **Lie Factor** as the ratio of the size of the effect shown in the graphic to the size of the effect in the data. A Lie Factor of 1 means perfect proportionality; values substantially above or below 1 indicate distortion, whether intentional or not.
+Chart junk is about too much decoration. A related but different problem is **graphical integrity**: making sure the size of what's shown in the chart matches the size of what it represents in the data. Tufte calls this the **Lie Factor**: the size of the effect shown in the chart, divided by the size of the effect in the real data. A Lie Factor of 1 means the chart is accurate. Values well above or below 1 mean the chart is distorted, whether on purpose or by accident.
 
-The most common sources of graphical distortion are:
+The most common causes of this kind of distortion are:
 
 <div style={{ display: 'flex', justifyContent: 'center' }}>
     <table
@@ -53,20 +53,20 @@ The most common sources of graphical distortion are:
     </table>
 </div>
 
-- **Non-zero baselines.** Starting the y-axis at a value other than zero exaggerates differences between bars. A bar chart whose y-axis begins at 90 instead of 0 can make a small absolute difference appear dramatic. For FSO bar and column charts, the baseline should start at zero unless there is an explicit and documented justification.
-- **Inconsistent scales.** Using non-uniform intervals on an axis, or different scales across small multiples that are meant to be compared, distorts the perceived relationship between values. Scales across comparable charts should be locked to the same range.
-- **Excessive pie slicing.** Pie charts with many small slices make it impossible to distinguish between categories. As a rule, pie charts with more than five or six segments should be replaced with a ranked bar chart or a grouped category chart.
-- **Pictograms as scaled encodings.** Replacing bars with icons sized to represent magnitude creates area distortion: a coin twice as tall appears approximately four times as large in area. This distortion cannot be corrected by reader effort.
+- **Non-zero baselines.** If the y-axis doesn't start at zero, differences between bars look bigger than they really are. For example, a bar chart with a y-axis that starts at 90 instead of 0 can make a small difference look dramatic. For FSO bar and column charts, the baseline should always start at zero, unless there's a clear, documented reason not to.
+- **Inconsistent scales.** Using uneven spacing on an axis, or different scales on charts that are meant to be compared side by side, changes how readers see the relationship between the values. Charts that are meant to be compared should always use the same scale.
+- **Excessive pie slicing.** Pie charts with many small slices are hard to read, you can't tell the categories apart. As a rule, if a pie chart has more than five or six slices, use a ranked bar chart or a grouped category chart instead.
+- **Pictograms as scaled encodings.** Replacing bars with icons that are sized to show a value causes area distortion: a coin that's twice as tall looks about four times bigger in area. Readers can't correct for this on their own, no matter how carefully they look.
 
-These distortions are distinct from decoration but are closely related: both involve ink that misrepresents the data rather than serving it.
+Distortion is a different problem from decoration, but the two are related: both mean ink is being used in a way that misrepresents the data instead of showing it clearly.
 
 ## What counts as harmful chart junk
 
-The following are the most common forms of harmful chart junk encountered in practice.
+Here are the most common types of harmful chart junk you'll come across.
 
 ### Decorative fills and patterns
 
-Replacing solid fills with textures, gradients, or cross-hatching patterns does not add information. These treatments fragment the visual surface and make area comparisons harder. Tufte specifically criticised the use of ornamental hatching in bars and area charts as a practice that adds visual noise without aiding comprehension. For FSO charts, use flat colours from the institutional palette. Textures are acceptable only where colour alone cannot distinguish elements — for example in print contexts where the chart will be reproduced in greyscale — and should be used sparingly even then.
+Replacing plain, solid colours with textures, gradients, or hatching patterns doesn't add any information. It breaks up the visual surface and makes it harder to compare areas. Tufte specifically criticised decorative hatching in bars and area charts, since it adds visual noise without helping readers understand the chart. For FSO charts, use flat colours from the institutional colour palette. Textures should only be used when colour alone can't tell elements apart.
 
 ### Unnecessary gridlines and tick marks
 
@@ -93,35 +93,35 @@ Replacing solid fills with textures, gradients, or cross-hatching patterns does 
   </div>
 </div>
 
-Gridlines exist to help the reader estimate values. Dense gridlines, or gridlines that are darker than the data series they support, invert this relationship: they draw attention away from the data. In most cases, light horizontal gridlines at major intervals are sufficient. Vertical gridlines are rarely needed in bar or line charts. Minor tick marks add visual noise without improving value-reading precision.
+Gridlines are there to help readers estimate values. If gridlines are too dense, or darker than the data itself, they end up doing the opposite: pulling attention away from the data. In most cases, light horizontal gridlines at the main intervals are enough. Vertical gridlines are rarely needed in bar or line charts. Minor tick marks just add visual noise without helping readers read values more precisely.
 
 ### 3D effects
 
-Three-dimensional rendering of two-dimensional data introduces systematic distortion. The visual angle at which the reader perceives the chart changes the apparent size of the encoded values. A 3D pie chart makes the front slices appear larger than equivalent slices at the back. There is no situation in FSO data visualisation where a 3D effect improves accuracy or comprehension. It should not be used.
+Rendering 2D data in 3D introduces distortion. The angle the reader views the chart from changes how big the values appear to be. For example, in a 3D pie chart, the slices at the front look bigger than equal-sized slices at the back. There is no case in FSO data visualisation where a 3D effect makes a chart more accurate or easier to understand. Don't use them.
 
 ### Redundant data labels
 
-Showing both a y-axis scale and individual data labels on every bar encodes the same information twice. Choose one: either a clear axis scale that lets the reader read approximate values, or targeted labels for the values that matter most in your argument. Full labelling of every data point is only justified when exact values are essential for all categories.
+Showing both a y-axis scale and a label on every single bar repeats the same information twice. Pick one: either use a clear axis scale so readers can read approximate values, or add labels just for the values that matter most to your point. Labelling every single data point is only worth doing when exact values are essential for all categories.
 
 ### Busy background images and fills
 
-Background images behind the chart plot area reduce the contrast between the data and the canvas, making value reading harder. This is a clear example of harmful junk: the background does not encode information and actively impairs perception of the data series. Chart plot areas should have a white or transparent background.
+Background images behind the chart reduce the contrast between the data and the background, making it harder to read values. This is a clear case of harmful junk: the background doesn't carry any information, and it actively makes the data harder to see. Chart backgrounds should be white or transparent.
 
 ### Heavy frames and borders
 
-Heavy borders around the chart plot area, around legends, or around individual chart elements add visual weight without contributing structure. A light or absent border typically produces a cleaner result. The chart frame, if present, should recede rather than compete with the content.
+Heavy borders around the chart area, around legends, or around individual chart elements add visual weight without adding any real structure. A light border, or no border at all, usually looks cleaner. If a chart has a frame, it should stay in the background rather than compete with the content.
 
 ## The data-ink ratio
 
-Tufte formalises the principle behind chart junk removal through the concept of the **data-ink ratio**: the proportion of a chart's ink that is used to represent actual data, as opposed to decoration or structure. A high data-ink ratio means that most of what the reader sees is data; a low ratio means that much of the visual surface is taken up by elements that carry no information.
+Tufte describes the idea behind removing chart junk with the concept of the **data-ink ratio**: the share of a chart's ink that's used to show actual data, rather than decoration or structure. A high data-ink ratio means most of what the reader sees is data. A low ratio means a lot of the chart is taken up by elements that don't carry any information.
 
-Formally: `data-ink ratio = data-ink / total ink used to print the graphic`
+In other words: `data-ink ratio = data-ink / total ink used to print the graphic`
 
-The goal is not to minimise ink absolutely. Some non-data elements are necessary (axes, a legend, a title, source lines). The goal is to ensure that every non-data element earns its place by supporting comprehension. In practice, this means asking of each visual element: *if I removed this, would the reader lose information or comprehension?* If the answer is no to both, the element should be removed or reduced.
+The goal isn't to use as little ink as possible. Some non-data elements are necessary : axes, a legend, a title, source lines. The goal is to make sure every non-data element earns its place by helping readers understand the chart. In practice, ask this about each visual element: *if I removed this, would the reader lose information, or find the chart harder to understand?* If the answer is no to both, remove it or make it lighter.
 
 ## Chart junk vs. necessary structure
 
-Not all non-data elements are chart junk. The distinction matters:
+Not every non-data element is chart junk. Here's the difference:
 <div style={{ display: 'flex', justifyContent: 'center' }}>
     <table
       style={{
@@ -213,22 +213,22 @@ Not all non-data elements are chart junk. The distinction matters:
 
 ### Do
 
-- Remove or lighten gridlines until they are clearly subordinate to the data series.
-- Use flat, solid fills from the FSO colour palette. Avoid gradients, textures, and patterns except where greyscale reproduction requires them.
-- Ask of every visual element: does removing this cost the reader information or comprehension? If neither, remove it.
-- Distinguish between harmful junk (distorts or obscures data) and harmless decoration (does not impair reading).
-- Start bar and column chart baselines at zero. Document any justified exception explicitly.
-- Review charts at their intended output size (print, screen, small multiples). Chart junk and distortion are often more visible at smaller scales.
-- Ensure consistent scales across all charts intended to be compared directly.
+- Remove or lighten gridlines until the data clearly stands out more than they do.
+- Use flat, solid colours from the FSO colour palette. Avoid gradients, textures, and patterns, except where a chart needs to work in greyscale.
+- For every visual element, ask: would removing this cost the reader any information or understanding? If not, remove it.
+- Tell the difference between harmful junk (distorts or hides data) and harmless decoration (doesn't get in the way of reading).
+- Start bar and column chart baselines at zero. If you make an exception, write down the reason clearly.
+- Check your charts at the size they'll actually be shown (print, screen, small multiples). Chart junk and distortion are often easier to spot at smaller sizes.
+- Use the same scale across all charts that are meant to be compared directly.
 
 ### Don't
 
-- Don't use 3D effects on any chart type. They distort encoded values and the distortion cannot be corrected by reader effort.
-- Don't place images or coloured fills behind the chart plot area. A white or transparent background maximises contrast with the data.
-- Don't frame chart elements (legend boxes, plot areas) with heavy borders. Let white space do the structural work.
-- Don't let the decorative form take over the chart structure (the "Big Duck" problem). If the shape of the chart is more salient than the data it encodes, the design has inverted its priorities.
-- Don't use pie charts with more than five or six segments. Switch to a ranked bar chart instead.
-- Don't confuse simplicity with loss of information. Removing chart junk should leave the data more visible, not less supported.
+- Don't use 3D effects on any chart. They distort the values shown, and readers can't correct for this on their own.
+- Don't put images or coloured backgrounds behind the chart area. A white or transparent background gives the best contrast with the data.
+- Don't put heavy borders around chart elements (legend boxes, plot areas). Let white space do that job instead.
+- Don't let decoration take over the shape of the chart (the "Big Duck" problem). If the shape of the chart stands out more than the data it shows, something has gone wrong.
+- Don't use pie charts with more than five or six slices. Use a ranked bar chart instead.
+- Don't confuse simplicity with losing information. Removing chart junk should make the data easier to see, not harder.
 
 ---
 

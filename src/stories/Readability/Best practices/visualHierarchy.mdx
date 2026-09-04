@@ -7,89 +7,89 @@ import * as chartStories from './visualHierarchy.stories'
 <img src="./stable.png" alt="status stable" width="100px"/>
 # Visual Hierarchy
 
-Visual hierarchy is the design discipline of telling the reader what to look at first, what to look at second, and what to look at last. In a well-structured chart or publication, every element occupies a position in a deliberate sequence and the visual properties of each element (its size, colour, position, and enclosure) reinforce that sequence rather than contradict it.
+Visual hierarchy means guiding the reader: what to look at first, what to look at second, and what to look at last. In a well-built chart or publication, every element has a place in a clear order, and its size, colour, position, and framing all support that order instead of working against it.
 
-For FSO publications, which serve audiences ranging from policy specialists to the general public, visual hierarchy is not an aesthetic preference. It is a functional requirement: a reader encountering a chart without clear hierarchy must reconstruct the intended reading order on their own, which increases cognitive load and raises the risk of misinterpretation. Establishing hierarchy explicitly removes that reconstruction effort.
+For FSO publications, which reach everyone from policy experts to the general public, visual hierarchy isn't just about looking nice. It's a practical need: if a chart has no clear hierarchy, the reader has to figure out the reading order themselves, which takes more effort and makes it more likely they'll misread the chart. Building in a clear hierarchy removes that extra work for the reader.
 
-Visual hierarchy is created through five main mechanisms: **position**, **size**, **colour**, **layering**, and **enclosure**. Each is described below with FSO-specific conventions where they apply.
+Visual hierarchy is built using five main tools: **position**, **size**, **colour**, **layering**, and **enclosure**. Each is explained below, along with FSO-specific rules where they apply.
 
 ## Position
 
-The simplest way to establish hierarchy is through placement. In left-to-right languages, including all FSO publication languages, readers begin at the top left of a page or chart and end at the bottom right. This reading order is consistent and can be relied upon to set expectations.
+The simplest way to build hierarchy is through placement. In left-to-right languages, including all FSO publication languages, readers start at the top left of a page or chart and finish at the bottom right. This reading pattern is consistent, so you can rely on it.
 
-The positional hierarchy for elements in a design is:
+The order of importance for positions in a design is:
 
 > top left > top right > bottom left > bottom right
 
-The importance of elements placed at each of these positions should match their rank in this sequence. Concretely for FSO charts:
+Elements placed in each of these positions should be as important as their place in this order. In practice, for FSO charts:
 
-- The **title** occupies the top-left or top-centre position. It is the first element the reader encounters and must be the most prominent text element on the chart.
-- The **subtitle** or explanatory line follows immediately below the title, in a smaller weight and size, providing the context or unit information the title alone cannot carry.
-- **Annotations** that explain features in the data sit close to the relevant data marks, at a visual weight below the title and subtitle but above axis labels.
-- **Axis labels and scale values** sit at the periphery of the plot area, where they are available for reference without competing with the data.
-- **Source lines, notes, and credits** appear at the bottom of the chart. They are necessary for institutional standards but should be the least visually prominent text elements on the page.
+- The **title** goes in the top-left. It's the first thing the reader sees, so it needs to be the most visible text on the chart.
+- The **subtitle** or explanatory line goes right below the title, in a smaller and lighter style. It gives context or units that the title alone can't fit.
+- **Annotations** that explain something in the data sit close to the data they're explaining, less prominent than the title and subtitle but more prominent than axis labels.
+- **Axis labels and scale values** sit at the edges of the plot area. They're there for reference, without competing with the data itself.
+- **Source lines, notes, and credits** go at the bottom of the chart. They're required for institutional standards, but they should be the least visible text on the page.
 
-When placing multiple charts in a publication or dashboard, the reading sequence must be considered. Charts higher and to the left in the layout will be seen first. Ensure the logical narrative order of the charts follows the spatial reading order, so the reader encounters context before conclusion.
+When you place several charts in a publication or dashboard, think about the order readers will see them in. Charts placed higher up and further left will be seen first. Make sure the order of your story matches this reading order, so readers see context before they see the conclusion.
 
-Note also that visualisations attract attention independently of their position: a striking chart may pull the eye even when it appears lower in the reading order. For this reason, FSO charts should be as self-contained as possible, any necessary elements required to understand the chart should be embedded in the chart itself, not left to surrounding body text.
+Keep in mind that a chart can grab attention regardless of its position: a striking chart can pull the eye even if it comes later in the reading order. That's why FSO charts should be able to stand on their own, everything needed to understand a chart should be built into the chart itself, not left for the surrounding text to explain.
 
 ## Size
 
-Larger elements are perceived as more important than smaller ones. When the contrast in size is large enough, it can override positional hierarchy entirely: a very large chart placed below the fold will draw the eye before a small one placed at the top left.
+Bigger elements feel more important than smaller ones. If the size difference is big enough, it can override position entirely: a very large chart placed further down the page can catch the eye before a small one at the top left.
 
-Within a single chart, the sizing of text elements should reflect their rank in the reading sequence. The FSO typographic hierarchy for chart elements is:
+Within a single chart, the size of text elements should match their place in the reading order. The FSO order for chart text, from biggest to smallest, is:
 
 > Title > Subtitle > Annotations > Axis labels, notes and value labels > Footer elements
 
 <Canvas of={chartStories.Description} />
-Each level should be visibly smaller than the one above it by enough that the distinction is immediately perceptible without inspection. A title and subtitle that are the same size, flatten the hierarchy and force the reader to determine importance through content rather than form.
+Each level should be clearly smaller than the one above it, enough that anyone can see the difference right away, without needing to look closely. If a title and subtitle are the same size, the hierarchy disappears, and the reader has to work out what's important just from the words, instead of how they're shown.
 
-In multi-chart layouts and dashboards, the key visualisation can be given additional visual weight by making it larger than the supporting charts. Size contrast communicates priority. A key indicator or featured chart that is the same size as all surrounding charts loses its status as the primary focus.
+In dashboards or layouts with several charts, you can give a key chart more visual weight by making it bigger than the others. Size shows priority. If a key chart is the same size as everything around it, it loses its status as the main focus.
 
 ## Colour
 
-Colour is one of the strongest hierarchy mechanisms available, because it operates in parallel with size and position rather than competing with them. A small element in the wrong position can still be elevated in the hierarchy if it carries a highly saturated or contrasting colour.
+Colour is one of the most powerful hierarchy tools, because it works alongside size and position instead of competing with them. Even a small element in a low-priority position can stand out if it uses a strong or contrasting colour.
 
-The FSO convention for colour-based hierarchy within a chart is:
+The FSO rule for using colour to show hierarchy inside a chart is:
 
-- **Accent colour** (the FSO primary colour or the most prominent hue in the palette) for the data series or categories that carry the primary message of the chart. This is the element the reader should notice first.
-- **Black** for the most important text elements: the title, subtitle and any annotations that are central to the message.
-- **Light grey** for supporting structural elements: gridlines, tick marks, axis lines.
+- **Accent colour** (the FSO primary colour, or the strongest colour in the palette) for the data or category that carries the chart's main message. This is what the reader should notice first.
+- **Black** for the most important text: the title, subtitle, and any annotations central to the message.
+- **Light grey** for supporting elements: gridlines, tick marks, axis lines.
 
-This pattern means that colour is doing two things simultaneously: encoding categorical membership (which series is which) and encoding importance (which series to look at first). These two functions must not contradict each other.
+This means colour does two jobs at once: it shows which category something belongs to, and it shows how important it is. These two jobs shouldn't send different signals.
 
-A common failure mode is applying a high-contrast, saturated colour to non-data elements such as logos, borders, or source lines. A red logo in the bottom-right corner, for example, draws the eye to the lowest-priority position on the chart, directly contradicting the positional hierarchy. Non-data elements should be rendered at a visual weight that keeps them subordinate to the data.
+A common mistake is using a strong, saturated colour on things that aren't data : like logos, borders, or source lines. For example, a red logo in the bottom-right corner pulls the eye to the lowest-priority spot on the chart, which works against the hierarchy you're trying to build. Non-data elements should stay visually quiet, so they don't compete with the data.
 
 ## Layering
 
-Layering is a subtler hierarchy mechanism, most relevant for charts with overlapping data marks or annotations placed over a plot area.
+Layering is a more subtle hierarchy tool. It matters most for charts with overlapping data or annotations placed over a plot area.
 
-Elements that appear in front of (on top of) other elements are perceived as more important. In practice this means:
+Elements placed in front of (on top of) others feel more important. In practice:
 
-- Annotation lines and labels should sit above (in front of) gridlines and axis lines, never behind them.
-- When data series overlap (as in area charts or stacked charts), the series that encodes the primary message should be rendered in front of the series present for context.
-- Reference lines (e.g. a European average or a regulatory threshold) should be clearly above the grid but visually subordinate to the data series — typically rendered as a dashed or lighter line rather than a solid prominent one.
+- Annotation lines and labels should sit in front of gridlines and axis lines, never behind them.
+- When data series overlap (like in area charts or stacked charts), put the series that carries the main message in front of the ones that are just there for context.
+- Reference lines (like a European average or a regulatory threshold) should sit above the grid, but stay visually less important than the data. They are usually shown as a dashed or lighter line rather than a bold, solid one.
 
 ## Enclosure
 
-Enclosure promotes that element in the visual hierarchy by making it appear grouped and distinct from its surroundings. Enclosed elements attract attention.
+Enclosure means putting a border or shaded area around an element to make it look grouped and separate from everything else. Enclosed elements draw attention.
 
-Enclosure should therefore be applied deliberately and sparingly. In FSO charts, legitimate uses of enclosure include:
+Because of this, use enclosure carefully and sparingly. Good uses of enclosure in FSO charts include:
 
-- A **light shaded background region** over a specific time interval in a line chart (e.g. a recession period or a policy period) to signal that the interval has a different status from the surrounding data.
-- A **callout box** for an annotation that is too long to fit as an inline label without ambiguity.
+- A **light shaded background area** over a specific time period in a line chart (for example, a recession or a policy period), to show that this period is different from the rest.
+- A **callout box** for an annotation that's too long to fit as a simple inline label.
 
-Enclosure should not be used to decorate elements that are not meant to be highlighted. A heavy border around a legend box, a framed source line, or a boxed subtitle all elevate those elements in the hierarchy without justification. As noted in the [Chart Junk guidelines](/docs/readability-best-practices-chart-junk--docs), borders and boxes on elements that do not need emphasis are a form of chart junk. In the context of hierarchy, they are actively misleading, because they imply importance that is not there.
+Don't use enclosure just to decorate elements that aren't meant to stand out. A heavy border around a legend box, a framed source line, or a boxed subtitle all make those elements seem more important than they should be. As explained in the [Chart Junk guidelines](/docs/readability-best-practices-chart-junk--docs), borders and boxes on elements that don't need extra attention are a form of chart junk. In terms of hierarchy, they're actually misleading, because they suggest importance that isn't really there.
 
 ## Consistency across a publication
 
-In multi-chart publications, reports, and dashboards, visual hierarchy must be applied consistently across all charts. When the same element type (titles, annotations, axis labels) is rendered differently across charts in the same document, different sizes, different colours, different weights, the reader cannot rely on visual properties as reliable signals of importance. They must re-evaluate hierarchy independently for each chart, which is cognitively expensive.
+In publications, reports, and dashboards with several charts, visual hierarchy needs to stay the same across all of them. If the same type of element (titles, annotations, axis labels) looks different from one chart to the next (different sizes, colours, or weights), readers can no longer trust what they see as a signal of importance. They have to work out the hierarchy again for every single chart, which takes extra effort.
 
-FSO institutional standards provide a typographic and colour framework that, when applied consistently, establishes hierarchy automatically across all outputs. Deviations from that framework should be documented and justified, and should not propagate across the publication.
+FSO's institutional standards already give you a typography and colour system. Used consistently, it sets up hierarchy automatically across all your outputs. If you need to deviate from it, write down why, and don't let that change spread to the rest of the publication.
 
 ## FSO element hierarchy reference
 
-The table below summarises the expected visual weight and position for each standard FSO chart element, from highest to lowest priority:
+The table below shows the expected visual weight and position for each standard FSO chart element, from highest to lowest priority:
 
 <div style={{ display: 'flex', justifyContent: 'center' }}>
     <table
@@ -176,17 +176,17 @@ The table below summarises the expected visual weight and position for each stan
 
 ### Do
 
-- Place the title top-left or top-centre, and ensure it is the largest and most prominent text element on the chart.
-- Apply the FSO typographic size sequence: title > subtitle > annotations > data labels > axis labels > footer. Make size differences clearly perceptible, not token.
-- Ensure reading order in multi-chart layouts follows the logical narrative: place context charts before conclusion charts in the spatial sequence.
+- Put the title top-left, and make sure it's the biggest and most visible text on the chart.
+- Follow the FSO size order: title > subtitle > annotations > data labels > axis labels > footer. Make the size differences clear, not just barely noticeable.
+- Make sure the reading order in multi-chart layouts follows your story: place context charts before conclusion charts, in that spatial order.
 
 ### Don't
 
-- Don't assign a high-contrast or saturated colour to non-data elements (logos, borders, source lines). It elevates them in the hierarchy against the intention of the design.
-- Don't flatten the typographic scale: titles and subtitles at the same font size, or axis labels and data labels at the same size, remove the signal that size is meant to provide.
-- Don't place the most important chart in a dashboard in a position that the reading order reaches last. If a chart must break the natural reading order, use size contrast to compensate.
-- Don't use enclosure decoratively. A border or box implies importance; if the element is not important, the border is actively misleading.
-- Don't allow hierarchy to vary inconsistently across charts in the same publication. Once a visual property (size, colour, position) is used as a hierarchy signal in one chart, it must carry the same meaning in all subsequent charts.
+- Don't give a strong or saturated colour to non-data elements (logos, borders, source lines). It makes them seem more important than intended.
+- Don't flatten the size scale: titles and subtitles at the same size, or axis labels and data labels at the same size, removes the signal that size is supposed to give.
+- Don't put the most important chart in a dashboard somewhere the reading order reaches last. If a chart has to break the natural reading order, use size to make up for it.
+- Don't use enclosure just for decoration. A border or box suggests something is important. If it isn't, the border is misleading.
+- Don't let hierarchy change inconsistently between charts in the same publication. Once a visual property (size, colour, position) is used to show importance in one chart, it needs to mean the same thing in every chart that follows.
 
 ---
 
